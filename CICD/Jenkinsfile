@@ -21,6 +21,7 @@ node {
    } 
 
 
+
    stage("deploy to heroku") {
       sh 'docker stop portfolio'
       sh "docker run -p 8081:8080 --name portfolio --rm -d islandhopper152/portfolio:${commit_id}"
