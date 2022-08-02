@@ -1,0 +1,50 @@
+{
+  "specialFeatures": {
+    "auth": true,
+    "iconEntrance": true,
+    "showFeatures": true
+  },
+  "dbIntegrations": {
+    "type": null,
+    "mongoDB": {
+      "connectionStr": null,
+      "user": [
+        "username",
+        "password"
+      ],
+      "dbName": null
+    },
+    "postgreSQL": null
+  },
+  "breakpoints": {
+    "slim": 768,
+    "mobile": 556
+  },
+  "findAlt": {
+    "displayCard": {
+      "large": {},
+      "medium": {},
+      "small": {}
+    }
+  },
+  "theme": {
+    "dark": {
+      "logoTint": "#",
+      "color": {
+        "highlight": "hsl(40, 100%, 68%)",
+        "highlight_2": "#fbdd7d",
+        "white": "#d9d7ce",
+        "offwhite": "#d9d7c3",
+        "title": "#ffffff",
+        "main": "#6cd0e6",
+        "mainOffset": "#d6d0f3"
+      },
+      "background": {
+        "color": {
+          "main": "#222733",
+          "window": "#1b1f28"
+        }
+      }
+    }
+  }
+}
