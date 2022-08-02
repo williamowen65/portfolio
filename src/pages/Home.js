@@ -26,15 +26,15 @@ export default function Home() {
   }, [but.current])
 
 
-  useEffect(() => {
-    gsap.registerPlugin(GSDevTools)
-    const tools = GSDevTools.create()
-    console.log(tools);
+  // useEffect(() => {
+  //   gsap.registerPlugin(GSDevTools)
+  //   const tools = GSDevTools.create()
+  //   console.log(tools);
 
-    return () => {
-      tools.kill()
-    }
-  }, [])
+  //   return () => {
+  //     tools.kill()
+  //   }
+  // }, [])
 
   return (
     <>
