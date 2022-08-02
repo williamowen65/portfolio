@@ -9,7 +9,7 @@ pipelineJob('portfolio') {
                     branch('*/main')
                 }
             }
-            scriptPath('Jenkinsfile')
+            scriptPath('CICD/Jenkinsfile')
         }
     }
     triggers {
