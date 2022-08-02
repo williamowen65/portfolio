@@ -8,7 +8,7 @@ import configValues from '../data/configValues.json'
 import Section from '../components/ui/Section'
 import gsap from 'gsap'
 import GSDevTools from 'gsap/GSDevTools'
-gsap.registerPlugin(GSDevTools)
+
 
 
 export default function Home() {
@@ -21,9 +21,20 @@ export default function Home() {
   useEffect(() => {
 
     gsap.to(but.current, { x: 100, y: 100, rotate: 80 })
-    GSDevTools.create()
+    // GSDevTools.create()
     // console.log(but.current);
   }, [but.current])
+
+
+  useEffect(() => {
+    gsap.registerPlugin(GSDevTools)
+    const tools = GSDevTools.create()
+    console.log(tools);
+
+    return () => {
+      tools.kill()
+    }
+  }, [])
 
   return (
     <>

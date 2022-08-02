@@ -22,6 +22,10 @@ const HeaderStyle = styled.header`
  
 
   padding: 20px;
-  background-image: url(${img})
+  background-image: url(${img});
+  h1 {
+    color: white;
+    text-shadow: 0 0 5px black;
+  }
 
 `

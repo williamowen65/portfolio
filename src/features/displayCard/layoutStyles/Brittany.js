@@ -12,7 +12,7 @@ export default function Brittany({ data }) {
   // const iconStyle = {
   //   cursor: "pointer"
   // }
-  console.log(data);
+  // console.log(data);
 
   return (
     <InnerContainer>

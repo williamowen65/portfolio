@@ -33,7 +33,6 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
-    "gsap": "file:gsap-bonus.tgz",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",

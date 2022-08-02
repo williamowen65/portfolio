@@ -3,7 +3,8 @@
 ::-webkit-scrollbar {
   width: 10px;
   position: absolute;
-  right: 0
+  right: 0;
+  display: none;
 }
 
 /* Track */
@@ -21,13 +22,3 @@
   background: #555;
 }
 
-// body {
-// 	width: 100vw;
-// 	height: 100vh;
-// 	overflow-x: hidden;
-// 	overflow-y: auto;
-// 	perspective: 1px;
-// 	-webkit-perspective: 1px;
-// 	transform-style: preserve-3d;
-// 	-webkit-transform-style: preserve-3d;
-// }

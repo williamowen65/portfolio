@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import Home from './pages/Home.js'
 import { Navigate, Route, Routes } from 'react-router-dom'
 // import Navbar from './layouts/Navbar.js'
@@ -14,6 +14,9 @@ import { useDispatch } from 'react-redux'
 import { setScreenWidth } from './context/appReducer.js'
 import PageNotFound from './pages/PageNotFound.js'
 import About from './pages/About.js'
+import gsap from 'gsap'
+// import GSDevTools from 'gsap/GSDevTools'
+// gsap.registerPlugin(GSDevTools)
 
 export default function App(props) {
   const dispatch = useDispatch()
@@ -22,6 +25,16 @@ export default function App(props) {
   useEffect(() => {
     dispatch(setScreenWidth(width))
   }, [width])
+
+
+
+  // useRef(GSDevTools.create())
+  // useEffect(() => {
+  //   GSDevTools.create()
+  // }, [])
+
+  // useMemo(() => {}, )
+
   return (
     <Div className="App" ref={ref}>
       <PageContainer >
