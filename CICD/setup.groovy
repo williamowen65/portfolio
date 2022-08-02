@@ -15,4 +15,5 @@ pipelineJob('portfolio') {
     triggers {
         githubPush()
     }
+
 }
