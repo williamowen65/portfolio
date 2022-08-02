@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import img from '../../../assets/flower.jpg'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+import gsap from '../../../../gsap/gsap.min'
+import ScrollTrigger from '../../../../gsap/ScrollTrigger.min'
 import parallaxRip from '../assets/parallaxRips.png'
 
 

@@ -14,7 +14,7 @@ import { useDispatch } from 'react-redux'
 import { setScreenWidth } from './context/appReducer.js'
 import PageNotFound from './pages/PageNotFound.js'
 import About from './pages/About.js'
-import gsap from 'gsap'
+import gsap from '../gsap/gsap.min.js'
 // import GSDevTools from 'gsap/GSDevTools'
 // gsap.registerPlugin(GSDevTools)
 

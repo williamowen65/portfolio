@@ -6,8 +6,8 @@ import Modal from '../components/ui/Modal'
 import DisplayCard from '../features/displayCard/index'
 import configValues from '../data/configValues.json'
 import Section from '../components/ui/Section'
-import gsap from 'gsap'
-import GSDevTools from 'gsap/GSDevTools'
+import gsap from '../../gsap/gsap.min'
+import GSDevTools from '../../gsap/GSDevTools.min'
 
 
 
