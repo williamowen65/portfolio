@@ -28,7 +28,7 @@ export default function Features() {
       </Section>
       <Section>
         <h2>Section Breaks</h2>
-        <SectionBreak type={"parallax"} />
+        {/* <SectionBreak type={"parallax"} /> */}
       </Section>
 
     </FeaturesStyled>
