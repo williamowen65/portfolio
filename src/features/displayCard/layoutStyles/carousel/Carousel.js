@@ -158,4 +158,10 @@ const CarouselStyled = styled.div`
   h1{
     color: ${configValues.theme.dark.color.main}
   }
+  header {
+    border-bottom: 1px solid ${configValues.theme.dark.color.main};
+  }
+  path {
+    stroke: ${configValues.theme.dark.color.main}
+  }
 `
