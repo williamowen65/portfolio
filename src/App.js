@@ -15,8 +15,10 @@ import { setScreenWidth } from './context/appReducer.js'
 import PageNotFound from './pages/PageNotFound.js'
 import About from './pages/About.js'
 import gsap from '../gsap/gsap.min.js'
+import Palette from './utils/Palette.js'
 // import GSDevTools from 'gsap/GSDevTools'
 // gsap.registerPlugin(GSDevTools)
+
 
 export default function App(props) {
   const dispatch = useDispatch()
@@ -28,12 +30,8 @@ export default function App(props) {
 
 
 
-  // useRef(GSDevTools.create())
-  // useEffect(() => {
-  //   GSDevTools.create()
-  // }, [])
 
-  // useMemo(() => {}, )
+
 
   return (
     <Div className="App" ref={ref}>
@@ -52,6 +50,7 @@ export default function App(props) {
             })()}>
             </Route>
           </Routes>
+          {configValues.specialFeatures.showPalette && <Palette />}
         </MainContainer>
       </PageContainer>
     </Div>

@@ -1,0 +1,151 @@
+// @use "./pages/_home.scss";
+@use "./_carousel.scss";
+// @use "./layout/_footer.scss";
+// @use "./pages/_credits.scss";
+@import "./variables/_variables.scss";
+@import "./variables/color-variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Jomhuria&display=swap");
+
+body {
+  margin: 0;
+  // color: white;
+  // height: 100vh;
+  // overflow-x: hidden !important;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Castoro", serif;
+  }
+  p,
+  a,
+  fieldset,
+  li,
+  .learningPath span,
+  form,
+  input,
+  textarea,
+  .theWhy,
+  .theHow,
+  .theWhat {
+    font-family: "Castoro", serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  // *:not(.contact) {
+  //   -webkit-user-select: none;
+  //   user-select: none;
+  // }
+  header,
+  nav,
+  .sidebar,
+  .hero,
+  .quicklinks,
+  .carousel,
+  .footer,
+  .fixed-action-btn,
+  .about,
+  .contactForm,
+  .introText,
+  .quickLinks,
+  .create,
+  .contact h2,
+  .modalContainer,
+  .item {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $scrollbar-color;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%),
+      inset -2px -2px 2px rgb(0 0 0 / 25%);
+  }
+
+  &::-webkit-scrollbar-track-piece:end {
+    border-radius: 10px;
+    background: $scrollbar-track;
+  }
+
+  &::-webkit-scrollbar-track-piece:start {
+    border-radius: 10px;
+    background: $scrollbar-track;
+  }
+}
+
+.container {
+  // max-width: 1200px;
+  // margin: 0 auto;
+  height: 100%;
+  // display: grid;
+  display: flex;
+  // display: inline-block;
+
+  background: $main-background;
+  // grid-template-columns: $left-col-width 1fr;
+  // grid-template-columns: 0 1fr;
+  // transition: grid-template-columns 1s;
+  @media #{$small-and-down} {
+    grid-template-columns: 1fr;
+  }
+}
+
+main {
+  // padding: 5px 10px;
+  padding: 5px 10px;
+  // max-width: 100%;
+  box-sizing: border-box;
+  // position: relative;
+  transition: width 1s;
+  // display: inline-block;
+  // width: 100%;
+
+  width: calc(100% - 0px);
+  &.min {
+    width: calc(100% - 215px);
+  }
+  @media #{$small-and-down} {
+    transition: none;
+    width: 100%;
+    min-height: 70vh;
+  }
+}
+
+#root {
+  height: 100%;
+}
+
+// .home,
+// .about,
+// .create,
+// .contact {
+//   // padding: 0 15px;
+// }
+a {
+  transition: color 0.2s;
+  &:hover {
+    color: rgba(194, 163, 163, 0.575);
+  }
+}
+
+body {
+  overflow-y: scroll;
+  &.noscroll {
+    overflow-y: hidden;
+    padding-right: 8px;
+  }
+}
+
+// ODD bug
+//fix for it

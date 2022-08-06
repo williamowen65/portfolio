@@ -1,0 +1,6 @@
+export const STRENGTH = "STRENGTH"
+export const VIRTUE = "VIRTUE"
+export const ENDURANCE = "ENDURANCE"
+export const STAMINA = "STAMINA"
+export const STEALTH = "STEALTH"
+export const GENEROSITY = "GENEROSITY"

@@ -1,0 +1,308 @@
+body {
+  overflow-x: hidden;
+}
+
+.carousel {
+  padding: 5px 10px;
+  text-align: center;
+  position: relative;
+  height: 70vh;
+  padding-top: 0%;
+}
+.carousel header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+}
+.carousel header .small-container {
+  display: flex;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+.carousel header h1 {
+  text-align: left;
+  margin: 0 auto 0 0;
+  font-size: 40px;
+}
+@media only screen and (max-width : 600px) {
+  .carousel header h1 {
+    font-size: 30px;
+  }
+}
+.carousel header p {
+  white-space: nowrap;
+  float: right;
+  margin: auto 0;
+}
+.carousel header p span {
+  font-size: 40px;
+  margin: 0 5px;
+  cursor: pointer;
+  color: #555;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  justify-content: center;
+  line-height: 19px;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 3px;
+  transition: color 0.5s, background 0.5s;
+}
+.carousel header p span:hover {
+  background: #222;
+  color: white;
+}
+.carousel header p span * {
+  margin-top: 3px;
+}
+.carousel section {
+  max-width: calc(100% + 100px);
+  height: 430px;
+  margin: auto;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  left: -49px;
+  overflow-x: scroll;
+  position: absolute;
+}
+.carousel section::-webkit-scrollbar {
+  height: 5px;
+}
+.carousel section::-webkit-scrollbar-track {
+  background: transparent;
+}
+.carousel section::-webkit-scrollbar-thumb {
+  background: #8181bd;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+.carousel section::-webkit-scrollbar-track-piece:end {
+  border-radius: 10px;
+  background: #91dfa9;
+  margin-right: 10px;
+}
+.carousel section::-webkit-scrollbar-track-piece:start {
+  border-radius: 10px;
+  background: #91dfa9;
+  margin-left: 10px;
+}
+.carousel section .projectCard {
+  padding: 0px;
+  min-width: 300px;
+  max-width: 300px;
+  height: 100%;
+  background: cornsilk;
+  border-radius: 20px;
+  position: relative;
+  left: 0;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.carousel section .projectCard.active-visit {
+  background: #ececec;
+  color: black;
+}
+.carousel section .projectCard.active-visit .projectCard {
+  transform: scale(1.01);
+  box-shadow: 2px 4px 5px 2px rgba(0, 0, 0, 0.25);
+  background: #b4e57d;
+}
+.carousel section .projectCard.active-visit a.detailLink {
+  opacity: 0.1;
+}
+.carousel section .projectCard.active-card {
+  background: #5490fe;
+  color: black;
+  transform: scale(1.01);
+  box-shadow: 2px 4px 5px 2px rgba(0, 0, 0, 0.25);
+}
+.carousel section .projectCard.active-card a.visitLink {
+  opacity: 0.1;
+}
+.carousel section .projectCard picture {
+  width: 100%;
+  height: 70%;
+  place-content: center;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 7px;
+}
+.carousel section .projectCard picture img {
+  width: -webkit-fill-available;
+  height: fit-content;
+}
+.carousel section .projectCard picture img.styles.trans-top {
+  transform: translateY(-40px);
+}
+.carousel section .projectCard .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 74px;
+}
+.carousel section .projectCard .card .card-title {
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 16px;
+  margin: -1px 0 3px;
+}
+.carousel section .projectCard .card .card-content {
+  font-size: 14px;
+  margin: auto;
+  width: 180px;
+  line-height: 16px;
+}
+.carousel section .projectCard a:not(.disinherit) {
+  position: absolute;
+  transition: opacity 0.5s;
+}
+.carousel section .projectCard a:not(.disinherit).visitLink {
+  left: 0%;
+  bottom: 0;
+  padding: 5px;
+  transition: background 0.5s;
+  width: 100%;
+}
+.carousel section .projectCard a:not(.disinherit).visitLink:hover {
+  background: #f0aa4e;
+  color: black;
+}
+.carousel section .projectCard a:not(.disinherit).detailLink {
+  right: 5%;
+  top: 5px;
+  color: rgba(44, 6, 6, 0.39);
+  transition: color 0.5s, opacity 0.5s;
+}
+.carousel section .projectCard a:not(.disinherit).detailLink:hover {
+  color: #49ee49;
+}
+.carousel section .projectCard.card {
+  margin: 0 10px 0 10px;
+  display: flex;
+  align-items: flex-start;
+  overflow: visible;
+  height: 375.85px;
+}
+.carousel section .projectCard.card svg.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.carousel section .projectCard.card svg.close.active {
+  z-index: 1;
+  opacity: 1;
+}
+.carousel section .projectCard.card svg.close:hover {
+  cursor: pointer;
+}
+.carousel section .projectCard.card svg.earth {
+  z-index: -1;
+  position: absolute;
+  top: 7px;
+  left: 46%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.carousel section .projectCard.card svg.earth.active {
+  z-index: 1;
+  opacity: 1;
+}
+.carousel section .projectCard.card svg.earth:hover {
+  cursor: pointer;
+}
+.carousel section .projectCard.card .details {
+  text-align: center;
+  flex-grow: 2;
+  color: transparent;
+  transition: color 0.5s;
+  width: 278px;
+  overflow-y: scroll;
+  height: 100%;
+  padding: 29px 0;
+}
+.carousel section .projectCard.card .details::-webkit-scrollbar {
+  display: none;
+}
+.carousel section .projectCard.card .details::-webkit-scrollbar-thumb {
+  background: #8181bd;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+.carousel section .projectCard.card .details h4 {
+  font-size: 25px;
+  margin-bottom: 0;
+}
+.carousel section .projectCard.card .details h4.sub {
+  margin-top: 0;
+}
+.carousel section .projectCard.card .details p {
+  white-space: pre-wrap;
+  margin: 15px auto;
+  width: 239px;
+}
+.carousel section .projectCard.card .details p:not(.author) {
+  line-height: 18px;
+  text-align: start;
+}
+.carousel section .projectCard.card .details p.pre {
+  transform: translate(26px, 14px);
+}
+.carousel section .projectCard.card .details p a {
+  white-space: nowrap;
+  position: initial;
+}
+.carousel section .projectCard.card .details ul {
+  list-style-type: none;
+  padding: 0;
+  position: relative;
+  bottom: -20px;
+  transition: border 0.2s;
+  border: 1px solid black;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 15px 0;
+}
+.carousel section .projectCard.card .details ul li.title {
+  text-decoration: underline;
+  padding-bottom: 10px;
+}
+.carousel section .projectCard.card .details ul li.breif {
+  width: 150px;
+  white-space: pre-wrap;
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+.carousel section .projectCard.card .details fieldset {
+  text-align: left;
+  white-space: normal;
+  margin: 100px 15px;
+}
+.carousel section .projectCard.card .details fieldset .title {
+  font-size: 15px;
+}
+.carousel section .projectCard.card.active {
+  min-width: 500px;
+}
+.carousel section .projectCard.card.active .details {
+  color: black;
+}
+.carousel .spacer {
+  color: transparent;
+}
+
+.card:not(.active-visit) ul {
+  transition: border 0.2s;
+  border: 1px solid transparent !important;
+}
+
+/*# sourceMappingURL=carousel.css.map */

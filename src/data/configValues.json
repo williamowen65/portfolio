@@ -2,7 +2,8 @@
   "specialFeatures": {
     "auth": true,
     "iconEntrance": true,
-    "showFeatures": true
+    "showFeatures": true,
+    "showPalette": false
   },
   "dbIntegrations": {
     "type": null,
