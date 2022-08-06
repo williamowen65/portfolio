@@ -9,7 +9,7 @@ import Section from '../components/ui/Section'
 import gsap from '../../gsap/gsap.min'
 import GSDevTools from '../../gsap/GSDevTools.min'
 import { allCards } from '../features/displayCard/layoutStyles/carousel/randomData/CardArchive.js'
-
+import { GrGithub } from 'react-icons/gr'
 
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
   // }, [])
 
   return (
-    <div className='hero'>
+    <Div className='hero'>
       <img />
       <p>My name is William and I simply love to code.</p>
 
@@ -46,14 +46,38 @@ export default function Home() {
       <p>Based near Seattle & can work remotely</p>
       <p></p>
 
-      <Button>sdsad</Button>
+      <Button>Connect</Button>
+
+      <article>
+
+
+        <fieldset>
+          <legend><h2>My Contributions to the <nobr>Open Source Community</nobr></h2></legend>
+
+          <p>Automate nearly 100% of your full-stack development experience with this completely customizable development tool I made!</p>
+
+          <a href="https://github.com/williamowen65/project-setup">
+            <GrGithub />
+          </a>
+
+          <p>The dockerized version coming soon...</p>
+
+        </fieldset>
+      </article>
 
       <DisplayCard type='carousel' title={"What I've been up to..."} data={allCards} />
 
-    </div>
+    </Div>
   )
 }
 
-// const Main = styled.main`
+const Div = styled.div`
+  legend {
+    text-align: left;
+    h2{
+      width: min-content;
+    }
+  }
+`
 
 
