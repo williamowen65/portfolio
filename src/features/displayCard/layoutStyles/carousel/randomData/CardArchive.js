@@ -4,7 +4,7 @@ import Card, { idGen } from './CardArchiveSetup.js'
 
 import * as A from './Attributes.js'
 
-
+// import YouTube from '../assets/Youtube.js'
 
 
 
@@ -15,28 +15,15 @@ export const allCards = [
 
     const UniqueCardStyle = styled.div`
  
-      h4 {
-        color: red !important
-      }
-      code{
-        text-align: left !important;
-        display: flex !important;
-        flex-direction: column !important;
-        code {
-          transform: translateX(50px);
-        }
-        p {
-          margin: 0 auto !important;
-          user-select: text !important;
-        }
-      }
+
     `
     return (<Card
-      title="Welcome to <br/> Outside Games"
+      title="Udemy and Youtube"
       imgSrc={(<img
-        src='https://images.unsplash.com/photo-1659264734757-e87d622e76ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1068&q=80' alt="Dfsd"
+        src='https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg' alt="Dfsd"
         style={{
-
+          objectFit: 'none',
+          transform: 'scale(0.5)'
         }}
       />)}
       pretext="Are you up for a challenge?"

@@ -30,7 +30,7 @@
   },
   "theme": {
     "dark": {
-      "logoTint": "#",
+      "logoTint": "rgb(92 255 120)",
       "color": {
         "highlight": "hsl(40, 100%, 68%)",
         "highlight_2": "#fbdd7d",
