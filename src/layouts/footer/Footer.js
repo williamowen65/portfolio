@@ -90,4 +90,10 @@ export default Footer;
 
 const FooterStyled = styled.footer`
   background: ${configValues.theme.dark.background.color.window};
+  h1 {
+    text-shadow: 0px 0px 4px white;
+  }
+  a{
+    color: ${configValues.theme.dark.color.highlight}
+  }
 `

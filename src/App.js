@@ -19,6 +19,7 @@ import Palette from './utils/Palette.js'
 // import GSDevTools from 'gsap/GSDevTools'
 // gsap.registerPlugin(GSDevTools)
 import Footer from './layouts/footer/Footer.js'
+import DownArrow from './assets/downArrow.png'
 
 export default function App(props) {
   const dispatch = useDispatch()
@@ -35,6 +36,8 @@ export default function App(props) {
 
   return (
     <Div className="App" ref={ref}>
+      <img src={DownArrow} alt="" srcset="" className='left downArrow' />
+      <img src={DownArrow} alt="" srcset="" className='right downArrow' />
       <PageContainer >
         <Header>Hello world</Header>
         <MainContainer className="main">
@@ -71,6 +74,17 @@ const Div = styled.div`
   }
   p {
     color: ${configValues.theme.dark.color.main}
+  }
+  .downArrow{
+    width: 40px;
+    position: fixed;
+    bottom: 0;
+    &.left {
+      left: 0;
+    }
+    &.right {
+      right: 0;
+    }
   }
 
 
