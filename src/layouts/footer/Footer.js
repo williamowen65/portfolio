@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import './styles/footer.css'
+import configValues from '../../data/configValues.json'
+import styled from "styled-components";
 
 const Footer = () => {
 
@@ -24,7 +26,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className='footer'>
+    <FooterStyled className='footer'>
       {/* <img src='./assets/imgs/GitHub.png' alt='' /> */}
       <div className='bottomFooter'>
         <div>
@@ -79,8 +81,13 @@ const Footer = () => {
         <h1>WO</h1>
         <p>Web Dev Portfolio</p>
       </div>
-    </footer>
+    </FooterStyled>
   );
 };
 
 export default Footer;
+
+
+const FooterStyled = styled.footer`
+  background: ${configValues.theme.dark.background.color.window};
+`
