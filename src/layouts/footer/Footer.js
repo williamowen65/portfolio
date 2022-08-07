@@ -4,7 +4,7 @@ import './styles/footer.css'
 import configValues from '../../data/configValues.json'
 import styled from "styled-components";
 
-const Footer = () => {
+const Footer = ({ style }) => {
 
   let target = useRef();
 
@@ -26,7 +26,7 @@ const Footer = () => {
   };
 
   return (
-    <FooterStyled className='footer'>
+    <FooterStyled className='footer' style={style}>
       {/* <img src='./assets/imgs/GitHub.png' alt='' /> */}
       <div className='bottomFooter'>
         <div>
@@ -89,12 +89,12 @@ export default Footer;
 
 
 const FooterStyled = styled.footer`
-    background: #00000026;
+background: #00000026;
   /* background: ${configValues.theme.dark.background.color.window}; */
   h1 {
-    text-shadow: 0px 0px 4px white;
-  }
+  text - shadow: 0px 0px 4px white;
+}
   a{
-    color: ${configValues.theme.dark.color.highlight}
-  }
+  color: ${configValues.theme.dark.color.highlight}
+}
 `

@@ -20,6 +20,9 @@ import Palette from './utils/Palette.js'
 // gsap.registerPlugin(GSDevTools)
 import Footer from './layouts/footer/Footer.js'
 import DownArrow from './assets/downArrow.png'
+import Sidebar from './layouts/sidebar/Sidebar.js'
+
+
 
 export default function App(props) {
   const dispatch = useDispatch()
@@ -36,8 +39,8 @@ export default function App(props) {
 
   return (
     <Div className="App" ref={ref}>
-      <img src={DownArrow} alt="" srcset="" className='left downArrow' />
-      <img src={DownArrow} alt="" srcset="" className='right downArrow' />
+      <Sidebar right />
+      <Sidebar left />
       <PageContainer >
         <Header>Hello world</Header>
         <MainContainer className="main">
@@ -55,7 +58,7 @@ export default function App(props) {
           </Routes>
           {configValues.specialFeatures.showPalette && <Palette />}
         </MainContainer>
-        <Footer />
+        <Footer style={{ order: 5 }} />
       </PageContainer>
     </Div>
   )
@@ -64,8 +67,10 @@ export default function App(props) {
 const Div = styled.div`
   /* background-color: ${configValues.theme.dark.background.color.window}; */
   background: linear-gradient(45deg, #2a57bb5c 10%, #99aad047 20%),linear-gradient(45deg, #1b1f28, #1b1f28);
+  display: flex;
   main {
     z-index: 3;
+    order: 2;
     background-color: ${configValues.theme.dark.background.color.main};
   }
   header {
@@ -77,16 +82,18 @@ const Div = styled.div`
   p {
     color: ${configValues.theme.dark.color.main}
   }
+  .sidebar{
+    
+    display: none;
+    &.right {
+      order:3
+
+    }
+  }
   .downArrow{
     filter: contrast(0) hue-rotate(21deg) opacity(0.9) sepia(1);
     width: 40px;
-    position: fixed;
-    bottom: 0;
-    &.left {
-      left:6%;
-    }
     &.right {
-      right: 6%;
     }
   }
 
