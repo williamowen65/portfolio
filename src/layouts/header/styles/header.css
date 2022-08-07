@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Jomhuria&display=swap");
+.flex {
+  display: flex;
+}
+.flex.C {
+  flex-direction: column;
+}
+.flex.C.innerWrapper {
+  flex-grow: 2;
+  justify-content: space-evenly;
+}
+.flex.C.innerWrapper nav, .flex.C.innerWrapper > div, .flex.C.innerWrapper > nav.exploreNav {
+  flex-grow: 1;
+}
+.flex.C .quote {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  justify-content: center;
+  text-align: center;
+}
+.flex.R {
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media only screen and (max-width : 600px) {
+  .flex.R {
+    flex-direction: column;
+  }
+}
+.flex.R .brand {
+  min-width: 215px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100px;
+  color: black;
+  background: #fff3e0;
+}
+@media only screen and (max-width : 600px) {
+  .flex.R .brand {
+    width: 100%;
+  }
+}
+.flex.R .brand h1,
+.flex.R .brand p {
+  margin: 0;
+}
+.flex.R.subInnerWrapper {
+  justify-content: flex-start;
+}
+.flex.R.subInnerWrapper i {
+  transform: rotate(-31deg) translateY(5px);
+}
+.flex.R.subInnerWrapper i.triangle {
+  transform: rotate(0deg) translateY(5px);
+}
+@media only screen and (max-width : 600px) {
+  .flex.R.subInnerWrapper {
+    display: none;
+  }
+}
+
+.main-header .brand h1 {
+  margin-bottom: 0;
+}
+.main-header .brand p {
+  margin-top: 0;
+}
+.main-header .quote {
+  background: #81c784;
+  color: black;
+}
+@media only screen and (max-width : 600px) {
+  .main-header .quote {
+    line-height: 30px;
+  }
+}
+.main-header .quote p {
+  margin: auto 0;
+}
+.main-header .exploreNav {
+  background: #e3f2fd;
+}
+.main-header .exploreNav > * {
+  padding: 0 15px;
+  align-self: center;
+}
+.main-header .exploreNav .moreDetails {
+  white-space: nowrap;
+  align-content: center;
+}
+.main-header .exploreNav .moreDetails p {
+  display: inline-block;
+  margin: auto;
+}
+
+.contentNav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  width: 100%;
+  z-index: 2;
+  text-align: right;
+  align-items: center;
+  justify-content: space-between;
+  background: #64b5f6;
+}
+@media only screen and (max-width : 600px) {
+  .contentNav {
+    text-align: center;
+  }
+}
+.contentNav.center {
+  justify-content: center;
+}
+.contentNav.flexEnd {
+  justify-content: space-between;
+}
+.contentNav.right {
+  justify-content: flex-end;
+}
+.contentNav i {
+  transform: translateY(3px);
+}
+.contentNav a {
+  display: inline-block;
+}
+.contentNav ul {
+  display: inline-block;
+  padding-inline-start: 11px;
+  padding-inline-end: 11px;
+  transition: transform 1s;
+}
+.contentNav ul li {
+  display: inline-block;
+  padding: 0 5px;
+}
+.contentNav ul li.active a {
+  color: rgba(0, 0, 0, 0.301);
+  transition: color 0.2s;
+}
+
+.NL {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  opacity: 0;
+  margin: 0;
+}
+@media only screen and (min-width : 601px) {
+  .NL {
+    left: 50px;
+  }
+}
+.NL h1,
+.NL p {
+  margin: 0 5px;
+}
+@media only screen and (max-width : 600px) {
+  .NL {
+    top: -4px;
+    transform: scale(0.5);
+  }
+  .NL p {
+    font-size: 20px;
+  }
+}
+.NL.navLogo {
+  opacity: 1;
+  animation: inOut 0.5s forwards;
+}
+@keyframes inOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.NL.navLogoOff {
+  opacity: 0;
+  animation: Out 0.5s forwards;
+}
+@keyframes Out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width : 601px) {
+  .NL.navLogoOff {
+    opacity: 0;
+  }
+}
+body {
+  margin: 0;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-family: "Castoro", serif;
+}
+body p,
+body a,
+body fieldset,
+body li,
+body .learningPath span,
+body form,
+body input,
+body textarea,
+body .theWhy,
+body .theHow,
+body .theWhat {
+  font-family: "Castoro", serif;
+}
+body a {
+  text-decoration: none;
+}
+body header,
+body nav,
+body .sidebar,
+body .hero,
+body .quicklinks,
+body .carousel,
+body .footer,
+body .fixed-action-btn,
+body .about,
+body .contactForm,
+body .introText,
+body .quickLinks,
+body .create,
+body .contact h2,
+body .modalContainer,
+body .item {
+  -webkit-user-select: none;
+  user-select: none;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: #8181bd;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+body::-webkit-scrollbar-track-piece:end {
+  border-radius: 10px;
+  background: rgba(215, 226, 218, 0.281);
+}
+body::-webkit-scrollbar-track-piece:start {
+  border-radius: 10px;
+  background: rgba(215, 226, 218, 0.281);
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  background: linear-gradient(55deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 85%);
+}
+@media only screen and (max-width : 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+main {
+  padding: 5px 10px;
+  box-sizing: border-box;
+  transition: width 1s;
+  width: calc(100% - 0px);
+}
+main.min {
+  width: calc(100% - 215px);
+}
+@media only screen and (max-width : 600px) {
+  main {
+    transition: none;
+    width: 100%;
+    min-height: 70vh;
+  }
+}
+
+#root {
+  height: 100%;
+}
+
+a {
+  transition: color 0.2s;
+}
+a:hover {
+  color: rgba(194, 163, 163, 0.575);
+}
+
+body {
+  overflow-y: scroll;
+}
+body.noscroll {
+  overflow-y: hidden;
+  padding-right: 8px;
+}
+
+/*# sourceMappingURL=header.css.map */
