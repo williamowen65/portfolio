@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import configValues from '../data/configValues.json'
+import { CgClose } from 'react-icons/cg'
 
 export default function Palette({ type = 'dark' }) {
 
@@ -21,8 +22,14 @@ export default function Palette({ type = 'dark' }) {
     })
   }
 
+  const handleClick = (e) => {
+    e.target.parentElement.remove()
+  }
+
   return (
     <NameStyled>
+
+      <CgClose onClick={handleClick} />
       <p>Theme: {type}</p>
       {[recursiveObjectOrPrintValue(colors)]}
     </NameStyled>

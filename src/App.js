@@ -18,7 +18,7 @@ import gsap from '../gsap/gsap.min.js'
 import Palette from './utils/Palette.js'
 // import GSDevTools from 'gsap/GSDevTools'
 // gsap.registerPlugin(GSDevTools)
-
+import Footer from './layouts/footer/Footer.js'
 
 export default function App(props) {
   const dispatch = useDispatch()
@@ -52,6 +52,7 @@ export default function App(props) {
           </Routes>
           {configValues.specialFeatures.showPalette && <Palette />}
         </MainContainer>
+        <Footer />
       </PageContainer>
     </Div>
   )

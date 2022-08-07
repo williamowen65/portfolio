@@ -9,9 +9,12 @@ import Section from '../components/ui/Section'
 import gsap from '../../gsap/gsap.min'
 import GSDevTools from '../../gsap/GSDevTools.min'
 import { allCards } from '../features/displayCard/layoutStyles/carousel/randomData/CardArchive.js'
-import { GrDocker, GrGithub } from 'react-icons/gr'
-import { SiSass } from 'react-icons/si'
+
 // import { git } from 'react-icons/all'
+
+
+
+import Hero from './components/Hero.js'
 
 export default function Home() {
   const but = useRef()
@@ -40,23 +43,7 @@ export default function Home() {
 
   return (
     <>
-      <div className='hero'>
-
-        <div>
-
-          <p>My name is William and I simply love to code.</p>
-
-          <p>Available for <EmbeddedLink type="link" href='/about'>hire & contracts</EmbeddedLink></p>
-          <p>Based near Seattle & can work remotely</p>
-          <p></p>
-
-          <Button>Connect</Button>
-        </div>
-        <div className="imageContainer">
-          Icons lfoating by
-        </div>
-
-      </div>
+      <Hero />
       <Article>
 
 
@@ -65,22 +52,9 @@ export default function Home() {
 
           <p>Automate nearly 100% of your full-stack development experience with this completely customizable development tool I made!</p>
 
-          <a href="https://github.com/williamowen65/project-setup">
-            <GrGithub size={30} color={configValues.theme.dark.logoTint} />
-          </a>
-          <a href="#">
-            <GrDocker size={30} color={configValues.theme.dark.logoTint} />
-          </a>
-          <a href="#">
-            <SiSass size={30} color={configValues.theme.dark.logoTint} />
-          </a>
-          <a href="#">
-            <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
-              width="30px"
-              alt="" />
-          </a>
+          <button>Check it out</button>
 
-          <p>The dockerized version coming soon...</p>
+          <p>Utilize it with any language of your choice through this Dockerized verizon...</p>
 
         </fieldset>
       </Article>

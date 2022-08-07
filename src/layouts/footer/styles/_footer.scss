@@ -1,0 +1,73 @@
+@import "./variables/variables";
+footer {
+  text-align: center;
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+  background: $footer-bg;
+  padding-bottom: 44px;
+  $img-size: 10px;
+
+  .links {
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    @media #{$linksSmall} {
+      transform: translateX(2px);
+    }
+    transform: translateX(0px);
+    img {
+      // display: absolute;
+      width: 32px;
+      margin: 20px 10px;
+      &.github {
+        // transform: scale(0.5) translateX(465px);
+        display: absolute;
+        // margin: 0px 0;
+        cursor: pointer;
+      }
+      &.linkedIn {
+        display: absolute;
+        // transform: scale(0.065) translateX(-24px);
+        // margin: -230px 0;
+        cursor: pointer;
+      }
+    }
+  }
+}
+h1 {
+  margin-bottom: 0;
+}
+p {
+  margin-top: 0;
+}
+.bottomFooter {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  > * {
+    // min-width: 0px;
+  }
+  @media #{$linksSmall} {
+    flex-direction: row;
+  }
+  // @media #{$linksSmall} {
+  //   > * {
+  //   }
+  //   .links {
+  //     // position: relative;
+  //     // width: 0;
+  //     // min-width: 0;
+  //   }
+  // }
+  // .links {
+  //   min-width: 300px;
+  // }
+}
