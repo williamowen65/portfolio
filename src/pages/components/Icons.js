@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import ReactLogo from '../../assets/react.png'
 import ExpressLogo from '../../assets/express.png'
-import VueLogo from '../../assets/Vue.png'
+import VueLogo from '../../assets/vue.png'
 import MongoLogo from '../../assets/mongo.png'
 import ElectronLogo from '../../assets/electron.png'
 import TypeScriptLogo from '../../assets/typescript.png'
