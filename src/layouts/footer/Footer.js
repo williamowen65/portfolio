@@ -37,7 +37,7 @@ const Footer = () => {
             </li>
             <li>
               {/* <Link to='/rate'> Give a review</Link> */}
-              <a href='#sdsd' download='ComicRelease'>Comic Release</a>
+              <a href='/William_Owen_Resume.pdf' download='WilliamOwenResume'>Resume</a>
             </li>
           </ul>
         </div>
@@ -71,15 +71,13 @@ const Footer = () => {
             <li onClick={() => scroll()}>
               <Link to='/credits'>Credits</Link>
             </li>
-            <li>Themes</li>
+            <li>Theme</li>
           </ul>
         </div>
       </div>
       <div>
-        <h1>OG</h1>
-        <p>Outside Games</p>
-        <p>😀</p>
-
+        <h1>WO</h1>
+        <p>Web Dev Portfolio</p>
       </div>
     </footer>
   );
