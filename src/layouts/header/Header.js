@@ -121,11 +121,12 @@ const Navbar = () => {
         ref={target}
         id='scrollTarget'
       >
-        {!mobile && minimized && (
+        {/* {!mobile && minimized && (
           <a href='#!' onClick={(e) => minimize(false)}>
             <i className='material-icons'>keyboard_arrow_right</i>
           </a>
-        )}
+        )} */}
+        <span></span>
         <div className='NL' ref={NL}>
           <h1>WO</h1>
           <p>Web Dev</p>
@@ -174,10 +175,6 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-
-      <a href='#!' className='icon menu' onClick={toggleSidenav}>
-        <Hamburger />
-      </a>
       {/* </div> */}
     </Fragment>
   );

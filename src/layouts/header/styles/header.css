@@ -62,6 +62,9 @@
   }
 }
 
+.main-header {
+  width: 100%;
+}
 .main-header .brand h1 {
   margin-bottom: 0;
 }

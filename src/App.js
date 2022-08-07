@@ -62,8 +62,10 @@ export default function App(props) {
 }
 
 const Div = styled.div`
-  background-color: ${configValues.theme.dark.background.color.window};
+  /* background-color: ${configValues.theme.dark.background.color.window}; */
+  background: linear-gradient(45deg, #2a57bb5c 10%, #99aad047 20%),linear-gradient(45deg, #1b1f28, #1b1f28);
   main {
+    z-index: 3;
     background-color: ${configValues.theme.dark.background.color.main};
   }
   header {
@@ -76,14 +78,15 @@ const Div = styled.div`
     color: ${configValues.theme.dark.color.main}
   }
   .downArrow{
+    filter: contrast(0) hue-rotate(21deg) opacity(0.9) sepia(1);
     width: 40px;
     position: fixed;
     bottom: 0;
     &.left {
-      left: 0;
+      left:6%;
     }
     &.right {
-      right: 0;
+      right: 6%;
     }
   }
 

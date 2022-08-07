@@ -89,7 +89,8 @@ export default Footer;
 
 
 const FooterStyled = styled.footer`
-  background: ${configValues.theme.dark.background.color.window};
+    background: #00000026;
+  /* background: ${configValues.theme.dark.background.color.window}; */
   h1 {
     text-shadow: 0px 0px 4px white;
   }
