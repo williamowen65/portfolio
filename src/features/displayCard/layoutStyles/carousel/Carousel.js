@@ -13,6 +13,7 @@ import configValues from '../../../../data/configValues.json'
 import Card from "./Card";
 import { useSelector } from 'react-redux'
 import { store } from './context/store.js'
+import { store as storee } from '../../../../context/store.js'
 import { Provider } from 'react-redux'
 import { allCards } from "./randomData/CardArchive";
 
@@ -101,6 +102,14 @@ const Carousel = ({ title, cards }) => {
     //   ///get the mouse position, track it while true. apply it to scroll bar
   }, [carouselScrollNoTouch]);
 
+  const screenWidth = useSelector(state => state.app.screenWidth)
+  const Section = styled.section`
+    max-width: calc(100% + ${configValues.breakpoints.mobile > screenWidth ? 29 : 99}px);
+    ${configValues.breakpoints.mobile < screenWidth ? "left: -49px" : "left: -20px"};
+    ${configValues.breakpoints.mobile > screenWidth && "padding-left: 18px"};
+`
+
+
   return (
     <CarouselStyled className='carousel sidenavTarget' data-name={title.replace(" ", "-")}>
       <header>
@@ -118,7 +127,7 @@ const Carousel = ({ title, cards }) => {
           </p>
         </div>
       </header>
-      <section
+      <Section
         ref={carousel}
         // onScroll={(e) => handleScroll("both")}
         // handlescroll={scrollBool ? "both" : ""}
@@ -132,7 +141,7 @@ const Carousel = ({ title, cards }) => {
         ))}
         {/* offset the last card, maybe not necesary.. */}
         <div className='spacer'>|</div>
-      </section>
+      </Section>
       <div id={title.replace(" ", "-")} className='sidenavAnchor'></div>
     </CarouselStyled>
   );
@@ -143,7 +152,7 @@ const Wrapper = (props) => (
   <ProjectsState>
     <AppControlState>
 
-      <Provider store={store}>
+      <Provider store={{ ...store, ...storee }}>
         <Carousel {...props} />
       </Provider>
     </AppControlState>
@@ -156,12 +165,13 @@ export default Wrapper;
 
 const CarouselStyled = styled.div`
   h1{
-    color: ${configValues.theme.dark.color.main}
-  }
+  color: ${configValues.theme.dark.color.main};
+}
   header {
-    border-bottom: 1px solid ${configValues.theme.dark.color.main};
-  }
+  border-bottom: 1px solid ${configValues.theme.dark.color.main};
+}
   path {
-    stroke: ${configValues.theme.dark.color.main}
-  }
+  stroke: ${configValues.theme.dark.color.main};
+}
+
 `
