@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import Hamburger from "./assets/Hamburger";
 import { useSelector, useDispatch } from "react-redux";
+import configValues from '../../data/configValues.json'
 
 import './styles/header.css'
 
@@ -111,7 +112,7 @@ const Navbar = () => {
           </div>
         </div>
       </Header>
-      <nav
+      <Nav
         className={
           mobile
             ? "contentNav center"
@@ -149,33 +150,19 @@ const Navbar = () => {
         <ul
           style={scrolledDown && mobile ? { transform: "translateY(5px)" } : {}}
         >
-          <li onClick={scroll} className={param === "" ? "active" : ""}>
-            {/* <li onClick={scroll}> */}
-            {/* <a href='#target'> */}
-            <Link to='/'>Home</Link>
-            {/* </a> */}
-          </li>{" "}
-          |
-          <li onClick={scroll} className={param === "create" ? "active" : ""}>
-            {/* <li onClick={scroll}> */}
-            {/* <a href='#target'> */}
-            <Link to='/create'>Create</Link>
-            {/* </a> */}
-          </li>{" "}
-          |
           <li onClick={scroll} className={param === "about" ? "active" : ""}>
             {/* <a href='#target'> */}
-            <Link to='/about'>About</Link>
+            <a href='#about'>About</a>
             {/* </a> */}
           </li>{" "}
           |
           <li onClick={scroll} className={param === "contact" ? "active" : ""}>
             {/* <a href='#target'> */}
-            <Link to='/contact'>Contact</Link>
+            <a href='#contact'>Contact</a>
             {/* </a> */}
           </li>
         </ul>
-      </nav>
+      </Nav>
       {/* </div> */}
     </Fragment>
   );
@@ -192,7 +179,27 @@ export default Wrapper
 
 
 const Header = styled.header`
-  * {
-    background-color: black !important;
+  h1 {
+    text-shadow: 0px 0px 3px white;
   }
+  *{
+    background-color: ${configValues.theme.dark.background.color.main} !important;
+    background: ${configValues.theme.dark.background.color.main} !important;
+  }
+  /* nav {
+  } */
+`
+const Nav = styled.nav`
+    background-color: ${configValues.theme.dark.background.color.main} !important;
+    background: ${configValues.theme.dark.background.color.main} !important;
+    
+    
+    li {
+      a{
+        color: ${configValues.theme.dark.color.main};
+      }
+      &.active a {
+        color: ${configValues.theme.dark.color.mainOffset} !important;
+      }
+    }
 `

@@ -9,7 +9,8 @@ export default function Sidebar({ left, right }) {
   const screenWidth = useSelector(state => state.app.screenWidth)
 
   const SidebarStyled = styled.div`
-  display: ${configValues.breakpoints.slim > screenWidth ? 'none' : 'flex'};
+  /* display: ${configValues.breakpoints.mainWidth > screenWidth ? 'none' : 'flex'}; */
+  display: flex;
   ${right && ("order:3")};
   justify-content: center;
   align-items: center;
@@ -20,7 +21,7 @@ export default function Sidebar({ left, right }) {
 
   return (
     <SidebarStyled>
-      <BsArrowDown style={{ position: 'fixed' }} size={30} color={configValues.theme.dark.color.highlight}></BsArrowDown>
+      <BsArrowDown style={{ position: 'fixed' }} size={60} color={configValues.theme.dark.color.highlight}></BsArrowDown>
     </SidebarStyled>
   )
 }

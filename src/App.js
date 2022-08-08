@@ -10,7 +10,7 @@ import PageContainer from './layouts/PageContainer.js'
 import configValues from './data/configValues.json'
 import MainContainer from './layouts/MainContainer.js'
 import useDimensions from 'react-use-dimensions'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setScreenWidth } from './context/appReducer.js'
 import PageNotFound from './pages/PageNotFound.js'
 import About from './pages/About.js'
@@ -27,6 +27,7 @@ import Sidebar from './layouts/sidebar/Sidebar.js'
 export default function App(props) {
   const dispatch = useDispatch()
   const [ref, { x, y, width }] = useDimensions()
+  const screenWidth = useSelector(state => state.app.screenWidth)
 
   useEffect(() => {
     dispatch(setScreenWidth(width))
@@ -39,8 +40,12 @@ export default function App(props) {
 
   return (
     <Div className="App" ref={ref}>
-      <Sidebar right />
-      <Sidebar left />
+      {configValues.breakpoints.mainWidth < screenWidth && (
+        <>
+          <Sidebar right />
+          <Sidebar left />
+        </>
+      )}
       <PageContainer >
         <Header>Hello world</Header>
         <MainContainer className="main">
