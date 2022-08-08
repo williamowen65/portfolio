@@ -7,6 +7,7 @@ import VueLogo from '../../assets/vue.png'
 import MongoLogo from '../../assets/mongo.png'
 import ElectronLogo from '../../assets/electron.png'
 import TypeScriptLogo from '../../assets/typescript.png'
+import GSAPLogo from '../../assets/gsap.png'
 import { GrDocker, GrGithub } from 'react-icons/gr'
 import { SiSass } from 'react-icons/si'
 import configValues from '../../data/configValues.json'
@@ -96,7 +97,7 @@ export default function Icons() {
         />
       </a>
       <a href="#">
-        <img src="https://www.nicepng.com/png/detail/949-9490768_eggman-png.png"
+        <img src={GSAPLogo}
           width="35px"
           alt=""
           style={{ display: 'inline-block' }}
