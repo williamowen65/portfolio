@@ -2,17 +2,25 @@ import React from 'react'
 import styled from 'styled-components'
 import configValues from '../../data/configValues.json'
 import { useSelector } from 'react-redux'
+import { BsArrowDown } from 'react-icons/bs'
 
-export default function Sidebar() {
+export default function Sidebar({ left, right }) {
 
   const screenWidth = useSelector(state => state.app.screenWidth)
 
   const SidebarStyled = styled.div`
-  display: ${configValues.breakpoints.slim > screenWidth ? 'none' : 'block'};
+  display: ${configValues.breakpoints.slim > screenWidth ? 'none' : 'flex'};
+  ${right && ("order:3")};
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 100vh;
 `
+
+
   return (
     <SidebarStyled>
-      <p>test</p>
+      <BsArrowDown style={{ position: 'fixed' }} size={30} color={configValues.theme.dark.color.highlight}></BsArrowDown>
     </SidebarStyled>
   )
 }

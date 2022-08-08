@@ -19,7 +19,8 @@
   },
   "breakpoints": {
     "slim": 768,
-    "mobile": 556
+    "mobile": 556,
+    "mainWidth": 1110
   },
   "findAlt": {
     "displayCard": {

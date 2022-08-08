@@ -18,8 +18,10 @@ const Main = styled.main`
   text-align: justify;
   flex-grow: 1;
   transition: all 0.2s;
-  
+  /* max-width: ${1030}px; */
+  /* min-width: 100vw; */
   /* min-height: 126px; */
+  /* flex-shrink: 2; */
 
 `
 

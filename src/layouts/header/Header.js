@@ -128,7 +128,7 @@ const Navbar = () => {
         )} */}
         <span></span>
         <div className='NL' ref={NL}>
-          <h1>WO</h1>
+          <h1 style={{ textShadow: '0px 0px 4px white' }}>WO</h1>
           <p>Web Dev</p>
         </div>
         {/* {scrolledDown ? (
