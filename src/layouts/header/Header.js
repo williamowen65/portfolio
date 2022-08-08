@@ -19,6 +19,7 @@ import {
 } from './context/navbarReducer.js'
 
 import { store } from "./context/store";
+import styled from "styled-components";
 
 const Navbar = () => {
 
@@ -76,7 +77,7 @@ const Navbar = () => {
 
   return (
     <Fragment>
-      <header>
+      <Header>
         <div className='main-header'>
           <div className='flex C'>
             <div className='flex R outerWrapper'>
@@ -109,7 +110,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </header>
+      </Header>
       <nav
         className={
           mobile
@@ -188,3 +189,10 @@ const Wrapper = (props) => (
 
 
 export default Wrapper
+
+
+const Header = styled.header`
+  * {
+    background-color: black !important;
+  }
+`
