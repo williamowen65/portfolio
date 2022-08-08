@@ -270,7 +270,7 @@ body::-webkit-scrollbar-track-piece:start {
 .container {
   height: 100%;
   display: flex;
-  background: linear-gradient(55deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 85%);
+  background: #232b3c;
 }
 @media only screen and (max-width : 600px) {
   .container {

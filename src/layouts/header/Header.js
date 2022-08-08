@@ -190,15 +190,13 @@ const Header = styled.header`
     text-shadow: 0px 0px 3px white;
   }
   *{
-    background-color: ${configValues.theme.dark.background.color.main} !important;
-    background: ${configValues.theme.dark.background.color.main} !important;
+    background-color: #232b3c !important;
   }
   /* nav {
   } */
 `
 const Nav = styled.nav`
-    background-color: ${configValues.theme.dark.background.color.main} !important;
-    background: ${configValues.theme.dark.background.color.main} !important;
+    background: #232b3c !important;
     
     
     li {
