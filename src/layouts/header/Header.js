@@ -150,6 +150,13 @@ const Navbar = () => {
         <ul
           style={scrolledDown && mobile ? { transform: "translateY(5px)" } : {}}
         >
+          <li onClick={scroll} className={param === "" ? "active" : ""}>
+            {/* <li onClick={scroll}> */}
+            {/* <a href='#target'> */}
+            <a href='#contributions'>Contributions</a>
+            {/* </a> */}
+          </li>{" "}
+          |
           <li onClick={scroll} className={param === "about" ? "active" : ""}>
             {/* <a href='#target'> */}
             <a href='#about'>About</a>

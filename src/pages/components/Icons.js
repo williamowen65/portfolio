@@ -137,5 +137,6 @@ export default function Icons() {
 }
 
 const IconsStyled = styled.div`
-
+    display: flex;
+    flex-wrap: wrap;
 `
