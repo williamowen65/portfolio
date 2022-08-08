@@ -8,6 +8,9 @@ import MongoLogo from '../../assets/mongo.png'
 import ElectronLogo from '../../assets/electron.png'
 import TypeScriptLogo from '../../assets/typescript.png'
 import GSAPLogo from '../../assets/gsap.png'
+import GimpLogo from '../../assets/gimp.png'
+import NodeJSLogo from '../../assets/nodejs.png'
+
 import { GrDocker, GrGithub } from 'react-icons/gr'
 import { SiSass } from 'react-icons/si'
 import configValues from '../../data/configValues.json'
@@ -111,20 +114,22 @@ export default function Icons() {
         />
       </a>
       <a href="#">
-        <img src="https://s.yimg.com/fz/api/res/1.2/lzdxZREIX2I86zjr0Jhb0w--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTI2MDtxPTgwO3c9MjYw/https://s.yimg.com/zb/imgv1/80173436-74fd-34d0-ac33-5b57f84d573f/t_500x300"
+        <img src={GimpLogo}
           width="35px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </a>
-
       <a href="#">
-        <img src="https://image.pngaaa.com/668/4547668-middle.png"
+        <img src={NodeJSLogo}
           width="50px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </a>
+
+
+
       <a href="#">
         <img src="http://yargs.js.org/images/yargs-logo.png"
           width="50px"
