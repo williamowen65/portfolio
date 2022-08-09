@@ -3,7 +3,7 @@
     "auth": true,
     "iconEntrance": true,
     "showFeatures": true,
-    "showPalette": false
+    "showPalette": true
   },
   "dbIntegrations": {
     "type": null,

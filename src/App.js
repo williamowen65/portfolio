@@ -61,7 +61,7 @@ export default function App(props) {
             })()}>
             </Route>
           </Routes>
-          {configValues.specialFeatures.showPalette && <Palette />}
+          {configValues.specialFeatures.showPalette && true && <Palette />}
         </MainContainer>
         <Footer style={{ order: 5 }} />
       </PageContainer>

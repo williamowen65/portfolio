@@ -189,12 +189,21 @@ const Header = styled.header`
   /* nav {
   } */
   .resumeButton {
-    border: 1px solid ${configValues.theme.dark.color.highlight};
+    /* border: 1px solid ${configValues.theme.dark.color.highlight}; */
     color: ${configValues.theme.dark.color.highlight};
-    &:hover {
-      background-color: rgb(121, 91, 255) !important;
-      border: 1px solid rgb(190, 189, 211);
-      color: black;
+    box-shadow: 
+        1px 1px 2px  #c193c1, 
+        -1px 1px 2px  #ad37ad,
+        0px -1px 2px  #5fcf19;
+        
+        &:hover {
+      box-shadow: 
+      0px -1px 2px  #5fcf19,
+      1px 1px 2px  #c193c1, 
+          -1px 1px 2px  #ad37ad;
+      /* background-color: rgb(121, 91, 255) !important; */
+      /* border: 1px solid rgb(190, 189, 211); */
+      /* color: black; */
     }
   }
 `

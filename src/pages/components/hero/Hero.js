@@ -39,6 +39,7 @@ const HeroStyled = styled.div`
     /* background: linear-gradient(-103deg, ${configValues.theme.dark.color.white} 3%, transparent 37%); */
     max-width: calc(100% + 99px);
       right: -49px;
+      z-index: 2;
     position: absolute;
     top: -50px;
     /* background-color:${configValues.theme.dark.color.white}; */
@@ -55,28 +56,43 @@ const HeroStyled = styled.div`
     /* top:30%;
     left: 50%;
     transform: translateX(-50%); */
+    /* padding: 5px; */
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: space-evenly;
     white-space: nowrap;
-    
-    h2 {
-      font-size: 50px;
-      text-shadow: 1px 1px 1px  #c193c1, -1px 1px 1px  #ad37ad,0px -1px 1px  #5fcf19;
-      position: relative;
-      width: min-content;
-      &::before {
+    /* &::before {
         content: '';
         position: absolute;
-        left: -20px;
-        z-index: -1;
-        background: gray;
-        border-radius: 500px;
+        /* left: -30px; */
+        z-index: -1; 
+
+        padding: 0 20px;
+        background: ${configValues.theme.dark.background.color.window};
+        border-radius: 50px;
         width: 100%;
         height: 80%;
         filter: blur(0px);
-      }
+        box-shadow: 
+        1px 1px 2px  #c193c1, 
+        -1px 1px 2px  #ad37ad,
+        0px -1px 2px  #5fcf19;
+
+      /* } */
+    
+    h2 {
+      font-size: 50px;
+      text-shadow: 
+        1px 1px 1px  ${configValues.theme.dark.logoTint}, 
+        -1px 1px 1px  ${configValues.theme.dark.logoTint},
+        0px -1px 1px  ${configValues.theme.dark.logoTint}, 
+        1px 0px 1px  ${configValues.theme.dark.logoTint};
+      position: relative;
+      width: min-content;
+      color: ${configValues.theme.dark.color.main};
+      color: blue;
+      
     }
     button {
       /* position: absolute; */
