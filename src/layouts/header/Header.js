@@ -188,7 +188,18 @@ const Header = styled.header`
   }
   /* nav {
   } */
+  .resumeButton {
+    border: 1px solid ${configValues.theme.dark.color.highlight};
+    color: ${configValues.theme.dark.color.highlight};
+    &:hover {
+      background-color: rgb(121, 91, 255) !important;
+      border: 1px solid rgb(190, 189, 211);
+      color: black;
+    }
+  }
 `
+
+
 const Nav = styled.nav`
     background: #232b3c !important;
     color: black !important;

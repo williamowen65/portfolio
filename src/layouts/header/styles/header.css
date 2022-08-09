@@ -4,17 +4,10 @@
   justify-content: end;
 }
 .flex .resumeButton {
-  border: 1px solid yellow;
   border-radius: 5px;
   padding: 7px 10px;
   margin: 6px;
   transition: all 0.5s;
-  color: yellow;
-}
-.flex .resumeButton:hover {
-  background-color: #795bff !important;
-  border: 1px solid #bebdd3;
-  color: black;
 }
 .flex.C {
   flex-direction: column;

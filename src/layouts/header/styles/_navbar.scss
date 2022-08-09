@@ -7,17 +7,11 @@
 
 
   .resumeButton {
-    border: 1px solid yellow;
     border-radius: 5px;
     padding: 7px 10px;
     margin: 6px;
     transition: all 0.5s;
-    color: yellow;
-    &:hover {
-      background-color: rgb(121, 91, 255) !important;
-      border: 1px solid rgb(190, 189, 211);
-      color: black;
-    }
+
   }
   // z-index: -1;
   &.C {
