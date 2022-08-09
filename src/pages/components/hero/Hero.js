@@ -10,7 +10,9 @@ export default function Hero() {
   return (
     <HeroStyled className='hero'>
 
-      <div className="imageContainer"></div>
+      <div className="imageContainer">
+        <Icons />
+      </div>
       <div className='content'>
 
         <div className='main'>
@@ -23,7 +25,6 @@ export default function Hero() {
           <Button className="connectBtn">Connect</Button>
         </div>
 
-        {/* <Icons /> */}
       </div>
 
     </HeroStyled>
@@ -32,13 +33,22 @@ export default function Hero() {
 
 const HeroStyled = styled.div`
   position: relative;
-  height: 60vh;
+  height: 80vh;
   .imageContainer {
+    background: linear-gradient(-103deg,transparent 21%,#d9d7ce45 22%,transparent 23%);
+    /* background: linear-gradient(-103deg, ${configValues.theme.dark.color.white} 3%, transparent 37%); */
+    max-width: calc(100% + 99px);
+      right: -49px;
     position: absolute;
-    top: 0;
+    top: -50px;
     /* background-color:${configValues.theme.dark.color.white}; */
     width: 100%;
     height: 100%;
+    > * {
+      position: absolute;
+      right:0;
+      bottom: 0;
+    }
   }
   .content {
     /* position: absolute; */

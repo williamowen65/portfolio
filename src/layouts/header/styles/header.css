@@ -45,6 +45,7 @@
 }
 .flex.R.outerWrapper {
   position: relative;
+  height: 67px;
 }
 @media only screen and (max-width : 600px) {
   .flex.R {
@@ -55,10 +56,11 @@
   min-width: 215px;
   text-align: center;
   display: flex;
-  transform: translateY(20px);
+  transform: translateY(10px);
   flex-direction: column;
   justify-content: center;
   min-height: 100px;
+  z-index: 5;
   color: black;
   background: #fff3e0;
 }
