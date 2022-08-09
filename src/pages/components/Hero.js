@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="imageContainer"></div>
       <div className='content'>
 
-        <p>My name is William and I simply love to code.</p>
+        <h2>My name is William</h2><p> and I simply love to code.</p>
 
         <p>Available for <EmbeddedLink type="link" href='/about'>hire & contracts</EmbeddedLink></p>
         <p>Based near Seattle & can work remotely</p>
@@ -28,7 +28,7 @@ export default function Hero() {
 
 const HeroStyled = styled.div`
   position: relative;
-  height: 60vh;
+  height: 80vh;
   .imageContainer {
     position: absolute;
     top: 0;
@@ -42,6 +42,9 @@ const HeroStyled = styled.div`
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
+    h2 {
+      font-size: 50px;
+    }
     /* p{
 
       color: ${configValues.theme.dark.background.color.window};

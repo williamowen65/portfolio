@@ -5,7 +5,7 @@ import EmbeddedLink from '../components/ui/EmbeddedLink.js'
 import Modal from '../components/ui/Modal'
 import DisplayCard from '../features/displayCard/index'
 import configValues from '../data/configValues.json'
-import Section from '../components/ui/Section'
+// import Section from '../components/ui/Section'
 import gsap from '../../gsap/gsap.min'
 import GSDevTools from '../../gsap/GSDevTools.min'
 import { allCards } from '../features/displayCard/layoutStyles/carousel/randomData/CardArchive.js'
@@ -45,8 +45,6 @@ export default function Home() {
     <>
       <Hero />
       <Article>
-
-
         <fieldset>
           <legend><h2>My Contributions to the <nobr>Open Source Community</nobr></h2></legend>
 
@@ -59,6 +57,7 @@ export default function Home() {
         </fieldset>
       </Article>
 
+      <Section className='sectionBreak' />
       <DisplayCard type='carousel' title={"What I've been up to..."} data={allCards} />
     </>
 
@@ -79,6 +78,11 @@ const Article = styled.article`
       margin: 10px;
     }
   }
+
+ `
+
+const Section = styled.section`
+  height: 100px;
 `
 
 // const H

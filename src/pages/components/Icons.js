@@ -10,6 +10,7 @@ import TypeScriptLogo from '../../assets/typescript.png'
 import GSAPLogo from '../../assets/gsap.png'
 import GimpLogo from '../../assets/gimp.png'
 import NodeJSLogo from '../../assets/nodejs.png'
+import JenkinsLogo from '../../assets/jenkins.png'
 
 import { GrDocker, GrGithub } from 'react-icons/gr'
 import { SiSass } from 'react-icons/si'
@@ -64,8 +65,8 @@ export default function Icons() {
         />
       </a>
       <a href="#">
-        <img src="https://cdn.freebiesupply.com/logos/large/2x/jenkins-logo-png-transparent.png"
-          width="100px"
+        <img src={JenkinsLogo}
+          width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
