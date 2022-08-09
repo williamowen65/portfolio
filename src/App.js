@@ -74,6 +74,8 @@ const Div = styled.div`
   background: linear-gradient(45deg, #2a57bb5c 10%, #99aad047 20%),linear-gradient(45deg, #1b1f28, #1b1f28);
   display: flex;
   justify-content: space-evenly;
+  word-spacing: 4px;
+  letter-spacing: 1px;
   main {
     z-index: 3;
     order: 2;
@@ -85,8 +87,8 @@ const Div = styled.div`
     justify-content: space-between;
     align-items: center;
   }
-  p {
-    color: ${configValues.theme.dark.color.main}
+  p, a, a.active, ul, nav {
+    color: ${configValues.theme.dark.color.main};
   }
   .sidebar{
     

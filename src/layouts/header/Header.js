@@ -189,6 +189,7 @@ export default Wrapper
 const Header = styled.header`
   h1 {
     text-shadow: 0px 0px 3px white;
+    color: black !important;
   }
   *{
     background-color: #232b3c !important;
@@ -198,8 +199,7 @@ const Header = styled.header`
 `
 const Nav = styled.nav`
     background: #232b3c !important;
-    
-    
+    color: black !important;
     li {
       a{
         color: ${configValues.theme.dark.color.main};
