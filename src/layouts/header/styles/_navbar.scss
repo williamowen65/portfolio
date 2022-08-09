@@ -5,6 +5,20 @@
   display: flex;
   justify-content: end;
 
+
+  .resumeButton {
+    border: 1px solid yellow;
+    border-radius: 5px;
+    padding: 7px 10px;
+    margin: 6px;
+    transition: all 0.5s;
+    color: yellow;
+    &:hover {
+      background-color: rgb(121, 91, 255) !important;
+      border: 1px solid rgb(190, 189, 211);
+      color: black;
+    }
+  }
   // z-index: -1;
   &.C {
     flex-direction: column;
@@ -23,6 +37,7 @@
 
       }
     }
+
     .quote {
       display: flex;
       align-items: center;
@@ -30,6 +45,7 @@
       justify-content: center;
       text-align: center;
       position: absolute;
+      top: 50%;
       left: 50%;
       transform: translateX(-50%);
       @media #{$small-and-down}{

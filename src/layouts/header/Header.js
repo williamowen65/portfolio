@@ -11,6 +11,7 @@ import Hamburger from "./assets/Hamburger";
 import { useSelector, useDispatch } from "react-redux";
 import configValues from '../../data/configValues.json'
 import { store } from './context/store'
+import { BsDot } from 'react-icons/bs'
 
 import './styles/header.css'
 
@@ -90,7 +91,7 @@ const Navbar = () => {
               <div className='flex C innerWrapper'>
                 <nav className='flex R subInnerWrapper exploreNav'>
                   <div className='moreDetails'>
-                    <a href='/William_Owen_Resume.pdf' download='WilliamOwenResume'>Resume</a>
+                    <a href='/William_Owen_Resume.pdf' download='WilliamOwenResume' className="resumeButton">Resume</a>
                   </div>
                   {/* <div>
                   </div> */}
@@ -148,11 +149,13 @@ const Navbar = () => {
             <a href='#contributions'>Contributions</a>
             {/* </a> */}
           </li>{" "}
+          <BsDot size={30} color={configValues.theme.dark.color.main} style={{ transform: 'translateY(-5px)' }} />
           <li onClick={scroll} className={param === "about" ? "active" : ""}>
             {/* <a href='#target'> */}
             <a href='#about'>About</a>
             {/* </a> */}
           </li>{" "}
+          <BsDot size={30} color={configValues.theme.dark.color.main} style={{ transform: 'translateY(-5px)' }} />
           <li onClick={scroll} className={param === "contact" ? "active" : ""}>
             {/* <a href='#target'> */}
             <a href='#contact'>Contact</a>
@@ -189,6 +192,9 @@ const Header = styled.header`
 const Nav = styled.nav`
     background: #232b3c !important;
     color: black !important;
+    ul {
+      display: flex;
+    }
     li {
       a{
         color: ${configValues.theme.dark.color.main};
