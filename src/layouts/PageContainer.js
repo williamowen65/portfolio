@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import configValues from '../data/configValues.json'
 
 export default function PageContainer({ children }) {
   return (
@@ -8,7 +9,7 @@ export default function PageContainer({ children }) {
 }
 
 const Div = styled.div`
-   max-width: 1200px;
+   max-width: ${configValues.breakpoints.mainWidth}px;
    margin: 0;
    min-height: 100vh;
    display: flex;
