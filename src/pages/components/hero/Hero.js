@@ -64,6 +64,19 @@ const HeroStyled = styled.div`
     h2 {
       font-size: 50px;
       text-shadow: 1px 1px 1px  #c193c1, -1px 1px 1px  #ad37ad,0px -1px 1px  #5fcf19;
+      position: relative;
+      width: min-content;
+      &::before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        z-index: -1;
+        background: gray;
+        border-radius: 500px;
+        width: 100%;
+        height: 80%;
+        filter: blur(0px);
+      }
     }
     button {
       /* position: absolute; */
