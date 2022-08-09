@@ -13,4 +13,5 @@ const Div = styled.div`
    min-height: 100vh;
    display: flex;
    flex-direction: column;
+   box-shadow: -1px 0px 34px yellow;
 `
