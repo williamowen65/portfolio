@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Jomhuria&display=swap");
 .flex {
   display: flex;
+  justify-content: end;
 }
 .flex.C {
   flex-direction: column;
@@ -11,6 +12,9 @@
 }
 .flex.C.innerWrapper nav, .flex.C.innerWrapper > div, .flex.C.innerWrapper > nav.exploreNav {
   flex-grow: 1;
+}
+.flex.C.innerWrapper .exploreNav {
+  justify-content: end;
 }
 .flex.C .quote {
   display: flex;
@@ -145,7 +149,7 @@
 }
 .contentNav ul li {
   display: inline-block;
-  padding: 0 5px;
+  padding: 0 13px;
 }
 .contentNav ul li.active a {
   color: rgba(0, 0, 0, 0.301);

@@ -3,6 +3,8 @@
 
 .flex {
   display: flex;
+  justify-content: end;
+
   // z-index: -1;
   &.C {
     flex-direction: column;
@@ -15,6 +17,10 @@
       & > nav.exploreNav {
         flex-grow: 1;
         // justify-content: center;
+      }
+      .exploreNav {
+        justify-content: end;
+
       }
     }
     .quote {
@@ -154,7 +160,7 @@
     transition: transform 1s;
     li {
       display: inline-block;
-      padding: 0 5px;
+      padding: 0 13px;
       &.active {
         a {
           color: $link-active;

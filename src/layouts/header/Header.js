@@ -90,19 +90,10 @@ const Navbar = () => {
               <div className='flex C innerWrapper'>
                 <nav className='flex R subInnerWrapper exploreNav'>
                   <div className='moreDetails'>
-                    <a
-                      href='https://calendar.google.com/calendar/u/0/embed?src=fcmj4f2tucb7j8683cj8dtp4do@group.calendar.google.com&ctz=America/Los_Angeles'
-                      target='_blank'
-                      rel='noreferrer'
-                    >
-                      <p>Calendar</p>
-                    </a>{" "}
-                    |{" "}
-
                     <a href='/William_Owen_Resume.pdf' download='WilliamOwenResume'>Resume</a>
                   </div>
-                  <div>
-                  </div>
+                  {/* <div>
+                  </div> */}
                 </nav>
                 <div className='quote'>
                   <p>Some Quote</p>
@@ -157,13 +148,11 @@ const Navbar = () => {
             <a href='#contributions'>Contributions</a>
             {/* </a> */}
           </li>{" "}
-          |
           <li onClick={scroll} className={param === "about" ? "active" : ""}>
             {/* <a href='#target'> */}
             <a href='#about'>About</a>
             {/* </a> */}
           </li>{" "}
-          |
           <li onClick={scroll} className={param === "contact" ? "active" : ""}>
             {/* <a href='#target'> */}
             <a href='#contact'>Contact</a>
