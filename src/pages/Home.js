@@ -14,7 +14,7 @@ import { allCards } from '../features/displayCard/layoutStyles/carousel/randomDa
 
 
 
-import Hero from './components/Hero.js'
+import Hero from './components/hero/Hero.js'
 
 export default function Home() {
   const but = useRef()
