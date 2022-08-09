@@ -28,7 +28,7 @@ export default function Hero() {
 
 const HeroStyled = styled.div`
   position: relative;
-  height: 80vh;
+  height: 60vh;
   .imageContainer {
     position: absolute;
     top: 0;
@@ -44,6 +44,7 @@ const HeroStyled = styled.div`
     white-space: nowrap;
     h2 {
       font-size: 50px;
+      text-shadow: 1px 1px 1px  #c193c1, -1px 1px 1px  #ad37ad,0px -1px 1px  #5fcf19;
     }
     /* p{
 
