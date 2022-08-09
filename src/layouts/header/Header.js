@@ -10,6 +10,7 @@ import { Link, useParams } from "react-router-dom";
 import Hamburger from "./assets/Hamburger";
 import { useSelector, useDispatch } from "react-redux";
 import configValues from '../../data/configValues.json'
+import { store } from './context/store'
 
 import './styles/header.css'
 
@@ -19,11 +20,11 @@ import {
   toggle
 } from './context/navbarReducer.js'
 
-import { store } from "./context/store";
+// import { store } from "./context/store";
 import styled from "styled-components";
 
 const Navbar = () => {
-
+  const screenWidth = useSelector(state => state.app.screenWidth)
 
   const {
     mobile,

@@ -22,7 +22,7 @@ import Footer from './layouts/footer/Footer.js'
 import DownArrow from './assets/downArrow.png'
 import Sidebar from './layouts/sidebar/Sidebar.js'
 
-
+import "./styles/global.scss"
 
 export default function App(props) {
   const dispatch = useDispatch()
