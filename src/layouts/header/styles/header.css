@@ -41,6 +41,11 @@
 }
 @media only screen and (max-width : 600px) {
   .flex.R .brand {
+    transform: translateY(0px);
+  }
+}
+@media only screen and (max-width : 600px) {
+  .flex.R .brand {
     width: 100%;
   }
 }
