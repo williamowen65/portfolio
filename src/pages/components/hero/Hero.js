@@ -47,7 +47,7 @@ const HeroStyled = styled.div`
     height: 100%;
     > * {
       position: absolute;
-      right:0;
+      right:242px;
       bottom: 0;
     }
   }
