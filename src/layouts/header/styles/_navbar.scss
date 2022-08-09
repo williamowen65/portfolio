@@ -29,6 +29,13 @@
       padding: 10px 10px;
       justify-content: center;
       text-align: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      @media #{$small-and-down}{
+        position: initial;
+        transform: translateX(0);
+      }
     }
   }
 
@@ -36,6 +43,9 @@
     flex-direction: row;
     justify-content: space-between;
     // align-items: center;
+    &.outerWrapper {
+      position: relative;
+    }
     @media #{$small-and-down} {
       flex-direction: column;
     }

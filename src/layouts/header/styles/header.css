@@ -22,10 +22,22 @@
   padding: 10px 10px;
   justify-content: center;
   text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media only screen and (max-width : 600px) {
+  .flex.C .quote {
+    position: initial;
+    transform: translateX(0);
+  }
 }
 .flex.R {
   flex-direction: row;
   justify-content: space-between;
+}
+.flex.R.outerWrapper {
+  position: relative;
 }
 @media only screen and (max-width : 600px) {
   .flex.R {
