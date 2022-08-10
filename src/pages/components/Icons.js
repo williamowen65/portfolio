@@ -36,9 +36,10 @@ export default function Icons() {
   }
 
   els.forEach((el, i) => {
-    gsap.set(el, { opacity: 0 })
 
-    gsap.to(el, {
+    const delay = Math.random()
+
+    gsap.fromTo(el, { y: 0, x: 0, opacity: 0 }, {
       opacity: 1,
       x: 100,
       y: -550,
@@ -47,7 +48,7 @@ export default function Icons() {
       rotateX: 1080,
       duration: random([15, 17]),
       ease: easeArr[i % easeArr.length],
-      delay: i * 1,
+      delay: i * delay,
       // yoyo: true,
       repeat: -1
     });
