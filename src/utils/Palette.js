@@ -8,7 +8,7 @@ export default function Palette({ type = 'dark' }) {
 
   const colors = configValues.theme[type]
 
-  console.log(Object.entries(colors));
+  // console.log(Object.entries(colors));
 
   function recursiveObjectOrPrintValue(obj) {
     return Object.entries(obj).map(([key, value], i) => {

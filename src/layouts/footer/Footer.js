@@ -46,13 +46,13 @@ const Footer = ({ style }) => {
 
         <div className='links'>
           <img
-            class='github'
+            className='github'
             src='./assets/imgs/GitHub.png'
             alt=''
             onClick={github}
           />
           <img
-            class='linkedIn'
+            className='linkedIn'
             src='./assets/imgs/linkedin.png'
             alt=''
             onClick={linkedIn}

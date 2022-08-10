@@ -21,7 +21,7 @@ export default function Home() {
   // console.log(gsap);
   useEffect(() => {
     but.current = document.getElementById('testing')
-    console.log(but.current);
+    // console.log(but.current);
   }, [document])
   useEffect(() => {
 

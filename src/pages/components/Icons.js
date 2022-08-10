@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import ReactLogo from '../../assets/react.png'
@@ -16,6 +16,8 @@ import { GrDocker, GrGithub } from 'react-icons/gr'
 import { SiSass } from 'react-icons/si'
 import configValues from '../../data/configValues.json'
 
+import { useSelector } from 'react-redux'
+
 import gsap from '../../../gsap/gsap.min'
 
 const random = (arr) => {
@@ -25,7 +27,14 @@ const random = (arr) => {
 
 export default function Icons() {
 
-  const els = gsap.utils.toArray('span[href]')
+  // const screenWidth = useSelector(state => state.app.screenWidth)
+  // const [width, setWidth] = useState(0)
+
+  // useEffect(() => {
+  //   setWidth(screenWidth)
+  // }, [screenWidth])
+
+  const els = gsap.utils.toArray('span.icon')
 
   const easeArr = [
     'linear'
@@ -53,6 +62,32 @@ export default function Icons() {
       repeat: -1
     });
   })
+  // gsap.to(els[4], { y: -400 })
+
+  // els.forEach((el, i) => {
+
+  //   const tl = gsap.timeline({
+  //     // repeat: -1 
+  //   })
+
+  //   tl.set(el, { opacity: 0 })
+
+  //   tl.to(el, {
+  //     opacity: 1,
+  //     // x: 100,
+  //     y: -550,
+  //     // rotateY: 720,
+  //     // rotateZ: 720,
+  //     // rotateX: 1080,
+  //     duration: 7,
+  //     ease: easeArr[i % easeArr.length],
+  //     delay: i * 1.22,
+  //     // yoyo: true,
+  //   });
+  //   tl.to(el, { opacity: 0 })
+
+
+  // })
 
   // gsap.to(els, {
   //   y: -600, stagger: { // wrap advanced options in an object
@@ -63,64 +98,87 @@ export default function Icons() {
   //     repeat: -1 // Repeats immediately, not waiting for the other staggered animations to finish
   //   }, duration: 20
   // })
+  const tl = gsap.timeline({
+    defaults: {
+      duration: 6, ease: 'linear'
+    }
+  })
 
-  console.log(els);
+
+
+  tl
+    .fromTo(els, {
+      y: 0,
+      x: -150,
+      opacity: 0
+    }, {
+      stagger: {
+        each: 1
+      },
+      opacity: 1,
+      y: -500,
+      repeat: -1,
+      // delay: -4
+    })
+
+
+  // console.log(els);
 
   return (
     <IconsStyled >
 
-      <span href="https://github.com/williamowen65/project-setup">
+      <span className="icon github" >
         <GrGithub size={30} color={configValues.theme.dark.logoTint} />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <GrDocker size={30} color={configValues.theme.dark.logoTint} />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <SiSass size={30} color={configValues.theme.dark.logoTint} />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
           width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src="https://miro.medium.com/max/2400/1*xQCjgB2DVqhtqGoGw9E6TQ.png"
           width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src={ReactLogo}
           width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src={ExpressLogo}
           width="40px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src="https://cdn.freebiesupply.com/logos/large/2x/jest-logo-png-transparent.png"
           width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src={JenkinsLogo}
           width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src={VueLogo}
           width="60px"
           alt=""
@@ -128,49 +186,49 @@ export default function Icons() {
         />
       </span>
 
-      <span href="#">
+      <span className="icon" href="#">
         <img src={MongoLogo}
-          width="15px"
+          width="5"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src={ElectronLogo}
           width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src="https://www.lifewire.com/thmb/jDMd4fXv49vV4TBSfJWDJk22frY=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/Inkscape_Logo.svg-58e992d15f9b58ef7e1988a2.png"
           width="35px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src={GSAPLogo}
           width="35px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src={TypeScriptLogo}
           width="35px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src={GimpLogo}
           width="35px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span href="#">
+      <span className="icon" href="#">
         <img src={NodeJSLogo}
           width="50px"
           alt=""
@@ -180,7 +238,7 @@ export default function Icons() {
 
 
 
-      <span href="#">
+      <span className="icon" href="#">
         <img src="http://yargs.js.org/images/yargs-logo.png"
           width="50px"
           alt=""
@@ -196,9 +254,12 @@ const IconsStyled = styled.div`
     display: flex;
     flex-wrap: wrap;
     span[href]{
-      width: 10px;
+      min-width: 30px;
+      position: absolute;
+      left: 50%;
+      
       img {
-        min-width: 32px;
+        min-width: 15px;
       }
       /* position: absolute; */
       /* z-index: 400; */
