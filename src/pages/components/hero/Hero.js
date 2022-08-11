@@ -13,7 +13,8 @@ export default function Hero() {
     position: 'absolute',
     right: 0,
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    marginRight: '60px'
   }
 
   const childrenStyles = {
