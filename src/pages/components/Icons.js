@@ -60,49 +60,42 @@ export default function Icons() {
       </span>
       <span className="icon" href="#">
         <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
-          width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
       <span className="icon" href="#">
         <img src="https://miro.medium.com/max/2400/1*xQCjgB2DVqhtqGoGw9E6TQ.png"
-          width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
       <span className="icon" href="#">
         <img src={ReactLogo}
-          width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
       <span className="icon" href="#">
         <img src={ExpressLogo}
-          width="40px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
       <span className="icon" href="#">
         <img src="https://cdn.freebiesupply.com/logos/large/2x/jest-logo-png-transparent.png"
-          width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
       <span className="icon" href="#">
         <img src={JenkinsLogo}
-          width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
       <span className="icon" href="#">
         <img src={VueLogo}
-          width="60px"
           alt=""
           style={{ display: 'inline-block' }}
         />
@@ -110,49 +103,42 @@ export default function Icons() {
 
       <span className="icon" href="#">
         <img src={MongoLogo}
-          width="5"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
       <span className="icon" href="#">
         <img src={ElectronLogo}
-          width="30px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
       <span className="icon" href="#">
         <img src="https://www.lifewire.com/thmb/jDMd4fXv49vV4TBSfJWDJk22frY=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/Inkscape_Logo.svg-58e992d15f9b58ef7e1988a2.png"
-          width="35px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
       <span className="icon" href="#">
         <img src={GSAPLogo}
-          width="35px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
       <span className="icon" href="#">
         <img src={TypeScriptLogo}
-          width="35px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
       <span className="icon" href="#">
         <img src={GimpLogo}
-          width="35px"
           alt=""
           style={{ display: 'inline-block' }}
         />
       </span>
       <span className="icon" href="#">
         <img src={NodeJSLogo}
-          width="50px"
           alt=""
           style={{ display: 'inline-block' }}
         />
@@ -183,6 +169,7 @@ const IconsStyled = styled.div`
       /* left: 50%; */
       
       img {
+        width: 100%;
         /* min-width: 15px; */
       }
       /* position: absolute; */

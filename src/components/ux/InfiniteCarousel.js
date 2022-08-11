@@ -1,8 +1,9 @@
 import gsap from 'gsap'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 
 export default function InfiniteCarousel({ children, containerStyles, childrenStyles, animation, play }) {
+  const [containerHeight, setContainerHeight] = useState(null)
 
   const container = useRef(null)
 
@@ -15,22 +16,31 @@ export default function InfiniteCarousel({ children, containerStyles, childrenSt
 
       children.forEach(child => {
 
-        if (childrenStyles) {
+        if (childrenStyles && containerHeight) {
 
           for (let [key, value] of Object.entries(childrenStyles)) {
+            // console.log(key, child);
             child.style[key] = value
           }
         }
 
-        play && animation && gsap.to(child, animation)
+        play && animation && gsap.to(child, { ...animation, y: -parseInt(containerHeight) })
       })
 
+      const data = window.getComputedStyle(container.current)
+      console.log(data.height);
+      setContainerHeight(data.height)
+      // const windowEl = document.querySelector(`.${container.current.classList[0]}`)
+      // console.log(windowEl.getComputedStyle());
+      // const height = container.current.getComputedStyles()
     }
-  }, [container.current])
+  }, [container.current, containerHeight])
+
+
 
 
   return (
-    <InfiniteCarouselStyled style={containerStyles} ref={container} >
+    <InfiniteCarouselStyled style={containerStyles} ref={container} className={"random"}>
       {children}
     </InfiniteCarouselStyled>
   )
@@ -38,7 +48,8 @@ export default function InfiniteCarousel({ children, containerStyles, childrenSt
 
 const InfiniteCarouselStyled = styled.div`
   display: flex;
+
   img {
-    width: 100%;
-  }
+        width: 100%;
+      }
 `

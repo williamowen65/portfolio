@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Button from '../../../components/ui/Button'
 import EmbeddedLink from '../../../components/ui/EmbeddedLink'
@@ -9,9 +9,11 @@ import Icons from '../Icons'
 
 export default function Hero() {
 
+
   const containerStyles = {
     position: 'absolute',
     right: 0,
+    top: 0,
     display: 'flex',
     flexDirection: 'column',
     marginRight: '60px'
@@ -21,7 +23,14 @@ export default function Hero() {
     // height: 'px',
     width: '70px',
   }
-  const animation = { y: -500, duration: 10, ease: 'linear', repeat: -1 }
+  const animation = {
+    y: -500,
+    duration: 70,
+    ease: 'linear',
+    repeat: -1
+  }
+
+
 
   return (
     <HeroStyled className='hero'>
@@ -76,6 +85,7 @@ const HeroStyled = styled.div`
     }
   }
   .content {
+    position: relative;
     /* position: absolute; */
     /* top:30%;
     left: 50%;
