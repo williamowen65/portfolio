@@ -15,6 +15,8 @@ import { allCards } from '../features/displayCard/layoutStyles/carousel/randomDa
 
 
 import Hero from './components/hero/Hero.js'
+import Contributions from './components/Contributions'
+import Contact from './components/Contact'
 
 export default function Home() {
 
@@ -33,42 +35,15 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Article>
-        <fieldset>
-          <legend><h2>My Contributions to the <nobr>Open Source Community</nobr></h2></legend>
-
-          <p>Automate nearly 100% of your full-stack development experience with this completely customizable development tool I made!</p>
-
-          <button>Check it out</button>
-
-          <p>Utilize it with any language of your choice through this Dockerized verizon...</p>
-
-        </fieldset>
-      </Article>
-
+      <Contributions />
       <Section className='sectionBreak' />
       <DisplayCard type='carousel' title={"What I've been up to..."} data={allCards} />
+      <Contact />
     </>
 
   )
 }
 
-const Article = styled.article`
-    fieldset {
-  legend {
-    text-align: left;
-    color: ${configValues.theme.dark.color.main};
-    h2{
-      width: min-content;
-    }
-  }
-    a {
-      padding: 10px;
-      margin: 10px;
-    }
-  }
-
- `
 
 const Section = styled.section`
   height: 100px;
