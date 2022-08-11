@@ -47,7 +47,7 @@ export default function Icons() {
 
   return (
 
-    <IconsStyled >
+    <>
 
       <span className="icon github" >
         <GrGithub size={30} color={configValues.theme.dark.logoTint} />
@@ -168,7 +168,7 @@ export default function Icons() {
         />
       </span>
 
-    </IconsStyled>
+    </>
   )
 }
 

@@ -2,18 +2,41 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '../../../components/ui/Button'
 import EmbeddedLink from '../../../components/ui/EmbeddedLink'
+import InfiniteCarousel from '../../../components/ux/InfiniteCarousel'
 import configValues from '../../../data/configValues.json'
 import Icons from '../Icons'
 // import './styles/_hero.scss'
 
 export default function Hero() {
+
+  const containerStyles = {
+    position: 'absolute',
+    right: 0,
+    display: 'flex',
+    flexDirection: 'column'
+  }
+
+  const childrenStyles = {
+    // height: 'px',
+    width: '70px',
+  }
+  const animation = { y: -500, duration: 10, ease: 'linear', repeat: -1 }
+
   return (
     <HeroStyled className='hero'>
 
       <div className='content'>
-        <div className="imageContainer">
+        {/* <div className="imageContainer">
           <Icons />
-        </div>
+        </div> */}
+        <InfiniteCarousel
+          play
+          containerStyles={containerStyles}
+          childrenStyles={childrenStyles}
+          animation={animation}
+        >
+          <Icons />
+        </InfiniteCarousel>
 
         <div className='main'>
           <h2>My name is William</h2>
