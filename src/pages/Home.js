@@ -17,18 +17,7 @@ import { allCards } from '../features/displayCard/layoutStyles/carousel/randomDa
 import Hero from './components/hero/Hero.js'
 
 export default function Home() {
-  const but = useRef()
-  // console.log(gsap);
-  useEffect(() => {
-    but.current = document.getElementById('testing')
-    // console.log(but.current);
-  }, [document])
-  useEffect(() => {
 
-    gsap.to(but.current, { x: 100, y: 100, rotate: 80 })
-    // GSDevTools.create()
-    // console.log(but.current);
-  }, [but.current])
 
 
   // useEffect(() => {

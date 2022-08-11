@@ -16,14 +16,17 @@ export default function Palette({ type = 'dark' }) {
         return recursiveObjectOrPrintValue(value)
       }
       return (
-        <p key={i}>{key}: {value} <span style={{ width: '100px', height: '50px', backgroundColor: value, display: 'block' }}></span></p>
+        <>
+          <p key={i}>{key}: {value} <span className='color' style={{ backgroundColor: value }}></span></p>
+          |
+        </>
       )
       // console.log(key, value)
     })
   }
 
   const handleClick = (e) => {
-    e.target.parentElement.remove()
+    setShow(!show)
   }
 
   const [show, setShow] = useState(false)
@@ -31,9 +34,9 @@ export default function Palette({ type = 'dark' }) {
   useEffect(() => {
     let state = false
     const ev = window.addEventListener("keypress", (e) => {
-      console.log(e);
+      // console.log(e);
       e.stopImmediatePropagation()
-      alert(show)
+      // alert(show)
       if (e.key === 'P' && e.shiftKey === true) {
         state = !state
         state ? setShow(state => false) : setShow(state => true)
@@ -65,14 +68,26 @@ const NameStyled = styled.div`
 position: fixed;
     /* top: 0; */
     left: 0;
-    bottom: 0;
+    bottom: -1px;
     background: white;
     padding-bottom: 10px;
     z-index: 10000;
     overflow-y: scroll;
     align-items: end;
     display: flex;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    color: black;
+    font-size: 12px;
   p{
+    color: black !important;
     /* display: inline-block; */
+    .color {
+       width: 50px;
+       height: 50px;
+       display: block;
+       padding: 0 5px;
+    }
   }
 `

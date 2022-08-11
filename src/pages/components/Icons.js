@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
 import ReactLogo from '../../assets/react.png'
@@ -44,87 +44,9 @@ export default function Icons() {
     return
   }
 
-  els.forEach((el, i) => {
-
-    const delay = Math.random()
-
-    gsap.fromTo(el, { y: 0, x: 0, opacity: 0 }, {
-      opacity: 1,
-      x: 100,
-      y: -550,
-      rotateY: 720,
-      rotateZ: 720,
-      rotateX: 1080,
-      duration: random([15, 17]),
-      ease: easeArr[i % easeArr.length],
-      delay: i * delay,
-      // yoyo: true,
-      repeat: -1
-    });
-  })
-  // gsap.to(els[4], { y: -400 })
-
-  // els.forEach((el, i) => {
-
-  //   const tl = gsap.timeline({
-  //     // repeat: -1 
-  //   })
-
-  //   tl.set(el, { opacity: 0 })
-
-  //   tl.to(el, {
-  //     opacity: 1,
-  //     // x: 100,
-  //     y: -550,
-  //     // rotateY: 720,
-  //     // rotateZ: 720,
-  //     // rotateX: 1080,
-  //     duration: 7,
-  //     ease: easeArr[i % easeArr.length],
-  //     delay: i * 1.22,
-  //     // yoyo: true,
-  //   });
-  //   tl.to(el, { opacity: 0 })
-
-
-  // })
-
-  // gsap.to(els, {
-  //   y: -600, stagger: { // wrap advanced options in an object
-  //     each: 0.1,
-  //     from: "center",
-  //     grid: "auto",
-  //     ease: "power2.inOut",
-  //     repeat: -1 // Repeats immediately, not waiting for the other staggered animations to finish
-  //   }, duration: 20
-  // })
-  const tl = gsap.timeline({
-    defaults: {
-      duration: 6, ease: 'linear'
-    }
-  })
-
-
-
-  tl
-    .fromTo(els, {
-      y: 0,
-      x: -150,
-      opacity: 0
-    }, {
-      stagger: {
-        each: 1
-      },
-      opacity: 1,
-      y: -500,
-      repeat: -1,
-      // delay: -4
-    })
-
-
-  // console.log(els);
 
   return (
+
     <IconsStyled >
 
       <span className="icon github" >
@@ -252,14 +174,16 @@ export default function Icons() {
 
 const IconsStyled = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
     span[href]{
       min-width: 30px;
-      position: absolute;
-      left: 50%;
+      display: block;
+      /* position: absolute; */
+      /* left: 50%; */
       
       img {
-        min-width: 15px;
+        /* min-width: 15px; */
       }
       /* position: absolute; */
       /* z-index: 400; */

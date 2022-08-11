@@ -10,10 +10,10 @@ export default function Hero() {
   return (
     <HeroStyled className='hero'>
 
-      <div className="imageContainer">
-        <Icons />
-      </div>
       <div className='content'>
+        <div className="imageContainer">
+          <Icons />
+        </div>
 
         <div className='main'>
           <h2>My name is William</h2>
@@ -47,7 +47,7 @@ const HeroStyled = styled.div`
     height: 100%;
     > * {
       position: absolute;
-      right:242px;
+      right:16%;
       bottom: 0;
     }
   }
@@ -62,6 +62,7 @@ const HeroStyled = styled.div`
     height: 100%;
     justify-content: space-evenly;
     white-space: nowrap;
+    overflow-y: hidden;
     /* &::before {
         content: '';
         position: absolute;
