@@ -57,7 +57,7 @@ export default function Icons() {
       <span className="icon github" >
         <img src={GithubLogo}
           alt=""
-          style={{ display: 'inline-block' }}
+          style={{ display: 'inline-block', filter: 'invert(100%)' }}
         />
       </span>
       <span className="icon" href="#">
@@ -66,16 +66,7 @@ export default function Icons() {
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span className="icon" href="#" title="GreenSock">
-        <img src={GSAPLogo}
-          alt=""
-          style={{
-            display: 'inline-block',
-            width: '150px',
-            transform: 'translateX(-20px)'
-          }}
-        />
-      </span>
+
       <span className="icon" href="#" title="Sass">
         <img src={SassLogo}
           alt=""
@@ -146,7 +137,7 @@ export default function Icons() {
       <span className="icon" href="#">
         <img src={TypeScriptLogo}
           alt=""
-          style={{ display: 'inline-block' }}
+          style={{ display: 'inline-block', filter: 'invert(100%)' }}
         />
       </span>
       <span className="icon" href="#">
@@ -161,9 +152,16 @@ export default function Icons() {
           style={{ display: 'inline-block' }}
         />
       </span>
-
-
-
+      <span className="icon" href="#" title="GreenSock">
+        <img src={GSAPLogo}
+          alt=""
+          style={{
+            display: 'inline-block',
+            width: '150px',
+            transform: 'translateX(-20px)'
+          }}
+        />
+      </span>
       <span className="icon" href="#">
         <img src="http://yargs.js.org/images/yargs-logo.png"
           width="50px"
