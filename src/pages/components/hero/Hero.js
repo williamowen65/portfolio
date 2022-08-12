@@ -34,6 +34,7 @@ export default function Hero() {
     ...containerStyles,
     marginRight: '170px',
     transform: 'scale(4.5)',
+    transformOrigin: 'top',
     filter: 'grayscale(1) blur(2px)',
     zIndex: '-1',
     opacity: '0.4'
