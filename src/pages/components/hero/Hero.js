@@ -21,6 +21,7 @@ export default function Hero() {
 
   const childrenStyles = {
     // height: 'px',
+    marginBottom: "20px",
     width: '70px',
   }
   const animation = {
@@ -35,12 +36,13 @@ export default function Hero() {
     marginRight: '170px',
     transform: 'scale(4.5)',
     transformOrigin: 'top',
-    filter: 'grayscale(1) blur(2px)',
+    filter: 'grayscale(1) blur(0.5px)',
     zIndex: '-1',
     opacity: '0.4'
   }
   const bgChildrenStyles = {
-    ...childrenStyles
+    ...childrenStyles,
+    marginBottom: '0'
   }
 
   const bgAnimation = {
