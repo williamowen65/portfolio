@@ -146,7 +146,7 @@ const HeroStyled = styled.div`
       /* } */
     
     h2 {
-      font-size: 50px;
+      font-size: clamp(15px, 10vw, 50px);
       text-shadow: 
         1px 1px 1px  ${configValues.theme.dark.logoTint}, 
         -1px 1px 1px  ${configValues.theme.dark.logoTint},
