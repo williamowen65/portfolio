@@ -42,6 +42,9 @@ export default function InfiniteCarousel({ children, containerStyles, childrenSt
   return (
     <InfiniteCarouselStyled style={containerStyles} ref={container} className={"random"}>
       {children}
+      {children}
+      {children}
+      {children}
     </InfiniteCarouselStyled>
   )
 }
