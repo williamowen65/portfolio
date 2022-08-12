@@ -25,7 +25,7 @@ export default function Hero() {
   }
   const animation = {
     y: -500,
-    duration: 70,
+    duration: 170,
     ease: 'linear',
     repeat: -1
   }
