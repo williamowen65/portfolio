@@ -4,7 +4,7 @@ import Button from '../../../components/ui/Button'
 import EmbeddedLink from '../../../components/ui/EmbeddedLink'
 import InfiniteCarousel from '../../../components/ux/InfiniteCarousel'
 import configValues from '../../../data/configValues.json'
-import Icons from '../Icons'
+import Icons from '../icons/Icons'
 // import './styles/_hero.scss'
 
 export default function Hero() {
@@ -24,10 +24,27 @@ export default function Hero() {
     width: '70px',
   }
   const animation = {
-    y: -500,
+    // y is auto calculated from window
     duration: 170,
     ease: 'linear',
     repeat: -1
+  }
+
+  const bgContainerStyles = {
+    ...containerStyles,
+    marginRight: '170px',
+    transform: 'scale(4.5)',
+    filter: 'grayscale(1) blur(2px)',
+    zIndex: '-1',
+    opacity: '0.4'
+  }
+  const bgChildrenStyles = {
+    ...childrenStyles
+  }
+
+  const bgAnimation = {
+    ...animation,
+    duration: 1500
   }
 
 
@@ -44,6 +61,15 @@ export default function Hero() {
           containerStyles={containerStyles}
           childrenStyles={childrenStyles}
           animation={animation}
+        >
+          <Icons />
+        </InfiniteCarousel>
+
+        <InfiniteCarousel
+          play
+          containerStyles={bgContainerStyles}
+          childrenStyles={bgChildrenStyles}
+          animation={bgAnimation}
         >
           <Icons />
         </InfiniteCarousel>
@@ -101,7 +127,7 @@ const HeroStyled = styled.div`
         content: '';
         position: absolute;
         /* left: -30px; */
-        z-index: -1; 
+        /* z-index: -1;  */
 
         padding: 0 20px;
         background: ${configValues.theme.dark.background.color.window};

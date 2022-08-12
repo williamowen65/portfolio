@@ -1,0 +1,17 @@
+span[href]{
+  min-width: 30px;
+  display: flex;
+  justify-content: center;
+  /* position: absolute; */
+  /* left: 50%; */
+  
+  img {
+    /* all: initial; */
+    max-width: initial;
+    width: 100%;
+    /* min-width: 15px; */
+  }
+  /* position: absolute; */
+  /* z-index: 400; */
+  /* width: 10px; */
+}

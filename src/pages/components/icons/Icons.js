@@ -1,24 +1,29 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
-import ReactLogo from '../../assets/react.png'
-import ExpressLogo from '../../assets/express.png'
-import VueLogo from '../../assets/vue.png'
-import MongoLogo from '../../assets/mongo.png'
-import ElectronLogo from '../../assets/electron.png'
-import TypeScriptLogo from '../../assets/typescript.png'
-import GSAPLogo from '../../assets/gsap.png'
-import GimpLogo from '../../assets/gimp.png'
-import NodeJSLogo from '../../assets/nodejs.png'
-import JenkinsLogo from '../../assets/jenkins.png'
+import ReactLogo from '../../../assets/icons/react.png'
+import ExpressLogo from '../../../assets/icons/express.png'
+import VueLogo from '../../../assets/icons/vue.png'
+import MongoLogo from '../../../assets/icons/mongo.png'
+import ElectronLogo from '../../../assets/icons/electron.png'
+import TypeScriptLogo from '../../../assets/icons/typescript.png'
+import GSAPLogo from '../../../assets/icons/gsap.png'
+import GimpLogo from '../../../assets/icons/gimp.png'
+import NodeJSLogo from '../../../assets/icons/node.png'
+import JenkinsLogo from '../../../assets/icons/jenkins.png'
+import GithubLogo from '../../../assets/icons/github.png'
+import DockerLogo from '../../../assets/icons/docker.png'
+import SassLogo from '../../../assets/icons/sass.png'
+
+import './iconStyles.scss'
 
 import { GrDocker, GrGithub } from 'react-icons/gr'
 import { SiSass } from 'react-icons/si'
-import configValues from '../../data/configValues.json'
+import configValues from '../../../data/configValues.json'
 
 import { useSelector } from 'react-redux'
 
-import gsap from '../../../gsap/gsap.min'
+import gsap from '../../../../gsap/gsap.min'
 
 const random = (arr) => {
   return Math.random() * (arr[1] - arr[0]) + arr[0]
@@ -50,13 +55,32 @@ export default function Icons() {
     <>
 
       <span className="icon github" >
-        <GrGithub size={30} color={configValues.theme.dark.logoTint} />
+        <img src={GithubLogo}
+          alt=""
+          style={{ display: 'inline-block' }}
+        />
       </span>
       <span className="icon" href="#">
-        <GrDocker size={30} color={configValues.theme.dark.logoTint} />
+        <img src={DockerLogo}
+          alt=""
+          style={{ display: 'inline-block' }}
+        />
       </span>
-      <span className="icon" href="#">
-        <SiSass size={30} color={configValues.theme.dark.logoTint} />
+      <span className="icon" href="#" title="GreenSock">
+        <img src={GSAPLogo}
+          alt=""
+          style={{
+            display: 'inline-block',
+            width: '150px',
+            transform: 'translateX(-20px)'
+          }}
+        />
+      </span>
+      <span className="icon" href="#" title="Sass">
+        <img src={SassLogo}
+          alt=""
+          style={{ display: 'inline-block' }}
+        />
       </span>
       <span className="icon" href="#">
         <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
@@ -70,7 +94,7 @@ export default function Icons() {
           style={{ display: 'inline-block' }}
         />
       </span>
-      <span className="icon" href="#">
+      <span className="icon" href="#" >
         <img src={ReactLogo}
           alt=""
           style={{ display: 'inline-block' }}
@@ -120,12 +144,6 @@ export default function Icons() {
         />
       </span>
       <span className="icon" href="#">
-        <img src={GSAPLogo}
-          alt=""
-          style={{ display: 'inline-block' }}
-        />
-      </span>
-      <span className="icon" href="#">
         <img src={TypeScriptLogo}
           alt=""
           style={{ display: 'inline-block' }}
@@ -158,22 +176,3 @@ export default function Icons() {
   )
 }
 
-const IconsStyled = styled.div`
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    span[href]{
-      min-width: 30px;
-      display: block;
-      /* position: absolute; */
-      /* left: 50%; */
-      
-      img {
-        width: 100%;
-        /* min-width: 15px; */
-      }
-      /* position: absolute; */
-      /* z-index: 400; */
-      /* width: 10px; */
-    }
-`
