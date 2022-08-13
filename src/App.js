@@ -35,16 +35,6 @@ export default function App(props) {
   }, [width])
 
 
-  const [isWebsiteLoading, setIsWebsiteLoading] = useState(true)
-
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsWebsiteLoading(false)
-    }, 3000)
-  }, [])
-
-  console.log(isWebsiteLoading);
 
 
 
@@ -52,7 +42,7 @@ export default function App(props) {
 
   return (
     <>
-      {isWebsiteLoading && <WebsiteLoading />}
+      <WebsiteLoading />
       <Div className="App" ref={ref}>
         {configValues.breakpoints.mainWidth < screenWidth && (
           <>
