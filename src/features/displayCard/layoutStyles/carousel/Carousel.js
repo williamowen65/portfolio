@@ -114,7 +114,7 @@ const Carousel = ({ title, cards }) => {
     <CarouselStyled className='carousel sidenavTarget' data-name={title.replace(" ", "-")}>
       <header>
         <div className='small-container'>
-          <h1>{title}</h1>
+          <h2>{title}</h2>
           <p>
             <span>
               {/* <i className='material-icons'>chevron_left</i> */}

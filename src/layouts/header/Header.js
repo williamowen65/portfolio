@@ -23,6 +23,7 @@ import {
 
 // import { store } from "./context/store";
 import styled from "styled-components";
+import WO from "../components/WO";
 
 const Navbar = () => {
   const screenWidth = useSelector(state => state.app.screenWidth)
@@ -123,7 +124,7 @@ const Navbar = () => {
         )} */}
         <span></span>
         <div className='NL' ref={NL}>
-          <h1 style={{ textShadow: '0px 0px 4px white' }}>WO</h1>
+          <WO />
           <p>Web Dev</p>
         </div>
         {/* {scrolledDown ? (

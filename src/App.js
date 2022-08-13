@@ -47,7 +47,7 @@ export default function App(props) {
         </>
       )}
       <PageContainer >
-        <Header>Hello world</Header>
+        <Header />
         <MainContainer className="main">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -76,9 +76,16 @@ const Div = styled.div`
   justify-content: space-evenly;
   word-spacing: 4px;
   letter-spacing: 1px;
+  h1,h2,h3,h4,h5,h6 {
+    color: ${configValues.theme.dark.color.main}
+  }
+  h2 {
+    font-size: 37px;
+  }
   main {
     z-index: 3;
     order: 2;
+    /* margin: 20px; */
     background-color: ${configValues.theme.dark.background.color.main};
   }
   header {

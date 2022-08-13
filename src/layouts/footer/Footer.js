@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import './styles/footer.css'
 import configValues from '../../data/configValues.json'
 import styled from "styled-components";
+import WO from "../components/WO";
 
 const Footer = ({ style }) => {
 
@@ -78,7 +79,7 @@ const Footer = ({ style }) => {
         </div>
       </div>
       <div>
-        <h1>WO</h1>
+        <WO />
         <p>Web Dev Portfolio</p>
       </div>
     </FooterStyled>

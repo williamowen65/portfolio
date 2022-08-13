@@ -9,7 +9,7 @@ export default function Contributions() {
   return (
     <Article>
       <fieldset>
-        <legend><h2>My Contributions to the <nobr>Open Source Community</nobr></h2></legend>
+        <legend><h2 className='contribute'>My Contributions to the <nobr>Open Source Community</nobr></h2></legend>
 
         <p>Automate nearly 100% of your development experience in any language of your choice with these simple lines of JavaScript.</p>
 
@@ -40,6 +40,7 @@ const Article = styled.article`
     color: ${configValues.theme.dark.color.main};
     h2{
       width: min-content;
+      font-size: 27px;
     }
   }
     a {

@@ -96,6 +96,8 @@ export default function Hero() {
 const HeroStyled = styled.div`
   position: relative;
   height: 80vh;
+  width: 100%;
+  margin: 0 auto;
   .imageContainer {
     background: linear-gradient(-103deg,transparent 21%,#d9d7ce45 22%,transparent 23%);
     /* background: linear-gradient(-103deg, ${configValues.theme.dark.color.white} 3%, transparent 37%); */
@@ -146,7 +148,7 @@ const HeroStyled = styled.div`
       /* } */
     
     h2 {
-      font-size: clamp(15px, 10vw, 50px);
+      font-size: clamp(20px, 6vw, 50px);
       text-shadow: 
         1px 1px 1px  ${configValues.theme.dark.logoTint}, 
         -1px 1px 1px  ${configValues.theme.dark.logoTint},
@@ -161,7 +163,8 @@ const HeroStyled = styled.div`
     button {
       /* position: absolute; */
     }
-    .main {
+    .main, .subInfo {
+      /* display: none; */
       
     }
     .subInfo {
