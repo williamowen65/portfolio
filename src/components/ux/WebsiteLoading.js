@@ -1,5 +1,5 @@
 import gsap from '../../../gsap/gsap.min'
-import React, { useEffect, useMemo, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import styled from 'styled-components'
 import WO from '../../layouts/components/WO'
 import * as d3 from 'd3'
@@ -23,9 +23,9 @@ export default function WebsiteLoading() {
     }
 
 
-    // apply().then(() => {
-    //   comp.current.remove()
-    // })
+    apply().then(() => {
+      comp.current.remove()
+    })
   }, [])
 
   return (
@@ -45,22 +45,36 @@ const Animation = () => {
   //   }
   // }, [screenWidth, state])
 
-  useEffect(() => {
-    const ref = d3.select(".animation_container")
+  useLayoutEffect(() => {
+    const svg = d3.select(".animation_container")
       .append("svg")
-      .attr('height', '100vh') //height="100" width="100"
-      .attr('width', '100vw') //height="100" width="100"
-      .attr('position', 'absolute')
-      .attr('top', 0)
+
+    // .attr('transform', 'translate(-50%,-50%)')
+
+    svg
       .append('circle')
-      .attr('fill', 'blue')
-      .attr('cx', 0)
-      .attr('cy', 0)
-      .attr('r', 40);
+      .attr('cx', 250)
+      .attr('cy', 250)
+      .attr('r', 250)
+      .attr('fill', 'transparent')
+      .attr('stroke', 'black')
+
+
+
+    // var path = svg.append('path')
+    //   .data(data)
+    //   .attr({
+    //     'd': line,
+    //     'stroke-dasharray': '385 385',
+    //     'stroke-dashoffset': 385
+    //   })
+    // .transition()
+    // .duration(1500)
+    // .attr('stroke-dashoffset', 0)
+
 
     return () => {
-      ref.exit()
-      // ref.call(sel => sel.remove())
+      svg.exit().remove()
     }
 
   }, [])
@@ -87,11 +101,17 @@ const WebsiteLoadingStyled = styled.div`
   justify-content: center;
   align-items: center;
   .animation_container {
+    /* max-width: 500px;
+  width: 100%;
+  height: 400px; */
     svg{
-
+      width: 500px;
+      height: 500px;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      /* fill: transparent; */
     }
     /* width: 100vw; */
   }
