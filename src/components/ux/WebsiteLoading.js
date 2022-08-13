@@ -10,13 +10,20 @@ export default function WebsiteLoading() {
   useEffect(() => {
 
     async function apply() {
-      await gsap.to(comp.current, { opacity: 0, duration: 0.3 }, "<4")
-      comp.current.remove()
+      await gsap.to(comp.current, {
+        opacity: 0,
+        duration: 0.3,
+        onUpdate: () => {
 
+          window.scrollTo({ top: 0 })
+        }
+      }, "<4")
     }
 
 
-    apply()
+    apply().then(() => {
+      comp.current.remove()
+    })
   }, [])
 
   return (
@@ -25,7 +32,7 @@ export default function WebsiteLoading() {
 }
 
 const WebsiteLoadingStyled = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
