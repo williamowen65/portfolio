@@ -67,7 +67,7 @@
       // padding: auto 0;
       // height: 100%;
       display: flex;
-      transform: translateY(10px);
+      transform: translateY(-17px);
       @media #{$small-and-down}{
         transform: translateY(0px);
 
@@ -151,7 +151,7 @@
   display: flex;
   width: 100%;
   // user-select: ;
-  z-index: 4;
+  z-index: 5;
   text-align: right;
   align-items: center;
   justify-content: space-between;
@@ -212,7 +212,7 @@
     margin: 0 5px;
   }
   @media #{$small-and-down} {
-    top: -4px;
+    top: 12px;
     transform: scale(0.5);
     // left: none;
     p {

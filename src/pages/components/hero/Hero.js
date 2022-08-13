@@ -117,6 +117,7 @@ const HeroStyled = styled.div`
   }
   .content {
     position: relative;
+    overflow: hidden;
     /* position: absolute; */
     /* top:30%;
     left: 50%;
