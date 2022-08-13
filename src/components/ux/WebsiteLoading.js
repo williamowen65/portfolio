@@ -1,3 +1,4 @@
+import gsap from '../../../gsap/gsap.min'
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import WO from '../../layouts/components/WO'
@@ -7,10 +8,15 @@ export default function WebsiteLoading() {
   const comp = useRef()
 
   useEffect(() => {
-    setTimeout(() => {
 
+    async function apply() {
+      await gsap.to(comp.current, { opacity: 0, duration: 0.3 }, "<4")
       comp.current.remove()
-    }, 4000)
+
+    }
+
+
+    apply()
   }, [])
 
   return (
