@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import Home from './pages/Home.js'
 import { Navigate, Route, Routes } from 'react-router-dom'
 // import Navbar from './layouts/Navbar.js'
@@ -21,6 +21,7 @@ import Palette from './utils/Palette.js'
 import Footer from './layouts/footer/Footer.js'
 import DownArrow from './assets/downArrow.png'
 import Sidebar from './layouts/sidebar/Sidebar.js'
+import WebsiteLoading from './components/ux/WebsiteLoading.js'
 
 import "./styles/global.scss"
 
@@ -34,9 +35,22 @@ export default function App(props) {
   }, [width])
 
 
+  const [isWebsiteLoading, setIsWebsiteLoading] = useState(true)
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsWebsiteLoading(false)
+    }, 3000)
+  }, [])
+
+  console.log(isWebsiteLoading);
 
 
 
+  if (isWebsiteLoading) {
+    return (<WebsiteLoading />)
+  }
 
   return (
     <Div className="App" ref={ref}>
