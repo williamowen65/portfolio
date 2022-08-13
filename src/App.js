@@ -48,38 +48,39 @@ export default function App(props) {
 
 
 
-  if (isWebsiteLoading) {
-    return (<WebsiteLoading />)
-  }
+
 
   return (
-    <Div className="App" ref={ref}>
-      {configValues.breakpoints.mainWidth < screenWidth && (
-        <>
-          <Sidebar right />
-          <Sidebar left />
-        </>
-      )}
-      <PageContainer >
-        <Header />
-        <MainContainer className="main">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            {configValues.specialFeatures.auth && <Route path="/auth" element={<Login />} />}
-            {configValues.specialFeatures.showFeatures && <Route path='/features' element={<Features />} />}
-            <Route path={"/about"} element={<About />} />
-            <Route path="*" element={(() => {
-              return (
-                <Navigate to="/" replace={true} />
-              )
-            })()}>
-            </Route>
-          </Routes>
-          {configValues.specialFeatures.showPalette && true && <Palette />}
-        </MainContainer>
-        <Footer style={{ order: 5 }} />
-      </PageContainer>
-    </Div>
+    <>
+      {isWebsiteLoading && <WebsiteLoading />}
+      <Div className="App" ref={ref}>
+        {configValues.breakpoints.mainWidth < screenWidth && (
+          <>
+            <Sidebar right />
+            <Sidebar left />
+          </>
+        )}
+        <PageContainer >
+          <Header />
+          <MainContainer className="main">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              {configValues.specialFeatures.auth && <Route path="/auth" element={<Login />} />}
+              {configValues.specialFeatures.showFeatures && <Route path='/features' element={<Features />} />}
+              <Route path={"/about"} element={<About />} />
+              <Route path="*" element={(() => {
+                return (
+                  <Navigate to="/" replace={true} />
+                )
+              })()}>
+              </Route>
+            </Routes>
+            {configValues.specialFeatures.showPalette && true && <Palette />}
+          </MainContainer>
+          <Footer style={{ order: 5 }} />
+        </PageContainer>
+      </Div>
+    </>
   )
 }
 
