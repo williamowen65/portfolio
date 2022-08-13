@@ -22,9 +22,9 @@ export default function WebsiteLoading() {
     }
 
 
-    // apply().then(() => {
-    //   comp.current.remove()
-    // })
+    apply().then(() => {
+      comp.current.remove()
+    })
   }, [])
 
   return (
@@ -45,9 +45,9 @@ const Animation = () => {
       .attr('top', 0)
       .append('circle')
       .attr('fill', 'blue')
-      .attr('cx', 40)
-      .attr('cy', 50)
-      .attr('r', 40);
+      .attr('cx', 4)
+      .attr('cy', 5)
+      .attr('r', 4);
 
     return () => {
       ref.remove()
