@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useRef } from 'react'
 import styled from 'styled-components'
 import WO from '../../layouts/components/WO'
 import * as d3 from 'd3'
+import { useSelector } from 'react-redux'
 
 export default function WebsiteLoading() {
 
@@ -22,9 +23,9 @@ export default function WebsiteLoading() {
     }
 
 
-    apply().then(() => {
-      comp.current.remove()
-    })
+    // apply().then(() => {
+    //   comp.current.remove()
+    // })
   }, [])
 
   return (
@@ -33,24 +34,33 @@ export default function WebsiteLoading() {
 }
 
 const Animation = () => {
-  const wo = useRef()
+
+  const screenWidth = useSelector(state => state.app.screenWidth)
+  // const [state, setState] = useState(0)
+  // useEffect(() => {
+  //   if (state) {
+  //     setState(screenWidth)
+  //   } else {
+  //     setState(1)
+  //   }
+  // }, [screenWidth, state])
+
   useEffect(() => {
-
-
-    // alert('hi')
     const ref = d3.select(".animation_container")
       .append("svg")
-      .attr('viewBox', '0 0 100 100')
+      .attr('height', '100vh') //height="100" width="100"
+      .attr('width', '100vw') //height="100" width="100"
       .attr('position', 'absolute')
       .attr('top', 0)
       .append('circle')
       .attr('fill', 'blue')
-      .attr('cx', 4)
-      .attr('cy', 5)
-      .attr('r', 4);
+      .attr('cx', 0)
+      .attr('cy', 0)
+      .attr('r', 40);
 
     return () => {
-      ref.remove()
+      ref.exit()
+      // ref.call(sel => sel.remove())
     }
 
   }, [])
