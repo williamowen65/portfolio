@@ -4,7 +4,8 @@ import styled from 'styled-components'
 export default function Contact() {
   return (
     <ContactStyled>
-      <p>CDFJslfsdlfk</p>
+      <h2>Contact me</h2>
+      <p>I am currently looking for job opportunities. </p>
     </ContactStyled>
   )
 }
