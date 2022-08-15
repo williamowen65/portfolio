@@ -28,6 +28,7 @@ export default function WebsiteLoading() {
     })
   }, [])
 
+
   return (
     <WebsiteLoadingStyled ref={comp}><Animation /></WebsiteLoadingStyled>
   )
@@ -36,53 +37,38 @@ export default function WebsiteLoading() {
 const Animation = () => {
 
   const screenWidth = useSelector(state => state.app.screenWidth)
-  // const [state, setState] = useState(0)
-  // useEffect(() => {
-  //   if (state) {
-  //     setState(screenWidth)
-  //   } else {
-  //     setState(1)
-  //   }
-  // }, [screenWidth, state])
 
-  useLayoutEffect(() => {
-    const svg = d3.select(".animation_container")
-      .append("svg")
+  useEffect(() => {
+    const selection = d3.select('.animation')
+      .selectAll('.dots')
+      .data([1, 3, 4, 2])
 
-    // .attr('transform', 'translate(-50%,-50%)')
+    selection.enter()
+      .append("circle")
+      .attr("cx", (d, i) => 100 * i)
+      .attr("cy", (d, i) => 100 * i)
+      .attr("r", (d, i) => 10 * i)
+      .attr("fill", 'blue')
+      .call((sel) => {
+        // sel._groups[0].forEach((el) => {
 
-    svg
-      .append('circle')
-      .attr('cx', 250)
-      .attr('cy', 250)
-      .attr('r', 250)
-      .attr('fill', 'transparent')
-      .attr('stroke', 'black')
+        gsap.to('.animation', { rotate: '360deg', duration: 5, repeat: -1, ease: 'linear' })
+        // })
+        const el = document.querySelector('.animation')
+        console.log(window.getComputedStyle(el).transformOrigin);
+      })
 
+    selection.enter()
+      .append('text').text("hi")
+      .attr('fill', 'black')
+      .attr('x', (d, i) => -100 * i)
+      .attr('y', (d, i) => 100 * i)
 
-
-    // var path = svg.append('path')
-    //   .data(data)
-    //   .attr({
-    //     'd': line,
-    //     'stroke-dasharray': '385 385',
-    //     'stroke-dashoffset': 385
-    //   })
-    // .transition()
-    // .duration(1500)
-    // .attr('stroke-dashoffset', 0)
-
-
-    return () => {
-      svg.exit().remove()
-    }
 
   }, [])
-
-  // useEffect(() => {
-  // }, [wo.current])
   return (
     <span className='animation_container' >
+      <svg className='animation'></svg>
       <WO />
     </span>
   )
@@ -104,14 +90,25 @@ const WebsiteLoadingStyled = styled.div`
     /* max-width: 500px;
   width: 100%;
   height: 400px; */
-    svg{
-      width: 500px;
-      height: 500px;
+    svg.animation{
+      width: 1px;
+      height: 1px;
+      overflow: visible;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
       /* fill: transparent; */
+      transform-origin: top center !important;
+      .dot {
+        width: 50px;
+        height: 50px;
+        overflow: visible;
+        fill: blue;
+      }
+      .dots {
+        transform: translate();
+      }
     }
     /* width: 100vw; */
   }
