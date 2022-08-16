@@ -1,5 +1,10 @@
 import gsap from "../../../gsap/gsap.min";
-import React, { useEffect, useLayoutEffect, useMemo, useRef } from "react";
+import React, {
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+} from "react";
 import styled from "styled-components";
 import WO from "../../layouts/components/WO";
 import * as d3 from "d3";
@@ -24,8 +29,8 @@ export default function WebsiteLoading() {
     }
 
     // apply().then(() => {
-    //   comp.current.remove()
-    // })
+    //   comp.current.remove();
+    // });
   }, []);
 
   return (
@@ -36,7 +41,9 @@ export default function WebsiteLoading() {
 }
 
 const Animation = () => {
-  const screenWidth = useSelector((state) => state.app.screenWidth);
+  const screenWidth = useSelector(
+    (state) => state.app.screenWidth
+  );
 
   useEffect(() => {
     const DATA = [1, 3, 4, 2];
@@ -53,33 +60,38 @@ const Animation = () => {
     //   // .attr("transform", (d, i) => `translate(${0, 30 * i})`)
     //   .attr("fill", 'blue')
 
-    selection.enter().append("g");
+    selection
+      .enter()
+      .append("g")
+      .attr("x")
+      .attr("");
 
-    d3.selectAll("g")
-      .selectAll(".dots")
-      .data(DATA)
-      .append("circle")
-      .attr("data-circle", (d, i) => i)
-      .attr("cx", (d, i) => -100 * i)
-      .attr("cy", (d, i) => -100 * i)
-      .attr("r", (d, i) => 10 * i)
-      .attr("transform", (d, i) => `translate(${(0, 30 * i)})`)
-      .attr("stroke", "black")
-      .attr("stroke-width", "1")
-      .attr("fill", "transparent")
-      .call((sel) => {
-        // sel._groups[0].forEach((el) => {
+    const groups = d3.selectAll("g");
 
-        gsap.to(".animation", {
-          rotate: "365deg",
-          duration: 5,
-          repeat: -1,
-          ease: "linear",
-        });
-        // })
-        const el = document.querySelector(".animation");
-        // console.log(window.getComputedStyle(el).transformOrigin);
-      });
+    // .selectAll(".dots")
+    // .data(DATA)
+    // .append("circle")
+    // .attr("data-circle", (d, i) => i)
+    // .attr("cx", (d, i) => -100 * i)
+    // .attr("cy", (d, i) => -100 * i)
+    // .attr("r", (d, i) => 10 * i)
+    // .attr("transform", (d, i) => `translate(${(0, 30 * i)})`)
+    // .attr("stroke", "black")
+    // .attr("stroke-width", "1")
+    // .attr("fill", "transparent")
+    // .call((sel) => {
+    //   // sel._groups[0].forEach((el) => {
+
+    //   gsap.to(".animation", {
+    //     rotate: "365deg",
+    //     duration: 5,
+    //     repeat: -1,
+    //     ease: "linear",
+    //   });
+    // })
+    // const el = document.querySelector(".animation");
+    // console.log(window.getComputedStyle(el).transformOrigin);
+    // });
     // selection.enter()
     //   .append('text').text("hi")
     //   .attr('fill', 'black')
