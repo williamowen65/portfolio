@@ -46,98 +46,67 @@ const Animation = () => {
   );
 
   useEffect(() => {
-    const DATA = [1, 3, 4, 2];
-    const selection = d3
-      .select(".animation")
-      .selectAll(".dotGroups")
-      .data(DATA);
-
-    // selection.enter()
-    //   .append("circle")
-    //   .attr("cx", (d, i) => 10 * i)
-    //   .attr("cy", (d, i) => 10 * i)
-    //   .attr("r", (d, i) => 10 * i)
-    //   // .attr("transform", (d, i) => `translate(${0, 30 * i})`)
-    //   .attr("fill", 'blue')
-
-    selection
-      .enter()
-      .append("g")
-      .classed("orb", true)
-      .append("circle")
-      .attr("data-circle", (d, i) => i)
-      .attr("cx", (d, i) => -100 * i)
-      .attr("cy", (d, i) => -100 * i)
-      .attr("r", (d, i) => 10 * i)
-      .attr(
-        "transform",
-        (d, i) =>
-          `translate(${(0, 30 * i)})`
-      )
-      .attr("stroke", "black")
-      .attr("stroke-width", "1")
-      .attr("fill", "transparent");
-
-    const specks = [
-      1, 2, 3, 4, 5, 6, 7,
+    var data = [
+      { x: -5, y: 10 },
+      { x: 4, y: 0 },
+      { x: 7, y: 20 },
+      { x: 0, y: 50 },
     ];
 
-    const groups = d3
-      .selectAll("g.orb")
-      .data(specks);
+    var xScale = d3
+      .scaleLinear()
+      .domain([0, 7])
+      .range([25, 175]);
+    var yScale = d3
+      .scaleLinear()
+      .domain([0, 20])
+      .range([175, 25]);
 
-    groups
-      .append("circle")
-      .classed("speck", true)
-      .attr("cx", (d, i) => -100 * i)
-      .attr("cy", (d, i) => -100 * i)
-      .attr("r", (d, i) => i && 5)
-      .attr("fill", "black");
+    var line = d3
+      .line()
+      .x((d) => xScale(d.x))
+      .y((d) => yScale(d.y));
 
-    console.log(groups);
+    function renderLine(
+      id,
+      line,
+      color,
+      data
+    ) {
+      color =
+        color === undefined
+          ? "black"
+          : color;
 
-    // .selectAll(".dots")
-    // .data(DATA)
-    // .append("circle")
-    // .attr("data-circle", (d, i) => i)
-    // .attr("cx", (d, i) => -100 * i)
-    // .attr("cy", (d, i) => -100 * i)
-    // .attr("r", (d, i) => 10 * i)
-    // .attr("transform", (d, i) => `translate(${(0, 30 * i)})`)
-    // .attr("stroke", "black")
-    // .attr("stroke-width", "1")
-    // .attr("fill", "transparent")
-    // .call((sel) => {
-    //   // sel._groups[0].forEach((el) => {
+      d3.select("#" + id)
+        .append("path")
+        .attr("d", line(data))
+        .attr("fill", "none")
+        .attr("stroke", color);
 
-    //   gsap.to(".animation", {
-    //     rotate: "365deg",
-    //     duration: 5,
-    //     repeat: -1,
-    //     ease: "linear",
-    //   });
-    // })
-    // const el = document.querySelector(".animation");
-    // console.log(window.getComputedStyle(el).transformOrigin);
-    // });
-    // selection.enter()
-    //   .append('text').text("hi")
-    //   .attr('fill', 'black')
-    //   .attr('x', (d, i) => -100 * i)
-    //   .attr('y', (d, i) => 100 * i)
+      d3.select("#" + id)
+        .selectAll("circle")
+        .data(data)
+        .join("circle")
+        .attr("cx", (d) => xScale(d.x))
+        .attr("cy", (d) => yScale(d.y))
+        .attr("r", 4.5)
+        .on("click", () => {
+          alert("hi");
+        })
+        .style("cursor", "pointer");
+    }
 
-    // d3.select('circle[data-circle="3"]')
-    //   .selectAll('circle')
-    //   .data([0])
-    //   .enter()
-    //   .append('circle')
-    //   .attr('cx', (d, i) => 40)
-    //   .attr('cy', 50)
-    //   .attr('r', 50).attr('fill', 'blue')
+    renderLine(
+      "animation",
+      line.curve(d3.curveBasisClosed),
+      "black",
+      data
+    );
   }, []);
   return (
     <span className="animation_container">
-      <svg className="animation"></svg>
+      <svg id="animation"></svg>
       <WO />
     </span>
   );
@@ -155,16 +124,18 @@ const WebsiteLoadingStyled = styled.div`
   justify-content: center;
   align-items: center;
   .animation_container {
-    svg.animation {
-      width: 1px;
-      height: 1px;
+    position: absolute;
+    /* overflow: visible; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    svg#animation {
+      width: 500px;
+      height: 500px;
       overflow: visible;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       /* fill: transparent; */
-      transform-origin: top center !important;
+      transform-origin: center center !important;
       .dot {
         width: 50px;
         height: 50px;
