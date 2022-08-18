@@ -63,10 +63,38 @@ const Animation = () => {
     selection
       .enter()
       .append("g")
-      .attr("x")
-      .attr("");
+      .classed("orb", true)
+      .append("circle")
+      .attr("data-circle", (d, i) => i)
+      .attr("cx", (d, i) => -100 * i)
+      .attr("cy", (d, i) => -100 * i)
+      .attr("r", (d, i) => 10 * i)
+      .attr(
+        "transform",
+        (d, i) =>
+          `translate(${(0, 30 * i)})`
+      )
+      .attr("stroke", "black")
+      .attr("stroke-width", "1")
+      .attr("fill", "transparent");
 
-    const groups = d3.selectAll("g");
+    const specks = [
+      1, 2, 3, 4, 5, 6, 7,
+    ];
+
+    const groups = d3
+      .selectAll("g.orb")
+      .data(specks);
+
+    groups
+      .append("circle")
+      .classed("speck", true)
+      .attr("cx", (d, i) => -100 * i)
+      .attr("cy", (d, i) => -100 * i)
+      .attr("r", (d, i) => i && 5)
+      .attr("fill", "black");
+
+    console.log(groups);
 
     // .selectAll(".dots")
     // .data(DATA)
