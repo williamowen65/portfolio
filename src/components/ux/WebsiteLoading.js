@@ -45,65 +45,7 @@ const Animation = () => {
     (state) => state.app.screenWidth
   );
 
-  useEffect(() => {
-    var data = [
-      { x: -5, y: 10 },
-      { x: 4, y: 0 },
-      { x: 7, y: 20 },
-      { x: 0, y: 50 },
-    ];
-
-    var xScale = d3
-      .scaleLinear()
-      .domain([0, 7])
-      .range([25, 175]);
-    var yScale = d3
-      .scaleLinear()
-      .domain([0, 20])
-      .range([175, 25]);
-
-    var line = d3
-      .line()
-      .x((d) => xScale(d.x))
-      .y((d) => yScale(d.y));
-
-    function renderLine(
-      id,
-      line,
-      color,
-      data
-    ) {
-      color =
-        color === undefined
-          ? "black"
-          : color;
-
-      d3.select("#" + id)
-        .append("path")
-        .attr("d", line(data))
-        .attr("fill", "none")
-        .attr("stroke", color);
-
-      d3.select("#" + id)
-        .selectAll("circle")
-        .data(data)
-        .join("circle")
-        .attr("cx", (d) => xScale(d.x))
-        .attr("cy", (d) => yScale(d.y))
-        .attr("r", 4.5)
-        .on("click", () => {
-          alert("hi");
-        })
-        .style("cursor", "pointer");
-    }
-
-    renderLine(
-      "animation",
-      line.curve(d3.curveBasisClosed),
-      "black",
-      data
-    );
-  }, []);
+  useEffect(() => {}, []);
   return (
     <span className="animation_container">
       <svg id="animation"></svg>
