@@ -24,13 +24,13 @@ export default function WebsiteLoading() {
             window.scrollTo({ top: 0 });
           },
         },
-        "<4"
+        "<6"
       );
     }
 
-    apply().then(() => {
-      comp.current.remove();
-    });
+    // apply().then(() => {
+    //   comp.current.remove();
+    // });
   }, []);
 
   return (
@@ -46,30 +46,47 @@ const Animation = () => {
   );
 
   useEffect(() => {
-    // var arcGen = d3
-    //   .arc()
-    //   .innerRadius((d) => d)
-    //   .outerRadius((d) => d)
-    //   .startAngle((d, i) =>
-    //     i % 2 == 0
-    //       ? 0
-    //       : -Math.PI + Math.PI / 3
-    //   )
-    //   .endAngle((d, i) =>
-    //     i % 2 == 0
-    //       ? Math.PI / 3
-    //       : -Math.PI
-    //   );
-
     function handleArcGen(d) {
       var arcGen = d3.path();
-      arcGen.moveTo(d, 0);
-      arcGen.arc(0, 0, d, 0, Math.PI);
+      arcGen.moveTo(d.r, 0);
+      arcGen.arc(
+        0,
+        0,
+        d.r,
+        d.start,
+        d.end
+      );
+      // console.log(d, arcGen);
       // arcGen.closePath();
       return arcGen;
     }
 
-    const radii = [100, 120, 150, 300];
+    const curves = [
+      {
+        r: 100,
+        start: 0,
+        end: Math.PI,
+        offset: 500,
+      },
+      {
+        r: 120,
+        start: 0,
+        end: Math.PI,
+        offset: 30000,
+      },
+      {
+        r: 150,
+        start: 0,
+        end: Math.PI,
+        offset: 4000,
+      },
+      {
+        r: 400,
+        start: 0,
+        end: Math.PI,
+        offset: 200,
+      },
+    ];
     // const spinSpeed = d3.scaleLinear().range([0, 10]).domain()
 
     const g = d3
@@ -79,35 +96,49 @@ const Animation = () => {
 
     const lines = g
       .selectAll("path.line")
-      .data(radii)
+      .data(curves)
       .join("path")
       .classed("line", true)
       .attr(
         "transform-origin",
-        (d) => `${d} 00`
+        (d) => `${d.r} 00`
       )
       .attr("d", (d) => handleArcGen(d))
       .attr("fill", "transparent")
       .attr("stroke", "black")
       .attr("stroke-width", 1)
+      .call((d, i, nodes) => {
+        // alert("hi");
 
-      .call((d, i) => {
-        gsap.to(".line", {
-          rotate: 360,
-          repeat: -1,
-          duration: 3,
-          ease: "linear",
-          stagger: {
-            // wrap advanced options in an object
-            each: 0.5,
-            // from: "center",
-            // grid: "auto",
-            // ease: "power2.inOut",
-            repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
-          },
+        const lines =
+          document.querySelectorAll(
+            ".line"
+          );
+
+        console.log(lines);
+        lines.forEach((line, i) => {
+          console.log(line, curves[i]);
+          gsap.fromTo(
+            line,
+            {
+              rotate: curves[i].offset,
+            },
+            {
+              rotate: 50,
+              duration: 3,
+              ease: "linear",
+              // stagger: {
+              //   // wrap advanced options in an object
+              //   each: 0.5,
+              //   // from: "center",
+              //   // grid: "auto",
+              //   // ease: "power2.inOut",
+              //   repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
+              // },
+            }
+          );
         });
       });
-    console.log("HEEELLL");
     return () => {
       lines.remove();
     };
