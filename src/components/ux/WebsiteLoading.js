@@ -66,7 +66,6 @@ const Animation = () => {
         r: 100,
         start: -Math.PI / 2,
         end: Math.PI / 4,
-        // end: Math.PI / 2,
         offset: 500,
       },
       {
@@ -78,14 +77,14 @@ const Animation = () => {
       },
       {
         r: 150,
-        start: 0,
-        end: Math.PI,
+        start: Math.PI / 10,
+        end: Math.PI - Math.PI / 5,
         offset: 4000,
       },
       {
         r: 400,
-        start: 0,
-        end: Math.PI,
+        start: Math.PI * 1.25,
+        end: -Math.PI / 4,
         offset: 200,
       },
     ];
@@ -141,6 +140,7 @@ const Animation = () => {
       });
     return () => {
       lines.remove();
+      g.remove();
     };
   }, []);
   return (
