@@ -28,9 +28,9 @@ export default function WebsiteLoading() {
       );
     }
 
-    apply().then(() => {
-      comp.current.remove();
-    });
+    // apply().then(() => {
+    //   comp.current.remove();
+    // });
   }, []);
 
   return (
@@ -46,42 +46,49 @@ const Animation = () => {
   );
 
   useEffect(() => {
-    var arcGen = d3
-      .arc()
-      .innerRadius(100)
-      .outerRadius(100)
-      .startAngle((d, i) =>
-        i % 2 == 0
-          ? 0
-          : -Math.PI + Math.PI / 3
-      )
-      .endAngle((d, i) =>
-        i % 2 == 0
-          ? Math.PI / 3
-          : -Math.PI
-      );
+    // var arcGen = d3
+    //   .arc()
+    //   .innerRadius((d) => d)
+    //   .outerRadius((d) => d)
+    //   .startAngle((d, i) =>
+    //     i % 2 == 0
+    //       ? 0
+    //       : -Math.PI + Math.PI / 3
+    //   )
+    //   .endAngle((d, i) =>
+    //     i % 2 == 0
+    //       ? Math.PI / 3
+    //       : -Math.PI
+    //   );
+
+    function handleArcGen(d) {
+      var arcGen = d3.path();
+      arcGen.moveTo(0, 0);
+      arcGen.arc(0, 0, d, 0, Math.PI);
+      // arcGen.closePath();
+      return arcGen;
+    }
+
+    const radii = [100, 150, 300];
 
     d3.select("#animation")
       .insert("g")
       .classed("circle one", true)
-      .attr(
-        "transform-origin",
-        "100 100"
-      )
+      .attr("transform-origin", "00 00")
       .selectAll("path")
-      .data([1, 2])
+      .data(radii)
       .join("path")
-      .attr("d", arcGen)
-      .attr("fill", "pink")
+      .attr("d", (d) => handleArcGen(d))
+      .attr("fill", "transparent")
       .attr("stroke", "black")
       .attr("stroke-width", 1)
       .call(() => {
-        gsap.to("#animation", {
-          rotate: 360,
-          repeat: -1,
-          duration: 5,
-          ease: "linear",
-        });
+        // gsap.to("#animation", {
+        //   rotate: 360,
+        //   repeat: -1,
+        //   duration: 5,
+        //   ease: "linear",
+        // });
       });
   }, []);
   return (
