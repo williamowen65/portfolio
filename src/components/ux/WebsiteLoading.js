@@ -28,9 +28,9 @@ export default function WebsiteLoading() {
       );
     }
 
-    // apply().then(() => {
-    //   comp.current.remove();
-    // });
+    apply().then(() => {
+      comp.current.remove();
+    });
   }, []);
 
   return (
@@ -63,33 +63,54 @@ const Animation = () => {
 
     function handleArcGen(d) {
       var arcGen = d3.path();
-      arcGen.moveTo(0, 0);
+      arcGen.moveTo(d, 0);
       arcGen.arc(0, 0, d, 0, Math.PI);
       // arcGen.closePath();
       return arcGen;
     }
 
-    const radii = [100, 150, 300];
+    const radii = [100, 120, 150, 300];
+    // const spinSpeed = d3.scaleLinear().range([0, 10]).domain()
 
-    d3.select("#animation")
+    const g = d3
+      .select("#animation")
       .insert("g")
-      .classed("circle one", true)
-      .attr("transform-origin", "00 00")
-      .selectAll("path")
+      .classed("circle one", true);
+
+    const lines = g
+      .selectAll("path.line")
       .data(radii)
       .join("path")
+      .classed("line", true)
+      .attr(
+        "transform-origin",
+        (d) => `${d} 00`
+      )
       .attr("d", (d) => handleArcGen(d))
       .attr("fill", "transparent")
       .attr("stroke", "black")
       .attr("stroke-width", 1)
-      .call(() => {
-        // gsap.to("#animation", {
-        //   rotate: 360,
-        //   repeat: -1,
-        //   duration: 5,
-        //   ease: "linear",
-        // });
+
+      .call((d, i) => {
+        gsap.to(".line", {
+          rotate: 360,
+          repeat: -1,
+          duration: 3,
+          ease: "linear",
+          stagger: {
+            // wrap advanced options in an object
+            each: 0.5,
+            // from: "center",
+            // grid: "auto",
+            // ease: "power2.inOut",
+            repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
+          },
+        });
       });
+    console.log("HEEELLL");
+    return () => {
+      lines.remove();
+    };
   }, []);
   return (
     <span className="animation_container">
