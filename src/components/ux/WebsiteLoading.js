@@ -91,14 +91,15 @@ const Animation = () => {
     // const spinSpeed = d3.scaleLinear().range([0, 10]).domain()
 
     const g = d3
-      .select("#animation")
-      .insert("g")
-      .classed("circle one", true);
-
-    const lines = g
-      .selectAll("path.line")
+      .select(".animation_container")
+      .selectAll("svg.circle")
       .data(curves)
-      .join("path")
+      .join("svg")
+      .classed("circle", true)
+      .attr("width", 500)
+      .attr("height", 500)
+      .attr("data-id", (d) => d.r)
+      .append("path")
       .classed("line", true)
       .attr(
         "transform-origin",
@@ -113,39 +114,39 @@ const Animation = () => {
 
         const lines =
           document.querySelectorAll(
-            ".line"
+            "svg.circle"
           );
 
-        // lines.forEach((line, i) => {
-        //   gsap.fromTo(
-        //     line,
-        //     {
-        //       rotate: curves[i].offset,
-        //     },
-        //     {
-        //       rotate: curves[i].end,
-        //       duration: 3,
-        //       ease: "linear",
-        //       // stagger: {
-        //       //   // wrap advanced options in an object
-        //       //   each: 0.5,
-        //       //   // from: "center",
-        //       //   // grid: "auto",
-        //       //   // ease: "power2.inOut",
-        //       //   repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
-        //       // },
-        //     }
-        //   );
-        // });
+        lines.forEach((line, i) => {
+          gsap.fromTo(
+            line,
+            {
+              rotate: curves[i].offset,
+            },
+            {
+              rotate: curves[i].end,
+              duration: 3,
+              ease: "linear",
+              stagger: {
+                // wrap advanced options in an object
+                each: 0.5,
+                // from: "center",
+                // grid: "auto",
+                // ease: "power2.inOut",
+                repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
+              },
+            }
+          );
+        });
       });
     return () => {
-      lines.remove();
+      // lines.remove();
       g.remove();
     };
   }, []);
   return (
     <span className="animation_container">
-      <svg id="animation"></svg>
+      {/* <svg id="animation"></svg> */}
       <WO />
     </span>
   );
@@ -168,7 +169,7 @@ const WebsiteLoadingStyled = styled.div`
     /* top: 50%;
     left: 50%; */
     transform: translate(-50%, -50%);
-    svg#animation {
+    svg {
       width: 1px;
       box-shadow: 0px 0px 4px black;
       height: 1px;
