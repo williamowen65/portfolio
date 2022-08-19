@@ -45,7 +45,45 @@ const Animation = () => {
     (state) => state.app.screenWidth
   );
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    var arcGen = d3
+      .arc()
+      .innerRadius(100)
+      .outerRadius(100)
+      .startAngle((d, i) =>
+        i % 2 == 0
+          ? 0
+          : -Math.PI + Math.PI / 3
+      )
+      .endAngle((d, i) =>
+        i % 2 == 0
+          ? Math.PI / 3
+          : -Math.PI
+      );
+
+    d3.select("#animation")
+      .insert("g")
+      .classed("circle one", true)
+      .attr(
+        "transform-origin",
+        "100 100"
+      )
+      .selectAll("path")
+      .data([1, 2])
+      .join("path")
+      .attr("d", arcGen)
+      .attr("fill", "pink")
+      .attr("stroke", "black")
+      .attr("stroke-width", 1)
+      .call(() => {
+        gsap.to("#animation", {
+          rotate: 360,
+          repeat: -1,
+          duration: 5,
+          ease: "linear",
+        });
+      });
+  }, []);
   return (
     <span className="animation_container">
       <svg id="animation"></svg>
@@ -68,14 +106,17 @@ const WebsiteLoadingStyled = styled.div`
   .animation_container {
     position: absolute;
     /* overflow: visible; */
-    top: 50%;
-    left: 50%;
+    /* top: 50%;
+    left: 50%; */
     transform: translate(-50%, -50%);
     svg#animation {
-      width: 500px;
-      height: 500px;
+      width: 1px;
+      box-shadow: 0px 0px 4px black;
+      height: 1px;
       overflow: visible;
-      position: absolute;
+      position: fixed;
+      top: 50%;
+      left: 50%;
       /* fill: transparent; */
       transform-origin: center center !important;
       .dot {
