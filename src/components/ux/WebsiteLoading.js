@@ -24,7 +24,7 @@ export default function WebsiteLoading() {
             window.scrollTo({ top: 0 });
           },
         },
-        "<6"
+        "<4"
       );
     }
 
@@ -56,8 +56,6 @@ const Animation = () => {
         d.start,
         d.end
       );
-      // console.log(d, arcGen);
-      // arcGen.closePath();
       return arcGen;
     }
 
@@ -66,26 +64,38 @@ const Animation = () => {
         r: 100,
         start: -Math.PI / 2,
         end: Math.PI / 4,
-        offset: 500,
+        offset: 2 * 360,
       },
       {
         r: 120,
         start: 0,
         end: Math.PI / 2,
         end: Math.PI,
-        offset: 300,
+        offset: 3 * 360,
       },
       {
         r: 150,
         start: Math.PI / 10,
         end: Math.PI - Math.PI / 5,
-        offset: 4000,
+        offset: 2 * 360,
+      },
+      // {
+      //   r: 400,
+      //   start: Math.PI * 1.25,
+      //   end: -Math.PI / 4,
+      //   offset: 1 * 360,
+      // },
+      {
+        r: 395,
+        start: Math.PI * 1.25,
+        end: -Math.PI / 4,
+        offset: 1 * 360,
       },
       {
         r: 400,
-        start: Math.PI * 1.25,
-        end: -Math.PI / 4,
-        offset: 200,
+        start: -Math.PI * 1.25,
+        end: Math.PI / 4,
+        offset: 1 * 360,
       },
     ];
     // const spinSpeed = d3.scaleLinear().range([0, 10]).domain()
@@ -112,20 +122,21 @@ const Animation = () => {
       .call((d, i, nodes) => {
         // alert("hi");
 
-        const lines =
+        const svgCircle =
           document.querySelectorAll(
             "svg.circle"
           );
 
-        lines.forEach((line, i) => {
-          gsap.fromTo(
-            line,
+        svgCircle.forEach((svg, i) => {
+          const tl = gsap.timeline();
+          tl.fromTo(
+            svg,
             {
               rotate: curves[i].offset,
             },
             {
               rotate: curves[i].end,
-              duration: 3,
+              duration: 5,
               ease: "linear",
               stagger: {
                 // wrap advanced options in an object
@@ -139,6 +150,45 @@ const Animation = () => {
           );
         });
       });
+
+    // TEXT CURVE
+
+    //Create the SVG
+    var svg = d3
+      .select(".animation_container")
+      .append("svg")
+      .attr("width", 500)
+      .attr("height", 500);
+
+    function textPath(d) {
+      const arc = d3.path();
+      arc.arc();
+    }
+
+    //Create an SVG path (based on bl.ocks.org/mbostock/2565344)
+    svg
+      .append("path")
+      .datum({
+        r: 300,
+        start: -Math.PI * 1.25,
+        end: Math.PI / 4,
+        offset: 1 * 360,
+      })
+      .attr("id", "wavy") //Unique id of the path
+      .attr("d", handleArcGen) //SVG path
+      .style("fill", "none")
+      .style("stroke", "#AAAAAA");
+
+    //Create an SVG text element and append a textPath element
+    svg
+      .append("text")
+      .append("textPath") //append a textPath to the text element
+      .attr("xlink:href", "#wavy") //place the ID of the path here
+      .style("text-anchor", "middle") //place the text halfway on the arc
+      .attr("startOffset", "50%")
+      .text(
+        "WEB DEVELOPMENT PORTFOLIO"
+      );
     return () => {
       // lines.remove();
       g.remove();
