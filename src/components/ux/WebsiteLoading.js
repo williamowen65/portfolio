@@ -181,7 +181,7 @@ const Animation = () => {
           id: "wavy",
         },
         {
-          r: 300,
+          r: 323,
           start: Math.PI,
           end: 0,
           offset: 1 * 360,
