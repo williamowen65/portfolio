@@ -54,7 +54,8 @@ const Animation = () => {
         0,
         d.r,
         d.start,
-        d.end
+        d.end,
+        d?.options?.anticlockwise
       );
       return arcGen;
     }
@@ -167,17 +168,58 @@ const Animation = () => {
 
     //Create an SVG path (based on bl.ocks.org/mbostock/2565344)
     svg
-      .append("path")
-      .datum({
-        r: 300,
-        start: -Math.PI * 1.25,
-        end: Math.PI / 4,
-        offset: 1 * 360,
-      })
-      .attr("id", "wavy") //Unique id of the path
+      .selectAll("path")
+      .data([
+        {
+          r: 300,
+          start: Math.PI,
+          end: Math.PI - Math.PI / 30,
+          offset: 1 * 360,
+          style: {
+            stroke: "transparent",
+          },
+          id: "wavy",
+        },
+        {
+          r: 300,
+          start: Math.PI,
+          end: 0,
+          offset: 1 * 360,
+          style: {
+            stroke: "transparent",
+          },
+          id: "wavy2",
+          options: {
+            anticlockwise: true,
+          },
+        },
+        {
+          r: 295,
+          start: -Math.PI,
+          end: Math.PI,
+          offset: 1 * 360,
+          style: {
+            stroke: "black",
+          },
+        },
+        {
+          r: 340,
+          start: -Math.PI,
+          end: Math.PI,
+          offset: 1 * 360,
+          style: {
+            stroke: "black",
+          },
+        },
+      ])
+      .join("path")
+      .attr("id", (d) => d.id) //Unique id of the path
       .attr("d", handleArcGen) //SVG path
       .style("fill", "none")
-      .style("stroke", "#AAAAAA");
+      .style(
+        "stroke",
+        (d) => d.style.stroke
+      );
 
     //Create an SVG text element and append a textPath element
     svg
@@ -185,13 +227,26 @@ const Animation = () => {
       .append("textPath") //append a textPath to the text element
       .attr("xlink:href", "#wavy") //place the ID of the path here
       .style("text-anchor", "middle") //place the text halfway on the arc
-      .attr("startOffset", "50%")
+      .attr("startOffset", "25%")
+      .attr("font-size", 50)
       .text(
         "WEB DEVELOPMENT PORTFOLIO"
+      );
+    svg
+      .append("text")
+      .append("textPath") //append a textPath to the text element
+      .attr("xlink:href", "#wavy2") //place the ID of the path here
+      .style("text-anchor", "middle") //place the text halfway on the arc
+      .attr("startOffset", "50%")
+      // .attr("side", "right")
+      .attr("font-size", 20)
+      .text(
+        "william.owen.dev@gmail.com"
       );
     return () => {
       // lines.remove();
       g.remove();
+      svg.remove();
     };
   }, []);
   return (
