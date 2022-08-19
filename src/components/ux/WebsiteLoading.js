@@ -48,7 +48,7 @@ const Animation = () => {
   useEffect(() => {
     function handleArcGen(d) {
       var arcGen = d3.path();
-      arcGen.moveTo(d.r, 0);
+      // arcGen.moveTo(d.r, 0);
       arcGen.arc(
         0,
         0,
@@ -64,15 +64,17 @@ const Animation = () => {
     const curves = [
       {
         r: 100,
-        start: 0,
-        end: Math.PI,
+        start: -Math.PI / 2,
+        end: Math.PI / 4,
+        // end: Math.PI / 2,
         offset: 500,
       },
       {
         r: 120,
         start: 0,
+        end: Math.PI / 2,
         end: Math.PI,
-        offset: 30000,
+        offset: 300,
       },
       {
         r: 150,
@@ -115,29 +117,27 @@ const Animation = () => {
             ".line"
           );
 
-        console.log(lines);
-        lines.forEach((line, i) => {
-          console.log(line, curves[i]);
-          gsap.fromTo(
-            line,
-            {
-              rotate: curves[i].offset,
-            },
-            {
-              rotate: 50,
-              duration: 3,
-              ease: "linear",
-              // stagger: {
-              //   // wrap advanced options in an object
-              //   each: 0.5,
-              //   // from: "center",
-              //   // grid: "auto",
-              //   // ease: "power2.inOut",
-              //   repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
-              // },
-            }
-          );
-        });
+        // lines.forEach((line, i) => {
+        //   gsap.fromTo(
+        //     line,
+        //     {
+        //       rotate: curves[i].offset,
+        //     },
+        //     {
+        //       rotate: curves[i].end,
+        //       duration: 3,
+        //       ease: "linear",
+        //       // stagger: {
+        //       //   // wrap advanced options in an object
+        //       //   each: 0.5,
+        //       //   // from: "center",
+        //       //   // grid: "auto",
+        //       //   // ease: "power2.inOut",
+        //       //   repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
+        //       // },
+        //     }
+        //   );
+        // });
       });
     return () => {
       lines.remove();
