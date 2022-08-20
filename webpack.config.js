@@ -2,6 +2,10 @@ const path = require("path");
 const glob = require("glob");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = (arg) => {
+  console.log(
+    "PROCESS PORT",
+    process.env.PORT
+  );
   return {
     mode: "development",
     entry: path.resolve(
