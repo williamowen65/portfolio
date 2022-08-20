@@ -12,20 +12,24 @@ import { useSelector } from "react-redux";
 
 export default function WebsiteLoading() {
   const comp = useRef();
-
   useEffect(() => {
     async function apply() {
-      await gsap.to(
-        comp.current,
-        {
-          opacity: 0,
-          duration: 0.3,
-          onUpdate: () => {
-            window.scrollTo({ top: 0 });
+      const tl = gsap.timeline();
+      await tl
+        .to(
+          comp.current,
+          {
+            opacity: 0,
+            duration: 0.3,
+            onStart: () => {
+              window.scrollTo(0, 0);
+            },
           },
-        },
-        "<4"
-      );
+          "<4"
+        )
+        .set("html", {
+          scrollBehavior: "smooth",
+        });
     }
 
     apply().then(() => {
