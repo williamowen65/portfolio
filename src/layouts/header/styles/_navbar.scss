@@ -5,13 +5,11 @@
   display: flex;
   justify-content: end;
 
-
   .resumeButton {
     border-radius: 5px;
     padding: 7px 10px;
     margin: 6px;
     transition: all 0.5s;
-
   }
   // z-index: -1;
   &.C {
@@ -28,7 +26,6 @@
       }
       .exploreNav {
         justify-content: end;
-
       }
     }
 
@@ -42,7 +39,7 @@
       top: 50%;
       left: 50%;
       transform: translateX(-50%);
-      @media #{$small-and-down}{
+      @media #{$small-and-down} {
         position: initial;
         transform: translateX(0);
       }
@@ -67,15 +64,16 @@
       // padding: auto 0;
       // height: 100%;
       display: flex;
-      transform: translateY(-17px);
-      @media #{$small-and-down}{
+      @media #{$small-and-down} {
         transform: translateY(0px);
-
       }
       flex-direction: column;
       justify-content: center;
       min-height: 100px;
-      z-index: 5;
+      &.top {
+        transform: translateY(6px);
+        z-index: 7;
+      }
       color: $brand-color;
       background: $brand-bg;
       @media #{$small-and-down} {
@@ -90,9 +88,11 @@
       justify-content: flex-start;
       // align-content: center;
       i {
-        transform: rotate(-31deg) translateY(5px);
+        transform: rotate(-31deg)
+          translateY(5px);
         &.triangle {
-          transform: rotate(0deg) translateY(5px);
+          transform: rotate(0deg)
+            translateY(5px);
         }
       }
       @media #{$small-and-down} {
@@ -222,6 +222,7 @@
   &.navLogo {
     opacity: 1;
     animation: inOut 0.5s forwards;
+    transform: translateY(-17px);
     @keyframes inOut {
       0% {
         opacity: 0;

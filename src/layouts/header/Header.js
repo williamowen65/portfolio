@@ -113,7 +113,7 @@ const Navbar = () => {
           <div className="flex C">
             <div className="flex R outerWrapper">
               <Link
-                className="brand"
+                className="brand top"
                 to="/"
               >
                 <h1>WO</h1>
@@ -159,7 +159,10 @@ const Navbar = () => {
           </a>
         )} */}
         <span></span>
-        <Link to="/">
+        <Link
+          to="/"
+          className="logoSmall"
+        >
           <div
             className="NL"
             ref={NL}

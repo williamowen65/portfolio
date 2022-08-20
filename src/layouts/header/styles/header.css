@@ -56,11 +56,9 @@
   min-width: 215px;
   text-align: center;
   display: flex;
-  transform: translateY(-17px);
   flex-direction: column;
   justify-content: center;
   min-height: 100px;
-  z-index: 5;
   color: black;
   background: #fff3e0;
 }
@@ -68,6 +66,10 @@
   .flex.R .brand {
     transform: translateY(0px);
   }
+}
+.flex.R .brand.top {
+  transform: translateY(6px);
+  z-index: 7;
 }
 @media only screen and (max-width : 600px) {
   .flex.R .brand {
@@ -205,6 +207,7 @@
 .NL.navLogo {
   opacity: 1;
   animation: inOut 0.5s forwards;
+  transform: translateY(-17px);
 }
 @keyframes inOut {
   0% {
