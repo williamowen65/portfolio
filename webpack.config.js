@@ -80,7 +80,7 @@ module.exports = (arg) => {
     devServer: {
       static: "./dist",
       hot: true,
-      port: 80,
+      port: $PORT,
       historyApiFallback: true,
       client: {
         progress: true,
