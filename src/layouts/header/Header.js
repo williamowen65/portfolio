@@ -159,16 +159,20 @@ const Navbar = () => {
           </a>
         )} */}
         <span></span>
-        <div
-          className="NL"
-          ref={NL}
-          onClick={() =>
-            window.scrollTo({ top: 0 })
-          }
-        >
-          <WO />
-          <p>Web Dev</p>
-        </div>
+        <Link to="/">
+          <div
+            className="NL"
+            ref={NL}
+            onClick={() =>
+              window.scrollTo({
+                top: 0,
+              })
+            }
+          >
+            <WO />
+            <p>Web Dev</p>
+          </div>
+        </Link>
         {/* {scrolledDown ? (
           <div className='navLogo NL'>
             <h1>WO</h1>
