@@ -1,19 +1,28 @@
 import React from "react";
 import styled from "styled-components";
+import { BsShareFill } from "react-icons/bs";
 
 export default function Contact() {
+  const iconStyle = {
+    position: "absolute",
+    right: 0,
+  };
   return (
     <ContactStyled>
-      <h2>Contact me</h2>
-      <p>
-        I am currently looking for job
-        opportunities.{" "}
-      </p>
+      <h2>Contact Info</h2>
+
       <div
         className="card"
         id="contactCard"
       >
+        <BsShareFill
+          style={iconStyle}
+        />
         <h2>William Owen</h2>
+        <p>
+          Full-Stack JavaScript
+          Developer
+        </p>
         <ul>
           <li>
             Contact
@@ -24,14 +33,23 @@ export default function Contact() {
               <li>253-514-2990</li>
             </ul>
           </li>
+          <li>
+            Portfolio
+            <ul>
+              <li>
+                <a href="https://www.wowebdev.com">
+                  www.WOWebDev.com
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Resume
+            <ul>
+              <li>PDF download</li>
+            </ul>
+          </li>
         </ul>
-        <p>
-          Visit{" "}
-          <a href="https://www.wowebdev.com">
-            {" "}
-            WOWebDev.com
-          </a>
-        </p>
       </div>
     </ContactStyled>
   );
@@ -39,6 +57,16 @@ export default function Contact() {
 
 const ContactStyled = styled.div`
   .card {
+    position: relative;
+    p {
+      color: black !important;
+    }
+    a {
+      color: darkblue !important;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
     border: 1px solid black;
     width: 400px;
     margin: 20px auto;
