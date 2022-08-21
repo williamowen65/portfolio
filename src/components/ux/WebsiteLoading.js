@@ -12,6 +12,11 @@ import { useSelector } from "react-redux";
 
 export default function WebsiteLoading() {
   const comp = useRef();
+
+  const screenWidth = useSelector(
+    (state) => state.app.screenWidth
+  );
+
   useEffect(() => {
     async function apply() {
       const tl = gsap.timeline();
@@ -35,9 +40,9 @@ export default function WebsiteLoading() {
         });
     }
 
-    apply().then(() => {
-      comp.current.remove();
-    });
+    // apply().then(() => {
+    //   comp.current.remove();
+    // });
   }, []);
 
   return (
@@ -67,195 +72,215 @@ const Animation = () => {
       return arcGen;
     }
 
-    const curves = [
-      {
-        r: 100,
-        start: -Math.PI / 2,
-        end: Math.PI / 4,
-        offset: 2 * 360,
-      },
-      {
-        r: 120,
-        start: 0,
-        end: Math.PI / 2,
-        end: Math.PI,
-        offset: 3 * 360,
-      },
-      {
-        r: 150,
-        start: Math.PI / 10,
-        end: Math.PI - Math.PI / 5,
-        offset: 2 * 360,
-      },
-      // {
-      //   r: 400,
-      //   start: Math.PI * 1.25,
-      //   end: -Math.PI / 4,
-      //   offset: 1 * 360,
-      // },
-      {
-        r: 395,
-        start: Math.PI * 1.25,
-        end: -Math.PI / 4,
-        offset: 1 * 360,
-      },
-      {
-        r: 400,
-        start: -Math.PI * 1.25,
-        end: Math.PI / 4,
-        offset: 1 * 360,
-      },
-    ];
-    // const spinSpeed = d3.scaleLinear().range([0, 10]).domain()
+    const calcWidth = d3
+      .scaleLinear()
+      .domain([350, 900])
+      .range([100, 400])
+      .clamp(true);
+    if (screenWidth) {
+      // alert(
+      //   "scaled" +
+      //     calcWidth(screenWidth)
+      // );
+      // alert(
+      //   "screen width " + screenWidth
+      // );
+      const curves = [
+        {
+          r: calcWidth(screenWidth), //100
+          start: -Math.PI / 2,
+          end: Math.PI / 4,
+          offset: 2 * 360,
+        },
+        {
+          r: calcWidth(screenWidth), //120
+          start: 0,
+          end: Math.PI / 2,
+          end: Math.PI,
+          offset: 3 * 360,
+        },
+        {
+          r: calcWidth(screenWidth), //150
+          start: Math.PI / 10,
+          end: Math.PI - Math.PI / 5,
+          offset: 2 * 360,
+        },
+        // {
+        //   r: 400,
+        //   start: Math.PI * 1.25,
+        //   end: -Math.PI / 4,
+        //   offset: 1 * 360,
+        // },
+        {
+          r: calcWidth(screenWidth), ///395
+          start: Math.PI * 1.25,
+          end: -Math.PI / 4,
+          offset: 1 * 360,
+        },
+        {
+          r: calcWidth(screenWidth), //400
+          start: -Math.PI * 1.25,
+          end: Math.PI / 4,
+          offset: 1 * 360,
+        },
+      ];
+      // const spinSpeed = d3.scaleLinear().range([0, 10]).domain()
 
-    const g = d3
-      .select(".animation_container")
-      .selectAll("svg.circle")
-      .data(curves)
-      .join("svg")
-      .classed("circle", true)
-      .attr("width", 500)
-      .attr("height", 500)
-      .attr("data-id", (d) => d.r)
-      .append("path")
-      .classed("line", true)
-      .attr(
-        "transform-origin",
-        (d) => `${d.r} 00`
-      )
-      .attr("d", (d) => handleArcGen(d))
-      .attr("fill", "transparent")
-      .attr("stroke", "black")
-      .attr("stroke-width", 1)
-      .call((d, i, nodes) => {
-        // alert("hi");
+      const g = d3
+        .select(".animation_container")
+        .selectAll("svg.circle")
+        .data(curves)
+        .join("svg")
+        .classed("circle", true)
+        .attr("width", 500)
+        .attr("height", 500)
+        .attr("data-id", (d) => d.r)
+        .append("path")
+        .classed("line", true)
+        .attr(
+          "transform-origin",
+          (d) => `${d.r} 00`
+        )
+        .attr("d", (d) =>
+          handleArcGen(d)
+        )
+        .attr("fill", "transparent")
+        .attr("stroke", "black")
+        .attr("stroke-width", 1)
+        .call((d, i, nodes) => {
+          // alert("hi");
 
-        const svgCircle =
-          document.querySelectorAll(
-            "svg.circle"
-          );
+          const svgCircle =
+            document.querySelectorAll(
+              "svg.circle"
+            );
 
-        svgCircle.forEach((svg, i) => {
-          const tl = gsap.timeline();
-          tl.fromTo(
-            svg,
-            {
-              rotate: curves[i].offset,
-            },
-            {
-              rotate: curves[i].end,
-              duration: 5,
-              ease: "linear",
-              stagger: {
-                // wrap advanced options in an object
-                each: 0.5,
-                // from: "center",
-                // grid: "auto",
-                // ease: "power2.inOut",
-                repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
-              },
+          svgCircle.forEach(
+            (svg, i) => {
+              const tl =
+                gsap.timeline();
+              tl.fromTo(
+                svg,
+                {
+                  rotate:
+                    curves[i].offset,
+                },
+                {
+                  rotate: curves[i].end,
+                  duration: 5,
+                  ease: "linear",
+                  stagger: {
+                    // wrap advanced options in an object
+                    each: 0.5,
+                    // from: "center",
+                    // grid: "auto",
+                    // ease: "power2.inOut",
+                    repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
+                  },
+                }
+              );
             }
           );
         });
-      });
 
-    // TEXT CURVE
+      // TEXT CURVE
 
-    //Create the SVG
-    var svg = d3
-      .select(".animation_container")
-      .append("svg")
-      .attr("width", 500)
-      .attr("height", 500);
+      //Create the SVG
+      var svg = d3
+        .select(".animation_container")
+        .append("svg")
+        .attr("width", 500)
+        .attr("height", 500);
 
-    function textPath(d) {
-      const arc = d3.path();
-      arc.arc();
+      function textPath(d) {
+        const arc = d3.path();
+        arc.arc();
+      }
+
+      //Create an SVG path (based on bl.ocks.org/mbostock/2565344)
+      svg
+        .selectAll("path")
+        .data([
+          {
+            r: 300,
+            start: Math.PI,
+            end: Math.PI - Math.PI / 30,
+            offset: 1 * 360,
+            style: {
+              stroke: "transparent",
+            },
+            id: "wavy",
+          },
+          {
+            r: 323,
+            start: Math.PI,
+            end: 0,
+            offset: 1 * 360,
+            style: {
+              stroke: "transparent",
+            },
+            id: "wavy2",
+            options: {
+              anticlockwise: true,
+            },
+          },
+          {
+            r: 295,
+            start: -Math.PI,
+            end: Math.PI,
+            offset: 1 * 360,
+            style: {
+              stroke: "black",
+            },
+          },
+          {
+            r: 340,
+            start: -Math.PI,
+            end: Math.PI,
+            offset: 1 * 360,
+            style: {
+              stroke: "black",
+            },
+          },
+        ])
+        .join("path")
+        .attr("id", (d) => d.id) //Unique id of the path
+        .attr("d", handleArcGen) //SVG path
+        .style("fill", "none")
+        .style(
+          "stroke",
+          (d) => d.style.stroke
+        );
+
+      //Create an SVG text element and append a textPath element
+      svg
+        .append("text")
+        .append("textPath") //append a textPath to the text element
+        .attr("xlink:href", "#wavy") //place the ID of the path here
+        .style("text-anchor", "middle") //place the text halfway on the arc
+        .attr("startOffset", "25%")
+        .attr("font-size", 50)
+        .text(
+          "WEB DEVELOPMENT PORTFOLIO"
+        );
+      svg
+        .append("text")
+        .append("textPath") //append a textPath to the text element
+        .attr("xlink:href", "#wavy2") //place the ID of the path here
+        .style("text-anchor", "middle") //place the text halfway on the arc
+        .attr("startOffset", "50%")
+        // .attr("side", "right")
+        .attr("font-size", 20)
+        .text(
+          "william.owen.dev@gmail.com"
+        );
+      return () => {
+        // lines.remove();
+        g.remove();
+        svg.remove();
+      };
     }
-
-    //Create an SVG path (based on bl.ocks.org/mbostock/2565344)
-    svg
-      .selectAll("path")
-      .data([
-        {
-          r: 300,
-          start: Math.PI,
-          end: Math.PI - Math.PI / 30,
-          offset: 1 * 360,
-          style: {
-            stroke: "transparent",
-          },
-          id: "wavy",
-        },
-        {
-          r: 323,
-          start: Math.PI,
-          end: 0,
-          offset: 1 * 360,
-          style: {
-            stroke: "transparent",
-          },
-          id: "wavy2",
-          options: {
-            anticlockwise: true,
-          },
-        },
-        {
-          r: 295,
-          start: -Math.PI,
-          end: Math.PI,
-          offset: 1 * 360,
-          style: {
-            stroke: "black",
-          },
-        },
-        {
-          r: 340,
-          start: -Math.PI,
-          end: Math.PI,
-          offset: 1 * 360,
-          style: {
-            stroke: "black",
-          },
-        },
-      ])
-      .join("path")
-      .attr("id", (d) => d.id) //Unique id of the path
-      .attr("d", handleArcGen) //SVG path
-      .style("fill", "none")
-      .style(
-        "stroke",
-        (d) => d.style.stroke
-      );
-
-    //Create an SVG text element and append a textPath element
-    svg
-      .append("text")
-      .append("textPath") //append a textPath to the text element
-      .attr("xlink:href", "#wavy") //place the ID of the path here
-      .style("text-anchor", "middle") //place the text halfway on the arc
-      .attr("startOffset", "25%")
-      .attr("font-size", 50)
-      .text(
-        "WEB DEVELOPMENT PORTFOLIO"
-      );
-    svg
-      .append("text")
-      .append("textPath") //append a textPath to the text element
-      .attr("xlink:href", "#wavy2") //place the ID of the path here
-      .style("text-anchor", "middle") //place the text halfway on the arc
-      .attr("startOffset", "50%")
-      // .attr("side", "right")
-      .attr("font-size", 20)
-      .text(
-        "william.owen.dev@gmail.com"
-      );
-    return () => {
-      // lines.remove();
-      g.remove();
-      svg.remove();
-    };
-  }, []);
+  }, [screenWidth]);
   return (
     <span className="animation_container">
       {/* <svg id="animation"></svg> */}
