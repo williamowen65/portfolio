@@ -40,9 +40,9 @@ export default function WebsiteLoading() {
         });
     }
 
-    // apply().then(() => {
-    //   comp.current.remove();
-    // });
+    apply().then(() => {
+      comp.current.remove();
+    });
   }, []);
 
   return (
@@ -344,7 +344,7 @@ const WebsiteLoadingStyled = styled.div`
     /* overflow: visible; */
     /* top: 50%;
     left: 50%; */
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     svg {
       width: 1px;
       box-shadow: 0px 0px 4px black;
