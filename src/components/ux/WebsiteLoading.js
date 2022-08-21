@@ -72,10 +72,13 @@ const Animation = () => {
       return arcGen;
     }
 
+    const domain = [350, 900];
+
     const calcWidth = d3
       .scaleLinear()
-      .domain([350, 900])
-      .range([100, 400])
+      .domain(domain)
+      // .range([147.5, 200])
+      .range([147.5, 400])
       .clamp(true);
     if (screenWidth) {
       // alert(
@@ -87,20 +90,26 @@ const Animation = () => {
       // );
       const curves = [
         {
-          r: calcWidth(screenWidth), //100
+          r:
+            calcWidth(screenWidth) *
+            (100 / 400), //100
           start: -Math.PI / 2,
           end: Math.PI / 4,
           offset: 2 * 360,
         },
         {
-          r: calcWidth(screenWidth), //120
+          r:
+            calcWidth(screenWidth) *
+            (120 / 400), //120
           start: 0,
           end: Math.PI / 2,
           end: Math.PI,
           offset: 3 * 360,
         },
         {
-          r: calcWidth(screenWidth), //150
+          r:
+            calcWidth(screenWidth) *
+            (150 / 400), //150
           start: Math.PI / 10,
           end: Math.PI - Math.PI / 5,
           offset: 2 * 360,
@@ -112,13 +121,17 @@ const Animation = () => {
         //   offset: 1 * 360,
         // },
         {
-          r: calcWidth(screenWidth), ///395
+          r:
+            calcWidth(screenWidth) *
+            (395 / 400), ///395
           start: Math.PI * 1.25,
           end: -Math.PI / 4,
           offset: 1 * 360,
         },
         {
-          r: calcWidth(screenWidth), //400
+          r:
+            calcWidth(screenWidth) *
+            (400 / 400), //400
           start: -Math.PI * 1.25,
           end: Math.PI / 4,
           offset: 1 * 360,
@@ -132,8 +145,8 @@ const Animation = () => {
         .data(curves)
         .join("svg")
         .classed("circle", true)
-        .attr("width", 500)
-        .attr("height", 500)
+        .attr("width", screenWidth)
+        .attr("height", screenWidth)
         .attr("data-id", (d) => d.r)
         .append("path")
         .classed("line", true)
@@ -157,8 +170,9 @@ const Animation = () => {
 
           svgCircle.forEach(
             (svg, i) => {
-              const tl =
-                gsap.timeline();
+              const tl = gsap.timeline({
+                paused: false,
+              });
               tl.fromTo(
                 svg,
                 {
@@ -202,7 +216,9 @@ const Animation = () => {
         .selectAll("path")
         .data([
           {
-            r: 300,
+            r:
+              calcWidth(screenWidth) *
+              (300 / 400), // 300
             start: Math.PI,
             end: Math.PI - Math.PI / 30,
             offset: 1 * 360,
@@ -212,7 +228,9 @@ const Animation = () => {
             id: "wavy",
           },
           {
-            r: 323,
+            r:
+              calcWidth(screenWidth) *
+              (323 / 400), //323
             start: Math.PI,
             end: 0,
             offset: 1 * 360,
@@ -225,7 +243,9 @@ const Animation = () => {
             },
           },
           {
-            r: 295,
+            r:
+              calcWidth(screenWidth) *
+              (295 / 400), //295
             start: -Math.PI,
             end: Math.PI,
             offset: 1 * 360,
@@ -234,7 +254,9 @@ const Animation = () => {
             },
           },
           {
-            r: 340,
+            r:
+              calcWidth(screenWidth) *
+              (340 / 400), //340
             start: -Math.PI,
             end: Math.PI,
             offset: 1 * 360,
@@ -252,6 +274,11 @@ const Animation = () => {
           (d) => d.style.stroke
         );
 
+      const fontScale = d3
+        .scaleLinear()
+        .domain(domain)
+        .range([25, 50]);
+
       //Create an SVG text element and append a textPath element
       svg
         .append("text")
@@ -259,7 +286,9 @@ const Animation = () => {
         .attr("xlink:href", "#wavy") //place the ID of the path here
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "25%")
-        .attr("font-size", 50)
+        .attr("font-size", () =>
+          fontScale(screenWidth)
+        )
         .text(
           "WEB DEVELOPMENT PORTFOLIO"
         );
@@ -270,7 +299,12 @@ const Animation = () => {
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "50%")
         // .attr("side", "right")
-        .attr("font-size", 20)
+        .attr(
+          "font-size",
+          () =>
+            fontScale(screenWidth) *
+            (20 / 50)
+        )
         .text(
           "william.owen.dev@gmail.com"
         );
@@ -291,6 +325,7 @@ const Animation = () => {
 
 const WebsiteLoadingStyled = styled.div`
   position: fixed;
+  overflow-y: hidden;
   top: 0;
   left: 0;
   width: 100vw;
