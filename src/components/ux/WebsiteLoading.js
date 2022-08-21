@@ -16,6 +16,9 @@ export default function WebsiteLoading() {
     async function apply() {
       const tl = gsap.timeline();
       await tl
+        .set("html", {
+          scrollBehavior: "none",
+        })
         .to(
           comp.current,
           {
