@@ -13,10 +13,6 @@ import { useSelector } from "react-redux";
 export default function WebsiteLoading() {
   const comp = useRef();
 
-  const screenWidth = useSelector(
-    (state) => state.app.screenWidth
-  );
-
   useEffect(() => {
     async function apply() {
       const tl = gsap.timeline();
@@ -56,6 +52,14 @@ const Animation = () => {
   const screenWidth = useSelector(
     (state) => state.app.screenWidth
   );
+  const screenHeight = useSelector(
+    (state) => state.app.screenHeight
+  );
+
+  const screenLimitingDim =
+    screenWidth > screenHeight
+      ? screenHeight
+      : screenWidth;
 
   useEffect(() => {
     function handleArcGen(d) {
@@ -80,18 +84,26 @@ const Animation = () => {
       // .range([147.5, 200])
       .range([147.5, 400])
       .clamp(true);
-    if (screenWidth) {
+    if (screenLimitingDim) {
       // alert(
-      //   "scaled" +
-      //     calcWidth(screenWidth)
+      //   "screenLimitingDim " + screenLimitingDim
       // );
       // alert(
-      //   "screen width " + screenWidth
+      //   "screenHeight " + screenHeight
+      // );
+      // alert(
+      //   "scaled" +
+      //     calcWidth(screenLimitingDim)
+      // );
+      // alert(
+      //   "screen width " + screenLimitingDim
       // );
       const curves = [
         {
           r:
-            calcWidth(screenWidth) *
+            calcWidth(
+              screenLimitingDim
+            ) *
             (100 / 400), //100
           start: -Math.PI / 2,
           end: Math.PI / 4,
@@ -99,7 +111,9 @@ const Animation = () => {
         },
         {
           r:
-            calcWidth(screenWidth) *
+            calcWidth(
+              screenLimitingDim
+            ) *
             (120 / 400), //120
           start: 0,
           end: Math.PI / 2,
@@ -108,7 +122,9 @@ const Animation = () => {
         },
         {
           r:
-            calcWidth(screenWidth) *
+            calcWidth(
+              screenLimitingDim
+            ) *
             (150 / 400), //150
           start: Math.PI / 10,
           end: Math.PI - Math.PI / 5,
@@ -122,7 +138,9 @@ const Animation = () => {
         // },
         {
           r:
-            calcWidth(screenWidth) *
+            calcWidth(
+              screenLimitingDim
+            ) *
             (395 / 400), ///395
           start: Math.PI * 1.25,
           end: -Math.PI / 4,
@@ -130,7 +148,9 @@ const Animation = () => {
         },
         {
           r:
-            calcWidth(screenWidth) *
+            calcWidth(
+              screenLimitingDim
+            ) *
             (400 / 400), //400
           start: -Math.PI * 1.25,
           end: Math.PI / 4,
@@ -145,8 +165,14 @@ const Animation = () => {
         .data(curves)
         .join("svg")
         .classed("circle", true)
-        .attr("width", screenWidth)
-        .attr("height", screenWidth)
+        .attr(
+          "width",
+          screenLimitingDim
+        )
+        .attr(
+          "height",
+          screenLimitingDim
+        )
         .attr("data-id", (d) => d.r)
         .append("path")
         .classed("line", true)
@@ -217,7 +243,9 @@ const Animation = () => {
         .data([
           {
             r:
-              calcWidth(screenWidth) *
+              calcWidth(
+                screenLimitingDim
+              ) *
               (300 / 400), // 300
             start: Math.PI,
             end: Math.PI - Math.PI / 30,
@@ -229,7 +257,9 @@ const Animation = () => {
           },
           {
             r:
-              calcWidth(screenWidth) *
+              calcWidth(
+                screenLimitingDim
+              ) *
               (323 / 400), //323
             start: Math.PI,
             end: 0,
@@ -244,7 +274,9 @@ const Animation = () => {
           },
           {
             r:
-              calcWidth(screenWidth) *
+              calcWidth(
+                screenLimitingDim
+              ) *
               (295 / 400), //295
             start: -Math.PI,
             end: Math.PI,
@@ -255,7 +287,9 @@ const Animation = () => {
           },
           {
             r:
-              calcWidth(screenWidth) *
+              calcWidth(
+                screenLimitingDim
+              ) *
               (340 / 400), //340
             start: -Math.PI,
             end: Math.PI,
@@ -288,10 +322,13 @@ const Animation = () => {
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "25%")
         .attr("font-size", () =>
-          screenWidth > 750
-            ? fontScale(screenWidth)
-            : fontScale(screenWidth) *
-              0.85
+          screenLimitingDim > 750
+            ? fontScale(
+                screenLimitingDim
+              )
+            : fontScale(
+                screenLimitingDim
+              ) * 0.85
         )
         .text(
           "WEB DEVELOPMENT PORTFOLIO"
@@ -306,7 +343,9 @@ const Animation = () => {
         .attr(
           "font-size",
           () =>
-            fontScale(screenWidth) *
+            fontScale(
+              screenLimitingDim
+            ) *
             (20 / 50)
         )
         .text(
@@ -318,7 +357,7 @@ const Animation = () => {
         svg.remove();
       };
     }
-  }, [screenWidth]);
+  }, [screenLimitingDim]);
   return (
     <span className="animation_container">
       {/* <svg id="animation"></svg> */}

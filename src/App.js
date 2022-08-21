@@ -23,7 +23,10 @@ import {
   useDispatch,
   useSelector,
 } from "react-redux";
-import { setScreenWidth } from "./context/appReducer.js";
+import {
+  setScreenWidth,
+  setScreenHeight,
+} from "./context/appReducer.js";
 import PageNotFound from "./pages/PageNotFound.js";
 import About from "./pages/About.js";
 import gsap from "../gsap/gsap.min.js";
@@ -39,19 +42,24 @@ import "./styles/global.scss";
 
 export default function App(props) {
   const dispatch = useDispatch();
-  const [ref, { x, y, width }] =
-    useDimensions();
+  const [ref, dims] = useDimensions();
+
+  const { x, y, width } = dims;
+
   const screenWidth = useSelector(
     (state) => state.app.screenWidth
   );
 
+  const height = window.innerHeight;
+
   useEffect(() => {
     dispatch(setScreenWidth(width));
+    dispatch(setScreenHeight(height));
     if (
       window.location.href.includes("#")
     )
       window.location.href = "/";
-  }, [width]);
+  }, [width, height]);
 
   return (
     <>
