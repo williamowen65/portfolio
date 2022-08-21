@@ -277,7 +277,8 @@ const Animation = () => {
       const fontScale = d3
         .scaleLinear()
         .domain(domain)
-        .range([25, 50]);
+        .range([25, 50])
+        .clamp(true);
 
       //Create an SVG text element and append a textPath element
       svg
@@ -287,7 +288,10 @@ const Animation = () => {
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "25%")
         .attr("font-size", () =>
-          fontScale(screenWidth)
+          screenWidth > 750
+            ? fontScale(screenWidth)
+            : fontScale(screenWidth) *
+              0.85
         )
         .text(
           "WEB DEVELOPMENT PORTFOLIO"
