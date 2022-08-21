@@ -48,16 +48,6 @@ const Footer = ({ style }) => {
       <div className="bottomFooter">
         <div>
           <ul>
-            <li onClick={scroll}>
-              <Link to="/contact">
-                Contact
-              </Link>
-            </li>
-            <li>
-              <a href="/create#FAQ">
-                FAQ
-              </a>
-            </li>
             <li>
               {/* <Link to='/rate'> Give a review</Link> */}
               <a

@@ -55,7 +55,7 @@ export default function App(props) {
 
   return (
     <>
-      <WebsiteLoading />
+      {/* <WebsiteLoading /> */}
       <Div className="App" ref={ref}>
         {configValues.breakpoints
           .mainWidth < screenWidth && (

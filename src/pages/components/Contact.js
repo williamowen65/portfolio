@@ -1,23 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import { BsShareFill } from "react-icons/bs";
+import configValues from "../../data/configValues.json";
 
 export default function Contact() {
-  const iconStyle = {
-    position: "absolute",
-    right: 0,
-  };
   return (
     <ContactStyled>
-      <h2>Contact Info</h2>
+      <header>
+        <h2>My Contact Info</h2>
+        <span className="share">
+          <BsShareFill
+            color={
+              configValues.theme.dark
+                .color.main
+            }
+          />
+        </span>
+      </header>
 
       <div
         className="card"
         id="contactCard"
       >
-        <BsShareFill
-          style={iconStyle}
-        />
         <h2>William Owen</h2>
         <p>
           Full-Stack JavaScript
@@ -37,7 +41,7 @@ export default function Contact() {
             Portfolio
             <ul>
               <li>
-                <a href="https://www.wowebdev.com">
+                <a href="http://www.wowebdev.com">
                   www.WOWebDev.com
                 </a>
               </li>
@@ -56,6 +60,28 @@ export default function Contact() {
 }
 
 const ContactStyled = styled.div`
+  .share {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    svg {
+      transform: translateX(2px);
+    }
+    &:hover {
+      background: ${configValues.theme
+        .dark.color.mainOffset + "aa"};
+
+      svg {
+        stroke: ${configValues.theme
+          .dark.background.color
+          .window};
+        fill: ${configValues.theme.dark
+          .background.color.window};
+      }
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
   .card {
     position: relative;
     p {
