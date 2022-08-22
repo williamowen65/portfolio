@@ -365,40 +365,40 @@ const Animation = () => {
         .attr(
           "transform",
           "translate(0,5)"
-        );
-      // .call((d, i, nodes) => {
-      //   // alert("hi");
+        )
+        .call((d, i, nodes) => {
+          // alert("hi");
 
-      //   const textPath =
-      //     document.querySelectorAll(
-      //       "path.textPath"
-      //     );
-      //   console.log(textPath);
-      //   textPath.forEach((svg, i) => {
-      //     const tl = gsap.timeline({
-      //       paused: false,
-      //     });
-      //     tl.fromTo(
-      //       svg,
-      //       {
-      //         x: 0,
-      //       },
-      //       {
-      //         x: 0,
-      //         duration: 5,
-      //         ease: "linear",
-      //         stagger: {
-      //           // wrap advanced options in an object
-      //           each: 0.5,
-      //           // from: "center",
-      //           // grid: "auto",
-      //           // ease: "power2.inOut",
-      //           repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
-      //         },
-      //       }
-      //     );
-      //   });
-      // });
+          const textPath =
+            document.querySelectorAll(
+              "svg.textPath"
+            );
+          console.log(textPath);
+          textPath.forEach((svg, i) => {
+            const tl = gsap.timeline({
+              paused: false,
+            });
+            tl.fromTo(
+              svg,
+              {
+                rotate: 0,
+              },
+              {
+                rotate: 360,
+                duration: 15,
+                ease: "linear",
+                stagger: {
+                  // wrap advanced options in an object
+                  each: 0.5,
+                  // from: "center",
+                  // grid: "auto",
+                  // ease: "power2.inOut",
+                  repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
+                },
+              }
+            );
+          });
+        });
       return () => {
         // lines.remove();
         g.remove();
