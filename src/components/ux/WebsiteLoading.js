@@ -185,43 +185,43 @@ const Animation = () => {
         )
         .attr("fill", "transparent")
         .attr("stroke", "black")
-        .attr("stroke-width", 1);
-      // .call((d, i, nodes) => {
-      //   // alert("hi");
+        .attr("stroke-width", 1)
+        .call((d, i, nodes) => {
+          // alert("hi");
 
-      //   const svgCircle =
-      //     document.querySelectorAll(
-      //       "svg.circle"
-      //     );
+          const svgCircle =
+            document.querySelectorAll(
+              "svg.circle"
+            );
 
-      //   svgCircle.forEach(
-      //     (svg, i) => {
-      //       const tl = gsap.timeline({
-      //         paused: false,
-      //       });
-      //       tl.fromTo(
-      //         svg,
-      //         {
-      //           rotate:
-      //             curves[i].offset,
-      //         },
-      //         {
-      //           rotate: curves[i].end,
-      //           duration: 5,
-      //           ease: "linear",
-      //           stagger: {
-      //             // wrap advanced options in an object
-      //             each: 0.5,
-      //             // from: "center",
-      //             // grid: "auto",
-      //             // ease: "power2.inOut",
-      //             repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
-      //           },
-      //         }
-      //       );
-      //     }
-      //   );
-      // });
+          svgCircle.forEach(
+            (svg, i) => {
+              const tl = gsap.timeline({
+                paused: false,
+              });
+              tl.fromTo(
+                svg,
+                {
+                  rotate:
+                    curves[i].offset,
+                },
+                {
+                  rotate: curves[i].end,
+                  duration: 5,
+                  ease: "linear",
+                  stagger: {
+                    // wrap advanced options in an object
+                    each: 0.5,
+                    // from: "center",
+                    // grid: "auto",
+                    // ease: "power2.inOut",
+                    repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
+                  },
+                }
+              );
+            }
+          );
+        });
 
       // TEXT CURVE
 
@@ -253,6 +253,7 @@ const Animation = () => {
       //Create an SVG path (based on bl.ocks.org/mbostock/2565344)
       svg
         .selectAll("path")
+
         .data([
           {
             r:
@@ -313,6 +314,7 @@ const Animation = () => {
           },
         ])
         .join("path")
+        .classed("textPath", true)
 
         .attr("id", (d) => d.id) //Unique id of the path
         .attr("d", handleArcGen) //SVG path
@@ -378,7 +380,39 @@ const Animation = () => {
           "transform",
           "translate(0,5)"
         )
-        .classed();
+        .call((d, i, nodes) => {
+          // alert("hi");
+
+          const textPath =
+            document.querySelectorAll(
+              "path.textPath"
+            );
+          console.log(textPath);
+          textPath.forEach((svg, i) => {
+            const tl = gsap.timeline({
+              paused: false,
+            });
+            tl.fromTo(
+              svg,
+              {
+                x: 0,
+              },
+              {
+                x: 0,
+                duration: 5,
+                ease: "linear",
+                stagger: {
+                  // wrap advanced options in an object
+                  each: 0.5,
+                  // from: "center",
+                  // grid: "auto",
+                  // ease: "power2.inOut",
+                  repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
+                },
+              }
+            );
+          });
+        });
       return () => {
         // lines.remove();
         g.remove();
