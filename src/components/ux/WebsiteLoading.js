@@ -228,8 +228,7 @@ const Animation = () => {
       //Create the SVG
       var svg = d3
         .select(".animation_container")
-        .selectAll("svg")
-        .classed("textPath", true)
+        .selectAll("svg.textPath")
         .attr(
           "width",
           screenLimitingDim
@@ -300,8 +299,9 @@ const Animation = () => {
         ])
         .join("svg")
         .classed("textPath", true)
-
-        .attr("id", (d) => d.id) //Unique id of the path
+        .attr("id", (d) => `${d.id}Svg`)
+        .append("path") //Unique id of the path
+        .attr("id", (d) => `${d.id}`)
         .attr("d", handleArcGen) //SVG path
         .style("fill", "none")
         .style(
@@ -315,8 +315,9 @@ const Animation = () => {
         .range([25, 50])
         .clamp(true);
 
+      d3.select(".animation_container");
       //Create an SVG text element and append a textPath element
-      svg
+      d3.select("svg#wavySvg")
         .append("text")
         .append("textPath") //append a textPath to the text element
         .attr("xlink:href", "#wavy") //place the ID of the path here
@@ -364,40 +365,40 @@ const Animation = () => {
         .attr(
           "transform",
           "translate(0,5)"
-        )
-        .call((d, i, nodes) => {
-          // alert("hi");
+        );
+      // .call((d, i, nodes) => {
+      //   // alert("hi");
 
-          const textPath =
-            document.querySelectorAll(
-              "path.textPath"
-            );
-          console.log(textPath);
-          textPath.forEach((svg, i) => {
-            const tl = gsap.timeline({
-              paused: false,
-            });
-            tl.fromTo(
-              svg,
-              {
-                x: 0,
-              },
-              {
-                x: 0,
-                duration: 5,
-                ease: "linear",
-                stagger: {
-                  // wrap advanced options in an object
-                  each: 0.5,
-                  // from: "center",
-                  // grid: "auto",
-                  // ease: "power2.inOut",
-                  repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
-                },
-              }
-            );
-          });
-        });
+      //   const textPath =
+      //     document.querySelectorAll(
+      //       "path.textPath"
+      //     );
+      //   console.log(textPath);
+      //   textPath.forEach((svg, i) => {
+      //     const tl = gsap.timeline({
+      //       paused: false,
+      //     });
+      //     tl.fromTo(
+      //       svg,
+      //       {
+      //         x: 0,
+      //       },
+      //       {
+      //         x: 0,
+      //         duration: 5,
+      //         ease: "linear",
+      //         stagger: {
+      //           // wrap advanced options in an object
+      //           each: 0.5,
+      //           // from: "center",
+      //           // grid: "auto",
+      //           // ease: "power2.inOut",
+      //           repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
+      //         },
+      //       }
+      //     );
+      //   });
+      // });
       return () => {
         // lines.remove();
         g.remove();
