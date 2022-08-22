@@ -228,31 +228,16 @@ const Animation = () => {
       //Create the SVG
       var svg = d3
         .select(".animation_container")
-        .append("svg");
-      // .classed("circle", true)
-      // .attr(
-      //   "width",
-      //   screenLimitingDim
-      // )
-      // .attr(
-      //   "height",
-      //   screenLimitingDim
-      // )
-      // .call(() => {
-      //   alert(
-      //     "screenLimit " +
-      //       screenLimitingDim
-      //   );
-      // });
-
-      function textPath(d) {
-        const arc = d3.path();
-        arc.arc();
-      }
-
-      //Create an SVG path (based on bl.ocks.org/mbostock/2565344)
-      svg
-        .selectAll("path")
+        .selectAll("svg")
+        .classed("textPath", true)
+        .attr(
+          "width",
+          screenLimitingDim
+        )
+        .attr(
+          "height",
+          screenLimitingDim
+        )
 
         .data([
           {
@@ -313,7 +298,7 @@ const Animation = () => {
             },
           },
         ])
-        .join("path")
+        .join("svg")
         .classed("textPath", true)
 
         .attr("id", (d) => d.id) //Unique id of the path
