@@ -335,7 +335,7 @@ const Animation = () => {
         .text(
           "WEB DEVELOPMENT PORTFOLIO"
         );
-      svg
+      d3.select("svg#wavy2Svg")
         .append("text")
         .append("textPath") //append a textPath to the text element
         .attr("xlink:href", "#wavy2") //place the ID of the path here
@@ -354,7 +354,7 @@ const Animation = () => {
           "william.owen.dev@gmail.com"
         );
 
-      svg
+      d3.select("svg#wavySvg")
         .append("text")
         .text("WO")
         .attr("text-anchor", "middle")
