@@ -385,7 +385,7 @@ const Animation = () => {
               },
               {
                 rotate: 360,
-                duration: Infinity,
+                duration: 40000000,
                 ease: "linear",
                 stagger: {
                   // wrap advanced options in an object
