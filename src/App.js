@@ -52,12 +52,12 @@ export default function App(props) {
 
   const height = window.innerHeight;
 
-  useEffect(() => {
-    alert(`
-    height ${height},
-    width ${width}
-    `);
-  }, [width]);
+  // useEffect(() => {
+  //   alert(`
+  //   height ${height},
+  //   width ${width}
+  //   `);
+  // }, [width]);
 
   useEffect(() => {
     dispatch(setScreenWidth(width));

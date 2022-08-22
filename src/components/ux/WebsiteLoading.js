@@ -378,7 +378,7 @@ const WebsiteLoadingStyled = styled.div`
   left: 0;
   width: 100vw;
   min-height: ${window.innerHeight}px;
-  height: 100vh;
+  height: 100%;
   z-index: 100000;
   background-color: white;
   display: flex;
