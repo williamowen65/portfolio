@@ -54,6 +54,13 @@ export default function App(props) {
     window.screen.availHeight;
 
   useEffect(() => {
+    alert(`
+    height ${height},
+    width ${width}
+    `);
+  }, []);
+
+  useEffect(() => {
     dispatch(setScreenWidth(width));
     dispatch(setScreenHeight(height));
     if (
