@@ -57,7 +57,7 @@ export default function App(props) {
     height ${height},
     width ${width}
     `);
-  }, []);
+  }, [width]);
 
   useEffect(() => {
     dispatch(setScreenWidth(width));
