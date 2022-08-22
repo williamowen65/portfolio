@@ -61,7 +61,7 @@ const Animation = () => {
       ? screenHeight
       : screenWidth;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     function handleArcGen(d) {
       var arcGen = d3.path();
       // arcGen.moveTo(d.r, 0);
