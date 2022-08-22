@@ -229,8 +229,14 @@ const Animation = () => {
       var svg = d3
         .select(".animation_container")
         .append("svg")
-        .attr("width", 500)
-        .attr("height", 500);
+        .attr(
+          "width",
+          screenLimitingDim
+        )
+        .attr(
+          "height",
+          screenLimitingDim
+        );
 
       function textPath(d) {
         const arc = d3.path();
@@ -356,6 +362,20 @@ const Animation = () => {
         .text(
           "william.owen.dev@gmail.com"
         );
+
+      svg
+        .append("text")
+        .text("WO")
+        .attr("text-anchor", "middle")
+        .attr(
+          "transform-origin",
+          "center center"
+        )
+        .attr(
+          "transform",
+          "translate(0,5)"
+        )
+        .classed();
       return () => {
         // lines.remove();
         g.remove();
@@ -366,7 +386,7 @@ const Animation = () => {
   return (
     <span className="animation_container">
       {/* <svg id="animation"></svg> */}
-      <WO />
+      {/* <WO />  */}
     </span>
   );
 };
