@@ -50,7 +50,7 @@ export default function App(props) {
     (state) => state.app.screenWidth
   );
 
-  const height = window.innerHeight;
+  const height = window.outerHeight;
 
   useEffect(() => {
     dispatch(setScreenWidth(width));

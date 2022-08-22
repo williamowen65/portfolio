@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BsShareFill } from "react-icons/bs";
 import configValues from "../../data/configValues.json";
+import QR from "../../assets/qrcode_www.wowebdev.com.png";
 
 export default function Contact() {
   return (
@@ -22,6 +23,11 @@ export default function Contact() {
         className="card"
         id="contactCard"
       >
+        <img
+          src={QR}
+          alt=""
+          className="qr"
+        />
         <h2>William Owen</h2>
         <p>
           Full-Stack JavaScript
