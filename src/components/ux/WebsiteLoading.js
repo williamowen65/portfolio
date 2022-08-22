@@ -36,9 +36,9 @@ export default function WebsiteLoading() {
         });
     }
 
-    apply().then(() => {
-      comp.current.remove();
-    });
+    // apply().then(() => {
+    //   comp.current.remove();
+    // });
   }, []);
 
   return (
@@ -298,10 +298,20 @@ const Animation = () => {
           },
         ])
         .join("svg")
+        .style(
+          "transform",
+          "translate3d(0px,0px,0px) rotate(0deg)"
+        ) //transform: translate3d(0px, 0px, 0px) rotate(0.004deg);
         .classed("textPath", true)
-        .attr("id", (d) => `${d.id}Svg`)
+        .attr(
+          "id",
+          (d) => d.id && `${d.id}Svg`
+        )
         .append("path") //Unique id of the path
-        .attr("id", (d) => `${d.id}`)
+        .attr(
+          "id",
+          (d) => d.id && `${d.id}`
+        )
         .attr("d", handleArcGen) //SVG path
         .style("fill", "none")
         .style(
@@ -368,40 +378,40 @@ const Animation = () => {
         .attr(
           "transform",
           "translate(0,5)"
-        )
-        .call((d, i, nodes) => {
-          // alert("hi");
+        );
+      // .call((d, i, nodes) => {
+      //   // alert("hi");
 
-          const textPath =
-            document.querySelectorAll(
-              "svg.textPath"
-            );
-          console.log(textPath);
-          textPath.forEach((svg, i) => {
-            const tl = gsap.timeline({
-              paused: false,
-            });
-            tl.fromTo(
-              svg,
-              {
-                rotate: 0,
-              },
-              {
-                rotate: 360,
-                duration: 4000000,
-                ease: "linear",
-                stagger: {
-                  // wrap advanced options in an object
-                  each: 0.5,
-                  // from: "center",
-                  // grid: "auto",
-                  // ease: "power2.inOut",
-                  repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
-                },
-              }
-            );
-          });
-        });
+      //   const textPath =
+      //     document.querySelectorAll(
+      //       "svg.textPath"
+      //     );
+      //   console.log(textPath);
+      //   textPath.forEach((svg, i) => {
+      //     const tl = gsap.timeline({
+      //       paused: false,
+      //     });
+      //     tl.fromTo(
+      //       svg,
+      //       {
+      //         rotate: 0,
+      //       },
+      //       {
+      //         rotate: 360,
+      //         duration: 4000000,
+      //         ease: "linear",
+      //         stagger: {
+      //           // wrap advanced options in an object
+      //           each: 0.5,
+      //           // from: "center",
+      //           // grid: "auto",
+      //           // ease: "power2.inOut",
+      //           repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
+      //         },
+      //       }
+      //     );
+      //   });
+      // });
       return () => {
         // lines.remove();
         g.remove();
