@@ -29,16 +29,16 @@ export default function WebsiteLoading() {
               window.scrollTo(0, 0);
             },
           },
-          "<4"
+          "<5"
         )
         .set("html", {
           scrollBehavior: "smooth",
         });
     }
 
-    // apply().then(() => {
-    //   comp.current.remove();
-    // });
+    apply().then(() => {
+      comp.current.remove();
+    });
   }, []);
 
   return (
