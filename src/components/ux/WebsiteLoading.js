@@ -384,7 +384,7 @@ const Animation = () => {
                 rotate: 0,
               },
               {
-                rotate: 360,
+                rotate: 0,
                 duration: 15,
                 ease: "linear",
                 stagger: {
