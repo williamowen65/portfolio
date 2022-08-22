@@ -298,10 +298,6 @@ const Animation = () => {
           },
         ])
         .join("svg")
-        .style(
-          "transform",
-          "translate3d(0px,0px,0px) rotate(0deg)"
-        ) //transform: translate3d(0px, 0px, 0px) rotate(0.004deg);
         .classed("textPath", true)
         .attr(
           "id",
@@ -378,40 +374,20 @@ const Animation = () => {
         .attr(
           "transform",
           "translate(0,5)"
-        );
-      // .call((d, i, nodes) => {
-      //   // alert("hi");
-
-      //   const textPath =
-      //     document.querySelectorAll(
-      //       "svg.textPath"
-      //     );
-      //   console.log(textPath);
-      //   textPath.forEach((svg, i) => {
-      //     const tl = gsap.timeline({
-      //       paused: false,
-      //     });
-      //     tl.fromTo(
-      //       svg,
-      //       {
-      //         rotate: 0,
-      //       },
-      //       {
-      //         rotate: 360,
-      //         duration: 4000000,
-      //         ease: "linear",
-      //         stagger: {
-      //           // wrap advanced options in an object
-      //           each: 0.5,
-      //           // from: "center",
-      //           // grid: "auto",
-      //           // ease: "power2.inOut",
-      //           repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
-      //         },
-      //       }
-      //     );
-      //   });
-      // });
+        )
+        .call((d, i, nodes) => {
+          // this block fixes a bug in chrome mobile...
+          const textPath =
+            document.querySelectorAll(
+              "svg.textPath"
+            );
+          textPath.forEach((svg, i) => {
+            gsap.to(svg, {
+              rotate: 360,
+              duration: 4000000,
+            });
+          });
+        });
       return () => {
         // lines.remove();
         g.remove();
