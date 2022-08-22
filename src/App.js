@@ -50,8 +50,7 @@ export default function App(props) {
     (state) => state.app.screenWidth
   );
 
-  const height =
-    window.screen.availHeight;
+  const height = window.innerHeight;
 
   useEffect(() => {
     alert(`
