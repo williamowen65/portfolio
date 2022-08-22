@@ -36,9 +36,9 @@ export default function WebsiteLoading() {
         });
     }
 
-    // apply().then(() => {
-    //   comp.current.remove();
-    // });
+    apply().then(() => {
+      comp.current.remove();
+    });
   }, []);
 
   return (
