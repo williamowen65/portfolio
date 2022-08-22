@@ -229,15 +229,15 @@ const Animation = () => {
       var svg = d3
         .select(".animation_container")
         .append("svg")
-        .classed("circle", true)
-        .attr(
-          "width",
-          screenLimitingDim
-        )
-        .attr(
-          "height",
-          screenLimitingDim
-        )
+        // .classed("circle", true)
+        // .attr(
+        //   "width",
+        //   screenLimitingDim
+        // )
+        // .attr(
+        //   "height",
+        //   screenLimitingDim
+        // )
         .call(() => {
           alert(
             "screenLimit " +
