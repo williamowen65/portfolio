@@ -175,7 +175,7 @@ const Animation = () => {
         )
         .attr("data-id", (d) => d.r)
         .append("path")
-        .classed("line", true)
+        // .classed("line", true)
         .attr(
           "transform-origin",
           (d) => `${d.r} 00`
@@ -236,7 +236,13 @@ const Animation = () => {
         .attr(
           "height",
           screenLimitingDim
-        );
+        )
+        .call(() => {
+          alert(
+            "screenLimit " +
+              screenLimitingDim
+          );
+        });
 
       function textPath(d) {
         const arc = d3.path();
