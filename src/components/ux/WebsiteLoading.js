@@ -300,6 +300,11 @@ const Animation = () => {
           },
         ])
         .join("path")
+        .classed("line", true)
+        .attr(
+          "transform-origin",
+          (d) => `${d.r} 00`
+        )
         .attr("id", (d) => d.id) //Unique id of the path
         .attr("d", handleArcGen) //SVG path
         .style("fill", "none")
