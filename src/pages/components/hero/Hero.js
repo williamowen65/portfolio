@@ -117,6 +117,7 @@ export default function Hero() {
 const HeroStyled = styled.div`
   position: relative;
   height: 80vh;
+  min-height: 446px;
   width: 100%;
   margin: 0 auto;
   .imageContainer {
