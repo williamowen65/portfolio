@@ -1,15 +1,21 @@
 import React, {
   useEffect,
 } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Button from "../../../components/ui/Button";
 import EmbeddedLink from "../../../components/ui/EmbeddedLink";
 import InfiniteCarousel from "../../../components/ux/InfiniteCarousel";
 import configValues from "../../../data/configValues.json";
 import Icons from "../icons/Icons";
+
 // import './styles/_hero.scss'
 
 export default function Hero() {
+  const screenWidth = useSelector(
+    (state) => state.app.screenWidth
+  );
+
   const containerStyles = {
     position: "absolute",
     right: 0,
@@ -50,8 +56,19 @@ export default function Hero() {
     duration: 1500,
   };
 
+  const width = {
+    width:
+      screenWidth >
+      configValues.breakpoints.mobile
+        ? "100%"
+        : "80%",
+  };
+
   return (
-    <HeroStyled className="hero">
+    <HeroStyled
+      className="hero"
+      style={width}
+    >
       <div className="content">
         {/* <div className="imageContainer">
           <Icons />
@@ -118,7 +135,6 @@ const HeroStyled = styled.div`
   position: relative;
   height: 80vh;
   min-height: 446px;
-  width: 100%;
   margin: 0 auto;
   .imageContainer {
     background: linear-gradient(
@@ -157,12 +173,11 @@ const HeroStyled = styled.div`
     flex-direction: column;
     height: 100%;
     justify-content: space-evenly;
-    white-space: nowrap;
     overflow-y: hidden;
     /* &::before {
-        content: '';
-        position: absolute;
-        /* left: -30px; */
+      content: '';
+      position: absolute;
+      /* left: -30px; */
     /* z-index: -1;  */
 
     padding: 0 20px;
@@ -177,8 +192,8 @@ const HeroStyled = styled.div`
       0px -1px 2px #5fcf19;
 
     /* } */
-
     h2 {
+      white-space: nowrap;
       font-size: clamp(20px, 6vw, 50px);
       text-shadow: 1px 1px 1px
           ${configValues.theme.dark
