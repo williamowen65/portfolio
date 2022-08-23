@@ -103,48 +103,54 @@ export default function App(props) {
             }
           />
           <MainContainer className="main">
-            <Routes>
-              <Route
-                path="/"
-                element={<Home />}
-              />
-              {configValues
-                .specialFeatures
-                .auth && (
+            <MobileWrapper
+              width={width}
+            >
+              <Routes>
                 <Route
-                  path="/auth"
-                  element={<Login />}
+                  path="/"
+                  element={<Home />}
                 />
-              )}
-              {configValues
-                .specialFeatures
-                .showFeatures && (
+                {configValues
+                  .specialFeatures
+                  .auth && (
+                  <Route
+                    path="/auth"
+                    element={<Login />}
+                  />
+                )}
+                {configValues
+                  .specialFeatures
+                  .showFeatures && (
+                  <Route
+                    path="/features"
+                    element={
+                      <Features />
+                    }
+                  />
+                )}
                 <Route
-                  path="/features"
-                  element={<Features />}
+                  path={"/about"}
+                  element={<About />}
                 />
-              )}
-              <Route
-                path={"/about"}
-                element={<About />}
-              />
 
-              <Route
-                path="*"
-                element={(() => {
-                  return (
-                    <Navigate
-                      to="/"
-                      replace={true}
-                    />
-                  );
-                })()}
-              ></Route>
-            </Routes>
-            {configValues
-              .specialFeatures
-              .showPalette &&
-              true && <Palette />}
+                <Route
+                  path="*"
+                  element={(() => {
+                    return (
+                      <Navigate
+                        to="/"
+                        replace={true}
+                      />
+                    );
+                  })()}
+                ></Route>
+              </Routes>
+              {configValues
+                .specialFeatures
+                .showPalette &&
+                true && <Palette />}
+            </MobileWrapper>
           </MainContainer>
           <Footer
             style={{ order: 5 }}
@@ -221,4 +227,13 @@ const Div = styled.div`
     &.right {
     }
   }
+`;
+
+const MobileWrapper = styled.div`
+  width: ${(props) =>
+    props.width <
+    configValues.breakpoints.mobile
+      ? "95%"
+      : "100%"};
+  margin: 0 auto;
 `;
