@@ -31,7 +31,9 @@ import {
 import styled from "styled-components";
 import WO from "../components/WO";
 
-const Navbar = () => {
+const Navbar = ({
+  triggerRerender,
+}) => {
   const screenWidth = useSelector(
     (state) => state.app.screenWidth
   );
@@ -115,6 +117,12 @@ const Navbar = () => {
               <Link
                 className="brand top"
                 to="/"
+                onClick={() => {
+                  triggerRerender();
+                  console.log(
+                    triggerRerender
+                  );
+                }}
               >
                 <h1>WO</h1>
                 <p>Web Dev Portfolio</p>

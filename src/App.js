@@ -43,6 +43,10 @@ import "./styles/global.scss";
 export default function App(props) {
   const dispatch = useDispatch();
   const [ref, dims] = useDimensions();
+  const [state, setState] =
+    useState(true);
+  const [statee, setStatee] =
+    useState("test");
 
   const { x, y, width } = dims;
 
@@ -68,9 +72,19 @@ export default function App(props) {
       window.location.href = "/";
   }, [width, height]);
 
+  function handleClick() {
+    // alert("hi " + state);
+    setState(!state);
+    // alert("bye " + state);
+  }
+
   return (
     <>
-      <WebsiteLoading />
+      {state && (
+        <span>
+          <WebsiteLoading />
+        </span>
+      )}
       <Div className="App" ref={ref}>
         {configValues.breakpoints
           .mainWidth < screenWidth && (
@@ -80,7 +94,11 @@ export default function App(props) {
           </>
         )}
         <PageContainer>
-          <Header />
+          <Header
+            triggerRerender={
+              handleClick
+            }
+          />
           <MainContainer className="main">
             <Routes>
               <Route
