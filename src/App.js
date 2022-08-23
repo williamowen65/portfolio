@@ -74,7 +74,10 @@ export default function App(props) {
 
   function handleClick() {
     // alert("hi " + state);
-    setState(!state);
+    setState((state) => !state);
+    setTimeout(() => {
+      setState((state) => !state);
+    });
     // alert("bye " + state);
   }
 
