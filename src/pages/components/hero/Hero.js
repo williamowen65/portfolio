@@ -61,7 +61,7 @@ export default function Hero() {
       screenWidth >
       configValues.breakpoints.mobile
         ? "100%"
-        : "80%",
+        : "85%",
   };
 
   return (
