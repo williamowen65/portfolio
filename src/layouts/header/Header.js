@@ -151,6 +151,14 @@ const Navbar = ({
         </div>
       </Header>
       <Nav
+        /*
+          # Smaller header on scrolling
+
+          It should hide when scrolling down past a specific point.
+          to get it back, slightly scroll up.... 
+          WO web DEV in center with hamburger on right
+            Other items are in drop down on mobile, maybe drawer in desktop
+        */
         className={
           mobile
             ? "contentNav center"
@@ -161,18 +169,12 @@ const Navbar = ({
         ref={target}
         id="scrollTarget"
       >
-        {/* {!mobile && minimized && (
-          <a href='#!' onClick={(e) => minimize(false)}>
-            <i className='material-icons'>keyboard_arrow_right</i>
-          </a>
-        )} */}
-        <span></span>
         <Link
           to="/"
           className="logoSmall"
         >
           <div
-            className="NL"
+            className="navLogo NL"
             ref={NL}
             onClick={() =>
               window.scrollTo({

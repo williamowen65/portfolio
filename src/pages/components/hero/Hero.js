@@ -56,19 +56,8 @@ export default function Hero() {
     duration: 1500,
   };
 
-  const width = {
-    width:
-      screenWidth >
-      configValues.breakpoints.mobile
-        ? "100%"
-        : "95%",
-  };
-
   return (
-    <HeroStyled
-      className="hero"
-      style={width}
-    >
+    <HeroStyled className="hero">
       <div className="content">
         {/* <div className="imageContainer">
           <Icons />
@@ -135,7 +124,7 @@ const HeroStyled = styled.div`
   position: relative;
   height: 80vh;
   min-height: 446px;
-  margin: 0 auto;
+  margin: 50px auto;
   .imageContainer {
     background: linear-gradient(
       -103deg,
