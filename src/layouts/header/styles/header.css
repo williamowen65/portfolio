@@ -45,7 +45,6 @@
 }
 .flex.R.outerWrapper {
   position: relative;
-  height: 67px;
 }
 @media only screen and (max-width : 600px) {
   .flex.R {
@@ -89,12 +88,6 @@
 .flex.R.subInnerWrapper i.triangle {
   transform: rotate(0deg) translateY(5px);
 }
-@media only screen and (max-width : 600px) {
-  .flex.R.subInnerWrapper {
-    display: none;
-  }
-}
-
 .main-header {
   width: 100%;
 }
@@ -125,6 +118,7 @@
 }
 .main-header .exploreNav .moreDetails {
   white-space: nowrap;
+  display: block;
   align-content: center;
 }
 .main-header .exploreNav .moreDetails p {
@@ -133,6 +127,7 @@
 }
 
 .contentNav {
+  overflow-x: scroll;
   position: -webkit-sticky;
   position: sticky;
   top: -1px;
@@ -196,10 +191,6 @@
   margin: 0 5px;
 }
 @media only screen and (max-width : 600px) {
-  .NL {
-    top: 12px;
-    transform: scale(0.5);
-  }
   .NL p {
     font-size: 20px;
   }
@@ -207,7 +198,14 @@
 .NL.navLogo {
   opacity: 1;
   animation: inOut 0.5s forwards;
-  transform: translateY(-17px);
+  transform: translate(0px, -3px);
+  position: relative;
+  white-space: nowrap;
+}
+@media only screen and (max-width : 600px) {
+  .NL.navLogo {
+    transform: translate(5px, -3px);
+  }
 }
 @keyframes inOut {
   0% {

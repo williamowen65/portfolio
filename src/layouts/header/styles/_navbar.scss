@@ -52,7 +52,7 @@
     // align-items: center;
     &.outerWrapper {
       position: relative;
-      height: 67px;
+      // height: 67px;
     }
     @media #{$small-and-down} {
       flex-direction: column;
@@ -96,7 +96,7 @@
         }
       }
       @media #{$small-and-down} {
-        display: none;
+        // display: none;
       }
     }
   }
@@ -134,7 +134,7 @@
     }
     .moreDetails {
       white-space: nowrap;
-      // display: flex;
+      display: block;
       align-content: center;
       p {
         display: inline-block;
@@ -145,6 +145,7 @@
 }
 
 .contentNav {
+  overflow-x: scroll;
   position: -webkit-sticky;
   position: sticky;
   top: -1px;
@@ -212,8 +213,8 @@
     margin: 0 5px;
   }
   @media #{$small-and-down} {
-    top: 12px;
-    transform: scale(0.5);
+    // top: 12px;
+    // transform: scale(0.5);
     // left: none;
     p {
       font-size: 20px;
@@ -222,7 +223,12 @@
   &.navLogo {
     opacity: 1;
     animation: inOut 0.5s forwards;
-    transform: translateY(-17px);
+    transform: translate(0px, -3px);
+    @media #{$small-and-down} {
+      transform: translate(5px, -3px);
+    }
+    position: relative;
+    white-space: nowrap;
     @keyframes inOut {
       0% {
         opacity: 0;
