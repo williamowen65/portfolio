@@ -71,7 +71,7 @@
       justify-content: center;
       min-height: 100px;
       &.top {
-        transform: translateY(6px);
+        transform: translateY(21px);
         z-index: 7;
       }
       color: $brand-color;
@@ -134,7 +134,9 @@
     }
     .moreDetails {
       white-space: nowrap;
-      display: block;
+      a {
+        display: block;
+      }
       align-content: center;
       p {
         display: inline-block;
@@ -157,21 +159,31 @@
   align-items: center;
   justify-content: space-between;
   background: $contentNav-bg;
+  .hamburger {
+    position: absolute;
+    right: 45px;
+    top: 35px;
+    display: none;
+    @media #{$small-and-down} {
+      display: inline;
+    }
+  }
   @media #{$small-and-down} {
     text-align: center;
   }
-  &.center {
-    justify-content: center;
-  }
-  &.flexEnd {
-    justify-content: space-between;
-  }
-  &.right {
-    justify-content: flex-end;
-  }
-  i {
-    transform: translateY(3px);
-  }
+  // &.center {
+  //   justify-content: center;
+  // }
+  // &.flexEnd {
+  //   justify-content: space-between;
+  // }
+  // &.right {
+  //   justify-content: flex-end;
+  // }
+
+  // i {
+  //   transform: translateY(3px);
+  // }
   a {
     display: inline-block;
   }
@@ -181,13 +193,16 @@
     padding-inline-start: 11px;
     padding-inline-end: 11px;
     transition: transform 1s;
+    @media #{$small-and-down} {
+      display: none;
+    }
     li {
       display: inline-block;
       padding: 0 13px;
       &.active {
         a {
-          color: $link-active;
-          transition: color 0.2s;
+          // color: $link-active;
+          // transition: color 0.2s;
           // &:visited {
           //   color: rgb(165, 202, 165);
           // }
@@ -221,7 +236,7 @@
     }
   }
   &.navLogo {
-    opacity: 1;
+    opacity: 0;
     animation: inOut 0.5s forwards;
     transform: translate(0px, -3px);
     @media #{$small-and-down} {

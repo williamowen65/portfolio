@@ -67,7 +67,7 @@
   }
 }
 .flex.R .brand.top {
-  transform: translateY(6px);
+  transform: translateY(21px);
   z-index: 7;
 }
 @media only screen and (max-width : 600px) {
@@ -118,8 +118,10 @@
 }
 .main-header .exploreNav .moreDetails {
   white-space: nowrap;
-  display: block;
   align-content: center;
+}
+.main-header .exploreNav .moreDetails a {
+  display: block;
 }
 .main-header .exploreNav .moreDetails p {
   display: inline-block;
@@ -139,22 +141,21 @@
   justify-content: space-between;
   background: #64b5f6;
 }
+.contentNav .hamburger {
+  position: absolute;
+  right: 45px;
+  top: 35px;
+  display: none;
+}
+@media only screen and (max-width : 600px) {
+  .contentNav .hamburger {
+    display: inline;
+  }
+}
 @media only screen and (max-width : 600px) {
   .contentNav {
     text-align: center;
   }
-}
-.contentNav.center {
-  justify-content: center;
-}
-.contentNav.flexEnd {
-  justify-content: space-between;
-}
-.contentNav.right {
-  justify-content: flex-end;
-}
-.contentNav i {
-  transform: translateY(3px);
 }
 .contentNav a {
   display: inline-block;
@@ -165,15 +166,15 @@
   padding-inline-end: 11px;
   transition: transform 1s;
 }
+@media only screen and (max-width : 600px) {
+  .contentNav ul {
+    display: none;
+  }
+}
 .contentNav ul li {
   display: inline-block;
   padding: 0 13px;
 }
-.contentNav ul li.active a {
-  color: rgba(0, 0, 0, 0.301);
-  transition: color 0.2s;
-}
-
 .NL {
   display: flex;
   align-items: center;
@@ -196,7 +197,7 @@
   }
 }
 .NL.navLogo {
-  opacity: 1;
+  opacity: 0;
   animation: inOut 0.5s forwards;
   transform: translate(0px, -3px);
   position: relative;

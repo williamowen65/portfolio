@@ -11,6 +11,7 @@ import {
   useParams,
 } from "react-router-dom";
 import Hamburger from "./assets/Hamburger";
+import { IoReorderThree } from "react-icons/io5";
 import {
   useSelector,
   useDispatch,
@@ -169,12 +170,20 @@ const Navbar = ({
         ref={target}
         id="scrollTarget"
       >
+        <IoReorderThree
+          color={
+            configValues.theme.dark
+              .color.main
+          }
+          size={30}
+          className="hamburger"
+        />
         <Link
           to="/"
           className="logoSmall"
         >
           <div
-            className="navLogo NL"
+            className="NL" //plus navLogo dynamically on scroll
             ref={NL}
             onClick={() =>
               window.scrollTo({
