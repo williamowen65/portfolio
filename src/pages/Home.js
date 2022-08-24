@@ -33,11 +33,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Div id="contributions">
+      <Content id="contributions">
         <Contributions />
-      </Div>
+      </Content>
       <Section className="sectionBreak" />
-      <Div id="about">
+      <Content id="about">
         <DisplayCard
           type="carousel"
           title={
@@ -45,10 +45,10 @@ export default function Home() {
           }
           data={allCards}
         />
-      </Div>
-      <Div id="contact">
+      </Content>
+      <Content id="contact">
         <Contact />
-      </Div>
+      </Content>
     </>
   );
 }
@@ -57,9 +57,17 @@ const Section = styled.section`
   height: 100px;
 `;
 
-const Div = styled.div`
+const Content = styled.div`
   /* #contributions { */
   padding-top: 100px;
+  &#about {
+    /* padding-bottom: 200px; */
+    /* padding-bottom: clamp(
+      200px,
+      6vh,
+      200px
+    ); */
+  }
   /* } */
 `;
 // const H

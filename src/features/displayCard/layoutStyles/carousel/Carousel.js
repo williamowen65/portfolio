@@ -7,36 +7,42 @@ import React, {
 } from "react";
 import AppControlContent from "./context/global/appControl/appControlContext";
 import ProjectControlContext from "./context/global/projects/projectContext";
-import configValues from '../../../../data/configValues.json'
+import configValues from "../../../../data/configValues.json";
 
 // import AppControlContent from "./context/global/appControl/appControlContext";
 import Card from "./Card";
-import { useSelector } from 'react-redux'
-import { store } from './context/store.js'
-import { store as storee } from '../../../../context/store.js'
-import { Provider } from 'react-redux'
+import { useSelector } from "react-redux";
+import { store } from "./context/store.js";
+import { store as storee } from "../../../../context/store.js";
+import { Provider } from "react-redux";
 import { allCards } from "./randomData/CardArchive";
 
 import LeftArrow from "./assets/LeftArrow";
 import RightArrow from "./assets/RightArrow";
 
-import './styles/carousel.css'
+import "./styles/carousel.css";
 import ProjectsState from "./context/global/projects/ProjectsState.js";
 import AppControlState from "./context/global/appControl/AppControlState.js";
 import styled from "styled-components";
 
-
 const Carousel = ({ title, cards }) => {
-
   // console.log("STATE ", useContext(AppControlContent));
 
-  const appControlContext = useContext(AppControlContent);
-  const { detail, carouselScrollNoTouch } = appControlContext;
-  const projectControlContext = useContext(ProjectControlContext);
+  const appControlContext = useContext(
+    AppControlContent
+  );
+  const {
+    detail,
+    carouselScrollNoTouch,
+  } = appControlContext;
+  const projectControlContext =
+    useContext(ProjectControlContext);
   // const { projects } = useSelector();
   const carousel = useRef();
 
-  const carouselData = useSelector(state => state.carousel)
+  const carouselData = useSelector(
+    (state) => state.carousel
+  );
 
   // console.log(carouselData);
 
@@ -52,22 +58,26 @@ const Carousel = ({ title, cards }) => {
     // console.log("hi");
     // console.log(carousel.current, projects.length);
     const carouselSlider =
-      e.target.parentElement.parentElement.parentElement.parentElement
-        .parentElement.nextSibling;
+      e.target.parentElement
+        .parentElement.parentElement
+        .parentElement.parentElement
+        .nextSibling;
     // console.log(carouselSlider, e);
     if (dir > 0) {
       // console.log("hi");
       carouselSlider.scrollTo({
         left:
           carousel.current.scrollLeft +
-          carousel.current.scrollWidth / cards.length,
+          carousel.current.scrollWidth /
+            cards.length,
         behavior: "smooth",
       });
     } else {
       carouselSlider.scrollTo({
         left:
           carousel.current.scrollLeft -
-          carousel.current.scrollWidth / cards.length,
+          carousel.current.scrollWidth /
+            cards.length,
         behavior: "smooth",
       });
     }
@@ -78,7 +88,8 @@ const Carousel = ({ title, cards }) => {
 
     if (
       carouselScrollNoTouch.dragging &&
-      carouselScrollNoTouch.section === title &&
+      carouselScrollNoTouch.section ===
+        title &&
       carouselScrollNoTouch.dragging
     ) {
       trackPos = setInterval(() => {
@@ -87,7 +98,9 @@ const Carousel = ({ title, cards }) => {
       }, 60);
       // console.log("hi");
       // clearInterval(trackPos);
-    } else if (!carouselScrollNoTouch.dragging) {
+    } else if (
+      !carouselScrollNoTouch.dragging
+    ) {
       clearInterval(trackPos);
     }
     //   while (drag == true) {
@@ -102,27 +115,49 @@ const Carousel = ({ title, cards }) => {
     //   ///get the mouse position, track it while true. apply it to scroll bar
   }, [carouselScrollNoTouch]);
 
-  const screenWidth = useSelector(state => state.app.screenWidth)
+  const screenWidth = useSelector(
+    (state) => state.app.screenWidth
+  );
   const Section = styled.section`
-    max-width: calc(100% + ${configValues.breakpoints.mobile > screenWidth ? 29 : 99}px);
-    ${configValues.breakpoints.mobile < screenWidth ? "left: -49px" : "left: -20px"};
-    ${configValues.breakpoints.mobile > screenWidth && "padding-left: 18px"};
-`
-
+    max-width: calc(
+      100% +
+        ${configValues.breakpoints
+          .mobile > screenWidth
+          ? 29
+          : 99}px
+    );
+    ${configValues.breakpoints.mobile <
+    screenWidth
+      ? "left: -49px"
+      : "left: -20px"};
+    ${configValues.breakpoints.mobile >
+      screenWidth &&
+    "padding-left: 18px"};
+  `;
 
   return (
-    <CarouselStyled className='carousel sidenavTarget' data-name={title.replace(" ", "-")}>
+    <CarouselStyled
+      className="carousel sidenavTarget"
+      data-name={title.replace(
+        " ",
+        "-"
+      )}
+    >
       <header>
-        <div className='small-container'>
+        <div className="small-container">
           <h2>{title}</h2>
           <p>
             <span>
               {/* <i className='material-icons'>chevron_left</i> */}
-              <LeftArrow scroll={scroll} />
+              <LeftArrow
+                scroll={scroll}
+              />
             </span>
             <span>
               {/* <i className='material-icons'>chevron_right</i> */}
-              <RightArrow scroll={scroll} />
+              <RightArrow
+                scroll={scroll}
+              />
             </span>
           </p>
         </div>
@@ -131,47 +166,51 @@ const Carousel = ({ title, cards }) => {
         ref={carousel}
         // onScroll={(e) => handleScroll("both")}
         // handlescroll={scrollBool ? "both" : ""}
-        className='carouselSlider'
+        className="carouselSlider"
       >
         {/* {projects.map((project) => (
           <Card key={project.id} project={project} section={title}></Card>
         ))} */}
         {cards.map((project) => (
-          <Card key={project.props.id} project={project} section={title}></Card>
+          <Card
+            key={project.props.id}
+            project={project}
+            section={title}
+          ></Card>
         ))}
         {/* offset the last card, maybe not necesary.. */}
-        <div className='spacer'>|</div>
+        <div className="spacer">|</div>
       </Section>
-      <div id={title.replace(" ", "-")} className='sidenavAnchor'></div>
     </CarouselStyled>
   );
 };
 
-
 const Wrapper = (props) => (
   <ProjectsState>
     <AppControlState>
-
-      <Provider store={{ ...store, ...storee }}>
+      <Provider
+        store={{ ...store, ...storee }}
+      >
         <Carousel {...props} />
       </Provider>
     </AppControlState>
   </ProjectsState>
-)
-
+);
 
 export default Wrapper;
 
-
 const CarouselStyled = styled.div`
-  h1{
-  color: ${configValues.theme.dark.color.main};
-}
+  h1 {
+    color: ${configValues.theme.dark
+      .color.main};
+  }
   header {
-  border-bottom: 1px solid ${configValues.theme.dark.color.main};
-}
+    border-bottom: 1px solid
+      ${configValues.theme.dark.color
+        .main};
+  }
   path {
-  stroke: ${configValues.theme.dark.color.main};
-}
-
-`
+    stroke: ${configValues.theme.dark
+      .color.main};
+  }
+`;
