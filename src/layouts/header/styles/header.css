@@ -16,6 +16,11 @@
   flex-grow: 2;
   justify-content: space-evenly;
 }
+@media only screen and (max-width : 600px) {
+  .flex.C.innerWrapper {
+    display: none !important;
+  }
+}
 .flex.C.innerWrapper nav, .flex.C.innerWrapper > div, .flex.C.innerWrapper > nav.exploreNav {
   flex-grow: 1;
 }
@@ -64,12 +69,17 @@
 @media only screen and (max-width : 600px) {
   .flex.R .brand {
     position: absolute;
-    transform: translateY(0px);
+    top: 0;
   }
 }
 .flex.R .brand.top {
   transform: translateY(21px);
   z-index: 7;
+}
+@media only screen and (max-width : 600px) {
+  .flex.R .brand.top {
+    transform: translateY(0px);
+  }
 }
 @media only screen and (max-width : 600px) {
   .flex.R .brand {
@@ -169,7 +179,7 @@
 }
 @media only screen and (max-width : 600px) {
   .contentNav ul {
-    display: none;
+    display: none !important;
   }
 }
 .contentNav ul li {

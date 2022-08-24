@@ -18,6 +18,9 @@
     &.innerWrapper {
       flex-grow: 2;
       justify-content: space-evenly;
+      @media #{$small-and-down} {
+        display: none !important;
+      }
       nav,
       & > div,
       & > nav.exploreNav {
@@ -66,13 +69,16 @@
       display: flex;
       @media #{$small-and-down} {
         position: absolute;
-        transform: translateY(0px);
+        top: 0;
       }
       flex-direction: column;
       justify-content: center;
       min-height: 100px;
       &.top {
         transform: translateY(21px);
+        @media #{$small-and-down} {
+          transform: translateY(0px);
+        }
         z-index: 7;
       }
       color: $brand-color;
@@ -195,7 +201,8 @@
     padding-inline-end: 11px;
     transition: transform 1s;
     @media #{$small-and-down} {
-      display: none;
+      // apple
+      display: none !important;
     }
     li {
       display: inline-block;
