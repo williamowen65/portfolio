@@ -55,7 +55,7 @@ const Article = styled.article`
         font-size: clamp(
           10px,
           6vw,
-          21px
+          30px
         );
       }
     }
