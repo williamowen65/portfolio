@@ -65,6 +65,7 @@
       // height: 100%;
       display: flex;
       @media #{$small-and-down} {
+        position: absolute;
         transform: translateY(0px);
       }
       flex-direction: column;

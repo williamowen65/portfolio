@@ -63,6 +63,7 @@
 }
 @media only screen and (max-width : 600px) {
   .flex.R .brand {
+    position: absolute;
     transform: translateY(0px);
   }
 }
