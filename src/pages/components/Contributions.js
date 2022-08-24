@@ -50,7 +50,13 @@ const Article = styled.article`
         .color.main};
       h2 {
         width: min-content;
-        font-size: 27px;
+        /* font-size: 27px; */
+        /* white-space: nowrap; */
+        font-size: clamp(
+          10px,
+          6vw,
+          21px
+        );
       }
     }
     a {
