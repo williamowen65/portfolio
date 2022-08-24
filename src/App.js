@@ -96,7 +96,7 @@ export default function App(props) {
             <Sidebar left />
           </>
         )}
-        <PageContainer>
+        <PageContainer width={width}>
           <Header
             triggerRerender={
               handleClick
@@ -105,6 +105,7 @@ export default function App(props) {
           <MainContainer className="main">
             <MobileWrapper
               width={width}
+              className="MobileWrapperLayer"
             >
               <Routes>
                 <Route
