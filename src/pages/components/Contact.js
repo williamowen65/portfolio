@@ -28,17 +28,22 @@ export default function Contact() {
           alt=""
           className="qr"
         />
-        <h2>William Owen</h2>
-        <p>
-          Full-Stack JavaScript
-          Developer
-        </p>
+        <span className="title">
+          <h2>William Owen</h2>
+          <p>
+            Full-Stack JavaScript
+            Developer
+          </p>
+        </span>
         <ul>
           <li>
             Contact
             <ul>
               <li>
-                william.owen.dev@gmail.com
+                <nobr>
+                  william.owen.dev
+                </nobr>
+                @gmail.com
               </li>
               <li>253-514-2990</li>
             </ul>
@@ -66,6 +71,11 @@ export default function Contact() {
 }
 
 const ContactStyled = styled.div`
+  header {
+    h2 {
+      font-size: clamp(10px, 6vw, 21px);
+    }
+  }
   .share {
     width: 30px;
     height: 30px;
@@ -90,8 +100,18 @@ const ContactStyled = styled.div`
   }
   .card {
     position: relative;
-    p {
-      color: black !important;
+    .title {
+      text-align: center;
+      h2 {
+        font-size: clamp(
+          15px,
+          6vw,
+          37px
+        );
+      }
+      p {
+        color: black !important;
+      }
     }
     a {
       color: darkblue !important;
@@ -100,9 +120,10 @@ const ContactStyled = styled.div`
       }
     }
     border: 1px solid black;
-    width: 400px;
+    max-width: 400px;
     margin: 20px auto;
-    padding: 30px 45px;
+    padding: clamp(5px, 6vw, 30px)
+      clamp(5px, 6vw, 45px);
     background: aquamarine;
     h2,
     ul li {
@@ -114,11 +135,19 @@ const ContactStyled = styled.div`
       li {
         ul {
           padding-left: 40px;
-          li::before {
-            content: "▶";
-            position: relative;
-            left: -16px;
-            top: 1px;
+          li {
+            text-align: left;
+            font-size: clamp(
+              3px,
+              100%,
+              15px
+            );
+            &::before {
+              content: "▶";
+              position: relative;
+              left: -16px;
+              top: 1px;
+            }
           }
         }
       }
