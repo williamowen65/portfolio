@@ -199,7 +199,7 @@
   }
   .contentNav ul.navItems.show li a {
     padding-inline-start: 11px;
-    padding-inline-end: 11px;
+    padding-inline-end: 24px;
   }
   .contentNav ul.navItems.show li.quote {
     align-self: center;
@@ -282,7 +282,7 @@
 
 .hamburger {
   position: absolute;
-  right: 45px;
+  right: 14px;
   box-sizing: content-box;
   padding: 10px;
   cursor: pointer;
