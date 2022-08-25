@@ -233,14 +233,14 @@
 
     // color: black;
     @media #{$small-and-down} {
-      margin-top: 220px;
+      margin-top: 20px;
       width: 100%;
       &.navItems {
         display: none;
         &.show {
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
+          justify-content: end;
           align-items: flex-end;
           height: 100%;
           li {

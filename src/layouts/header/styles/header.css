@@ -192,7 +192,7 @@
 }
 @media only screen and (max-width : 600px) {
   .contentNav ul {
-    margin-top: 220px;
+    margin-top: 20px;
     width: 100%;
   }
   .contentNav ul.navItems {
@@ -201,7 +201,7 @@
   .contentNav ul.navItems.show {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: end;
     align-items: flex-end;
     height: 100%;
   }
