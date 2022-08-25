@@ -4,7 +4,7 @@
     "iconEntrance": true,
     "showFeatures": true,
     "showPalette": true,
-    "showLoadingScreen": true
+    "showLoadingScreen": false
   },
   "dbIntegrations": {
     "type": null,
