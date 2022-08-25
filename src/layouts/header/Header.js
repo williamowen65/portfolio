@@ -129,11 +129,20 @@ const Navbar = ({
 
   let bottomNav = useRef();
   const triggerPoint = 300;
+  const condition = () => {
+    const el = document.querySelector(
+      ".navItems"
+    );
+    return el.classList.contains(
+      "show"
+    );
+  };
   useEffect(() => {
     const event = captureScroll(
       () => setScrollDir(1),
       () => setScrollDir(-1),
-      300
+      500,
+      condition
     );
     // return () => {
     //   window.removeEventListener(
