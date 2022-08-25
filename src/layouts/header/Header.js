@@ -22,6 +22,8 @@ import { BsDot } from "react-icons/bs";
 
 import "./styles/header.css";
 
+import { captureScroll } from "../../utils/scrollDirection";
+
 import {
   minimize,
   changeTheme,
@@ -51,8 +53,6 @@ const Navbar = ({
     toggle(!sidenavToggle);
   };
 
-  let target = useRef();
-
   useEffect(() => {
     target.current =
       document.getElementById("target");
@@ -61,21 +61,6 @@ const Navbar = ({
   let param = window.location.href
     .split("/")
     .pop();
-
-  const scroll = () => {
-    // console.log(document.getElementById("scrollTo"));
-    // console.log("hi", target);
-    // if(window.)
-    // console.log(window.scrollY, target.current.offsetTop);
-    if (
-      window.scrollY >
-      target.current.offsetTop
-    ) {
-      target.current.scrollIntoView({
-        // behavior: "smooth",
-      });
-    }
-  };
 
   const [
     scrolledDown,
@@ -109,6 +94,8 @@ const Navbar = ({
     );
   }, []);
 
+  // handles drop down
+
   const [
     showMobileNav,
     setShowMobileNav,
@@ -135,6 +122,43 @@ const Navbar = ({
     }
   }, [screenWidth]);
 
+  /// handles hiding nav on scroll down
+
+  const [scrollDir, setScrollDir] =
+    useState(-1);
+
+  let bottomNav = useRef();
+  const triggerPoint = 300;
+  useEffect(() => {
+    const event = captureScroll(
+      () => setScrollDir(1),
+      () => setScrollDir(-1)
+    );
+    // return () => {
+    //   window.removeEventListener(
+    //     "scroll",
+    //     event
+    //   );
+    // };
+  }, []);
+
+  useEffect(() => {
+    console.log(scrollDir);
+    if (bottomNav.current) {
+      const el = bottomNav.current;
+      if (scrollDir > 0) {
+        gsap.to(el, {
+          y: 0,
+        });
+      } else {
+        gsap.to(el, {
+          y: -50,
+        });
+      }
+    }
+  }, [scrollDir]);
+
+  /// the html
   const Resume = () => (
     <a
       href="/William_Owen_Resume.pdf"
@@ -211,8 +235,8 @@ const Navbar = ({
             ? "contentNav flexEnd"
             : "contentNav right"
         }
-        ref={target}
-        id="scrollTarget"
+        ref={bottomNav}
+        // id="scrollTarget"
       >
         <IoReorderThree
           color={
@@ -349,7 +373,7 @@ const Navbar = ({
               </li>
             </>
           )}
-          {console.log(screenWidth)}
+          {/* {console.log(screenWidth)} */}
         </ul>
       </Nav>
       {/* </div> */}
