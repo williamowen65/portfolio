@@ -3,7 +3,8 @@
     "auth": true,
     "iconEntrance": true,
     "showFeatures": true,
-    "showPalette": true
+    "showPalette": true,
+    "showLoadingScreen": false
   },
   "dbIntegrations": {
     "type": null,
@@ -19,7 +20,7 @@
   },
   "breakpoints": {
     "slim": 768,
-    "mobile": 556,
+    "mobile": 601,
     "mainWidth": 1000
   },
   "findAlt": {
