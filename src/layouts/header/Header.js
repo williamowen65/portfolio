@@ -315,11 +315,12 @@ const Navbar = ({
           <div
             className="NL" //plus navLogo dynamically on scroll
             ref={NL}
-            onClick={() =>
+            onClick={() => {
               window.scrollTo({
                 top: 0,
-              })
-            }
+              });
+              setShowMobileNav(false);
+            }}
           >
             <WO />
             <p>Web Dev</p>
@@ -365,7 +366,12 @@ const Navbar = ({
           >
             {/* <li onClick={scroll}> */}
             {/* <a href='#target'> */}
-            <a href="#contributions">
+            <a
+              href="#contributions"
+              onClick={() =>
+                setShowMobileNav(false)
+              }
+            >
               Contributions
             </a>
             {/* </a> */}
@@ -382,7 +388,14 @@ const Navbar = ({
             }
           >
             {/* <a href='#target'> */}
-            <a href="#about">About</a>
+            <a
+              href="#about"
+              onClick={() =>
+                setShowMobileNav(false)
+              }
+            >
+              About
+            </a>
             {/* </a> */}
           </li>{" "}
           <Dot
@@ -397,7 +410,12 @@ const Navbar = ({
             }
           >
             {/* <a href='#target'> */}
-            <a href="#contact">
+            <a
+              href="#contact"
+              onClick={() =>
+                setShowMobileNav(false)
+              }
+            >
               Contact
             </a>
             {/* </a> */}
@@ -464,6 +482,7 @@ const Nav = styled.nav`
   background: #232b3c !important;
   color: black !important;
   ul {
+    background: #232b3c !important;
     display: flex;
   }
   li {
