@@ -142,21 +142,26 @@
 .contentNav {
   overflow-x: scroll;
   position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  z-index: 8;
   top: -1px;
   display: flex;
   width: 100%;
-  z-index: 5;
   text-align: right;
   align-items: center;
   justify-content: space-between;
   background: #64b5f6;
+  height: 50px;
+  display: flex !important;
+  align-items: center !important;
 }
 .contentNav .hamburger {
   position: absolute;
   right: 45px;
   top: 35px;
   display: none;
+  position: sticky;
+  top: 0px;
 }
 @media only screen and (max-width : 600px) {
   .contentNav .hamburger {

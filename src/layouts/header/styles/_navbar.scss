@@ -56,6 +56,10 @@
     &.outerWrapper {
       position: relative;
       // height: 67px;
+      // .logoContainer {
+      //   width: fit-content;
+      //   height: fit-content;
+      // }
     }
     @media #{$small-and-down} {
       flex-direction: column;
