@@ -80,15 +80,27 @@ const Navbar = ({
         if (
           NL.current.classList != null
         ) {
+          const ham =
+            document.querySelector(
+              ".hamburger"
+            );
           if (window > 130) {
             NL.current.classList.add(
               "navLogo"
+            );
+            ham.classList.toggle(
+              "scrolledDown",
+              true
             );
             setScrolledDown(true);
           } else {
             setScrolledDown(false);
             NL.current.classList.remove(
               "navLogo"
+            );
+            ham.classList.toggle(
+              "scrolledDown",
+              false
             );
           }
         }

@@ -171,6 +171,10 @@
   .contentNav .hamburger {
     display: inline;
     position: absolute;
+    transition: all 0.5s;
+    top: 23px;
+  }
+  .contentNav .hamburger.scrolledDown {
     top: 0;
   }
 }

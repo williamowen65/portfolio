@@ -200,7 +200,11 @@
     @media #{$small-and-down} {
       display: inline;
       position: absolute;
-      top: 0;
+      transition: all 0.5s;
+      top: 23px;
+      &.scrolledDown {
+        top: 0;
+      }
     }
   }
   @media #{$small-and-down} {
