@@ -159,25 +159,6 @@
     position: fixed;
   }
 }
-.contentNav .hamburger {
-  position: absolute;
-  right: 45px;
-  box-sizing: content-box;
-  padding: 10px;
-  cursor: pointer;
-  display: none;
-}
-@media only screen and (max-width : 600px) {
-  .contentNav .hamburger {
-    display: inline;
-    position: absolute;
-    transition: all 0.5s;
-    top: 23px;
-  }
-  .contentNav .hamburger.scrolledDown {
-    top: 0;
-  }
-}
 @media only screen and (max-width : 600px) {
   .contentNav {
     text-align: center;
@@ -297,6 +278,31 @@
   min-width: 100vw;
   min-height: 100vh;
   z-index: 7;
+}
+
+.hamburger {
+  position: absolute;
+  right: 45px;
+  box-sizing: content-box;
+  padding: 10px;
+  cursor: pointer;
+  display: none;
+}
+@media only screen and (max-width : 600px) {
+  .hamburger {
+    display: inline;
+    position: absolute;
+    transition: all 0.5s;
+    top: 23px;
+  }
+  .hamburger.sticky {
+    top: 0px;
+    opacity: 0;
+  }
+  .hamburger.scrolledDown {
+    position: fixed;
+    top: 0px;
+  }
 }
 
 body {

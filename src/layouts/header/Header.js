@@ -262,6 +262,19 @@ const Navbar = ({
                     Web Dev Portfolio
                   </p>
                 </Link>
+                <IoReorderThree
+                  color={
+                    configValues.theme
+                      .dark.color.main
+                  }
+                  size={30}
+                  className="hamburger"
+                  onClick={() =>
+                    setShowMobileNav(
+                      !showMobileNav
+                    )
+                  }
+                />
               </div>
               <div className="flex C innerWrapper">
                 <nav className="flex R subInnerWrapper exploreNav">
@@ -313,7 +326,7 @@ const Navbar = ({
               .color.main
           }
           size={30}
-          className="hamburger"
+          className="hamburger sticky"
           onClick={() =>
             setShowMobileNav(
               !showMobileNav

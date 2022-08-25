@@ -187,26 +187,7 @@
   height: 50px; // clamp(50px, 215px); ///50px;
   display: flex !important;
   align-items: center !important;
-  .hamburger {
-    position: absolute;
-    right: 45px;
-    box-sizing: content-box;
-    padding: 10px;
-    cursor: pointer;
-    // top: 35px;
-    display: none;
-    // position: sticky;
-    // top: 0px;
-    @media #{$small-and-down} {
-      display: inline;
-      position: absolute;
-      transition: all 0.5s;
-      top: 23px;
-      &.scrolledDown {
-        top: 0;
-      }
-    }
-  }
+
   @media #{$small-and-down} {
     text-align: center;
   }
@@ -355,4 +336,30 @@
   min-width: 100vw;
   min-height: 100vh;
   z-index: 7;
+}
+
+.hamburger {
+  position: absolute;
+  right: 45px;
+  box-sizing: content-box;
+  padding: 10px;
+  cursor: pointer;
+  // top: 35px;
+  display: none;
+  // position: sticky;
+  // top: 0px;
+  @media #{$small-and-down} {
+    display: inline;
+    position: absolute;
+    transition: all 0.5s;
+    &.sticky {
+      top: 0px;
+      opacity: 0;
+    }
+    top: 23px;
+    &.scrolledDown {
+      position: fixed;
+      top: 0px;
+    }
+  }
 }
