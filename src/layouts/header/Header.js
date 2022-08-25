@@ -123,7 +123,7 @@ const Navbar = ({
   useEffect(() => {
     if (showMobileNav) {
       gsap.to(".contentNav", {
-        height: 275,
+        height: 231, //231
       });
     } else {
       gsap.to(".contentNav", {
@@ -482,9 +482,10 @@ const Header = styled.header`
     text-shadow: 0px 0px 3px white;
     color: black !important;
   }
-  * {
+  *:not(svg) {
     background-color: #232b3c !important;
   }
+
   /* nav {
   } */
   .resumeButton {
