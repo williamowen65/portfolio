@@ -17,7 +17,7 @@ import {
   useDispatch,
 } from "react-redux";
 import configValues from "../../data/configValues.json";
-import { store } from "./context/store";
+import { store } from "../../context/store";
 import { BsDot } from "react-icons/bs";
 
 import "./styles/header.css";
@@ -126,6 +126,18 @@ const Navbar = ({
     }
   }, [showMobileNav]);
 
+  const Resume = () => (
+    <a
+      href="/William_Owen_Resume.pdf"
+      download="WilliamOwenResume"
+      className="resumeButton"
+    >
+      Resume
+    </a>
+  );
+
+  const Quote = () => <p>Some Quote</p>;
+
   return (
     <Fragment>
       <Header>
@@ -152,19 +164,13 @@ const Navbar = ({
               <div className="flex C innerWrapper">
                 <nav className="flex R subInnerWrapper exploreNav">
                   <div className="moreDetails">
-                    <a
-                      href="/William_Owen_Resume.pdf"
-                      download="WilliamOwenResume"
-                      className="resumeButton"
-                    >
-                      Resume
-                    </a>
+                    <Resume />
                   </div>
                   {/* <div>
                   </div> */}
                 </nav>
                 <div className="quote">
-                  <p>Some Quote</p>
+                  <Quote />
                 </div>
                 <span id="target"></span>
               </div>
@@ -313,6 +319,19 @@ const Navbar = ({
             </a>
             {/* </a> */}
           </li>
+          {screenWidth <
+            configValues.breakpoints
+              .mobile && (
+            <>
+              <li>
+                <Resume />
+              </li>
+              <li>
+                <Quote />
+              </li>
+            </>
+          )}
+          {console.log(screenWidth)}
         </ul>
       </Nav>
       {/* </div> */}
