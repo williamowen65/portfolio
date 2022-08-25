@@ -187,6 +187,14 @@ const Navbar = ({
           </div>
         </div>
       </Header>
+      {showMobileNav && (
+        <div
+          className="closeBackdrop"
+          onClick={() =>
+            setShowMobileNav(false)
+          }
+        ></div>
+      )}
       <Nav
         /*
           # Smaller header on scrolling
@@ -250,6 +258,7 @@ const Navbar = ({
             <p>Web Dev</p>
           </div>
         )} */}
+
         <ul
           className={
             showMobileNav

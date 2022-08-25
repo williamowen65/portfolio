@@ -259,6 +259,15 @@
     opacity: 0;
   }
 }
+.closeBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: 7;
+}
+
 body {
   margin: 0;
 }
