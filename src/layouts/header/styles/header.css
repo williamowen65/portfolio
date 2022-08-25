@@ -28,7 +28,7 @@
   justify-content: end;
 }
 .flex.C .logoContainer {
-  width: 92px;
+  width: fit-content;
   margin: 0 auto;
   display: block;
   z-index: 50;
@@ -71,12 +71,6 @@
   min-height: 100px;
   color: black;
   background: #fff3e0;
-}
-@media only screen and (max-width : 600px) {
-  .flex.R .brand {
-    position: absolute;
-    top: 0;
-  }
 }
 .flex.R .brand.top {
   transform: translateY(21px);
