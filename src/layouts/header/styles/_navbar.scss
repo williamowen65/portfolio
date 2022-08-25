@@ -348,18 +348,23 @@
   display: none;
   // position: sticky;
   // top: 0px;
+  &.sticky {
+    top: 0px !important;
+    opacity: 0;
+  }
   @media #{$small-and-down} {
     display: inline;
     position: absolute;
-    transition: all 0.5s;
-    &.sticky {
-      top: 0px;
-      opacity: 0;
-    }
+    // transition: top 0.5s;
     top: 23px;
     &.scrolledDown {
       position: fixed;
       top: 0px;
+      opacity: 0;
+      &.sticky {
+        top: 0px !important;
+        opacity: 1 !important;
+      }
     }
   }
 }

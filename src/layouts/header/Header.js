@@ -81,16 +81,18 @@ const Navbar = ({
           NL.current.classList != null
         ) {
           const ham =
-            document.querySelector(
+            document.querySelectorAll(
               ".hamburger"
             );
           if (window > 130) {
             NL.current.classList.add(
               "navLogo"
             );
-            ham.classList.toggle(
-              "scrolledDown",
-              true
+            ham.forEach((el) =>
+              el.classList.toggle(
+                "scrolledDown",
+                true
+              )
             );
             setScrolledDown(true);
           } else {
@@ -98,9 +100,11 @@ const Navbar = ({
             NL.current.classList.remove(
               "navLogo"
             );
-            ham.classList.toggle(
-              "scrolledDown",
-              false
+            ham.forEach((el) =>
+              el.classList.toggle(
+                "scrolledDown",
+                false
+              )
             );
           }
         }

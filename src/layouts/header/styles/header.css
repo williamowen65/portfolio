@@ -288,20 +288,24 @@
   cursor: pointer;
   display: none;
 }
+.hamburger.sticky {
+  top: 0px !important;
+  opacity: 0;
+}
 @media only screen and (max-width : 600px) {
   .hamburger {
     display: inline;
     position: absolute;
-    transition: all 0.5s;
     top: 23px;
-  }
-  .hamburger.sticky {
-    top: 0px;
-    opacity: 0;
   }
   .hamburger.scrolledDown {
     position: fixed;
     top: 0px;
+    opacity: 0;
+  }
+  .hamburger.scrolledDown.sticky {
+    top: 0px !important;
+    opacity: 1 !important;
   }
 }
 
