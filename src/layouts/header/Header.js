@@ -114,6 +114,18 @@ const Navbar = ({
     setShowMobileNav,
   ] = useState(false);
 
+  useEffect(() => {
+    if (showMobileNav) {
+      gsap.to(".contentNav", {
+        height: 275,
+      });
+    } else {
+      gsap.to(".contentNav", {
+        height: 50,
+      });
+    }
+  }, [showMobileNav]);
+
   return (
     <Fragment>
       <Header>

@@ -226,11 +226,13 @@
     padding-inline-start: 11px;
     padding-inline-end: 11px;
     transition: transform 1s;
-    &.navItems {
-      display: none;
-      &.show {
-        display: flex;
-        flex-direction: column;
+    @media #{$small-and-down} {
+      &.navItems {
+        display: none;
+        &.show {
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
     @media #{$small-and-down} {

@@ -187,12 +187,14 @@
   padding-inline-end: 11px;
   transition: transform 1s;
 }
-.contentNav ul.navItems {
-  display: none;
-}
-.contentNav ul.navItems.show {
-  display: flex;
-  flex-direction: column;
+@media only screen and (max-width : 600px) {
+  .contentNav ul.navItems {
+    display: none;
+  }
+  .contentNav ul.navItems.show {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .contentNav ul li {
   display: inline-block;
