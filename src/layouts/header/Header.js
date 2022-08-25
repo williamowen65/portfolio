@@ -201,6 +201,33 @@ const Navbar = ({
 
   const Quote = () => <p>Some Quote</p>;
 
+  const Dot = ({ screenWidth }) => {
+    console.log(
+      screenWidth,
+      configValues.breakpoints.mobile
+    );
+    if (
+      screenWidth >
+      configValues.breakpoints.mobile
+    ) {
+      return (
+        <BsDot
+          size={30}
+          color={
+            configValues.theme.dark
+              .color.main
+          }
+          style={{
+            transform:
+              "translateY(-5px)",
+          }}
+        />
+      );
+    } else {
+      return null;
+    }
+  };
+
   return (
     <Fragment>
       <Header>
@@ -343,16 +370,8 @@ const Navbar = ({
             </a>
             {/* </a> */}
           </li>{" "}
-          <BsDot
-            size={30}
-            color={
-              configValues.theme.dark
-                .color.main
-            }
-            style={{
-              transform:
-                "translateY(-5px)",
-            }}
+          <Dot
+            screenWidth={screenWidth}
           />
           <li
             onClick={scroll}
@@ -366,16 +385,8 @@ const Navbar = ({
             <a href="#about">About</a>
             {/* </a> */}
           </li>{" "}
-          <BsDot
-            size={30}
-            color={
-              configValues.theme.dark
-                .color.main
-            }
-            style={{
-              transform:
-                "translateY(-5px)",
-            }}
+          <Dot
+            screenWidth={screenWidth}
           />
           <li
             onClick={scroll}

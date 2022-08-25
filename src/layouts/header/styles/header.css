@@ -140,7 +140,6 @@
 }
 
 .contentNav {
-  overflow-x: scroll;
   position: -webkit-sticky;
   position: sticky;
   z-index: 8;
@@ -180,26 +179,35 @@
     text-align: center;
   }
 }
-.contentNav a {
+.contentNav a.logoSmall {
   display: inline-block;
+  position: absolute;
+  top: 0;
 }
 .contentNav ul {
-  display: inline-block;
+  margin-left: auto;
+  display: inline-flex;
   padding-inline-start: 11px;
   padding-inline-end: 11px;
   transition: transform 1s;
+  justify-content: flex-end;
 }
 @media only screen and (max-width : 600px) {
+  .contentNav ul {
+    width: 100%;
+  }
   .contentNav ul.navItems {
     display: none;
   }
   .contentNav ul.navItems.show {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
   }
   .contentNav ul.navItems.show li {
     background: gray;
-    padding: 10px 20px;
+    padding: 0px 20px;
   }
 }
 .contentNav ul li {

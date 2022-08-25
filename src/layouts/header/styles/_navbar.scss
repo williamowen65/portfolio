@@ -169,7 +169,7 @@
 }
 
 .contentNav {
-  overflow-x: scroll;
+  // overflow-x: scroll;
   position: -webkit-sticky;
   position: sticky;
   @media #{$small-and-down} {
@@ -219,24 +219,30 @@
   // i {
   //   transform: translateY(3px);
   // }
-  a {
+  a.logoSmall {
     display: inline-block;
+    position: absolute;
+    top: 0;
   }
   ul {
-    // margin-right: 15px;
-    display: inline-block;
+    margin-left: auto;
+    display: inline-flex;
     padding-inline-start: 11px;
     padding-inline-end: 11px;
     transition: transform 1s;
+    justify-content: flex-end;
     @media #{$small-and-down} {
+      width: 100%;
       &.navItems {
         display: none;
         &.show {
           display: flex;
           flex-direction: column;
+          justify-content: space-around;
+          height: 100%;
           li {
             background: gray;
-            padding: 10px 20px;
+            padding: 0px 20px;
           }
         }
       }
