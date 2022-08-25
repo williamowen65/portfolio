@@ -115,19 +115,23 @@ const Navbar = ({
         <div className="main-header">
           <div className="flex C">
             <div className="flex R outerWrapper">
-              <Link
-                className="brand top"
-                to="/"
-                onClick={() => {
-                  triggerRerender();
-                  console.log(
-                    triggerRerender
-                  );
-                }}
-              >
-                <h1>WO</h1>
-                <p>Web Dev Portfolio</p>
-              </Link>
+              <div className="logoContainer">
+                <Link
+                  className="brand top"
+                  to="/"
+                  onClick={() => {
+                    triggerRerender();
+                    console.log(
+                      triggerRerender
+                    );
+                  }}
+                >
+                  <h1>WO</h1>
+                  <p>
+                    Web Dev Portfolio
+                  </p>
+                </Link>
+              </div>
               <div className="flex C innerWrapper">
                 <nav className="flex R subInnerWrapper exploreNav">
                   <div className="moreDetails">

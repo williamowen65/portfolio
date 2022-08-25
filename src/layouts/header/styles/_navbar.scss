@@ -31,6 +31,12 @@
         justify-content: end;
       }
     }
+    .logoContainer {
+      width: 92px;
+      margin: 0 auto;
+      display: block;
+      z-index: 50;
+    }
 
     .quote {
       display: flex;

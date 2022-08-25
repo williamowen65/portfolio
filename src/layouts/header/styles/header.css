@@ -27,6 +27,12 @@
 .flex.C.innerWrapper .exploreNav {
   justify-content: end;
 }
+.flex.C .logoContainer {
+  width: 92px;
+  margin: 0 auto;
+  display: block;
+  z-index: 50;
+}
 .flex.C .quote {
   display: flex;
   align-items: center;
