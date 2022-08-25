@@ -190,6 +190,9 @@
   .hamburger {
     position: absolute;
     right: 45px;
+    box-sizing: content-box;
+    padding: 10px;
+    cursor: pointer;
     // top: 35px;
     display: none;
     // position: sticky;
@@ -223,9 +226,15 @@
     padding-inline-start: 11px;
     padding-inline-end: 11px;
     transition: transform 1s;
+    &.navItems {
+      display: none;
+      &.show {
+        display: flex;
+        flex-direction: column;
+      }
+    }
     @media #{$small-and-down} {
       // apple
-      display: none !important;
     }
     li {
       display: inline-block;

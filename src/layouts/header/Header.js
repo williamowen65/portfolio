@@ -109,6 +109,11 @@ const Navbar = ({
     );
   }, []);
 
+  const [
+    showMobileNav,
+    setShowMobileNav,
+  ] = useState(false);
+
   return (
     <Fragment>
       <Header>
@@ -181,6 +186,11 @@ const Navbar = ({
           }
           size={30}
           className="hamburger"
+          onClick={() =>
+            setShowMobileNav(
+              !showMobileNav
+            )
+          }
         />
         <Link
           to="/"
@@ -214,6 +224,11 @@ const Navbar = ({
           </div>
         )} */}
         <ul
+          className={
+            showMobileNav
+              ? "navItems show"
+              : "navItems"
+          }
           style={
             scrolledDown && mobile
               ? {

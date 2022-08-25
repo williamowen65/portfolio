@@ -163,6 +163,9 @@
 .contentNav .hamburger {
   position: absolute;
   right: 45px;
+  box-sizing: content-box;
+  padding: 10px;
+  cursor: pointer;
   display: none;
 }
 @media only screen and (max-width : 600px) {
@@ -184,10 +187,12 @@
   padding-inline-end: 11px;
   transition: transform 1s;
 }
-@media only screen and (max-width : 600px) {
-  .contentNav ul {
-    display: none !important;
-  }
+.contentNav ul.navItems {
+  display: none;
+}
+.contentNav ul.navItems.show {
+  display: flex;
+  flex-direction: column;
 }
 .contentNav ul li {
   display: inline-block;
