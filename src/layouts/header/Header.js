@@ -126,6 +126,15 @@ const Navbar = ({
     }
   }, [showMobileNav]);
 
+  useEffect(() => {
+    if (
+      screenWidth >
+      configValues.breakpoints.mobile
+    ) {
+      setShowMobileNav(false);
+    }
+  }, [screenWidth]);
+
   const Resume = () => (
     <a
       href="/William_Owen_Resume.pdf"
