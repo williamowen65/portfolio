@@ -208,10 +208,16 @@
     height: 100%;
   }
   .contentNav ul.navItems.show li {
-    padding: 0px 20px;
+    padding: 10px 0px 10px 100%;
+    display: block;
+    cursor: pointer;
+    transition: all 0.5s;
   }
   .contentNav ul.navItems.show li.quote {
     align-self: center;
+  }
+  .contentNav ul.navItems.show li:hover {
+    background-color: yellow;
   }
 }
 .contentNav ul li {

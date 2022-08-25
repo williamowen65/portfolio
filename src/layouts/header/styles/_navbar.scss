@@ -247,9 +247,15 @@
           height: 100%;
           li {
             // background: gray;
-            padding: 0px 20px;
+            padding: 10px 0px 10px 100%;
+            display: block;
+            cursor: pointer;
+            transition: all 0.5s;
             &.quote {
               align-self: center;
+            }
+            &:hover {
+              background-color: yellow;
             }
           }
         }
