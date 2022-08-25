@@ -125,14 +125,15 @@ const Navbar = ({
   /// handles hiding nav on scroll down
 
   const [scrollDir, setScrollDir] =
-    useState(-1);
+    useState(1);
 
   let bottomNav = useRef();
   const triggerPoint = 300;
   useEffect(() => {
     const event = captureScroll(
       () => setScrollDir(1),
-      () => setScrollDir(-1)
+      () => setScrollDir(-1),
+      300
     );
     // return () => {
     //   window.removeEventListener(
