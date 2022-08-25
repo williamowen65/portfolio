@@ -156,21 +156,26 @@
 .contentNav {
   overflow-x: scroll;
   position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  z-index: 8;
   top: -1px;
   display: flex;
   width: 100%;
   // user-select: ;
-  z-index: 5;
   text-align: right;
   align-items: center;
   justify-content: space-between;
   background: $contentNav-bg;
+  height: 50px;
+  display: flex !important;
+  align-items: center !important;
   .hamburger {
     position: absolute;
     right: 45px;
     top: 35px;
     display: none;
+    position: sticky;
+    top: 0px;
     @media #{$small-and-down} {
       display: inline;
     }
