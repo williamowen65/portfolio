@@ -83,11 +83,13 @@ export default function App(props) {
 
   return (
     <>
-      {state && (
-        <span>
-          <WebsiteLoading />
-        </span>
-      )}
+      {configValues.specialFeatures
+        .showLoadingScreen &&
+        state && (
+          <span>
+            <WebsiteLoading />
+          </span>
+        )}
       <Div className="App" ref={ref}>
         {configValues.breakpoints
           .mainWidth < screenWidth && (
