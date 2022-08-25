@@ -232,9 +232,10 @@
     padding-inline-end: 11px;
     transition: transform 1s;
     justify-content: flex-end;
+
     // color: black;
     @media #{$small-and-down} {
-      margin-top: 60px;
+      margin-top: 220px;
       width: 100%;
       &.navItems {
         display: none;
@@ -247,6 +248,9 @@
           li {
             // background: gray;
             padding: 0px 20px;
+            &.quote {
+              align-self: center;
+            }
           }
         }
       }

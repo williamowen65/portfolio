@@ -427,9 +427,9 @@ const Navbar = ({
               <li>
                 <Resume />
               </li>
-              <li>
+              {/* <li className="quote">
                 <Quote />
-              </li>
+              </li> */}
             </>
           )}
           {/* {console.log(screenWidth)} */}

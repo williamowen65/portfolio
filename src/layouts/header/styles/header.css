@@ -194,7 +194,7 @@
 }
 @media only screen and (max-width : 600px) {
   .contentNav ul {
-    margin-top: 60px;
+    margin-top: 220px;
     width: 100%;
   }
   .contentNav ul.navItems {
@@ -209,6 +209,9 @@
   }
   .contentNav ul.navItems.show li {
     padding: 0px 20px;
+  }
+  .contentNav ul.navItems.show li.quote {
+    align-self: center;
   }
 }
 .contentNav ul li {
