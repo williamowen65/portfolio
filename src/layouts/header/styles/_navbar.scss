@@ -199,6 +199,8 @@
     // top: 0px;
     @media #{$small-and-down} {
       display: inline;
+      position: absolute;
+      top: 0;
     }
   }
   @media #{$small-and-down} {
@@ -232,6 +234,10 @@
         &.show {
           display: flex;
           flex-direction: column;
+          li {
+            background: gray;
+            padding: 10px 20px;
+          }
         }
       }
     }
