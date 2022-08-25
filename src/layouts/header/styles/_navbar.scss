@@ -227,9 +227,7 @@
   ul {
     margin-left: auto;
     display: inline-flex;
-    padding-inline-start: 11px;
 
-    padding-inline-end: 11px;
     transition: transform 1s;
     justify-content: flex-end;
 
@@ -246,6 +244,10 @@
           align-items: flex-end;
           height: 100%;
           li {
+            a {
+              padding-inline-start: 11px;
+              padding-inline-end: 11px;
+            }
             // background: gray;
             padding: 10px 0px 10px 100%;
             display: block;

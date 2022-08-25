@@ -187,8 +187,6 @@
 .contentNav ul {
   margin-left: auto;
   display: inline-flex;
-  padding-inline-start: 11px;
-  padding-inline-end: 11px;
   transition: transform 1s;
   justify-content: flex-end;
 }
@@ -212,6 +210,10 @@
     display: block;
     cursor: pointer;
     transition: all 0.5s;
+  }
+  .contentNav ul.navItems.show li a {
+    padding-inline-start: 11px;
+    padding-inline-end: 11px;
   }
   .contentNav ul.navItems.show li.quote {
     align-self: center;
