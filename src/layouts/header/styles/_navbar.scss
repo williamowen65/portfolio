@@ -160,7 +160,10 @@
 .contentNav {
   overflow-x: scroll;
   position: -webkit-sticky;
-  position: fixed;
+  position: sticky;
+  @media #{$small-and-down} {
+    position: fixed;
+  }
   z-index: 8;
   top: -1px;
   display: flex;
