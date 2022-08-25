@@ -40,6 +40,9 @@ const Navbar = ({
   const screenWidth = useSelector(
     (state) => state.app.screenWidth
   );
+  const screenHeight = useSelector(
+    (state) => state.app.screenHeight
+  );
 
   const {
     mobile,
@@ -133,16 +136,33 @@ const Navbar = ({
     const el = document.querySelector(
       ".navItems"
     );
-    return el.classList.contains(
+    return !el.classList.contains(
       "show"
     );
   };
+  const condition2 = () => {
+    return (
+      window.innerHeight <
+      configValues.breakpoints
+        .mobileHeight
+    );
+  };
+  const condition3 = () => {
+    const bool =
+      window.innerWidth <
+      configValues.breakpoints.mobile;
+    // console.log(bool);
+    return bool;
+  };
+
   useEffect(() => {
     const event = captureScroll(
       () => setScrollDir(1),
       () => setScrollDir(-1),
       500,
-      condition
+      condition,
+      condition2,
+      condition3
     );
     // return () => {
     //   window.removeEventListener(

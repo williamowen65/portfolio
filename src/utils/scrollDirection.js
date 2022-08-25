@@ -4,18 +4,28 @@ export const captureScroll = (
   upFn,
   downFn,
   topMargin,
-  condition
+  condition,
+  condition2,
+  condition3
 ) => {
   // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
   return window.addEventListener(
     "scroll",
     function () {
       // or window.addEventListener("scroll"....
-
-      const bool = condition();
+      console.log(
+        "scrolling",
+        condition(),
+        condition2(),
+        condition3()
+      );
       if (
-        window.scrollY > topMargin &&
-        !bool
+        (window.scrollY > topMargin &&
+          condition() &&
+          condition2()) ||
+        (condition() &&
+          condition3() &&
+          condition2())
       ) {
         var st =
           window.pageYOffset ||
