@@ -221,6 +221,9 @@
   .contentNav ul.navItems.show li:hover {
     background-color: yellow;
   }
+  .contentNav ul.navItems.show li.resBtnListItem {
+    cursor: initial;
+  }
   .contentNav ul.navItems.show li.resBtnListItem a {
     padding: 0px 10px;
     margin-top: 10px;

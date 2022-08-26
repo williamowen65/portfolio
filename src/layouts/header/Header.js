@@ -159,7 +159,7 @@ const Navbar = ({
     useState(1);
 
   let bottomNav = useRef();
-  const triggerPoint = 300;
+  const triggerPoint = 800;
   const condition = () => {
     const el = document.querySelector(
       ".navItems"
@@ -187,7 +187,7 @@ const Navbar = ({
     const event = captureScroll(
       () => setScrollDir(1),
       () => setScrollDir(-1),
-      500,
+      triggerPoint,
       condition,
       condition2,
       condition3

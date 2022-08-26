@@ -19,11 +19,13 @@ export const captureScroll = (
         condition2(),
         condition3()
       );
+      // alert(window.scrollY);
       if (
         (window.scrollY > topMargin &&
           condition() &&
           condition2()) ||
-        (condition() &&
+        (window.scrollY > topMargin &&
+          condition() &&
           condition3() &&
           condition2())
       ) {
