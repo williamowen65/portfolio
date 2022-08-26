@@ -109,50 +109,7 @@ export default function App(props) {
               width={width}
               className="MobileWrapperLayer"
             >
-              <Routes>
-                <Route
-                  path="/"
-                  element={<Home />}
-                />
-                {configValues
-                  .specialFeatures
-                  .auth && (
-                  <Route
-                    path="/auth"
-                    element={<Login />}
-                  />
-                )}
-                {configValues
-                  .specialFeatures
-                  .showFeatures && (
-                  <Route
-                    path="/features"
-                    element={
-                      <Features />
-                    }
-                  />
-                )}
-                <Route
-                  path={"/about"}
-                  element={<About />}
-                />
-
-                <Route
-                  path="*"
-                  element={(() => {
-                    return (
-                      <Navigate
-                        to="/"
-                        replace={true}
-                      />
-                    );
-                  })()}
-                ></Route>
-              </Routes>
-              {configValues
-                .specialFeatures
-                .showPalette &&
-                true && <Palette />}
+              <AllTheRoutes />
             </MobileWrapper>
           </MainContainer>
           <Footer
@@ -240,3 +197,56 @@ const MobileWrapper = styled.div`
       : "100%"};
   margin: 0 auto;
 `;
+
+const AllTheRoutes = () => (
+  <>
+    <Routes>
+      <Route
+        path="/"
+        element={<Home />}
+      />
+      {/* {configValues
+                  .specialFeatures
+                  .auth && (
+                  <Route
+                    path="/auth"
+                    element={<Login />}
+                  />
+                )}
+                {configValues
+                  .specialFeatures
+                  .showFeatures && (
+                  <Route
+                    path="/features"
+                    element={
+                      <Features />
+                    }
+                  />
+                )}
+                <Route
+                  path={"/about"}
+                  element={<About />}
+                /> */}
+      {/*                 
+                <Route
+                  path="/#"
+                  element={<Home />}
+                /> */}
+
+      <Route
+        path="*"
+        element={(() => {
+          return (
+            <Navigate
+              to="/"
+              replace={true}
+            />
+          );
+        })()}
+      />
+    </Routes>
+    {configValues.specialFeatures
+      .showPalette &&
+      true && <Palette />}
+  </>
+);

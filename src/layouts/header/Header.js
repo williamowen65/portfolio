@@ -8,6 +8,8 @@ import React, {
 import { Provider } from "react-redux";
 import {
   Link,
+  Route,
+  useLocation,
   useParams,
 } from "react-router-dom";
 import Hamburger from "./assets/Hamburger";
@@ -41,6 +43,7 @@ import ResumeButton from "../../layouts/components/ResumeButton";
 const Navbar = ({
   triggerRerender,
 }) => {
+  const location = useLocation();
   const screenWidth = useSelector(
     (state) => state.app.screenWidth
   );
@@ -252,6 +255,14 @@ const Navbar = ({
     }
   };
 
+  const scroll = (ev, id) => {
+    const el = document
+      .querySelector(`#${id}`)
+      .scrollIntoView();
+
+    // window.scrollTo({ top: el });
+  };
+
   return (
     <Fragment>
       <Header>
@@ -404,10 +415,14 @@ const Navbar = ({
             {/* <li onClick={scroll}> */}
             {/* <a href='#target'> */}
             <a
-              href="#contributions"
-              onClick={() =>
-                setShowMobileNav(false)
-              }
+              // href="#contributions"
+              onClick={(e) => {
+                scroll(
+                  e,
+                  "contributions"
+                );
+                setShowMobileNav(false);
+              }}
             >
               Contributions
             </a>
@@ -426,10 +441,11 @@ const Navbar = ({
           >
             {/* <a href='#target'> */}
             <a
-              href="#about"
-              onClick={() =>
-                setShowMobileNav(false)
-              }
+              // href="#about"
+              onClick={(e) => {
+                scroll(e, "about");
+                setShowMobileNav(false);
+              }}
             >
               About
             </a>
@@ -448,10 +464,11 @@ const Navbar = ({
           >
             {/* <a href='#target'> */}
             <a
-              href="#contact"
-              onClick={() =>
-                setShowMobileNav(false)
-              }
+              // href="#contact"
+              onClick={(e) => {
+                scroll(e, "contact");
+                setShowMobileNav(false);
+              }}
             >
               Contact
             </a>
