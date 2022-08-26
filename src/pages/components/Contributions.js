@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BsGithub } from "react-icons/bs";
 import { DiDocker } from "react-icons/di";
 import { FaDocker } from "react-icons/fa";
+import { ImInfo } from "react-icons/im";
 import configValues from "../../data/configValues.json";
 
 export default function Contributions() {
@@ -17,6 +18,7 @@ export default function Contributions() {
             </nobr>
           </h2>
         </legend>
+        <ImInfo className="info" />
 
         <p>
           Automate nearly 100% of your
@@ -44,7 +46,10 @@ export default function Contributions() {
 
 const Article = styled.article`
   fieldset {
+    position: relative;
     legend {
+      display: flex;
+      align-items: center;
       text-align: left;
       color: ${configValues.theme.dark
         .color.main};
@@ -59,6 +64,16 @@ const Article = styled.article`
         );
       }
     }
+    svg.info {
+      color: ${configValues.theme.dark
+        .color.main};
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: -30px;
+      /* transform: translate(0, -10px); */
+      /* margin: 0 25px; */
+    }
     a {
       padding: 10px;
       margin: 10px;
@@ -69,6 +84,7 @@ const Article = styled.article`
       white-space: nowrap;
       margin: 20px auto;
       text-align: center;
+      /* position: relative; */
       span.outer {
         display: flex;
         justify-content: space-between;
