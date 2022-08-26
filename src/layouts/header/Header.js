@@ -11,7 +11,10 @@ import {
   useParams,
 } from "react-router-dom";
 import Hamburger from "./assets/Hamburger";
-import { IoReorderThree } from "react-icons/io5";
+import {
+  IoBluetooth,
+  IoReorderThree,
+} from "react-icons/io5";
 import {
   useSelector,
   useDispatch,
@@ -491,27 +494,49 @@ export default Wrapper;
 
 const ResumeButton = styled.a`
   /* .resumeButton { */
-  /* border: 1px solid ${configValues
-    .theme.dark.color.highlight}; */
+  /* border: 1px solid ${
+    configValues.theme.dark.color
+      .highlight
+  }; */
   width: fit-content !important;
-  color: ${configValues.theme.dark.color
-    .highlight};
+  color: ${
+    configValues.theme.dark.color
+      .highlight
+  };
   box-shadow: 1px 1px 2px #c193c1,
     -1px 1px 2px #ad37ad,
     0px -1px 2px #5fcf19;
   transition: box-shadow 1s;
 
-  &:hover {
+  @mixin BoxShadowColors {
     box-shadow: 0px -1px 2px #5fcf19,
       1px 1px 2px #c193c1,
       -1px 1px 3px #ad37ad,
       6px -9px 2px #5fcf19,
       -6px 8px 2px #c193c1;
-    /* -9px 17px 15px #ad37ad; */
-    /* background-color: rgb(121, 91, 255) !important; */
-    /* border: 1px solid rgb(190, 189, 211); */
-    /* color: black; */
   }
+
+  &:hover {
+    /* @include BoxShadowColors; */
+    box-shadow: 0px -1px 2px #5fcf19,
+      1px 1px 2px #c193c1,
+      -1px 1px 3px #ad37ad,
+      6px -9px 2px #5fcf19,
+      -6px 8px 2px #c193c1;
+  }
+  }
+  /* @media #{$sma} */
+  
+  &:focus,
+  &:visited {
+    ${
+      window.innerWidth >
+        configValues.breakpoints
+          .mobile &&
+      `
+    box-shadow: blue
+  `
+    }
 `;
 
 const Header = styled.header`
