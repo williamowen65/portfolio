@@ -243,13 +243,14 @@
 
             a {
               padding-inline-end: 24px;
-              display: block;
+              display: flex;
               width: 100vw;
-              height: 100%;
-              text-align: right;
+              height: 37px;
+              justify-content: flex-end;
+              align-items: center;
             }
             // background: gray;
-            padding: 10px 0px 10px 100%;
+            padding: 0px 0px 0px 100%;
             display: block;
             cursor: pointer;
             transition: all 0.5s;
