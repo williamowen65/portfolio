@@ -218,13 +218,13 @@ const Navbar = ({
 
   /// the html
   const Resume = () => (
-    <a
+    <ResumeButton
       href="/William_Owen_Resume.pdf"
       download="WilliamOwenResume"
       className="resumeButton"
     >
       Resume
-    </a>
+    </ResumeButton>
   );
 
   const Quote = () => <p>Some Quote</p>;
@@ -465,7 +465,7 @@ const Navbar = ({
             configValues.breakpoints
               .mobile && (
             <>
-              <li>
+              <li className="resBtnListItem">
                 <Resume />
               </li>
               {/* <li className="quote">
@@ -489,6 +489,27 @@ const Wrapper = (props) => (
 
 export default Wrapper;
 
+const ResumeButton = styled.a`
+  /* .resumeButton { */
+  /* border: 1px solid ${configValues
+    .theme.dark.color.highlight}; */
+  width: fit-content !important;
+  color: ${configValues.theme.dark.color
+    .highlight};
+  box-shadow: 1px 1px 2px #c193c1,
+    -1px 1px 2px #ad37ad,
+    0px -1px 2px #5fcf19;
+
+  &:hover {
+    box-shadow: 0px -1px 2px #5fcf19,
+      1px 1px 2px #c193c1,
+      -1px 1px 2px #ad37ad;
+    /* background-color: rgb(121, 91, 255) !important; */
+    /* border: 1px solid rgb(190, 189, 211); */
+    /* color: black; */
+  }
+`;
+
 const Header = styled.header`
   h1 {
     text-shadow: 0px 0px 3px white;
@@ -500,24 +521,6 @@ const Header = styled.header`
 
   /* nav {
   } */
-  .resumeButton {
-    /* border: 1px solid ${configValues
-      .theme.dark.color.highlight}; */
-    color: ${configValues.theme.dark
-      .color.highlight};
-    box-shadow: 1px 1px 2px #c193c1,
-      -1px 1px 2px #ad37ad,
-      0px -1px 2px #5fcf19;
-
-    &:hover {
-      box-shadow: 0px -1px 2px #5fcf19,
-        1px 1px 2px #c193c1,
-        -1px 1px 2px #ad37ad;
-      /* background-color: rgb(121, 91, 255) !important; */
-      /* border: 1px solid rgb(190, 189, 211); */
-      /* color: black; */
-    }
-  }
 `;
 
 const Nav = styled.nav`

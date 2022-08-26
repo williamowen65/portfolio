@@ -242,7 +242,7 @@
             // height: 100%;
 
             a {
-              padding-inline-end: 24px;
+              margin-inline-end: 24px;
               display: flex;
               width: 100vw;
               height: 37px;
@@ -259,6 +259,16 @@
             }
             &:hover {
               background-color: yellow;
+            }
+            &.resBtnListItem {
+              a {
+                padding: 0px 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+              }
+              &:hover {
+                background-color: transparent;
+              }
             }
           }
         }

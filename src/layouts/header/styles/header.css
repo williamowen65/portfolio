@@ -208,7 +208,7 @@
     transition: all 0.5s;
   }
   .contentNav ul.navItems.show li a {
-    padding-inline-end: 24px;
+    margin-inline-end: 24px;
     display: flex;
     width: 100vw;
     height: 37px;
@@ -220,6 +220,14 @@
   }
   .contentNav ul.navItems.show li:hover {
     background-color: yellow;
+  }
+  .contentNav ul.navItems.show li.resBtnListItem a {
+    padding: 0px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .contentNav ul.navItems.show li.resBtnListItem:hover {
+    background-color: transparent;
   }
 }
 .contentNav ul li {
