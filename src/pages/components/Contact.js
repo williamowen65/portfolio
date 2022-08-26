@@ -52,9 +52,7 @@ export default function Contact() {
             Portfolio
             <ul>
               <li>
-                <a href="http://www.wowebdev.com">
-                  www.WOWebDev.com
-                </a>
+                <a>www.WOWebDev.com</a>
               </li>
             </ul>
           </li>
@@ -100,6 +98,7 @@ const ContactStyled = styled.div`
   }
   .card {
     position: relative;
+    user-select: text;
     .title {
       text-align: center;
       h2 {
