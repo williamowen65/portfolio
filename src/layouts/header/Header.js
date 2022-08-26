@@ -36,6 +36,7 @@ import {
 // import { store } from "./context/store";
 import styled from "styled-components";
 import WO from "../components/WO";
+import ResumeButton from "../../layouts/components/ResumeButton";
 
 const Navbar = ({
   triggerRerender,
@@ -220,15 +221,7 @@ const Navbar = ({
   }, [scrollDir]);
 
   /// the html
-  const Resume = () => (
-    <ResumeButton
-      href="/William_Owen_Resume.pdf"
-      download="WilliamOwenResume"
-      className="resumeButton"
-    >
-      Resume
-    </ResumeButton>
-  );
+  const Resume = () => <ResumeButton />;
 
   const Quote = () => <p>Some Quote</p>;
 
@@ -491,53 +484,6 @@ const Wrapper = (props) => (
 );
 
 export default Wrapper;
-
-const ResumeButton = styled.a`
-  /* .resumeButton { */
-  /* border: 1px solid ${
-    configValues.theme.dark.color
-      .highlight
-  }; */
-  width: fit-content !important;
-  color: ${
-    configValues.theme.dark.color
-      .highlight
-  };
-  box-shadow: 1px 1px 2px #c193c1,
-    -1px 1px 2px #ad37ad,
-    0px -1px 2px #5fcf19;
-  transition: box-shadow 1s;
-
-  @mixin BoxShadowColors {
-    box-shadow: 0px -1px 2px #5fcf19,
-      1px 1px 2px #c193c1,
-      -1px 1px 3px #ad37ad,
-      6px -9px 2px #5fcf19,
-      -6px 8px 2px #c193c1;
-  }
-
-  &:hover {
-    /* @include BoxShadowColors; */
-    box-shadow: 0px -1px 2px #5fcf19,
-      1px 1px 2px #c193c1,
-      -1px 1px 3px #ad37ad,
-      6px -9px 2px #5fcf19,
-      -6px 8px 2px #c193c1;
-  }
-  }
-  /* @media #{$sma} */
-  
-  &:focus,
-  &:visited {
-    ${
-      window.innerWidth >
-        configValues.breakpoints
-          .mobile &&
-      `
-    box-shadow: blue
-  `
-    }
-`;
 
 const Header = styled.header`
   h1 {

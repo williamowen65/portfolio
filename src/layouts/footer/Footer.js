@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import "./styles/footer.css";
 import configValues from "../../data/configValues.json";
 import styled from "styled-components";
+import ResumeButton from "../../layouts/components/ResumeButton";
 import WO from "../components/WO";
 
 const Footer = ({ style }) => {
@@ -50,12 +51,7 @@ const Footer = ({ style }) => {
           <ul>
             <li>
               {/* <Link to='/rate'> Give a review</Link> */}
-              <a
-                href="/William_Owen_Resume.pdf"
-                download="WilliamOwenResume"
-              >
-                Resume
-              </a>
+              <ResumeButton />
             </li>
           </ul>
         </div>
