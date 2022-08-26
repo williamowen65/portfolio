@@ -95,10 +95,22 @@ const Navbar = ({
               )
             );
             setScrolledDown(true);
+            gsap.to(
+              ".spacer.forDropDown",
+              {
+                marginBottom: 0,
+              }
+            );
           } else {
             setScrolledDown(false);
             NL.current.classList.remove(
               "navLogo"
+            );
+            gsap.to(
+              ".spacer.forDropDown",
+              {
+                marginBottom: 69,
+              }
             );
             ham.forEach((el) =>
               el.classList.toggle(
@@ -369,7 +381,7 @@ const Navbar = ({
             <p>Web Dev</p>
           </div>
         )} */}
-
+        <div className="spacer forDropDown"></div>
         <ul
           className={
             showMobileNav

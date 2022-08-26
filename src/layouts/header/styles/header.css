@@ -165,9 +165,13 @@
     position: fixed;
   }
 }
+.contentNav .spacer {
+  margin-bottom: 69px;
+}
 @media only screen and (max-width : 600px) {
   .contentNav {
     text-align: center;
+    flex-direction: column;
   }
 }
 .contentNav a.logoSmall {

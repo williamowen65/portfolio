@@ -193,9 +193,12 @@
   height: 50px; // clamp(50px, 215px); ///50px;
   display: flex !important;
   align-items: center !important;
-
+  .spacer {
+    margin-bottom: 69px;
+  }
   @media #{$small-and-down} {
     text-align: center;
+    flex-direction: column;
   }
   // &.center {
   //   justify-content: center;
