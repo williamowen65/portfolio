@@ -499,11 +499,15 @@ const ResumeButton = styled.a`
   box-shadow: 1px 1px 2px #c193c1,
     -1px 1px 2px #ad37ad,
     0px -1px 2px #5fcf19;
+  transition: box-shadow 1s;
 
   &:hover {
     box-shadow: 0px -1px 2px #5fcf19,
       1px 1px 2px #c193c1,
-      -1px 1px 2px #ad37ad;
+      -1px 1px 3px #ad37ad,
+      6px -9px 2px #5fcf19,
+      -6px 8px 2px #c193c1;
+    /* -9px 17px 15px #ad37ad; */
     /* background-color: rgb(121, 91, 255) !important; */
     /* border: 1px solid rgb(190, 189, 211); */
     /* color: black; */
