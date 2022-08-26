@@ -159,7 +159,7 @@ const Navbar = ({
     useState(1);
 
   let bottomNav = useRef();
-  const triggerPoint = 800;
+  const triggerPoint = 500;
   const condition = () => {
     const el = document.querySelector(
       ".navItems"
