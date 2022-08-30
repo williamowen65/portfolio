@@ -10,6 +10,7 @@ import { ImInfo } from "react-icons/im";
 import configValues from "../../../data/configValues.json";
 import * as d3 from "d3";
 import "./styles/_contributions.scss";
+import gsap from "gsap";
 
 export default function Contributions() {
   return (
@@ -29,7 +30,6 @@ export default function Contributions() {
             Element={() => (
               <div>dgfg</div>
             )}
-            text="dfdsfsd"
           />
 
           <p>
@@ -115,7 +115,16 @@ const Article = styled.article`
 const ToolTip = ({ Element, text }) => {
   const tooltip = useRef();
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    const el = getComputedStyle(
+      document.querySelector(
+        ".tooltip.elem"
+      )
+    ).opacity;
+    gsap.to(".tooltip.elem", {
+      opacity: el == "1" ? 0 : 1,
+    });
+  };
   return (
     <ToolTipStyled>
       <div ref={tooltip}>
