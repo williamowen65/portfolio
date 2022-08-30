@@ -1,8 +1,22 @@
 .tooltip.elem {
   background: lightblue;
-  max-width: 300px;
+  width: 300px;
+  height: 100px;
   position: absolute;
-  right: 10px;
-  top: -77px;
+  border-radius: 10px;
+  right: -24px;
+  top: -164px;
   padding: 5px;
+  &::before {
+    content: "";
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    position: absolute;
+    background: lightblue;
+    bottom: -16px;
+    transform: rotate(45deg);
+    right: 30px;
+  }
 }
