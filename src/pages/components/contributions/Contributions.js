@@ -7,8 +7,9 @@ import { BsGithub } from "react-icons/bs";
 import { DiDocker } from "react-icons/di";
 import { FaDocker } from "react-icons/fa";
 import { ImInfo } from "react-icons/im";
-import configValues from "../../data/configValues.json";
+import configValues from "../../../data/configValues.json";
 import * as d3 from "d3";
+import "./styles/_contributions.scss";
 
 export default function Contributions() {
   return (
@@ -25,9 +26,10 @@ export default function Contributions() {
           </legend>
 
           <ToolTip
-            element={() => (
-              <div>HELLO</div>
+            Element={() => (
+              <div>dgfg</div>
             )}
+            text="dfdsfsd"
           />
 
           <p>
@@ -110,52 +112,10 @@ const Article = styled.article`
   }
 `;
 
-const ToolTip = (element) => {
+const ToolTip = ({ Element, text }) => {
   const tooltip = useRef();
 
-  useEffect(() => {
-    let svg;
-    if (tooltip.current) {
-      const el = document.querySelector(
-        "svg.tooltip.info.elem"
-      );
-      svg = d3.select(el);
-      const g = svg.append("g");
-
-      const pathGen = d3.path();
-      pathGen.moveTo(0, 0);
-      pathGen.lineTo(-10, -10);
-      pathGen.lineTo(-100, -50);
-      pathGen.lineTo(-100, -100);
-      pathGen.lineTo(100, -100);
-      pathGen.lineTo(100, -50);
-      pathGen.lineTo(10, -10);
-      // pathGen.lineTo(100, 60);
-      // pathGen.lineTo(10, 10);
-      pathGen.closePath();
-
-      g.append("path")
-        .attr("d", pathGen)
-        .attr("fill", "black");
-    }
-
-    const pathGen = drawPopup();
-
-    return () => {
-      // svg?.remove();
-    };
-  }, [tooltip.current]);
-
-  const drawPopup = () => {
-    const path = d3.path;
-
-    // path.lineTo(10,10)
-
-    return path;
-  };
-
   const handleClick = () => {};
-
   return (
     <ToolTipStyled>
       <div ref={tooltip}>
@@ -164,7 +124,9 @@ const ToolTip = (element) => {
           size={20}
           onClick={handleClick}
         />
-        <svg className="tooltip info elem"></svg>
+        <div className="tooltip info elem">
+          <Element />
+        </div>
       </div>
     </ToolTipStyled>
   );

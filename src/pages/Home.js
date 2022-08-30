@@ -16,7 +16,7 @@ import { allCards } from "../features/displayCard/layoutStyles/carousel/randomDa
 // import { git } from 'react-icons/all'
 
 import Hero from "./components/hero/Hero.js";
-import Contributions from "./components/Contributions";
+import Contributions from "./components/contributions/Contributions";
 import Contact from "./components/Contact";
 
 export default function Home() {
