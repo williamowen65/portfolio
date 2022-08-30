@@ -40,9 +40,8 @@ export default function Contact() {
             Contact
             <ul>
               <li>
-                <nobr>
-                  william.owen.dev
-                </nobr>
+                william.owen.dev
+                <wbr />
                 @gmail.com
               </li>
               <li>253-514-2990</li>
