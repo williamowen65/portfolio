@@ -201,6 +201,9 @@ const Div = styled.div`
     width: 40px;
     &.right {
     }
+    * {
+      opacity: 0;
+    }
   }
 `;
 
