@@ -36,7 +36,7 @@ export default function Sidebar({
   `;
 
   return (
-    <SidebarStyled>
+    <SidebarStyled className="sidebarContent">
       {children}
     </SidebarStyled>
   );

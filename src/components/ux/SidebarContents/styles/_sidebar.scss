@@ -1,8 +1,10 @@
-svg {
-  padding: 13px;
-  margin: 3px;
-  box-sizing: content-box;
-  &:hover {
-    cursor: pointer;
+.sidebarContent {
+  svg {
+    padding: 13px;
+    margin: 3px;
+    box-sizing: content-box;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

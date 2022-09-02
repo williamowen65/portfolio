@@ -1,9 +1,9 @@
-svg {
+.sidebarContent svg {
   padding: 13px;
   margin: 3px;
   box-sizing: content-box;
 }
-svg:hover {
+.sidebarContent svg:hover {
   cursor: pointer;
 }
 
