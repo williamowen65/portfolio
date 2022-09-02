@@ -6,7 +6,11 @@ import configValues from "../../../data/configValues.json";
 export default function Right() {
   return (
     <RightStyled>
-      <p>william.owen.dev@gmail.com</p>
+      <a href="mailto:william.owen.dev@gmail.com">
+        <p>
+          william.owen.dev@gmail.com
+        </p>
+      </a>
       <SidebarSVG cName="altPosSVG" />
     </RightStyled>
   );
