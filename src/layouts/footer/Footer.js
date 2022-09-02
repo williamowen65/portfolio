@@ -4,7 +4,7 @@ import React, {
   useRef,
 } from "react";
 import { Link } from "react-router-dom";
-import "./styles/footer.css";
+import "./styles/index.css";
 import configValues from "../../data/configValues.json";
 import styled from "styled-components";
 import ResumeButton from "../../layouts/components/ResumeButton";
@@ -86,7 +86,14 @@ const Footer = ({ style }) => {
           </ul>
         </div>
       </div>
-      <div>
+      <div
+        className="footerLogo"
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+          });
+        }}
+      >
         <WO />
         <p>Web Dev Portfolio</p>
       </div>
