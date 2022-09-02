@@ -21,6 +21,12 @@ export default function Left() {
             .main
         }
         className={icons}
+        onClick={() => {
+          window.open(
+            "https://medium.com/@william.owen.dev",
+            "_blank"
+          );
+        }}
       />
       <BsGithub
         size={30}
@@ -29,6 +35,12 @@ export default function Left() {
             .main
         }
         className={icons}
+        onClick={() => {
+          window.open(
+            "https://github.com/williamowen65",
+            "_blank"
+          );
+        }}
       />
       <FiCodepen
         size={30}
@@ -37,6 +49,12 @@ export default function Left() {
             .main
         }
         className={icons + " stroke"}
+        onClick={() => {
+          window.open(
+            "https://codepen.io/williamowen65",
+            "_blank"
+          );
+        }}
       />
       <SidebarSVG />
     </LeftStyled>
