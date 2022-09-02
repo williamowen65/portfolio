@@ -1,0 +1,10 @@
+svg {
+  padding: 13px;
+  margin: 3px;
+  box-sizing: content-box;
+}
+svg:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=index.css.map */
