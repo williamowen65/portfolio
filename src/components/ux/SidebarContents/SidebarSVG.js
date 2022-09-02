@@ -2,6 +2,7 @@ import React, {
   useEffect,
   useRef,
 } from "react";
+import configValues from "../../../data/configValues.json";
 import * as d3 from "d3";
 
 function SidebarSVG({ cName }) {
@@ -24,7 +25,10 @@ function SidebarSVG({ cName }) {
     >
       <path
         d={pathGen}
-        stroke="black"
+        stroke={
+          configValues.theme.dark.color
+            .main
+        }
         strokeWidth={2}
       />
     </svg>
