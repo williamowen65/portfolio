@@ -39,6 +39,8 @@ import Sidebar from "./layouts/sidebar/Sidebar.js";
 import WebsiteLoading from "./components/ux/WebsiteLoading.js";
 
 import "./styles/global.scss";
+import Right from "./components/ux/SidebarContents/Right.js";
+import Left from "./components/ux/SidebarContents/Left.js";
 
 export default function App(props) {
   const dispatch = useDispatch();
@@ -94,8 +96,12 @@ export default function App(props) {
         {configValues.breakpoints
           .mainWidth < screenWidth && (
           <>
-            <Sidebar right />
-            <Sidebar left />
+            <Sidebar right>
+              <Right />
+            </Sidebar>
+            <Sidebar left>
+              <Left />
+            </Sidebar>
           </>
         )}
         <PageContainer width={width}>

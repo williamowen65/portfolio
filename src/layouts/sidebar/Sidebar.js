@@ -1,27 +1,37 @@
-import React from 'react'
-import styled from 'styled-components'
-import configValues from '../../data/configValues.json'
-import { useSelector } from 'react-redux'
-import { BsArrowDown } from 'react-icons/bs'
+import React from "react";
+import styled from "styled-components";
+import configValues from "../../data/configValues.json";
+import { useSelector } from "react-redux";
+import { BsArrowDown } from "react-icons/bs";
 
-export default function Sidebar({ left, right }) {
-
-  const screenWidth = useSelector(state => state.app.screenWidth)
+export default function Sidebar({
+  left,
+  right,
+  children,
+}) {
+  const screenWidth = useSelector(
+    (state) => state.app.screenWidth
+  );
 
   const SidebarStyled = styled.div`
-  /* display: ${configValues.breakpoints.mainWidth > screenWidth ? 'none' : 'flex'}; */
-  display: flex;
-  ${right && ("order:3")};
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 100vh;
-`
-
+    /* display: ${configValues
+      .breakpoints.mainWidth >
+    screenWidth
+      ? "none"
+      : "flex"}; */
+    display: flex;
+    ${right && "order:3"};
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  `;
 
   return (
     <SidebarStyled>
-      <BsArrowDown style={{ position: 'fixed' }} size={60} color={configValues.theme.dark.color.highlight}></BsArrowDown>
+      {children}
     </SidebarStyled>
-  )
+  );
 }
