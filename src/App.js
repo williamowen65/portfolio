@@ -41,6 +41,7 @@ import WebsiteLoading from "./components/ux/WebsiteLoading.js";
 import "./styles/global.scss";
 import Right from "./components/ux/SidebarContents/Right.js";
 import Left from "./components/ux/SidebarContents/Left.js";
+import introAnimation from "./utils/introAnimation";
 
 export default function App(props) {
   const dispatch = useDispatch();
@@ -83,8 +84,16 @@ export default function App(props) {
     // alert("bye " + state);
   }
 
+  const isLoaded = useRef();
+  useEffect(() => {
+    if (isLoaded.current) {
+      introAnimation();
+    }
+  }, [isLoaded.current]);
+
   return (
     <>
+      <div ref={isLoaded}></div>
       {configValues.specialFeatures
         .showLoadingScreen &&
         state && (
