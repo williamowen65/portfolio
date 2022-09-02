@@ -1,8 +1,12 @@
-import React from "react";
+import React, {
+  useEffect,
+  useRef,
+} from "react";
 import styled from "styled-components";
 import configValues from "../../data/configValues.json";
 import { useSelector } from "react-redux";
 import { BsArrowDown } from "react-icons/bs";
+import * as d3 from "d3";
 
 export default function Sidebar({
   left,
@@ -27,6 +31,8 @@ export default function Sidebar({
     height: 100vh;
     position: sticky;
     top: 0;
+    flex-direction: column;
+    align-items: center;
   `;
 
   return (
