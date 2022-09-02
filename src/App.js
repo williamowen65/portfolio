@@ -202,9 +202,6 @@ const Div = styled.div`
     &.right {
     }
   }
-  * {
-    opacity: 0;
-  }
 `;
 
 const MobileWrapper = styled.div`

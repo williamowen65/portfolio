@@ -265,7 +265,7 @@ const Navbar = ({
 
   return (
     <Fragment>
-      <Header>
+      <HeaderStyled>
         <div className="main-header">
           <div className="flex C">
             <div className="flex R outerWrapper">
@@ -315,7 +315,7 @@ const Navbar = ({
             </div>
           </div>
         </div>
-      </Header>
+      </HeaderStyled>
       {showMobileNav && (
         <div
           className="closeBackdrop"
@@ -502,7 +502,7 @@ const Wrapper = (props) => (
 
 export default Wrapper;
 
-const Header = styled.header`
+const HeaderStyled = styled.header`
   h1 {
     text-shadow: 0px 0px 3px white;
     color: black !important;
