@@ -33,6 +33,9 @@ export default function Sidebar({
     top: 0;
     flex-direction: column;
     align-items: center;
+    svg {
+      overflow: visible;
+    }
   `;
 
   return (

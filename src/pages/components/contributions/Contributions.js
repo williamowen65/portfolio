@@ -11,6 +11,7 @@ import configValues from "../../../data/configValues.json";
 import * as d3 from "d3";
 import "./styles/_contributions.scss";
 import gsap from "gsap";
+import Data from "./data/contributions-data.json";
 
 export default function Contributions() {
   return (
@@ -28,29 +29,31 @@ export default function Contributions() {
 
           <ToolTip
             Element={() => (
-              <div>dgfg</div>
+              <div>Custom tool Tip</div>
             )}
           />
 
-          <p>
-            Automate nearly 100% of your
-            development experience in
-            any language of your choice
-            with these simple lines of
-            JavaScript.
-          </p>
+          {/* <div className="item">
+            <h3>#1</h3>
+            <p>
+              Automate custom projects
+              in any language of your
+              choice with these simple
+              lines of JavaScript.
+            </p>
 
-          <div className="action">
-            <p>Check it out</p>
-            <span className="outer">
-              <span>
-                <BsGithub size={30} />
+            <div className="action">
+              <p>Check it out</p>
+              <span className="outer">
+                <span>
+                  <BsGithub size={30} />
+                </span>
+                <span>
+                  <FaDocker size={30} />
+                </span>
               </span>
-              <span>
-                <FaDocker size={30} />
-              </span>
-            </span>
-          </div>
+            </div>
+          </div> */}
         </fieldset>
       </Article>
     </>
@@ -73,7 +76,7 @@ const Article = styled.article`
         font-size: clamp(
           10px,
           6vw,
-          30px
+          25px
         );
       }
     }

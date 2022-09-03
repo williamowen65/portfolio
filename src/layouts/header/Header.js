@@ -24,6 +24,7 @@ import {
 import configValues from "../../data/configValues.json";
 import { store } from "../../context/store";
 import { BsDot } from "react-icons/bs";
+import * as d3 from "d3";
 
 import "./styles/header.css";
 
@@ -226,7 +227,43 @@ const Navbar = ({
   /// the html
   const Resume = () => <ResumeButton />;
 
-  const Quote = () => <p>Some Quote</p>;
+  const Quote = () => {
+    const container = useRef();
+
+    useEffect(() => {
+      let path;
+      if (container.current) {
+        const pathGen = d3.path();
+        pathGen.moveTo(0, 0);
+        // pathGen.bezierCurveTo()
+
+        path = d3
+          .select(container.current)
+          .append("g")
+          .classed("quoteSvg", true);
+
+        path
+          .append("path")
+          .attr("stroke", "black");
+      }
+
+      return () => {
+        const el =
+          document.querySelector(
+            ".quoteSvg"
+          );
+        if (el) {
+          el.remove();
+        }
+      };
+    }, [container.current]);
+
+    return (
+      <div>
+        <svg ref={container}></svg>
+      </div>
+    );
+  };
 
   const Dot = ({ screenWidth }) => {
     console.log(

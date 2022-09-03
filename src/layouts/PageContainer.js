@@ -20,6 +20,7 @@ const Div = styled.div`
   max-width: ${configValues.breakpoints
     .mainWidth}px;
   margin: 0;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
