@@ -119,6 +119,45 @@ export default function Contributions() {
                 )
               )}
             </div>
+            <div className="actualContent">
+              {Data.filter(
+                (entry) =>
+                  entry.type == selected
+              )
+                .filter(
+                  (entry, i) =>
+                    i + 1 === projectNum
+                )
+                .map((entry, i) => (
+                  <>
+                    <p
+                      className="description"
+                      key={i}
+                    >
+                      {
+                        entry.description
+                      }
+                    </p>
+                    <div className="action">
+                      <p>
+                        Check it out
+                      </p>
+                      <span className="outer">
+                        <span>
+                          <BsGithub
+                            size={30}
+                          />
+                        </span>
+                        <span>
+                          <FaDocker
+                            size={30}
+                          />
+                        </span>
+                      </span>
+                    </div>
+                  </>
+                ))}
+            </div>
           </div>
           {/* <div className="item">
             <h3>#1</h3>
@@ -129,18 +168,9 @@ export default function Contributions() {
               lines of JavaScript.
             </p>
 
-            <div className="action">
-              <p>Check it out</p>
-              <span className="outer">
-                <span>
-                  <BsGithub size={30} />
-                </span>
-                <span>
-                  <FaDocker size={30} />
-                </span>
-              </span>
-            </div>
-          </div> */}
+       
+          </div>
+           */}
         </fieldset>
       </Article>
     </>
