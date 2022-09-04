@@ -54,6 +54,10 @@ export default function Contributions() {
                     onClick={() => {
                       setSelected(type);
                     }}
+                    className={
+                      selected ===
+                        type && "active"
+                    }
                   >
                     {type}
                   </p>
