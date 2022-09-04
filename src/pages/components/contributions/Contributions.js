@@ -20,6 +20,10 @@ export default function Contributions() {
   );
   const [selected, setSelected] =
     useState("Dev Tools");
+
+  const [projectNum, setProjectNum] =
+    useState(1);
+
   useEffect(() => {
     Data.forEach((entry) => {
       types.add(entry.type);
@@ -82,7 +86,14 @@ export default function Contributions() {
             ).map((entry, i) => (
               <p
                 key={i}
-                className="active"
+                onClick={() => {
+                  setProjectNum(i + 1);
+                }}
+                className={
+                  projectNum === i + 1
+                    ? "active"
+                    : null
+                }
               >
                 {i + 1}
               </p>
