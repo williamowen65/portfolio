@@ -1,6 +1,7 @@
 import React, {
   useEffect,
   useRef,
+  useState,
 } from "react";
 import styled from "styled-components";
 import { BsGithub } from "react-icons/bs";
@@ -14,6 +15,16 @@ import gsap from "gsap";
 import Data from "./data/contributions-data.json";
 
 export default function Contributions() {
+  const [types, setTypes] = useState(
+    new Set()
+  );
+  useEffect(() => {
+    Data.forEach((entry) => {
+      types.add(entry.type);
+    });
+    setTypes(types);
+  }, []);
+
   return (
     <>
       <Article>
@@ -32,7 +43,14 @@ export default function Contributions() {
               <div>Custom tool Tip</div>
             )}
           />
-
+          <div className="types">
+            {Array.from(types).map(
+              (type) => (
+                <p>{type}</p>
+              )
+            )}
+          </div>
+          <ul className="list"></ul>
           {/* <div className="item">
             <h3>#1</h3>
             <p>

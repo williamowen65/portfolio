@@ -209,7 +209,7 @@ const Navbar = ({
   }, []);
 
   useEffect(() => {
-    console.log(scrollDir);
+    // console.log(scrollDir);
     if (bottomNav.current) {
       const el = bottomNav.current;
       if (scrollDir > 0) {
@@ -266,10 +266,10 @@ const Navbar = ({
   };
 
   const Dot = ({ screenWidth }) => {
-    console.log(
-      screenWidth,
-      configValues.breakpoints.mobile
-    );
+    // console.log(
+    //   screenWidth,
+    //   configValues.breakpoints.mobile
+    // );
     if (
       screenWidth >
       configValues.breakpoints.mobile
@@ -312,9 +312,9 @@ const Navbar = ({
                   to="/"
                   onClick={() => {
                     triggerRerender();
-                    console.log(
-                      triggerRerender
-                    );
+                    // console.log(
+                    //   triggerRerender
+                    // );
                   }}
                 >
                   <h1>WO</h1>

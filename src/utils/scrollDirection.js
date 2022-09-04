@@ -13,12 +13,12 @@ export const captureScroll = (
     "scroll",
     function () {
       // or window.addEventListener("scroll"....
-      console.log(
-        "scrolling",
-        condition(),
-        condition2(),
-        condition3()
-      );
+      // console.log(
+      //   "scrolling",
+      //   condition(),
+      //   condition2(),
+      //   condition3()
+      // );
       // alert(window.scrollY);
       if (
         (window.scrollY > topMargin &&
