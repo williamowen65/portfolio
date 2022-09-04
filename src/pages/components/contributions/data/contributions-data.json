@@ -4,6 +4,10 @@
     "links": {
       "github": "www.wowebdev.com"
     },
+    "meta": {
+      "description": "Automate your custom project setup with a few lines of JavaScript.",
+      "title": "#"
+    },
     "description": "Automate your custom project setup with a few lines of JavaScript."
   },
   {

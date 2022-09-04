@@ -27,6 +27,22 @@ export default function Contributions() {
     setTypes(types);
   }, []);
 
+  const listMargin = useRef();
+  useEffect(() => {
+    if (listMargin.current) {
+      const typeWidth =
+        getComputedStyle(
+          document.querySelector(
+            ".content .types"
+          )
+        ).width;
+      listMargin.current.style.marginLeft =
+        parseFloat(typeWidth) +
+        5 +
+        "px";
+    }
+  }, [listMargin.current]);
+
   return (
     <>
       <Article className="contributions">
@@ -45,6 +61,22 @@ export default function Contributions() {
               <div>Custom tool Tip</div>
             )}
           />
+          <div
+            className="list"
+            ref={listMargin}
+          >
+            {Data.filter(
+              (entry) =>
+                entry.type == selected
+            ).map((entry, i) => (
+              <p
+                key={i}
+                className="active"
+              >
+                {i + 1}
+              </p>
+            ))}
+          </div>
           <div className="content">
             <div className="types">
               {Array.from(types).map(
@@ -55,8 +87,9 @@ export default function Contributions() {
                       setSelected(type);
                     }}
                     className={
-                      selected ===
-                        type && "active"
+                      selected === type
+                        ? "active"
+                        : null
                     }
                   >
                     {type}
@@ -64,16 +97,6 @@ export default function Contributions() {
                 )
               )}
             </div>
-            <ul className="list">
-              {Data.filter(
-                (entry) =>
-                  entry.type == selected
-              ).map((entry, i) => (
-                <p key={i}>
-                  {entry.description}
-                </p>
-              ))}
-            </ul>
           </div>
           {/* <div className="item">
             <h3>#1</h3>

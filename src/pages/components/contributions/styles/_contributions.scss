@@ -56,4 +56,24 @@
       }
     }
   }
+  .list {
+    margin: 10px 20px;
+    p {
+      padding: 0 10px;
+      position: relative;
+      cursor: pointer;
+      width: fit-content;
+      &::before {
+        content: "#";
+        position: absolute;
+        left: 50%;
+        scale: 0.8;
+        translate: -150% -5px;
+      }
+      &.active {
+        border-bottom: 1px solid
+          lightblue;
+      }
+    }
+  }
 }
