@@ -36,10 +36,21 @@ export default function Contributions() {
             ".content .types"
           )
         ).width;
-      listMargin.current.style.marginLeft =
+      listMargin.current.style.paddingLeft =
         parseFloat(typeWidth) +
         5 +
         "px";
+
+      setTimeout(() => {
+        const typeHeight =
+          getComputedStyle(
+            document.querySelector(
+              ".content .types p"
+            )
+          ).height;
+        listMargin.current.style.height =
+          parseFloat(typeHeight) + "px";
+      });
     }
   }, [listMargin.current]);
 
