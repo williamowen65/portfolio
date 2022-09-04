@@ -20,3 +20,17 @@
     right: 30px;
   }
 }
+
+.types {
+  p {
+    cursor: pointer;
+    width: fit-content;
+    &:hover {
+      background-color: rgb(
+        129,
+        67,
+        176
+      );
+    }
+  }
+}

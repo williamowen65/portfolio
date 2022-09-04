@@ -18,6 +18,8 @@ export default function Contributions() {
   const [types, setTypes] = useState(
     new Set()
   );
+  const [selected, setSelected] =
+    useState("Dev Tools");
   useEffect(() => {
     Data.forEach((entry) => {
       types.add(entry.type);
@@ -45,12 +47,28 @@ export default function Contributions() {
           />
           <div className="types">
             {Array.from(types).map(
-              (type) => (
-                <p>{type}</p>
+              (type, i) => (
+                <p
+                  key={i}
+                  onClick={() => {
+                    setSelected(type);
+                  }}
+                >
+                  {type}
+                </p>
               )
             )}
           </div>
-          <ul className="list"></ul>
+          <ul className="list">
+            {Data.filter(
+              (entry) =>
+                entry.type == selected
+            ).map((entry, i) => (
+              <p key={i}>
+                {entry.description}
+              </p>
+            ))}
+          </ul>
           {/* <div className="item">
             <h3>#1</h3>
             <p>

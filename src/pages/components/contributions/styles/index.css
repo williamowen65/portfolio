@@ -21,4 +21,12 @@
   right: 30px;
 }
 
+.types p {
+  cursor: pointer;
+  width: fit-content;
+}
+.types p:hover {
+  background-color: #8143b0;
+}
+
 /*# sourceMappingURL=index.css.map */

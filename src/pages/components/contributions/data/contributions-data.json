@@ -1,13 +1,20 @@
 [
   {
-    "type": "dev-tool",
+    "type": "Dev Tools",
     "links": {
       "github": "www.wowebdev.com"
     },
     "description": "Automate your custom project setup with a few lines of JavaScript."
   },
   {
-    "type": "product",
+    "type": "Products",
+    "links": {
+      "github": "www.wowebdev.com"
+    },
+    "description": "None yet, but soon (etc)"
+  },
+  {
+    "type": "Products",
     "links": {
       "github": "www.wowebdev.com"
     },
