@@ -6,22 +6,27 @@
     },
     "meta": {
       "description": "Automate your custom project setup with a few lines of JavaScript.",
-      "title": "#"
-    },
-    "description": "Automate your custom project setup with a few lines of JavaScript."
+      "title": "First Project"
+    }
   },
   {
     "type": "Products",
     "links": {
       "github": "www.wowebdev.com"
     },
-    "description": "Chronos"
+    "meta": {
+      "title": "Chronos",
+      "description": "Chronos sdfsdf"
+    }
   },
   {
     "type": "Products",
     "links": {
       "github": "www.wowebdev.com"
     },
-    "description": "None yet, but soon (etc)"
+    "meta": {
+      "title": "Extra",
+      "description": "None yet, but soon (etc)"
+    }
   }
 ]

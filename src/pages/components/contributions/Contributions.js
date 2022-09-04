@@ -130,33 +130,27 @@ export default function Contributions() {
                     i + 1 === projectNum
                 )
                 .map((entry, i) => (
-                  <>
-                    <p
-                      className="description"
-                      key={i}
-                    >
+                  <div key={i}>
+                    <h3>
+                      {entry.meta.title}
+                    </h3>
+                    <p className="description">
                       {
-                        entry.description
+                        entry.meta
+                          .description
                       }
                     </p>
                     <div className="action">
-                      <p>
-                        Check it out
-                      </p>
-                      <span className="outer">
-                        <span>
-                          <BsGithub
-                            size={30}
-                          />
-                        </span>
-                        <span>
-                          <FaDocker
-                            size={30}
-                          />
-                        </span>
-                      </span>
+                      <BsGithub
+                        size={20}
+                        color={
+                          configValues
+                            .theme.dark
+                            .color.main
+                        }
+                      />
                     </div>
-                  </>
+                  </div>
                 ))}
             </div>
           </div>
