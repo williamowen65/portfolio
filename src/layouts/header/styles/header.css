@@ -50,6 +50,11 @@
     transform: translateX(0);
   }
 }
+.flex.C .quote p {
+  transform: translateY(-30px);
+  text-align: left;
+  font-size: 12px;
+}
 .flex.R {
   flex-direction: row;
   justify-content: space-between;
@@ -185,6 +190,9 @@
   display: inline-flex;
   transition: transform 1s;
   justify-content: flex-end;
+}
+.contentNav ul.navItems a {
+  cursor: pointer;
 }
 @media only screen and (max-width : 600px) {
   .contentNav ul {

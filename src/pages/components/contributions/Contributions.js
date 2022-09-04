@@ -29,7 +29,7 @@ export default function Contributions() {
 
   return (
     <>
-      <Article>
+      <Article className="contributions">
         <fieldset>
           <legend>
             <h2 className="contribute">
@@ -45,34 +45,36 @@ export default function Contributions() {
               <div>Custom tool Tip</div>
             )}
           />
-          <div className="types">
-            {Array.from(types).map(
-              (type, i) => (
-                <p
-                  key={i}
-                  onClick={() => {
-                    setSelected(type);
-                  }}
-                >
-                  {type}
+          <div className="content">
+            <div className="types">
+              {Array.from(types).map(
+                (type, i) => (
+                  <p
+                    key={i}
+                    onClick={() => {
+                      setSelected(type);
+                    }}
+                  >
+                    {type}
+                  </p>
+                )
+              )}
+            </div>
+            <ul className="list">
+              {Data.filter(
+                (entry) =>
+                  entry.type == selected
+              ).map((entry, i) => (
+                <p key={i}>
+                  {entry.description}
                 </p>
-              )
-            )}
+              ))}
+            </ul>
           </div>
-          <ul className="list">
-            {Data.filter(
-              (entry) =>
-                entry.type == selected
-            ).map((entry, i) => (
-              <p key={i}>
-                {entry.description}
-              </p>
-            ))}
-          </ul>
           {/* <div className="item">
             <h3>#1</h3>
             <p>
-              Automate custom projects
+            Automate custom projects
               in any language of your
               choice with these simple
               lines of JavaScript.
@@ -147,6 +149,11 @@ const Article = styled.article`
           margin: 0 20px;
         }
       }
+    }
+    .types {
+      background-color: ${configValues
+        .theme.dark.background.color
+        .window};
     }
   }
 `;

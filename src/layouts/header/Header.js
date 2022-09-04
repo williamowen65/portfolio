@@ -227,43 +227,51 @@ const Navbar = ({
   /// the html
   const Resume = () => <ResumeButton />;
 
-  const Quote = () => {
-    const container = useRef();
+  // const Quote = () => {
+  //   const container = useRef();
 
-    useEffect(() => {
-      let path;
-      if (container.current) {
-        const pathGen = d3.path();
-        pathGen.moveTo(0, 0);
-        // pathGen.bezierCurveTo()
+  //   useEffect(() => {
+  //     let path;
+  //     if (container.current) {
+  //       const pathGen = d3.path();
+  //       pathGen.moveTo(0, 0);
+  //       // pathGen.bezierCurveTo()
 
-        path = d3
-          .select(container.current)
-          .append("g")
-          .classed("quoteSvg", true);
+  //       path = d3
+  //         .select(container.current)
+  //         .append("g")
+  //         .classed("quoteSvg", true);
 
-        path
-          .append("path")
-          .attr("stroke", "black");
-      }
+  //       path
+  //         .append("path")
+  //         .attr("stroke", "black");
+  //     }
 
-      return () => {
-        const el =
-          document.querySelector(
-            ".quoteSvg"
-          );
-        if (el) {
-          el.remove();
-        }
-      };
-    }, [container.current]);
+  //     return () => {
+  //       const el =
+  //         document.querySelector(
+  //           ".quoteSvg"
+  //         );
+  //       if (el) {
+  //         el.remove();
+  //       }
+  //     };
+  //   }, [container.current]);
 
-    return (
-      <div>
-        <svg ref={container}></svg>
-      </div>
-    );
-  };
+  //   return (
+  //     <div>
+  //       <svg ref={container}></svg>
+  //     </div>
+  //   );
+  // };
+
+  const Quote = () => (
+    <p>
+      The two most important days of
+      your life are the day you were
+      born and the day you find out why.
+    </p>
+  );
 
   const Dot = ({ screenWidth }) => {
     // console.log(

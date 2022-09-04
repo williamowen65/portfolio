@@ -21,11 +21,19 @@
   right: 30px;
 }
 
-.types p {
-  cursor: pointer;
-  width: fit-content;
+.contributions .content {
+  display: flex;
 }
-.types p:hover {
+.contributions .content .types {
+  display: flex;
+  flex-direction: column;
+}
+.contributions .content .types p {
+  cursor: pointer;
+  padding: 10px 5px;
+  transition: all 0.5s;
+}
+.contributions .content .types p:hover {
   background-color: #8143b0;
 }
 

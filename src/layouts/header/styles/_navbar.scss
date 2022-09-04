@@ -57,6 +57,11 @@
         position: initial;
         transform: translateX(0);
       }
+      p {
+        transform: translateY(-30px);
+        text-align: left;
+        font-size: 12px;
+      }
     }
   }
 
@@ -227,11 +232,17 @@
     justify-content: flex-end;
 
     // color: black;
+    &.navItems {
+      a {
+        cursor: pointer;
+      }
+    }
     @media #{$small-and-down} {
       margin-top: 20px;
       width: 100%;
       &.navItems {
         display: none;
+
         &.show {
           display: flex;
           flex-direction: column;
