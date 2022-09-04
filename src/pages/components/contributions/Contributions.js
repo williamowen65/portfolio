@@ -107,9 +107,7 @@ export default function Contributions() {
                     key={i}
                     onClick={() => {
                       setSelected(type);
-                      setProjectNum(
-                        i + 1
-                      );
+                      setProjectNum(1);
                     }}
                     className={
                       selected === type
