@@ -5,6 +5,10 @@ import React, {
   useState,
 } from "react";
 import { useSelector } from "react-redux";
+import {
+  setDetail,
+  setCarouselScrollNoTouch,
+} from "./context/carousel";
 
 // import Info from "../Icons/Info";
 
@@ -16,11 +20,7 @@ const CardItem = ({
   handleLeave,
   handleScroll,
 }) => {
-  const {
-    detail,
-    setDetail,
-    setCarouselScrollNoTouch,
-  } = useSelector(
+  const { detail } = useSelector(
     (state) => state.carousel
   );
 

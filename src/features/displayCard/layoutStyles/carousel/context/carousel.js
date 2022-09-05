@@ -21,11 +21,20 @@ const carouselSlice = createSlice({
       // console.log('action', action.payload);
       // console.log("state", state);
     },
+    setCarouselScrollNoTouch: (
+      state,
+      action
+    ) => {
+      alert("hey");
+    },
   },
 });
 
 export const setDetail =
   carouselSlice.actions.setDetail;
+export const setCarouselScrollNoTouch =
+  carouselSlice.actions
+    .setCarouselScrollNoTouch;
 export default carouselSlice.reducer;
 
 // console.log(setDetail({ id: 342, title: 'dsfds' }));

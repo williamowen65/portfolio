@@ -19,6 +19,7 @@ import GithubLogo from "../../../assets/icons/github.png";
 import DockerLogo from "../../../assets/icons/docker.png";
 import SassLogo from "../../../assets/icons/sass.png";
 import D3Logo from "../../../assets/icons/d3.png";
+import Redux from "../../../assets/icons/redux.png";
 
 import "./iconStyles.scss";
 
@@ -114,6 +115,15 @@ export default function Icons() {
       <span className="icon" href="#">
         <img
           src={ReactLogo}
+          alt=""
+          style={{
+            display: "inline-block",
+          }}
+        />
+      </span>
+      <span className="icon" href="#">
+        <img
+          src={Redux}
           alt=""
           style={{
             display: "inline-block",
