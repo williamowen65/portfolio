@@ -1,17 +1,26 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import AppControlContext from "./context/global/appControl/appControlContext";
-import ProjectContext from "./context/global/projects/projectContext";
+import React, {
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import CardItem from "./CardItem";
 import Close from "./assets/Close";
 import Earth from "./assets/Earth";
+import { useSelector } from "react-redux";
 
-const Card = ({ children, project, section }) => {
-  const appControlContext = useContext(AppControlContext);
-  const { detail, setDetail } = appControlContext;
+const Card = ({
+  children,
+  project,
+  section,
+}) => {
+  const { detail, setDetail } =
+    useSelector(
+      (state) => state.carousel
+    );
 
   // console.log(project);
-
 
   // const projectContext = useContext(ProjectContext);
   const { details, xAxisPos } = project;
@@ -26,9 +35,14 @@ const Card = ({ children, project, section }) => {
     e.stopPropagation();
     // e.persist();
     // console.log(e);
-    card.current.classList.add(`active-${type}`);
+    card.current.classList.add(
+      `active-${type}`
+    );
     // console.log(card.current.children);
-    if (`${project.props.id}_${project.props.title}` === detail.id) {
+    if (
+      `${project.props.id}_${project.props.title}` ===
+      detail.id
+    ) {
       return;
     } else {
       card.current.children[2].scrollTop = 0;
@@ -36,16 +50,25 @@ const Card = ({ children, project, section }) => {
     // console.log("toggle from card", type, card.current);
   };
   const handleLeave = (type) => {
-    if (`${project.props.id}_${project.props.title}` === detail.id) {
+    if (
+      `${project.props.id}_${project.props.title}` ===
+      detail.id
+    ) {
       return;
     }
-    card.current.classList.remove(`active-${type}`);
+    card.current.classList.remove(
+      `active-${type}`
+    );
   };
 
   //Injects detail info in the form of html
   useEffect(() => {
-    if (detailSection.current && details) {
-      detailSection.current.innerHTML += details;
+    if (
+      detailSection.current &&
+      details
+    ) {
+      detailSection.current.innerHTML +=
+        details;
     }
   }, [detailSection]);
 
@@ -56,7 +79,9 @@ const Card = ({ children, project, section }) => {
     // console.log(detail.openDetail);
     // console.log(e);
     const carousel =
-      e.target.parentElement.parentElement.parentElement.parentElement;
+      e.target.parentElement
+        .parentElement.parentElement
+        .parentElement;
     // console.log(carousel);
     // if (!detail.openDetail) {
     if (window.innerWidth < 500) {
@@ -76,7 +101,10 @@ const Card = ({ children, project, section }) => {
   // const close = useRef();
   useEffect(() => {
     let slideUp;
-    if (detail.id !== `${project.props.id}_${project.props.title}`) {
+    if (
+      detail.id !==
+      `${project.props.id}_${project.props.title}`
+    ) {
       // console.log(close.current);
       slideUp = setTimeout(() => {
         detailSection.current.scrollTop = 0;
@@ -89,7 +117,10 @@ const Card = ({ children, project, section }) => {
   }, [detail]);
 
   const toggleDetails = (e) => {
-    if (detail.id === `${project.props.id}_${project.props.title}`) {
+    if (
+      detail.id ===
+      `${project.props.id}_${project.props.title}`
+    ) {
       setDetail("", "");
     }
   };
@@ -99,8 +130,9 @@ const Card = ({ children, project, section }) => {
       ref={card}
       // data-attr={project}
       className={
-        detail.id === `${project.props.id}_${project.props.title}` &&
-          detail.openDetail === true
+        detail.id ===
+          `${project.props.id}_${project.props.title}` &&
+        detail.openDetail === true
           ? "projectCard card active active-visit"
           : "projectCard card"
       }
@@ -114,15 +146,24 @@ const Card = ({ children, project, section }) => {
         handleLeave={handleLeave}
         handleScroll={scrollFocus}
       />
-      <Close project={project} detail={detail} toggleDetails={toggleDetails} />
+      <Close
+        project={project}
+        detail={detail}
+        toggleDetails={toggleDetails}
+      />
       {/* <a href=''> */}
-      {project.props.link !== null && <Earth project={project} detail={detail} />}
+      {project.props.link !== null && (
+        <Earth
+          project={project}
+          detail={detail}
+        />
+      )}
       {/* </a> */}
 
       <div
         style={{ whiteSpace: "nowrap" }}
         ref={detailSection}
-        className='details'
+        className="details"
         id={`${project.props.title}`}
       >
         {project.props.children}
