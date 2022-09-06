@@ -78,8 +78,32 @@ const Carousel = React.memo(
           className="carouselSlider"
         >
           {/* {cards.map((project) => (
-  
+              
         ))} */}
+
+          <div className="cardContainer">
+            <div className="card">
+              <div className="slide one">
+                <h3>sdfsdjfkl</h3>
+                <p>dfhsljdflsdds</p>
+              </div>
+              <div className="slide two">
+                <p>hsdfhsdlfhsdklhf</p>
+              </div>
+            </div>
+          </div>
+          <div className="cardContainer">
+            <div className="card">
+              <div className="slide one">
+                <h3>sdfsdjfkl</h3>
+                <p>dfhsljdflsdds</p>
+              </div>
+              <div className="slide two">
+                <p>hsdfhsdlfhsdklhf</p>
+              </div>
+            </div>
+          </div>
+
           {/* offset the last card, maybe not necesary.. */}
           {/* <div className="spacer">|</div> */}
         </Section>
