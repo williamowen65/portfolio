@@ -16,96 +16,77 @@ import RightArrow from "./assets/RightArrow";
 import "./styles/carousel.css";
 import styled from "styled-components";
 
-const Carousel = ({ title, cards }) => {
-  // console.log("STATE ", useContext(AppControlContent));
-  console.log(cards);
-  const {
-    detail,
-    carouselScrollNoTouch,
-  } = useSelector(
-    (state) => state.carousel
-  );
-
-  const carousel = useRef();
-
-  // useEffect(() => {
-  //   var e, posX, posY, trackPos;
-
-  //   if (
-  //     carouselScrollNoTouch.dragging &&
-  //     carouselScrollNoTouch.section ===
-  //       title &&
-  //     carouselScrollNoTouch.dragging
-  //   ) {
-  //     trackPos = setInterval(() => {},
-  //     60);
-  //   } else if (
-  //     !carouselScrollNoTouch.dragging
-  //   ) {
-  //     clearInterval(trackPos);
-  //   }
-  // }, [carouselScrollNoTouch]);
-
-  const screenWidth = useSelector(
-    (state) => state.app.screenWidth
-  );
-  const Section = styled.section`
-    max-width: calc(
-      100% +
-        ${configValues.breakpoints
-          .mobile > screenWidth
-          ? 29
-          : 99}px
+const Carousel = React.memo(
+  ({ title, cards }) => {
+    // console.log("STATE ", useContext(AppControlContent));
+    console.log(cards);
+    const { test } = useSelector(
+      (state) => state.carousel
     );
-    ${configValues.breakpoints.mobile <
-    screenWidth
-      ? "left: -49px"
-      : "left: -20px"};
-    ${configValues.breakpoints.mobile >
-      screenWidth &&
-    "padding-left: 18px"};
-  `;
 
-  return (
-    <CarouselStyled
-      className="carousel sidenavTarget"
-      data-name={title.replace(
-        " ",
-        "-"
-      )}
-    >
-      <header>
-        <div className="small-container">
-          <h2>{title}</h2>
-          <p>
-            <span>
-              {/* <i className='material-icons'>chevron_left</i> */}
-              <LeftArrow
-                scroll={scroll}
-              />
-            </span>
-            <span>
-              {/* <i className='material-icons'>chevron_right</i> */}
-              <RightArrow
-                scroll={scroll}
-              />
-            </span>
-          </p>
-        </div>
-      </header>
-      <Section
-        ref={carousel}
-        className="carouselSlider"
+    const carousel = useRef();
+
+    const screenWidth = useSelector(
+      (state) => state.app.screenWidth
+    );
+    const Section = styled.section`
+      max-width: calc(
+        100% +
+          ${configValues.breakpoints
+            .mobile > screenWidth
+            ? 29
+            : 99}px
+      );
+      ${configValues.breakpoints
+        .mobile < screenWidth
+        ? "left: -49px"
+        : "left: -20px"};
+      ${configValues.breakpoints
+        .mobile > screenWidth &&
+      "padding-left: 18px"};
+    `;
+
+    return (
+      <CarouselStyled
+        className="carousel sidenavTarget"
+        data-name={title.replace(
+          " ",
+          "-"
+        )}
       >
-        {/* {cards.map((project) => (
+        <header>
+          <div className="small-container">
+            <h2>{title}</h2>
+            <p>
+              <span>
+                {/* <i className='material-icons'>chevron_left</i> */}
+                <LeftArrow
+                  scroll={scroll}
+                />
+              </span>
+              <span>
+                {/* <i className='material-icons'>chevron_right</i> */}
+                <RightArrow
+                  scroll={scroll}
+                />
+              </span>
+            </p>
+          </div>
+        </header>
+        <Section
+          ref={carousel}
+          className="carouselSlider"
+        >
+          {/* {cards.map((project) => (
   
         ))} */}
-        {/* offset the last card, maybe not necesary.. */}
-        {/* <div className="spacer">|</div> */}
-      </Section>
-    </CarouselStyled>
-  );
-};
+          {/* offset the last card, maybe not necesary.. */}
+          {/* <div className="spacer">|</div> */}
+        </Section>
+      </CarouselStyled>
+    );
+  }
+);
 
 const Wrapper = (props) => (
   <Provider store={store}>
