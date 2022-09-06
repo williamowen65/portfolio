@@ -11,7 +11,6 @@ import configValues from "../data/configValues.json";
 // import Section from '../components/ui/Section'
 import gsap from "../../gsap/gsap.min";
 import GSDevTools from "../../gsap/GSDevTools.min";
-import { allCards } from "../features/displayCard/layoutStyles/carousel/randomData/CardArchive.js";
 
 // import { git } from 'react-icons/all'
 
@@ -43,7 +42,6 @@ export default function Home() {
           title={
             "What I've been up to..."
           }
-          data={allCards}
         />
       </Content>
       <Content id="contact">

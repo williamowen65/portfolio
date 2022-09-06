@@ -9,7 +9,6 @@ import configValues from "../../../../data/configValues.json";
 import { useSelector } from "react-redux";
 import { store } from "../../../../context/store";
 import { Provider } from "react-redux";
-import { allCards } from "./randomData/CardArchive";
 
 import LeftArrow from "./assets/LeftArrow";
 import RightArrow from "./assets/RightArrow";
@@ -19,7 +18,7 @@ import styled from "styled-components";
 
 const Carousel = ({ title, cards }) => {
   // console.log("STATE ", useContext(AppControlContent));
-
+  console.log(cards);
   const {
     detail,
     carouselScrollNoTouch,
@@ -29,23 +28,23 @@ const Carousel = ({ title, cards }) => {
 
   const carousel = useRef();
 
-  useEffect(() => {
-    var e, posX, posY, trackPos;
+  // useEffect(() => {
+  //   var e, posX, posY, trackPos;
 
-    if (
-      carouselScrollNoTouch.dragging &&
-      carouselScrollNoTouch.section ===
-        title &&
-      carouselScrollNoTouch.dragging
-    ) {
-      trackPos = setInterval(() => {},
-      60);
-    } else if (
-      !carouselScrollNoTouch.dragging
-    ) {
-      clearInterval(trackPos);
-    }
-  }, [carouselScrollNoTouch]);
+  //   if (
+  //     carouselScrollNoTouch.dragging &&
+  //     carouselScrollNoTouch.section ===
+  //       title &&
+  //     carouselScrollNoTouch.dragging
+  //   ) {
+  //     trackPos = setInterval(() => {},
+  //     60);
+  //   } else if (
+  //     !carouselScrollNoTouch.dragging
+  //   ) {
+  //     clearInterval(trackPos);
+  //   }
+  // }, [carouselScrollNoTouch]);
 
   const screenWidth = useSelector(
     (state) => state.app.screenWidth
