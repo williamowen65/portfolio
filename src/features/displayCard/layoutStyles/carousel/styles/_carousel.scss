@@ -1,5 +1,3 @@
-@import "./variables/_variables.scss";
-
 body {
   overflow-x: hidden;
 }
@@ -63,8 +61,6 @@ body {
     }
   }
   section {
-    @media #{$small-and-down} {
-    }
     height: 430px;
     margin: auto;
     margin-bottom: 100px;

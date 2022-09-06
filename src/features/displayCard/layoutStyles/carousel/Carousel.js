@@ -13,7 +13,7 @@ import { Provider } from "react-redux";
 import LeftArrow from "./assets/LeftArrow";
 import RightArrow from "./assets/RightArrow";
 
-import "./styles/carousel.css";
+import "./styles/index.css";
 import styled from "styled-components";
 
 const Carousel = React.memo(
