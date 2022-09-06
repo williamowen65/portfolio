@@ -13,7 +13,7 @@ export const allCards = [
     const UniqueCardStyle = styled.div``;
     return (
       <Card
-        title="Udemy and Youtube"
+        title="Customized Client Projects"
         imgSrc={
           <img
             src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
@@ -24,7 +24,7 @@ export const allCards = [
             }}
           />
         }
-        pretext="Are you up for a challenge?"
+        pretext="A quick glimpse at how"
         attributes={[
           A.STRENGTH,
           A.ENDURANCE,

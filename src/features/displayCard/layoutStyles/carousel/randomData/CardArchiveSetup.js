@@ -1,20 +1,23 @@
-import CardComponent from '../Card.js'
-
+import CardComponent from "../_Card.js";
 
 export function* IdGen() {
-  let i = 0
+  let i = 0;
   while (true) {
     yield i;
-    i++
+    i++;
   }
 }
 
-export const idGen = IdGen()
+export const idGen = IdGen();
 
-
-
-const Card = (title, imgSrc, preText, attributes, link, children) => {
-
+const Card = (
+  title,
+  imgSrc,
+  preText,
+  attributes,
+  link,
+  children
+) => {
   return (
     <CardComponent
       cardInfo={{
@@ -23,13 +26,12 @@ const Card = (title, imgSrc, preText, attributes, link, children) => {
         preText,
         attributes,
         ID: () => idGen.next().value,
-        link
+        link,
       }}
     >
       {children}
     </CardComponent>
-  )
-}
+  );
+};
 
-
-export default Card
+export default Card;

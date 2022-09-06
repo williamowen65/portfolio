@@ -5,7 +5,7 @@ import React, {
   useState,
 } from "react";
 
-import CardItem from "./CardItem";
+import CardItem from "./_CardItem";
 import Close from "./assets/Close";
 import Earth from "./assets/Earth";
 import { useSelector } from "react-redux";

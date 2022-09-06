@@ -6,7 +6,6 @@ import React, {
 } from "react";
 import configValues from "../../../../data/configValues.json";
 
-import Card from "./Card";
 import { useSelector } from "react-redux";
 import { store } from "../../../../context/store";
 import { Provider } from "react-redux";
@@ -99,13 +98,9 @@ const Carousel = ({ title, cards }) => {
         ref={carousel}
         className="carouselSlider"
       >
-        {cards.map((project) => (
-          <Card
-            key={project.props.id}
-            project={project}
-            section={title}
-          ></Card>
-        ))}
+        {/* {cards.map((project) => (
+  
+        ))} */}
         {/* offset the last card, maybe not necesary.. */}
         {/* <div className="spacer">|</div> */}
       </Section>
