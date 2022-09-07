@@ -19,11 +19,7 @@ export default function Card() {
     <CardStyled>
       <div className="card intro">
         <div className="slide">
-          <p>
-            Thanks for your interest.
-          </p>
-          <p>Scroll through</p>
-          <BiArrowFromLeft size={30} />
+          <h2></h2>
         </div>
       </div>
 
@@ -49,6 +45,9 @@ export default function Card() {
                 className="coverPhoto"
                 src={webDevPic}
                 alt=""
+                style={{
+                  translate: "0 -50px",
+                }}
               />
             </div>
           </div>
