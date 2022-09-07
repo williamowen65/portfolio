@@ -19,7 +19,7 @@ export default function Card() {
   return (
     <CardStyled>
       <div className="card intro">
-        <div className="slide">
+        <div className="slide intro">
           <p>
             Tap the following cards to
             learn more

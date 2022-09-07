@@ -56,6 +56,26 @@ export default function FirstCard() {
           </p>
           {/* <button>Learn More</button> */}
         </div>
+        <div className="slide two">
+          <h2>MARK DOWN TEXT</h2>
+          <p>
+            Lorem ipsum dolor sit amet,
+            consectetur adipisicing
+            elit. Repellendus illum aut
+            perferendis vero fugit
+            possimus asperiores sunt
+            dolorum ullam doloremque.
+            Aliquid vel dolor maxime in
+            nam, voluptas architecto
+            eveniet, dolores similique
+            nisi error autem aliquam
+            deleniti. Aliquam,
+            perferendis animi nam
+            dolore, suscipit magnam,
+            accusantium natus sunt sit
+            magni aperiam modi.
+          </p>
+        </div>
       </div>
     </FirstCardStyled>
   );

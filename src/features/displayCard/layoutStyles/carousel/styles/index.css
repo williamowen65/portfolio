@@ -87,20 +87,11 @@ body {
   margin-left: 10px;
 }
 .carousel section .card {
-  width: 600px;
-  height: 300px;
-  border-radius: 10px;
-  margin: 10px;
-  background: #3c513268;
-  box-shadow: 1px 1px 2px #c193c1, -1px 1px 2px #ad37ad, 0px -1px 2px #5fcf19;
   position: relative;
-  padding: 12px 0;
   display: flex;
   overflow: hidden;
   flex-direction: column;
   justify-content: space-around;
-  background-repeat: no-repeat;
-  background-position: 0px 0px, calc(100% + 0px) calc(100% + 0px);
   background-size: 100px;
 }
 .carousel section .card:not(.intro) {
@@ -109,10 +100,6 @@ body {
 .carousel section .card .content {
   display: flex;
   align-items: center;
-}
-.carousel section .card.intro {
-  width: 253px;
-  padding: 4px;
 }
 .carousel section .card.intro .coverPhoto {
   border-radius: 50%;
@@ -138,10 +125,20 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  width: 600px;
+  height: 300px;
+  border-radius: 10px;
+  margin: 10px;
+  background: #3c513268;
+  box-shadow: 1px 1px 2px #c193c1, -1px 1px 2px #ad37ad, 0px -1px 2px #5fcf19;
+  padding: 12px 0;
+}
+.carousel section .card .slide.intro {
+  width: 253px;
 }
 .carousel section .card .slide.two {
-  height: 0;
-  bottom: 0;
+  overflow: hidden;
+  position: absolute;
 }
 .carousel section .card button {
   cursor: pointer;

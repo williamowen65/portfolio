@@ -118,27 +118,14 @@ body {
         cursor: pointer;
       }
       // position: relative;
-      width: 600px;
-      height: 300px;
-      border-radius: 10px;
-      margin: 10px;
-      background: #3c513268;
-      // box-shadow: 0 0 5px #000 inset;
-      box-shadow: 1px 1px 2px #c193c1,
-        -1px 1px 2px #ad37ad,
-        0px -1px 2px #5fcf19;
+
       // width: inherit;
       // height: fit-content;
       position: relative;
-      padding: 12px 0;
       display: flex;
       overflow: hidden;
       flex-direction: column;
       justify-content: space-around;
-      background-repeat: no-repeat;
-      background-position: -0px -0px,
-        calc(100% + 0px)
-          calc(100% + 0px);
 
       background-size: 100px;
       .content {
@@ -146,8 +133,8 @@ body {
         align-items: center;
       }
       &.intro {
-        width: 253px;
-        padding: 4px;
+        // width: 253px;
+        // padding: 4px;
         .coverPhoto {
           border-radius: 50%;
           overflow: hidden;
@@ -167,6 +154,7 @@ body {
         margin: 0 20px;
       }
       .slide {
+        // position: absolute;
         width: 100%;
         overflow: hidden;
         display: flex;
@@ -174,9 +162,29 @@ body {
         align-items: center;
         justify-content: space-between;
         height: 100%;
+        width: 600px;
+        &.intro {
+          width: 253px;
+        }
+        height: 300px;
+        border-radius: 10px;
+        margin: 10px;
+        background: #3c513268;
+        // box-shadow: 0 0 5px #000 inset;
+        box-shadow: 1px 1px 2px #c193c1,
+          -1px 1px 2px #ad37ad,
+          0px -1px 2px #5fcf19;
+        padding: 12px 0;
         &.two {
-          height: 0;
-          bottom: 0;
+          overflow: hidden;
+          // height: 0;
+          position: absolute;
+          .mask {
+            // position: absolute;
+            // top: 0;
+          }
+          // height: 0;
+          // bottom: 0;
         }
       }
       button {
