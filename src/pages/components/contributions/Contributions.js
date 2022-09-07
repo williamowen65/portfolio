@@ -115,7 +115,7 @@ export default function Contributions() {
                         : null
                     }
                   >
-                    {type}
+                    <nobr>{type}</nobr>
                   </p>
                 )
               )}

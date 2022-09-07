@@ -13,8 +13,11 @@ import { Provider } from "react-redux";
 import LeftArrow from "./assets/LeftArrow";
 import RightArrow from "./assets/RightArrow";
 
+import { BiArrowFromLeft } from "react-icons/bi";
+
 import "./styles/index.css";
 import styled from "styled-components";
+import Card from "./NewCard";
 
 const Carousel = React.memo(
   ({ title, cards }) => {
@@ -81,29 +84,7 @@ const Carousel = React.memo(
               
         ))} */}
 
-          <div className="cardContainer">
-            <div className="card">
-              <div className="slide one">
-                <h3>sdfsdjfkl</h3>
-                <p>dfhsljdflsdds</p>
-              </div>
-              <div className="slide two">
-                <p>hsdfhsdlfhsdklhf</p>
-              </div>
-            </div>
-          </div>
-          <div className="cardContainer">
-            <div className="card">
-              <div className="slide one">
-                <h3>sdfsdjfkl</h3>
-                <p>dfhsljdflsdds</p>
-              </div>
-              <div className="slide two">
-                <p>hsdfhsdlfhsdklhf</p>
-              </div>
-            </div>
-          </div>
-
+          <Card />
           {/* offset the last card, maybe not necesary.. */}
           {/* <div className="spacer">|</div> */}
         </Section>

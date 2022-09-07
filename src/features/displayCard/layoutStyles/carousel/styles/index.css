@@ -84,21 +84,24 @@ body {
   background: #91dfa9;
   margin-left: 10px;
 }
-.carousel section .cardContainer {
-  position: relative;
+.carousel section .card {
   width: 600px;
   height: 200px;
-  margin-right: 10px;
-}
-.carousel section .cardContainer .card {
-  width: inherit;
-  height: fit-content;
+  margin: 10px;
+  background: blue;
   position: relative;
 }
-.carousel section .cardContainer .card .slide {
+.carousel section .card.intro {
+  width: 300px;
+}
+.carousel section .card .slide {
   position: absolute;
-  background: blue;
   width: 100%;
+  overflow: hidden;
+}
+.carousel section .card .slide.two {
+  height: 0;
+  bottom: 0;
 }
 .carousel .spacer {
   color: transparent;

@@ -106,19 +106,25 @@ body {
     // perspective: 500px;
     // perspective-origin: 50%
     // calc(50% - 2em);
-    .cardContainer {
-      position: relative;
+    .card {
+      // position: relative;
       width: 600px;
       height: 200px;
-      margin-right: 10px;
-      .card {
-        width: inherit;
-        height: fit-content;
-        position: relative;
-        .slide {
-          position: absolute;
-          background: blue;
-          width: 100%;
+      margin: 10px;
+      background: blue;
+      // width: inherit;
+      // height: fit-content;
+      position: relative;
+      &.intro {
+        width: 300px;
+      }
+      .slide {
+        position: absolute;
+        width: 100%;
+        overflow: hidden;
+        &.two {
+          height: 0;
+          bottom: 0;
         }
       }
     }
