@@ -92,6 +92,7 @@ body {
   position: relative;
   padding: 12px 0;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   justify-content: space-around;
   background-repeat: no-repeat;
@@ -116,10 +117,9 @@ body {
   overflow: hidden;
   width: 150px;
   height: 150px;
-  margin: 0 auto;
+  margin: 0 20px;
 }
 .carousel section .card .slide {
-  position: absolute;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -131,6 +131,9 @@ body {
 .carousel section .card .slide.two {
   height: 0;
   bottom: 0;
+}
+.carousel section .card button {
+  cursor: pointer;
 }
 .carousel .spacer {
   color: transparent;

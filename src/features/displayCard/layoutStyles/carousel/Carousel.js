@@ -12,6 +12,7 @@ import { Provider } from "react-redux";
 
 import LeftArrow from "./assets/LeftArrow";
 import RightArrow from "./assets/RightArrow";
+import { BsDot } from "react-icons/bs";
 
 import { BiArrowFromLeft } from "react-icons/bi";
 
@@ -67,6 +68,7 @@ const Carousel = React.memo(
                   scroll={scroll}
                 />
               </span>
+              <BsDot size={30} />
               <span>
                 {/* <i className='material-icons'>chevron_right</i> */}
                 <RightArrow

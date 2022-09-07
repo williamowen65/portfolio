@@ -118,6 +118,7 @@ body {
       position: relative;
       padding: 12px 0;
       display: flex;
+      overflow: hidden;
       flex-direction: column;
       justify-content: space-around;
       background-repeat: no-repeat;
@@ -145,12 +146,9 @@ body {
         $w: 150px;
         width: $w;
         height: $w;
-        margin: 0 auto;
-        img {
-        }
+        margin: 0 20px;
       }
       .slide {
-        position: absolute;
         width: 100%;
         overflow: hidden;
         display: flex;
@@ -162,6 +160,9 @@ body {
           height: 0;
           bottom: 0;
         }
+      }
+      button {
+        cursor: pointer;
       }
     }
   }
