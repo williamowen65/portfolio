@@ -61,7 +61,7 @@ body {
     }
   }
   section {
-    height: 430px;
+    height: 340px;
     margin: auto;
     margin-bottom: 100px;
     display: flex;
@@ -109,14 +109,29 @@ body {
     .card {
       // position: relative;
       width: 600px;
-      height: 200px;
+      height: 300px;
       margin: 10px;
       background: blue;
+      // box-shadow: 0 0 5px #000 inset;
       // width: inherit;
       // height: fit-content;
       position: relative;
+      border: 30px solid transparent;
+
       &.intro {
         width: 300px;
+        .coverPhoto {
+          border-radius: 50%;
+          overflow: hidden;
+          width: 50%;
+          margin: 0 auto;
+        }
+      }
+      img {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 25%;
+        margin: 0 auto;
       }
       .slide {
         position: absolute;
