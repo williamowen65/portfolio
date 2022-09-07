@@ -7,6 +7,7 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 // import borderImg2p1 from "./assets/borderPattern2.1.png";
 
 import configValues from "../../../../data/configValues.json";
+import FirstCard from "./data/first-entry";
 
 export default function Card() {
   const kayakPic =
@@ -26,54 +27,8 @@ export default function Card() {
         </div>
       </div>
 
-      <div
-        className="card"
-        onClick={(e) => {
-          alert("hi");
-        }}
-      >
-        <div className="slide one">
-          <h3>
-            From Kayak Guide to Web
-            Developer
-          </h3>
-          <div className="content">
-            <div className="imgContainer">
-              <img
-                className="coverPhoto"
-                src={kayakPic}
-                alt=""
-              />
-            </div>
-            <HiArrowNarrowRight
-              size={30}
-              color={
-                configValues.theme.dark
-                  .color.main
-              }
-            />
-            <div className="imgContainer">
-              <img
-                className="coverPhoto"
-                src={webDevPic}
-                alt=""
-                style={{
-                  translate: "0 -50px",
-                }}
-              />
-            </div>
-          </div>
-          <p>
-            A freelance approach to
-            switching careers
-          </p>
-          {/* <button>Learn More</button> */}
-        </div>
+      <FirstCard />
 
-        <div className="slide two">
-          <p>hsdfhsdlfhsdklhf</p>
-        </div>
-      </div>
       <div className="card">
         <div className="slide one">
           <h3>sdfsdjfkl</h3>
