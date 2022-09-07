@@ -5,8 +5,8 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 // import borderImg from "./assets/borderPattern.png";
 // import borderImg2 from "./assets/borderPattern2.png";
 // import borderImg2p1 from "./assets/borderPattern2.1.png";
-import CornerArt from "./assets/cornerArt.png";
-import CornerArt2 from "./assets/cornerArt2.png";
+
+import configValues from "../../../../data/configValues.json";
 
 export default function Card() {
   const kayakPic =
@@ -19,11 +19,19 @@ export default function Card() {
     <CardStyled>
       <div className="card intro">
         <div className="slide">
-          <h2></h2>
+          <p>
+            Tap the following cards to
+            learn more
+          </p>
         </div>
       </div>
 
-      <div className="card">
+      <div
+        className="card"
+        onClick={(e) => {
+          alert("hi");
+        }}
+      >
         <div className="slide one">
           <h3>
             From Kayak Guide to Web
@@ -39,6 +47,10 @@ export default function Card() {
             </div>
             <HiArrowNarrowRight
               size={30}
+              color={
+                configValues.theme.dark
+                  .color.main
+              }
             />
             <div className="imgContainer">
               <img
@@ -51,9 +63,13 @@ export default function Card() {
               />
             </div>
           </div>
-          <p>dfhsljdflsdds</p>
-          <button>Learn More</button>
+          <p>
+            A freelance approach to
+            switching careers
+          </p>
+          {/* <button>Learn More</button> */}
         </div>
+
         <div className="slide two">
           <p>hsdfhsdlfhsdklhf</p>
         </div>
@@ -74,9 +90,5 @@ export default function Card() {
 const CardStyled = styled.div`
   display: flex;
   .card {
-    &:not(.intro) {
-      background-image: url(${CornerArt}),
-        url(${CornerArt2}) !important;
-    }
   }
 `;

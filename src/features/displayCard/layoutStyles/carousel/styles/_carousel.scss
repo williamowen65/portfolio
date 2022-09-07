@@ -33,6 +33,8 @@ body {
       white-space: nowrap;
       float: right;
       margin: auto 0;
+      display: flex;
+      align-items: center;
 
       span {
         font-size: 40px;
@@ -46,12 +48,11 @@ body {
         line-height: 19px;
         text-align: center;
         white-space: nowrap;
-        border-radius: 3px;
+        border-radius: 50%;
         // width: 50px;
-        transition: color 0.5s,
-          background 0.5s;
+        transition: color 0.5s, all 0.5s;
         &:hover {
-          background: #222;
+          box-shadow: 0px 0px 4px white;
           color: white;
         }
         * {
@@ -70,6 +71,12 @@ body {
     overflow-x: scroll;
     position: absolute;
     // padding-left: 10px;
+    // background: linear-gradient(
+    //   to right bottom,
+    //   blue 30%,
+    //   yellow 50%,
+    //   red 20%
+    // );
 
     &::-webkit-scrollbar {
       // display: none;
@@ -104,15 +111,22 @@ body {
     }
 
     // perspective: 500px;
-    // perspective-origin: 50%
+    // perspective-origin: 50%h
     // calc(50% - 2em);
     .card {
+      &:not(.intro) {
+        cursor: pointer;
+      }
       // position: relative;
       width: 600px;
       height: 300px;
+      border-radius: 10px;
       margin: 10px;
-      background: #3c5132;
+      background: #3c513268;
       // box-shadow: 0 0 5px #000 inset;
+      box-shadow: 1px 1px 2px #c193c1,
+        -1px 1px 2px #ad37ad,
+        0px -1px 2px #5fcf19;
       // width: inherit;
       // height: fit-content;
       position: relative;
@@ -132,12 +146,16 @@ body {
         align-items: center;
       }
       &.intro {
-        width: 300px;
+        width: 253px;
+        padding: 4px;
         .coverPhoto {
           border-radius: 50%;
           overflow: hidden;
           width: 50%;
           margin: 0 auto;
+        }
+        .slide {
+          justify-content: center;
         }
       }
       .imgContainer {
@@ -163,6 +181,9 @@ body {
       }
       button {
         cursor: pointer;
+      }
+      &.active {
+        translate: 0 -50px;
       }
     }
   }

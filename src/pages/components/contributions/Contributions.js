@@ -175,6 +175,11 @@ export default function Contributions() {
 const Article = styled.article`
   fieldset {
     position: relative;
+    .actualContent {
+      background-color: ${configValues
+        .theme.dark.background.color
+        .window};
+    }
     legend {
       display: flex;
       align-items: center;
