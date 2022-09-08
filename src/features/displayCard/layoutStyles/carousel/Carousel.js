@@ -23,10 +23,10 @@ import Card from "./NewCard";
 const Carousel = React.memo(
   ({ title, cards }) => {
     // console.log("STATE ", useContext(AppControlContent));
-    console.log(cards);
-    const { test } = useSelector(
-      (state) => state.carousel
-    );
+    // console.log(cards);
+    // const { test } = useSelector(
+    //   (state) => state.carousel
+    // );
 
     const carousel = useRef();
 
@@ -43,11 +43,39 @@ const Carousel = React.memo(
       );
       ${configValues.breakpoints
         .mobile < screenWidth
-        ? "left: -49px"
-        : "left: -20px"};
+        ? "left: -49px;"
+        : "left: -20px;"};
       ${configValues.breakpoints
         .mobile > screenWidth &&
-      "padding-left: 18px"};
+      "padding-left: 18px;"};
+    `;
+
+    const CarouselStyled = styled.div`
+      h1 {
+        color: ${configValues.theme.dark
+          .color.main};
+      }
+      header {
+        border-bottom: 1px solid
+          ${configValues.theme.dark
+            .color.main};
+      }
+      path {
+        stroke: ${configValues.theme
+          .dark.color.main};
+      }
+      .carouselSlider {
+        ${screenWidth <
+          configValues.breakpoints
+            .mobile &&
+        `height: 475px !important;`}
+      }
+      .slide {
+        ${screenWidth <
+          configValues.breakpoints
+            .mobile &&
+        `height: 411px !important;`}
+      }
     `;
 
     return (
@@ -82,13 +110,7 @@ const Carousel = React.memo(
           ref={carousel}
           className="carouselSlider"
         >
-          {/* {cards.map((project) => (
-              
-        ))} */}
-
           <Card />
-          {/* offset the last card, maybe not necesary.. */}
-          {/* <div className="spacer">|</div> */}
         </Section>
       </CarouselStyled>
     );
@@ -102,19 +124,3 @@ const Wrapper = (props) => (
 );
 
 export default Wrapper;
-
-const CarouselStyled = styled.div`
-  h1 {
-    color: ${configValues.theme.dark
-      .color.main};
-  }
-  header {
-    border-bottom: 1px solid
-      ${configValues.theme.dark.color
-        .main};
-  }
-  path {
-    stroke: ${configValues.theme.dark
-      .color.main};
-  }
-`;
