@@ -129,7 +129,7 @@ body {
   height: 300px;
   border-radius: 10px;
   margin: 10px;
-  background: #3c513268;
+  background: #3c5132;
   box-shadow: 1px 1px 2px #c193c1, -1px 1px 2px #ad37ad, 0px -1px 2px #5fcf19;
   padding: 12px 0;
 }
@@ -139,6 +139,11 @@ body {
 .carousel section .card .slide.two {
   overflow: hidden;
   position: absolute;
+  bottom: 0;
+  height: 0;
+  padding: 0;
+  transition: all 0.5s;
+  overflow-y: scroll;
 }
 .carousel section .card button {
   cursor: pointer;

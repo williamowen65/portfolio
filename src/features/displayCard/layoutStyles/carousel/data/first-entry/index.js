@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import configValues from "../../../../../../data/configValues.json";
+import { useRef } from "react";
 
 export default function FirstCard() {
   const kayakPic =
@@ -10,14 +11,21 @@ export default function FirstCard() {
   const webDevPic =
     "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/302085057_10225037046066479_347752878933419272_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=ICVasttexKYAX8P4IM4&_nc_ht=scontent-sea1-1.xx&oh=00_AT_D84gdgQS9kdNuBTuwbWDqtJMvb-gO-XIGHhMJtk6PKg&oe=631E7305";
 
+  const slideTwo = useRef();
+
+  const handleClick = () => {
+    slideTwo.current.style.height =
+      "300px";
+    slideTwo.current.style.padding =
+      "12px 0";
+  };
+
   return (
     <FirstCardStyled>
       <div
         className="card"
-        onClick={(e) => {
-          alert("hi");
-        }}
         // ref={}
+        onClick={handleClick}
       >
         <div className="slide one">
           <h3>
@@ -56,7 +64,11 @@ export default function FirstCard() {
           </p>
           {/* <button>Learn More</button> */}
         </div>
-        <div className="slide two">
+
+        <div
+          className="slide two"
+          ref={slideTwo}
+        >
           <h2>MARK DOWN TEXT</h2>
           <p>
             Lorem ipsum dolor sit amet,
@@ -73,7 +85,23 @@ export default function FirstCard() {
             perferendis animi nam
             dolore, suscipit magnam,
             accusantium natus sunt sit
-            magni aperiam modi.
+            magni aperiam modi. Lorem
+            ipsum dolor sit amet
+            consectetur, adipisicing
+            elit. Dignissimos rem dolor
+            similique impedit tenetur.
+            Maxime dolore vero ullam
+            adipisci. Exercitationem
+            nisi consequuntur suscipit
+            illum repellendus, nulla
+            reprehenderit ad. Ipsum nam,
+            aliquam ipsam optio sapiente
+            voluptates est asperiores
+            amet repellendus explicabo
+            nobis iste voluptatibus iure
+            inventore praesentium
+            molestiae, commodi ducimus
+            dignissimos.
           </p>
         </div>
       </div>
