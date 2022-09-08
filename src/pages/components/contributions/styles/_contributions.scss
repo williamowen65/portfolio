@@ -24,7 +24,9 @@
 .contributions {
   .content {
     display: flex;
-
+    .description {
+      margin: 22px 0;
+    }
     .types {
       display: flex;
       height: fit-content;

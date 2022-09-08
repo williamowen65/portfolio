@@ -5,12 +5,12 @@
       "github": "www.wowebdev.com"
     },
     "meta": {
-      "description": "Automate your custom project setup with a few lines of JavaScript.",
-      "title": "First Project"
+      "description": "Simply manage a folder of project-boiler-plates and use the built-in CLI tool to print projects to any folder on your machine. I was inspired by front-end frameworks that provide the same thing, but in a much more restricted way. This solution provides a 100% customizable experience. This is still in maintenance at the moment, but it is very usable already.",
+      "title": "A simple way to generate customized boiler-plate code"
     }
   },
   {
-    "type": "Products",
+    "type": "Open Source",
     "links": {
       "github": "www.wowebdev.com"
     },
@@ -20,7 +20,37 @@
     }
   },
   {
-    "type": "Products",
+    "type": "Open Source",
+    "links": {
+      "github": "www.wowebdev.com"
+    },
+    "meta": {
+      "title": "Extra",
+      "description": "None yet, but soon (etc)"
+    }
+  },
+  {
+    "type": "Freelance",
+    "links": {
+      "github": "www.wowebdev.com"
+    },
+    "meta": {
+      "title": "Excel Diary for tracking health & fitness ",
+      "description": "For this product I dove into Google Scripts/Google Sheets to create an awesome experience for my client and her clients. This project achieved the goals of automating spreadsheet generation in a consistent style and of adapting inspiration from a similar product."
+    }
+  },
+  {
+    "type": "Freelance",
+    "links": {
+      "github": "www.wowebdev.com"
+    },
+    "meta": {
+      "title": "Read Voices",
+      "description": "A custom app for a friend."
+    }
+  },
+  {
+    "type": "Games",
     "links": {
       "github": "www.wowebdev.com"
     },
