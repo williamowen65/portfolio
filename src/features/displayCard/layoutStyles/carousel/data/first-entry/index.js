@@ -1,9 +1,20 @@
-import React from "react";
+import React, {
+  useEffect,
+} from "react";
 import styled from "styled-components";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import configValues from "../../../../../../data/configValues.json";
 import { useRef } from "react";
 import { GrClose } from "react-icons/gr";
+import markdown from "./first-entry.md";
+import ConvertStringToHTML from "../../../../../../utils/stringToHTML";
+
+// console.log(markdown);
+// import { Remarkable } from "remarkable";
+
+// const md = new Remarkable();
+
+// console.log(md.render(markdown));
 
 export default function FirstCard() {
   const kayakPic =
@@ -20,6 +31,14 @@ export default function FirstCard() {
       "active"
     );
   };
+
+  useEffect(() => {
+    if (slideTwo.current) {
+      slideTwo.current.querySelector(
+        ".content"
+      ).innerHTML = markdown;
+    }
+  }, [slideTwo.current]);
 
   return (
     <FirstCardStyled>
@@ -78,40 +97,7 @@ export default function FirstCard() {
             className="close"
             onClick={handleClick}
           />
-          <h2>MARK DOWN TEXT</h2>
-          <p>
-            Lorem ipsum dolor sit amet,
-            consectetur adipisicing
-            elit. Repellendus illum aut
-            perferendis vero fugit
-            possimus asperiores sunt
-            dolorum ullam doloremque.
-            Aliquid vel dolor maxime in
-            nam, voluptas architecto
-            eveniet, dolores similique
-            nisi error autem aliquam
-            deleniti. Aliquam,
-            perferendis animi nam
-            dolore, suscipit magnam,
-            accusantium natus sunt sit
-            magni aperiam modi. Lorem
-            ipsum dolor sit amet
-            consectetur, adipisicing
-            elit. Dignissimos rem dolor
-            similique impedit tenetur.
-            Maxime dolore vero ullam
-            adipisci. Exercitationem
-            nisi consequuntur suscipit
-            illum repellendus, nulla
-            reprehenderit ad. Ipsum nam,
-            aliquam ipsam optio sapiente
-            voluptates est asperiores
-            amet repellendus explicabo
-            nobis iste voluptatibus iure
-            inventore praesentium
-            molestiae, commodi ducimus
-            dignissimos.
-          </p>
+          <div className="content"></div>
         </a>
       </div>
     </FirstCardStyled>
