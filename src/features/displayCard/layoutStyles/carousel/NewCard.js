@@ -7,7 +7,9 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 // import borderImg2p1 from "./assets/borderPattern2.1.png";
 
 import configValues from "../../../../data/configValues.json";
-import FirstCard from "./data/first-entry";
+import FirstCard from "./data/kayak-to-web";
+import SecondCard from "./data/development-standing";
+import ThirdCard from "./data/tour-guide";
 
 export default function Card() {
   const kayakPic =
@@ -28,16 +30,8 @@ export default function Card() {
       </div>
 
       <FirstCard />
-
-      <div className="card">
-        <div className="slide one">
-          <h3>sdfsdjfkl</h3>
-          <p>dfhsljdflsdds</p>
-        </div>
-        <div className="slide two">
-          <p>hsdfhsdlfhsdklhf</p>
-        </div>
-      </div>
+      <SecondCard />
+      <ThirdCard />
     </CardStyled>
   );
 }

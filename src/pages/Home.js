@@ -39,9 +39,7 @@ export default function Home() {
       <Content id="about">
         <DisplayCard
           type="carousel"
-          title={
-            "What I've been up to..."
-          }
+          title={"About me..."}
         />
       </Content>
       <Content id="contact">

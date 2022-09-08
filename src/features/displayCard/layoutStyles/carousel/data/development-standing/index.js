@@ -9,7 +9,7 @@ import {
 import configValues from "../../../../../../data/configValues.json";
 import { useRef } from "react";
 import { GrClose } from "react-icons/gr";
-import markdown from "./first-entry.md";
+import markdown from "./markdown.md";
 import ConvertStringToHTML from "../../../../../../utils/stringToHTML";
 import { useSelector } from "react-redux";
 
@@ -72,10 +72,10 @@ export default function FirstCard() {
     `}
   `;
 
-  const FirstCardStyled = styled.div``;
+  const CardStyled = styled.div``;
 
   return (
-    <FirstCardStyled>
+    <CardStyled>
       <div
         className="card"
         // ref={}
@@ -86,57 +86,11 @@ export default function FirstCard() {
           ref={slideOne}
         >
           <h3>
-            From Kayak Guide to Web
-            Developer
+            {/* A Glimpse Into my Mind */}
+            Thought's on web development
           </h3>
           <ContentStyled className="content">
-            <div className="imgContainer">
-              <img
-                className="coverPhoto"
-                src={kayakPic}
-                alt=""
-              />
-            </div>
-            {screenWidth <
-            configValues.breakpoints
-              .mobile ? (
-              <HiArrowNarrowDown
-                size={30}
-                color={
-                  configValues.theme
-                    .dark.color.main
-                }
-              />
-            ) : (
-              <HiArrowNarrowRight
-                size={30}
-                color={
-                  configValues.theme
-                    .dark.color.main
-                }
-              />
-            )}
-
-            <div className="imgContainer">
-              <img
-                className="coverPhoto"
-                src={webDevPic}
-                alt=""
-                style={
-                  screenWidth <
-                  configValues
-                    .breakpoints.mobile
-                    ? {
-                        translate:
-                          "0 -26px",
-                      }
-                    : {
-                        translate:
-                          "0 -50px",
-                      }
-                }
-              />
-            </div>
+            fgfd
           </ContentStyled>
           <p>
             A freelance approach to
@@ -145,10 +99,9 @@ export default function FirstCard() {
           {/* <button>Learn More</button> */}
         </div>
 
-        <a
+        <div
           className="slide two"
           ref={slideTwo}
-          href="#firstStory"
         >
           <GrClose
             size={30}
@@ -156,8 +109,8 @@ export default function FirstCard() {
             onClick={handleClick}
           />
           <div className="content"></div>
-        </a>
+        </div>
       </div>
-    </FirstCardStyled>
+    </CardStyled>
   );
 }
