@@ -36,5 +36,6 @@ dreams of my clients.
 
 #### ...and as for kayaking
 
-Maybe come on a tour with me. We can
-make it a business trip.
+You can still come on a tour with me.
+But now you can make it a business trip
+too.

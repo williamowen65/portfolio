@@ -114,6 +114,7 @@ body {
     // perspective-origin: 50%h
     // calc(50% - 2em);
     .card {
+      // padding: 10px;
       &:not(.intro) {
         cursor: pointer;
       }
@@ -164,6 +165,8 @@ body {
         justify-content: space-between;
         height: 100%;
         width: 600px;
+        max-width: 80vw;
+        box-sizing: border-box;
         &.intro {
           width: 253px;
         }

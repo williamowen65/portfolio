@@ -38,7 +38,7 @@ const Carousel = React.memo(
         100% +
           ${configValues.breakpoints
             .mobile > screenWidth
-            ? 29
+            ? 37
             : 99}px
       );
       ${configValues.breakpoints
