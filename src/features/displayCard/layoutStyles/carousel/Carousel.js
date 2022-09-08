@@ -70,11 +70,20 @@ const Carousel = React.memo(
             .mobile &&
         `height: 475px !important;`}
       }
-      .slide {
+      .slide:not(.two) {
         ${screenWidth <
           configValues.breakpoints
             .mobile &&
         `height: 411px !important;`}
+      }
+      .imgContainer {
+        ${screenWidth <
+          configValues.breakpoints
+            .mobile &&
+        `
+           width: 120px !important; 
+           height: 120px !important;   
+            `}
       }
     `;
 

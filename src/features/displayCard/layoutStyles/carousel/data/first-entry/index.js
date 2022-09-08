@@ -31,13 +31,29 @@ export default function FirstCard() {
   const webDevPic =
     "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/302085057_10225037046066479_347752878933419272_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=ICVasttexKYAX8P4IM4&_nc_ht=scontent-sea1-1.xx&oh=00_AT_D84gdgQS9kdNuBTuwbWDqtJMvb-gO-XIGHhMJtk6PKg&oe=631E7305";
 
+  const slideOne = useRef();
   const slideTwo = useRef();
 
   const handleClick = (e) => {
     e.stopPropagation();
-    slideTwo.current.classList.toggle(
-      "active"
-    );
+    // slideTwo.current.classList.toggle(
+    //   "active"
+    // );
+
+    if (
+      parseInt(
+        slideTwo.current.style.height
+      )
+    ) {
+      slideTwo.current.style.height = 0;
+    } else {
+      const slideOneHeight =
+        getComputedStyle(
+          slideOne.current
+        ).height;
+      slideTwo.current.style.height =
+        slideOneHeight;
+    }
   };
 
   useEffect(() => {
@@ -67,6 +83,7 @@ export default function FirstCard() {
         <div
           className="slide one"
           onClick={handleClick}
+          ref={slideOne}
         >
           <h3>
             From Kayak Guide to Web
@@ -105,9 +122,19 @@ export default function FirstCard() {
                 className="coverPhoto"
                 src={webDevPic}
                 alt=""
-                style={{
-                  translate: "0 -50px",
-                }}
+                style={
+                  screenWidth <
+                  configValues
+                    .breakpoints.mobile
+                    ? {
+                        translate:
+                          "0 -26px",
+                      }
+                    : {
+                        translate:
+                          "0 -50px",
+                      }
+                }
               />
             </div>
           </ContentStyled>
