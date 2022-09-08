@@ -137,6 +137,7 @@ body {
   width: 253px;
 }
 .carousel section .card .slide.two {
+  justify-content: flex-start;
   overflow: hidden;
   position: absolute;
   bottom: 0;
@@ -154,6 +155,28 @@ body {
   align-self: end;
   overflow: visible;
   cursor: pointer;
+}
+.carousel section .card .slide.two .content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.carousel section .card .slide.two .content h3 {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+.carousel section .card .slide.two .content p {
+  text-align: left;
+  margin-bottom: 15px;
+}
+.carousel section .card .slide.two .content a {
+  border-bottom: 2px solid black;
+}
+.carousel section .card .slide.two .content hr {
+  width: 75%;
+  border: 1px solid transparent;
+  height: 1px;
+  background: black;
 }
 .carousel section .card .slide.two.active {
   height: 300px;
