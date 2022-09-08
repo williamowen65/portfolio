@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import configValues from "../../../../../../data/configValues.json";
 import { useRef } from "react";
+import { GrClose } from "react-icons/gr";
 
 export default function FirstCard() {
   const kayakPic =
@@ -13,11 +14,11 @@ export default function FirstCard() {
 
   const slideTwo = useRef();
 
-  const handleClick = () => {
-    slideTwo.current.style.height =
-      "300px";
-    slideTwo.current.style.padding =
-      "12px 0";
+  const handleClick = (e) => {
+    e.stopPropagation();
+    slideTwo.current.classList.toggle(
+      "active"
+    );
   };
 
   return (
@@ -25,9 +26,11 @@ export default function FirstCard() {
       <div
         className="card"
         // ref={}
-        onClick={handleClick}
       >
-        <div className="slide one">
+        <div
+          className="slide one"
+          onClick={handleClick}
+        >
           <h3>
             From Kayak Guide to Web
             Developer
@@ -65,10 +68,16 @@ export default function FirstCard() {
           {/* <button>Learn More</button> */}
         </div>
 
-        <div
+        <a
           className="slide two"
           ref={slideTwo}
+          href="#firstStory"
         >
+          <GrClose
+            size={30}
+            className="close"
+            onClick={handleClick}
+          />
           <h2>MARK DOWN TEXT</h2>
           <p>
             Lorem ipsum dolor sit amet,
@@ -103,7 +112,7 @@ export default function FirstCard() {
             molestiae, commodi ducimus
             dignissimos.
           </p>
-        </div>
+        </a>
       </div>
     </FirstCardStyled>
   );

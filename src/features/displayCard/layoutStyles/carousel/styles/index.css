@@ -140,10 +140,24 @@ body {
   overflow: hidden;
   position: absolute;
   bottom: 0;
+  cursor: auto;
   height: 0;
-  padding: 0;
+  padding: 0 12px;
   transition: all 0.5s;
   overflow-y: scroll;
+}
+.carousel section .card .slide.two .close {
+  width: 30px;
+  height: 30px;
+  top: 4px;
+  position: sticky;
+  align-self: end;
+  overflow: visible;
+  cursor: pointer;
+}
+.carousel section .card .slide.two.active {
+  height: 300px;
+  padding: "12px 0";
 }
 .carousel section .card button {
   cursor: pointer;
