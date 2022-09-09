@@ -10,8 +10,8 @@ export default function Contact() {
       <header>
         <h2>My Contact Info</h2>
         <span className="share">
-          <a
-            href="https://www.facebook.com/dialog/share?app_id=873061097006100&display=popup&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer"
+          {/* <a
+            href="https://www.facebook.com/dialog/share?app_id=873061097006100&display=popup&href=http%3A%2F%2Fwww.WOWebDev.com%2Fdocs%2F&redirect_uri=http%3A%2F%2Fwww.WOWebDev.com%2Ftools%2Fexplorer"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -21,9 +21,15 @@ export default function Contact() {
                   .color.main
               }
             />
-          </a>
-          {/* <iframe
-            src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fwww.WOWebDev.com&layout=button&size=small&width=77&height=20&appId=873061097006100"
+          </a> */}
+          {/* <BsShareFill
+            color={
+              configValues.theme.dark
+                .color.main
+            }
+          /> */}
+          <iframe
+            src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fwww.WOWebDev.com&layout=button&size=small&width=77&height=20&appId"
             width="77"
             height="20"
             style={{
@@ -34,7 +40,7 @@ export default function Contact() {
             frameBorder="0"
             allowFullScreen
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          ></iframe> */}
+          ></iframe>
         </span>
       </header>
 
@@ -93,24 +99,24 @@ const ContactStyled = styled.div`
     }
   }
   .share {
-    width: 30px;
+    /* width: 30px;
     height: 30px;
-    padding: 5px;
-    svg {
+    padding: 5px; */
+    /* svg {
       transform: translateX(2px);
-    }
+    } */
     &:hover {
-      background: ${configValues.theme
-        .dark.color.mainOffset + "aa"};
-
+      /* background: ${configValues
+        .theme.dark.color.mainOffset +
+      "aa"}; */
+      /* 
       svg {
         stroke: ${configValues.theme
-          .dark.background.color
-          .window};
+        .dark.background.color.window};
         fill: ${configValues.theme.dark
-          .background.color.window};
-      }
-      border-radius: 50%;
+        .background.color.window};
+      } */
+      /* border-radius: 50%; */
       cursor: pointer;
     }
   }

@@ -50,5 +50,10 @@
     "react-use-dimensions": "^1.2.1",
     "remarkable": "^2.0.1",
     "styled-components": "^5.3.5"
-  }
+  },
+  "devNotes": [
+    "heroku container:push web",
+    "heroku container:release web",
+    "https://developers.facebook.com/tools/debug for updating share link preview cache"
+  ]
 }
