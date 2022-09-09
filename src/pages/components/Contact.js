@@ -16,6 +16,19 @@ export default function Contact() {
                 .color.main
             }
           />
+          <iframe
+            src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fwww.WOWebDev.com&layout=button&size=small&width=77&height=20&appId=873061097006100"
+            width="77"
+            height="20"
+            style={{
+              border: "none",
+              overflow: "hidden",
+            }}
+            scrolling="no"
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          ></iframe>
         </span>
       </header>
 
