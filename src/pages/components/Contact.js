@@ -10,13 +10,19 @@ export default function Contact() {
       <header>
         <h2>My Contact Info</h2>
         <span className="share">
-          <BsShareFill
-            color={
-              configValues.theme.dark
-                .color.main
-            }
-          />
-          <iframe
+          <a
+            href="https://www.facebook.com/dialog/share?app_id=873061097006100&display=popup&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsShareFill
+              color={
+                configValues.theme.dark
+                  .color.main
+              }
+            />
+          </a>
+          {/* <iframe
             src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fwww.WOWebDev.com&layout=button&size=small&width=77&height=20&appId=873061097006100"
             width="77"
             height="20"
@@ -28,7 +34,7 @@ export default function Contact() {
             frameBorder="0"
             allowFullScreen
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          ></iframe>
+          ></iframe> */}
         </span>
       </header>
 
@@ -36,11 +42,11 @@ export default function Contact() {
         className="card"
         id="contactCard"
       >
-        <img
+        {/* <img
           src={QR}
           alt=""
           className="qr"
-        />
+        /> */}
         <span className="title">
           <h2>William Owen</h2>
           <p>
