@@ -197,10 +197,13 @@ body {
           .content.imgFriendly {
             display: block;
             // align-items: none;
-            text-align: left;
+            text-align: justify;
             h3,
             h4 {
               text-align: center;
+            }
+            img {
+              box-sizing: content-box;
             }
           }
 

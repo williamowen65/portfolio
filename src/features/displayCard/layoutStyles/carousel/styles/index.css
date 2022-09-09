@@ -151,11 +151,14 @@ body {
 }
 .carousel section .card .slide.two .content.imgFriendly {
   display: block;
-  text-align: left;
+  text-align: justify;
 }
 .carousel section .card .slide.two .content.imgFriendly h3,
 .carousel section .card .slide.two .content.imgFriendly h4 {
   text-align: center;
+}
+.carousel section .card .slide.two .content.imgFriendly img {
+  box-sizing: content-box;
 }
 .carousel section .card .slide.two .close {
   width: 30px;
