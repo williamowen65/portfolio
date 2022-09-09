@@ -6,13 +6,13 @@ const PORT = process.env.PORT || 8080;
 
 app.use(
   express.static(
-    path.join(__dirname, "src/assets")
+    path.join(__dirname, "dist")
   )
 );
 
 app.use(
   express.static(
-    path.join(__dirname, "dist")
+    path.join(__dirname, "src/assets")
   )
 );
 
