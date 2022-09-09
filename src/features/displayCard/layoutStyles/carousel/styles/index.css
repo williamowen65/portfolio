@@ -174,13 +174,16 @@ body {
   width: 100%;
   flex-direction: column;
 }
+.carousel section .card .slide.two .content ul {
+  padding-right: 50px;
+}
 .carousel section .card .slide.two .content h3 {
   margin-bottom: 20px;
   font-size: 30px;
 }
 .carousel section .card .slide.two .content p {
   text-align: left;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 .carousel section .card .slide.two .content a {
   border-bottom: 2px solid black;
