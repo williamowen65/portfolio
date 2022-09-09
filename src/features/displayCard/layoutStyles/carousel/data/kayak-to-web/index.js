@@ -69,6 +69,7 @@ export default function FirstCard() {
       configValues.breakpoints.mobile &&
     `flex-direction: column;
       height: 475px;
+      justify-content: center;
     `}
   `;
 

@@ -72,7 +72,13 @@ export default function FirstCard() {
     `}
   `;
 
-  const CardStyled = styled.div``;
+  const CardStyled = styled.div`
+    .slide.one {
+      background-size: 116% !important;
+      background-position: 97% 0% !important;
+      background-image: url("https://sanjuan.objects.liquidweb.services/photos/aerial_of_friday_harbor_with_ferry_san_juan_island_photography_by_unknown_0-1200x800.jpg") !important;
+    }
+  `;
 
   return (
     <CardStyled>
@@ -90,11 +96,11 @@ export default function FirstCard() {
             Thought's on Kayak Guiding
           </h3>
           <ContentStyled className="content">
-            fgfd
+            {/* fgfd */}
           </ContentStyled>
           <p>
-            A freelance approach to
-            switching careers
+            What floating among the kelp
+            taught me
           </p>
           {/* <button>Learn More</button> */}
         </div>

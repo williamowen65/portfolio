@@ -167,6 +167,8 @@ body {
         width: 600px;
         max-width: 80vw;
         box-sizing: border-box;
+        // background-repeat: no-repeat;
+        // background-size: 100% !important;
         &.intro {
           width: 253px;
         }

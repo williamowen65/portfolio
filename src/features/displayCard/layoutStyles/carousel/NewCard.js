@@ -8,7 +8,7 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 
 import configValues from "../../../../data/configValues.json";
 import FirstCard from "./data/kayak-to-web";
-import SecondCard from "./data/development-standing";
+import SecondCard from "./data/dev-plans";
 import ThirdCard from "./data/tour-guide";
 
 export default function Card() {

@@ -70,6 +70,9 @@ export default function FirstCard() {
     `flex-direction: column;
       height: 475px;
     `}
+    .thinkingMan {
+      font-size: 101px;
+    }
   `;
 
   const CardStyled = styled.div``;
@@ -87,14 +90,17 @@ export default function FirstCard() {
         >
           <h3>
             {/* A Glimpse Into my Mind */}
-            Thought's on web development
+            Awesome Web Development
+            Plans
           </h3>
           <ContentStyled className="content">
-            fgfd
+            <p>
+              Earth spinning..
+              (D3.geo())
+            </p>
           </ContentStyled>
           <p>
-            A freelance approach to
-            switching careers
+            And open to collaboration!
           </p>
           {/* <button>Learn More</button> */}
         </div>
