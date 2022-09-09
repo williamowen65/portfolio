@@ -88,7 +88,6 @@ export default function Contact() {
       <img
         src={contactCard}
         id="contactCard"
-        className="card"
         alt=""
       />
     </ContactStyled>
@@ -96,6 +95,12 @@ export default function Contact() {
 }
 
 const ContactStyled = styled.div`
+  img {
+    box-sizing: content-box;
+    width: 375px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
   header {
     h2 {
       font-size: clamp(10px, 6vw, 21px);
