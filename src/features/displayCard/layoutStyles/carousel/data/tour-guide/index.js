@@ -74,6 +74,9 @@ export default function FirstCard() {
 
   const CardStyled = styled.div`
     .slide.one {
+      color: ${configValues.theme.dark
+        .background.color
+        .window} !important;
       background-size: 116% !important;
       background-position: 97% 0% !important;
       background-image: url("https://sanjuan.objects.liquidweb.services/photos/aerial_of_friday_harbor_with_ferry_san_juan_island_photography_by_unknown_0-1200x800.jpg") !important;
@@ -91,7 +94,14 @@ export default function FirstCard() {
           onClick={handleClick}
           ref={slideOne}
         >
-          <h3>
+          <h3
+            style={{
+              color:
+                configValues.theme.dark
+                  .background.color
+                  .window,
+            }}
+          >
             {/* A Glimpse Into my Mind */}
             Thought's on Kayak Guiding
           </h3>
@@ -114,7 +124,7 @@ export default function FirstCard() {
             className="close"
             onClick={handleClick}
           />
-          <div className="content"></div>
+          <div className="content imgFriendly"></div>
         </div>
       </div>
     </CardStyled>

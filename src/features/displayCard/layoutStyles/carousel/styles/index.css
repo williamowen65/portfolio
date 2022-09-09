@@ -149,6 +149,14 @@ body {
   transition: all 0.5s;
   overflow-y: scroll;
 }
+.carousel section .card .slide.two .content.imgFriendly {
+  display: block;
+  text-align: left;
+}
+.carousel section .card .slide.two .content.imgFriendly h3,
+.carousel section .card .slide.two .content.imgFriendly h4 {
+  text-align: center;
+}
 .carousel section .card .slide.two .close {
   width: 30px;
   height: 30px;
