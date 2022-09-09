@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BsShareFill } from "react-icons/bs";
 import configValues from "../../data/configValues.json";
 import QR from "../../assets/qrcode_www.wowebdev.com.png";
+import contactCard from "../../assets/card.png";
 
 export default function Contact() {
   return (
@@ -44,15 +45,11 @@ export default function Contact() {
         </span>
       </header>
 
-      <div
+      {/* <div
         className="card"
         id="contactCard"
       >
-        {/* <img
-          src={QR}
-          alt=""
-          className="qr"
-        /> */}
+      
         <span className="title">
           <h2>William Owen</h2>
           <p>
@@ -87,7 +84,13 @@ export default function Contact() {
             </ul>
           </li>
         </ul>
-      </div>
+      </div> */}
+      <img
+        src={contactCard}
+        id="contactCard"
+        className="card"
+        alt=""
+      />
     </ContactStyled>
   );
 }
