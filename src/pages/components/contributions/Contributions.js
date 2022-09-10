@@ -165,6 +165,18 @@ export default function Contributions() {
                 .map((entry, i) => (
                   <div key={i}>
                     <h3>
+                      <div className="action">
+                        <BsGithub
+                          size={20}
+                          color={
+                            configValues
+                              .theme
+                              .dark
+                              .color
+                              .main
+                          }
+                        />
+                      </div>
                       {entry.meta.title}
                     </h3>
                     <p className="description">
@@ -173,16 +185,6 @@ export default function Contributions() {
                           .description
                       }
                     </p>
-                    <div className="action">
-                      <BsGithub
-                        size={20}
-                        color={
-                          configValues
-                            .theme.dark
-                            .color.main
-                        }
-                      />
-                    </div>
                   </div>
                 ))}
             </div>

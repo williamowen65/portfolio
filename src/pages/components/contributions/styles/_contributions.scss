@@ -76,7 +76,10 @@
       padding: 10px;
       .action {
         cursor: pointer;
-        position: absolute;
+        // position: absolute;
+        float: right;
+        padding-left: 20px;
+        box-sizing: content-box;
         top: -10px;
         right: 20px;
         &::before {

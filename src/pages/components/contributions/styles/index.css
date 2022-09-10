@@ -61,7 +61,9 @@
 }
 .contributions .content .actualContent .action {
   cursor: pointer;
-  position: absolute;
+  float: right;
+  padding-left: 20px;
+  box-sizing: content-box;
   top: -10px;
   right: 20px;
   width: 25px;
