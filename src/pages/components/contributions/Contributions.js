@@ -16,6 +16,9 @@ import Data from "./data/contributions-data.json";
 import { useSelector } from "react-redux";
 
 export default function Contributions() {
+  const screenWidth = useSelector(
+    (state) => state.app.screenWidth
+  );
   const [types, setTypes] = useState(
     new Set()
   );
@@ -109,7 +112,10 @@ export default function Contributions() {
 
   return (
     <>
-      <Article className="contributions">
+      <Article
+        className="contributions"
+        sw={screenWidth}
+      >
         <fieldset>
           <legend>
             <h2 className="contribute">
@@ -214,6 +220,11 @@ const Article = styled.article`
       background-color: ${configValues
         .theme.dark.background.color
         .window};
+      margin-left: ${({ sw }) =>
+        sw <
+        configValues.breakpoints.mobile
+          ? 0
+          : 12}px !important;
     }
     legend {
       display: flex;
