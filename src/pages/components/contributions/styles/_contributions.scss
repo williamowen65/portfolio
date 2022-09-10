@@ -80,10 +80,26 @@
         cursor: pointer;
         // position: absolute;
         float: right;
-        padding-left: 20px;
+        padding: 10px;
         box-sizing: content-box;
         top: -10px;
         right: 20px;
+        display: block;
+        width: min-content;
+        white-space: nowrap;
+        margin: 0 auto;
+        text-align: center;
+        /* position: relative; */
+        span.outer {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          span {
+            cursor: pointer;
+            padding: 20px;
+            margin: 0 20px;
+          }
+        }
         &::before {
           transition: all 0.5s,
             rotate 3s;

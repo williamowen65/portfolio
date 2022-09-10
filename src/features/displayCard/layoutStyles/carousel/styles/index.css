@@ -149,7 +149,15 @@ body {
   transition: all 0.5s;
   overflow-y: scroll;
 }
-.carousel section .card .slide.two iframe {
+.carousel section .card .slide.two .iframeContainer {
+  position: relative;
+  overflow: hidden;
+  width: 85%;
+  max-width: 700px;
+  margin: 50px auto 20px;
+  padding: 56.25% 10px 60px;
+}
+.carousel section .card .slide.two .iframeContainer iframe {
   max-height: 393.75px;
   position: absolute;
   top: 0;

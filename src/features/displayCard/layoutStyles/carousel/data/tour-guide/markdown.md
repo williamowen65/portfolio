@@ -27,7 +27,7 @@
   lines, while a mother sings to them to
   help them avoid obstacles).
 
-<div style="position: relative;overflow: hidden;width: 100%;max-width: 700px;margin: 50px auto 0;padding-top: 56.25%;padding-bottom: 60px;">
+<div class="iframeContainer">
 <iframe src="https://www.youtube-nocookie.com/embed/U5tnzl7x5uo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 

@@ -192,15 +192,23 @@ body {
           padding: 0 12px;
           transition: all 0.5s;
           overflow-y: scroll;
-          iframe {
-            max-height: 393.75px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
+          .iframeContainer {
+            position: relative;
+            overflow: hidden;
+            width: 85%;
+            max-width: 700px;
+            margin: 50px auto 20px;
+            padding: 56.25% 10px 60px;
+            iframe {
+              max-height: 393.75px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              width: 100%;
+              height: 100%;
+            }
           }
           // box-shadow: 0px 0px 12px
           //   rgb(146, 229, 44);

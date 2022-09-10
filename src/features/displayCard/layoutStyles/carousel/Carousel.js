@@ -85,6 +85,14 @@ const Carousel = React.memo(
            height: 120px !important;   
             `}
       }
+      .iframeContainer {
+        width: ${screenWidth <
+        configValues.breakpoints.mobile
+          ? `
+         100%   
+            `
+          : `85%`} !important;
+      }
     `;
 
     return (

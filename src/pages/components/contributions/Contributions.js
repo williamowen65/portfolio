@@ -258,22 +258,6 @@ const Article = styled.article`
       margin: 10px;
     }
     .action {
-      display: block;
-      width: min-content;
-      white-space: nowrap;
-      margin: 20px auto;
-      text-align: center;
-      /* position: relative; */
-      span.outer {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        span {
-          cursor: pointer;
-          padding: 20px;
-          margin: 0 20px;
-        }
-      }
     }
     .types {
       background-color: ${configValues
