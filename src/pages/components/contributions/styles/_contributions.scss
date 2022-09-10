@@ -72,8 +72,10 @@
       border: 1px solid lightblue;
       // width: 100%;
       flex-grow: 1;
-      height: 294px;
+      height: fit-content;
+      min-height: 50vh;
       padding: 10px;
+
       .action {
         cursor: pointer;
         // position: absolute;

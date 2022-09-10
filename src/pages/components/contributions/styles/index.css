@@ -56,7 +56,8 @@
   position: relative;
   border: 1px solid lightblue;
   flex-grow: 1;
-  height: 294px;
+  height: fit-content;
+  min-height: 50vh;
   padding: 10px;
 }
 .contributions .content .actualContent .action {
