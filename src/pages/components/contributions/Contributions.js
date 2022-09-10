@@ -13,6 +13,7 @@ import * as d3 from "d3";
 import "./styles/_contributions.scss";
 import gsap from "gsap";
 import Data from "./data/contributions-data.json";
+import { useSelector } from "react-redux";
 
 export default function Contributions() {
   const [types, setTypes] = useState(
@@ -37,7 +38,7 @@ export default function Contributions() {
       const typeWidth =
         getComputedStyle(
           document.querySelector(
-            ".content .types"
+            ".content.main .types"
           )
         ).width;
       listMargin.current.style.paddingLeft =
@@ -58,6 +59,54 @@ export default function Contributions() {
     }
   }, [listMargin.current]);
 
+  const Types = ({ small }) => {
+    const screenWidth = useSelector(
+      (state) => state.app.screenWidth
+    );
+
+    const TypesStyled = styled.div`
+      &.small {
+        display: ${screenWidth <
+        configValues.breakpoints.mobile
+          ? "flex"
+          : "none"} !important;
+      }
+      &:not(.small) {
+        display: ${screenWidth >
+        configValues.breakpoints.mobile
+          ? "flex"
+          : "none"} !important;
+      }
+    `;
+
+    return (
+      <TypesStyled
+        className={`types ${
+          small && "small"
+        }`}
+      >
+        {Array.from(types).map(
+          (type, i) => (
+            <p
+              key={i}
+              onClick={() => {
+                setSelected(type);
+                setProjectNum(1);
+              }}
+              className={
+                selected === type
+                  ? "active"
+                  : null
+              }
+            >
+              <nobr>{type}</nobr>
+            </p>
+          )
+        )}
+      </TypesStyled>
+    );
+  };
+
   return (
     <>
       <Article className="contributions">
@@ -71,11 +120,14 @@ export default function Contributions() {
             </h2>
           </legend>
 
-          <ToolTip
+          {/* <ToolTip
             Element={() => (
               <div>Custom tool Tip</div>
             )}
-          />
+          /> */}
+          <div className="content">
+            <Types small />
+          </div>
           <div
             className="list"
             ref={listMargin}
@@ -99,27 +151,8 @@ export default function Contributions() {
               </p>
             ))}
           </div>
-          <div className="content">
-            <div className="types">
-              {Array.from(types).map(
-                (type, i) => (
-                  <p
-                    key={i}
-                    onClick={() => {
-                      setSelected(type);
-                      setProjectNum(1);
-                    }}
-                    className={
-                      selected === type
-                        ? "active"
-                        : null
-                    }
-                  >
-                    <nobr>{type}</nobr>
-                  </p>
-                )
-              )}
-            </div>
+          <div className="content main">
+            <Types />
             <div className="actualContent">
               {Data.filter(
                 (entry) =>

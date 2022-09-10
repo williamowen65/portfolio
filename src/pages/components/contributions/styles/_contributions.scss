@@ -33,6 +33,13 @@
       flex-direction: column;
       // background-color:  {};
       border: 1px solid lightblue;
+      &.small {
+        flex-direction: row;
+        // display: none;
+      }
+      &:not(.small) {
+        // display: none;
+      }
       p {
         &:not(p:first-child) {
           border-top: 1px solid

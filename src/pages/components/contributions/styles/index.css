@@ -24,17 +24,86 @@
 .contributions .content {
   display: flex;
 }
+.contributions .content .description {
+  margin: 22px 0;
+}
 .contributions .content .types {
   display: flex;
+  height: fit-content;
   flex-direction: column;
+  border: 1px solid lightblue;
+}
+.contributions .content .types.small {
+  flex-direction: row;
 }
 .contributions .content .types p {
+  box-sizing: border-box;
   cursor: pointer;
   padding: 10px 5px;
   transition: all 0.5s;
 }
+.contributions .content .types p:not(p:first-child) {
+  border-top: 1px solid lightblue;
+}
+.contributions .content .types p.active {
+  background-color: #8143b0;
+}
 .contributions .content .types p:hover {
   background-color: #8143b0;
+}
+.contributions .content .actualContent {
+  margin-left: 12px;
+  position: relative;
+  border: 1px solid lightblue;
+  flex-grow: 1;
+  height: 294px;
+  padding: 10px;
+}
+.contributions .content .actualContent .action {
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contributions .content .actualContent .action::before {
+  transition: all 0.5s, rotate 3s;
+  content: "";
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  box-shadow: 1px 1px 2px #c193c1, -1px 1px 2px #ad37ad, 0px -1px 2px #5fcf19;
+  border-radius: 50%;
+}
+.contributions .content .actualContent .action:hover::before {
+  box-shadow: 7px 7px 2px #c193c1, -7px 7px 2px #ad37ad, 0px -7px 2px #5fcf19;
+  rotate: 360deg;
+}
+.contributions .list {
+  display: flex;
+  padding: 5px 0;
+  align-items: center;
+}
+.contributions .list p {
+  padding: 0 10px;
+  margin: 0 20px;
+  position: relative;
+  cursor: pointer;
+  width: fit-content;
+}
+.contributions .list p::before {
+  content: "#";
+  position: absolute;
+  left: 50%;
+  scale: 0.8;
+  translate: -150% -5px;
+}
+.contributions .list p.active {
+  border-bottom: 1px solid lightblue;
 }
 
 /*# sourceMappingURL=index.css.map */
