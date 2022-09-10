@@ -11,6 +11,7 @@ node {
    stage('test') {
      nodejs(nodeJSInstallationName: 'nodejs') {
        sh 'npm install --legacy-peer-deps'
+       sh 'npm i --legacy-peer-deps'
        sh 'npm test'
      }
    }
