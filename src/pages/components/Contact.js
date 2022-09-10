@@ -1,10 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import { BsShareFill } from "react-icons/bs";
+import {
+  BsShareFill,
+  BsLinkedin,
+  BsFacebook,
+} from "react-icons/bs";
 import configValues from "../../data/configValues.json";
 import QR from "../../assets/qrcode_www.wowebdev.com.png";
 import contactCard from "../../assets/card.png";
 import LinkedInImg from "../../assets/Linkedin.png";
+import {
+  SpeedDial,
+  SpeedDialAction,
+} from "@mui/material";
 
 export default function Contact() {
   return (
@@ -31,35 +39,54 @@ export default function Contact() {
             }
           /> */}
 
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&u=http%3A%2F%2Fwww.WOWebDev.com%2F&display=popup&ref=plugin&src=share_button"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open(
-                "https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&u=http%3A%2F%2Fwww.WOWebDev.com%2F&ref=plugin&src=share_button",
-                "facebook",
-                "left=20,top=20,width=500,height=500,toolbar=1,resizable=0"
-              );
-              return false;
+          <SpeedDial
+            ariaLabel="SpeedDial basic example"
+            sx={{
+              position: "absolute",
+              bottom: -16,
+              right: 0,
             }}
+            direction="left"
+            icon={
+              <BsShareFill
+                color={
+                  configValues.theme
+                    .dark.color.main
+                }
+                size={24}
+              />
+            }
           >
-            FACEBOOK
-          </a>
+            {/* {actions.map((action) => ( */}
+            <SpeedDialAction
+              icon={<BsLinkedin />}
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(
+                  "http://www.linkedin.com/shareArticle?mini=true&url=http://www.wowebdev.com/",
+                  "linkedin",
+                  "left=20,top=20,width=500,height=500,toolbar=1,resizable=0"
+                );
+                return false;
+              }}
+              tooltipTitle="LinkedIn"
+            />
+            <SpeedDialAction
+              icon={<BsFacebook />}
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(
+                  "https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&u=http%3A%2F%2Fwww.WOWebDev.com%2F&ref=plugin&src=share_button",
+                  "facebook",
+                  "left=20,top=20,width=500,height=500,toolbar=1,resizable=0"
+                );
+                return false;
+              }}
+              tooltipTitle="Facebook"
+            />
 
-          <a
-            href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.wowebdev.com/"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open(
-                "http://www.linkedin.com/shareArticle?mini=true&url=http://www.wowebdev.com/",
-                "linkedin",
-                "left=20,top=20,width=500,height=500,toolbar=1,resizable=0"
-              );
-              return false;
-            }}
-          >
-            LINKED IN
-          </a>
+            {/* ))} */}
+          </SpeedDial>
         </span>
       </header>
 
@@ -113,9 +140,9 @@ export default function Contact() {
 }
 
 const ContactStyled = styled.div`
-a {
-  display: block;
-}
+  a {
+    display: block;
+  }
   img {
     box-sizing: content-box;
     width: 375px;
@@ -124,7 +151,7 @@ a {
     &.linkedin {
       width: 74px;
       background: #2b7ab8;
-      border
+      /* border */
     }
   }
   header {
@@ -133,29 +160,8 @@ a {
     }
   }
   .share {
-    /* width: 30px;
-    height: 30px;
-    padding: 5px; */
-    /* svg {
-      transform: translateX(2px);
-    } */
+    position: relative;
     &:hover {
-      /* background: ${
-        configValues.theme.dark.color
-          .mainOffset + "aa"
-      }; */
-      /* 
-      svg {
-        stroke: ${
-          configValues.theme.dark
-            .background.color.window
-        };
-        fill: ${
-          configValues.theme.dark
-            .background.color.window
-        };
-      } */
-      /* border-radius: 50%; */
       cursor: pointer;
     }
   }

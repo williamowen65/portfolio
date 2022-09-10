@@ -1,14 +1,10 @@
-@import './_variables.scss';
+@use "@material/fab";
+@import "./_variables.scss";
 
+@include fab.core-styles;
 :root {
   // font-size: 16px;
   // @media #{$} {
   //   font-size: 8px;
   // }
-
-
-
 }
-
-
-
