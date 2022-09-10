@@ -73,13 +73,54 @@ export default function FirstCard() {
   `;
 
   const CardStyled = styled.div`
-    .slide.one {
-      color: ${configValues.theme.dark
-        .background.color
-        .window} !important;
-      background-size: 116% !important;
-      background-position: 97% 0% !important;
-      background-image: url("https://sanjuan.objects.liquidweb.services/photos/aerial_of_friday_harbor_with_ferry_san_juan_island_photography_by_unknown_0-1200x800.jpg") !important;
+    .slide {
+      &.one {
+        h3 {
+          ${
+            screenWidth <
+              configValues.breakpoints
+                .mobile &&
+            "translate: 0 51px;"
+          }
+        }
+        p {
+          ${
+            screenWidth <
+              configValues.breakpoints
+                .mobile &&
+            "translate: 0 -98px;"
+          }
+        }
+        background-size: ${
+          screenWidth <
+          configValues.breakpoints
+            .mobile
+            ? "224% !important"
+            : "116% !important"
+        };
+        background-repeat: no-repeat !important;
+        background-position: 97% 0% !important;
+        background-image: url("https://sanjuan.objects.liquidweb.services/photos/aerial_of_friday_harbor_with_ferry_san_juan_island_photography_by_unknown_0-1200x800.jpg") !important;
+        /* ${
+          screenWidth <
+            configValues.breakpoints
+              .mobile &&
+          `
+        background-repeat: no-repeat !important;
+        `
+        } */
+      }
+      &.two {
+        ul {
+          ${
+            screenWidth <
+              configValues.breakpoints
+                .mobile &&
+            `padding-inline-start: 19px;
+    padding-right: 11px !important;
+    text-align: left;`
+          }
+      }
     }
   `;
 

@@ -149,6 +149,16 @@ body {
   transition: all 0.5s;
   overflow-y: scroll;
 }
+.carousel section .card .slide.two iframe {
+  max-height: 393.75px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
 .carousel section .card .slide.two .content.imgFriendly {
   display: block;
   text-align: justify;
