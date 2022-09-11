@@ -96,13 +96,13 @@ export default function FirstCard() {
       var projection = d3
         .geoOrthographic()
         .center([0, 0])
-        .scale(250)
+        .scale(100)
         .clipAngle(90)
         .translate([
           width / 2,
           height / 3,
         ])
-        .rotate([110, -40]);
+        .rotate([0, 0]);
 
       const path = d3
         .geoPath()
@@ -169,10 +169,13 @@ export default function FirstCard() {
           </h3>
           <ContentStyled className="content">
             <svg
-              width="500"
-              height="300"
+              width="300"
+              height="100"
               ref={earth}
               className="earth"
+              style={{
+                overflow: "visible",
+              }}
             ></svg>
           </ContentStyled>
           <p>
