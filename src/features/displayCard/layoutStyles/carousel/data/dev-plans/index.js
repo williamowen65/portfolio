@@ -77,6 +77,80 @@ export default function FirstCard() {
 
   const CardStyled = styled.div``;
 
+  const earth = useRef();
+
+  useEffect(() => {
+    if (earth.current) {
+      var svg = d3.select(".earth"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height");
+
+      const config = {
+        speed: 0.01,
+        verticalTilted: -10,
+        horizontalTilted: 0,
+      };
+
+      // The orthographic Earth projection
+      // Center(0,0) and no rotation
+      var projection = d3
+        .geoOrthographic()
+        .center([0, 0])
+        .scale(250)
+        .clipAngle(90)
+        .translate([
+          width / 2,
+          height / 3,
+        ])
+        .rotate([110, -40]);
+
+      const path = d3
+        .geoPath()
+        .projection(projection);
+
+      // Calling rotate() function for rotation of globe
+      Rotate();
+
+      // Loading data from json
+      d3.json(
+        "https://raw.githubusercontent.com/" +
+          "epistler999/GeoLocation/master/world.json",
+        function (data) {
+          // Draw the map
+          svg
+            .append("g")
+            .selectAll("path")
+            .data(data.features)
+            .enter()
+            .append("path")
+            .attr("fill", "grey")
+            .attr(
+              "d",
+              d3
+                .geoPath()
+                .projection(projection)
+            )
+            .style("stroke", "#ffff");
+        }
+      );
+
+      // Function to rotate() projection of globe.
+      function Rotate() {
+        d3.timer(function (elapsed) {
+          projection.rotate([
+            config.speed * elapsed -
+              120,
+            config.verticalTilted,
+            config.horizontalTilted,
+          ]);
+          svg
+            .selectAll("path")
+            .attr("d", path);
+        });
+      }
+    }
+  }, [earth.current]);
+
   return (
     <CardStyled>
       <div
@@ -94,10 +168,12 @@ export default function FirstCard() {
             Plans
           </h3>
           <ContentStyled className="content">
-            <p>
-              Earth spinning..
-              (D3.geo())
-            </p>
+            <svg
+              width="500"
+              height="300"
+              ref={earth}
+              className="earth"
+            ></svg>
           </ContentStyled>
           <p>
             And open to collaboration!
@@ -120,3 +196,81 @@ export default function FirstCard() {
     </CardStyled>
   );
 }
+
+/* 
+
+<html lang="en"> 
+
+<head> 
+<meta charset="UTF-8" /> 
+<meta name="viewport" content=
+"width=device-width,initial-scale=1.0" /> 
+<script src="https://d3js.org/d3.v4.js"></script> 
+<script src=
+"https://d3js.org/d3-geo-projection.v2.min.js">
+</script>  
+</head> 
+
+<body> 
+<div> 
+<svg width="1200" height="850"> 
+            </svg> 
+            </div> 
+            
+            <script> 
+            var svg = d3.select("svg"), 
+            width = +svg.attr("width"), 
+            height = +svg.attr("height"); 
+            
+            const config = {
+              speed: 0.010,
+              verticalTilted: -10,
+              horizontalTilted: 0
+            }
+            
+            // The orthographic Earth projection 
+            // Center(0,0) and no rotation 
+            var projection = d3.geoOrthographic()
+            .center([0, 0]) 
+            .scale(250)
+            .clipAngle(90 )
+            .translate([width / 2, height / 3]) 
+            .rotate([0,0])
+            
+            const path = d3.geoPath().projection(projection);
+            
+            // Calling rotate() function for rotation of globe
+            Rotate();
+            
+            // Loading data from json
+            d3.json("https://raw.githubusercontent.com/"
+            +"epistler999/GeoLocation/master/world.json", 
+            function (data) { 
+      
+                    // Draw the map 
+                    svg.append("g") 
+                    .selectAll("path") 
+                    .data(data.features) 
+                        .enter().append("path") 
+                        .attr("fill", "grey") 
+                        .attr("d", d3.geoPath() 
+                        .projection(projection) 
+                        ) 
+                        .style("stroke", "#ffff") 
+                      }) 
+                      
+                      // Function to rotate() projection of globe.
+                      function Rotate() {
+                        d3.timer(function (elapsed) {
+                          projection.rotate(
+                            [config.speed*elapsed-120, 
+                              config.verticalTilted, 
+                              config.horizontalTilted]);
+                              svg.selectAll("path").attr("d", path);
+                            });
+                          }   
+                          </script> 
+                          </body>
+                          
+                          </html>
+                          */
