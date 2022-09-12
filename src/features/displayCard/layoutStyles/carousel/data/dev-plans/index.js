@@ -175,6 +175,12 @@ export default function FirstCard() {
               className="earth"
               style={{
                 overflow: "visible",
+                marginTop:
+                  screenWidth <
+                  configValues
+                    .breakpoints.mobile
+                    ? "105px"
+                    : "10px",
               }}
             ></svg>
           </ContentStyled>

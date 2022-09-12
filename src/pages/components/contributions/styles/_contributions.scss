@@ -24,6 +24,8 @@
 .contributions {
   .content {
     display: flex;
+    width: calc(100% - 63px);
+    overflow-x: scroll;
     .description {
       margin: 22px 0;
     }

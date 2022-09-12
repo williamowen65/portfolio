@@ -214,6 +214,7 @@ export default function Contributions() {
 }
 
 const Article = styled.article`
+  overflow: hidden;
   fieldset {
     position: relative;
     .actualContent {
