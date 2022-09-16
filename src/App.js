@@ -42,15 +42,12 @@ import "./styles/global.scss";
 import Right from "./components/ux/SidebarContents/Right.js";
 import Left from "./components/ux/SidebarContents/Left.js";
 import introAnimation from "./utils/introAnimation";
-import Window from "./components/ux/IntersectionObserverWindow.js";
 
 export default function App(props) {
   const dispatch = useDispatch();
   const [ref, dims] = useDimensions();
   const [state, setState] =
     useState(true);
-  const [statee, setStatee] =
-    useState("test");
 
   const { x, y, width } = dims;
 
@@ -132,7 +129,6 @@ export default function App(props) {
             style={{ order: 5 }}
           />
         </PageContainer>
-        <Window />
       </Div>
     </>
   );

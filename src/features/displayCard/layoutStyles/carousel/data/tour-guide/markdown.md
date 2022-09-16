@@ -34,7 +34,5 @@
 #### How to book a tour with me!
 
 Book with San Juan Kayak Expeditions,
-Friday Harbor WA. Specifically ask for
-me. And if they say I don't work there
-anymore, just tell them that I've okayed
-it!
+Friday Harbor WA during the open season
+and specifically ask for me!
