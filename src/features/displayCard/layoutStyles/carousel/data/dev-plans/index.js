@@ -115,20 +115,6 @@ export default function FirstCard() {
           "epistler999/GeoLocation/master/world.json",
         function (data) {
           // Draw the map
-          svg
-            .append("g")
-            .selectAll("path")
-            .data(data.features)
-            .enter()
-            .append("path")
-            .attr("fill", "grey")
-            .attr(
-              "d",
-              d3
-                .geoPath()
-                .projection(projection)
-            )
-            .style("stroke", "#ffff");
 
           svg
             .append("g")
@@ -152,14 +138,14 @@ export default function FirstCard() {
             .data(data.features)
             .enter()
             .append("path")
-            .attr("fill", "grey")
+            .attr("fill", "black")
             .attr(
               "d",
               d3
                 .geoPath()
                 .projection(projection)
             )
-            .style("stroke", "#ffff");
+            .style("stroke", "black");
         }
       );
 

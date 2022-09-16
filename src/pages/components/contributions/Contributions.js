@@ -119,10 +119,10 @@ export default function Contributions() {
         <fieldset>
           <legend>
             <h2 className="contribute">
-              My Contributions to the{" "}
               <nobr>
-                Open Source Community
-              </nobr>
+                What I've been
+              </nobr>{" "}
+              working on
             </h2>
           </legend>
 
@@ -159,7 +159,10 @@ export default function Contributions() {
           </div>
           <div className="content main">
             <Types />
-            <div className="actualContent">
+            <div
+              className="actualContent"
+              id="content"
+            >
               {Data.filter(
                 (entry) =>
                   entry.type == selected
@@ -217,22 +220,53 @@ const Article = styled.article`
   overflow: hidden;
   fieldset {
     position: relative;
+    > .content {
+      width: ${({ sw }) =>
+        sw <
+        configValues.breakpoints.mobile
+          ? "calc(100% - 63px)"
+          : "auto"} !important;
+      }
+    }
     .actualContent {
-      background-color: ${configValues
-        .theme.dark.background.color
-        .window};
+      width: ${({ sw }) =>
+        console.log(
+          sw,
+          sw <
+            configValues.breakpoints
+              .mobile
+        )};
+  
+    background-color: ${
+      configValues.theme.dark.background
+        .color.window
+    };
+    &#content {
+      /* > div {
+
+        width: ${({ sw }) =>
+          sw <
+          configValues.breakpoints
+            .mobile
+            ? "calc(100% - 63px)"
+            : "auto"} !important;
+      } */
+    };
       margin-left: ${({ sw }) =>
         sw <
         configValues.breakpoints.mobile
           ? 0
           : 12}px !important;
+      }
     }
     legend {
       display: flex;
       align-items: center;
       text-align: left;
-      color: ${configValues.theme.dark
-        .color.main};
+      color: ${
+        configValues.theme.dark.color
+          .main
+      };
       h2 {
         width: min-content;
         /* font-size: 27px; */
@@ -245,8 +279,10 @@ const Article = styled.article`
       }
     }
     svg.info {
-      color: ${configValues.theme.dark
-        .color.main};
+      color: ${
+        configValues.theme.dark.color
+          .main
+      };
       cursor: pointer;
       position: absolute;
       right: 20px;
@@ -261,9 +297,10 @@ const Article = styled.article`
     .action {
     }
     .types {
-      background-color: ${configValues
-        .theme.dark.background.color
-        .window};
+      background-color: ${
+        configValues.theme.dark
+          .background.color.window
+      };
     }
   }
 `;

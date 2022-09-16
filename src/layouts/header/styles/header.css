@@ -69,6 +69,7 @@
 .flex.C .quote span.author {
   translate: 20px 0px;
   cursor: pointer;
+  white-space: no-wrap;
 }
 .flex.R {
   flex-direction: row;

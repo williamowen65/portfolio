@@ -29,13 +29,6 @@ through. You can check that list out
 I started during the 2020
 covid-lockdowns and am proud to have
 since then kick-started my freelance
-career and be helping to create the
-dreams of my clients.
+career and be serving clients.
 
-<hr/>
-
-#### ...and as for kayaking
-
-You can still come on a tour with me.
-But now you can make it a business trip
-too.
+<!-- <hr/>/ -->

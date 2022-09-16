@@ -273,8 +273,11 @@ const Navbar = ({
   const handleClick = (e) => {
     document.querySelector(
       ".author"
-    ).innerHTML =
-      "<p style='position:relative; top: 39px;'>Mark Twain?</p>";
+    ).innerHTML = `<p style='
+        position:relative; 
+        top: 39px; 
+        white-space: nowrap
+      ' >Mark Twain?</p>`;
   };
 
   const Quote = () => (
@@ -499,7 +502,7 @@ const Navbar = ({
                 setShowMobileNav(false);
               }}
             >
-              Contributions
+              Experience
             </a>
             {/* </a> */}
           </li>{" "}
@@ -602,9 +605,9 @@ const Nav = styled.nav`
       color: ${configValues.theme.dark
         .color.main};
     }
-    &.active a {
+    /* &.active a {
       color: ${configValues.theme.dark
-        .color.mainOffset} !important;
-    }
+      .color.mainOffset} !important;
+    } */
   }
 `;

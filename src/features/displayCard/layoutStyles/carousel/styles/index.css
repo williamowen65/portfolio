@@ -131,7 +131,7 @@ body {
   height: 300px;
   border-radius: 10px;
   margin: 10px;
-  background: #3c5132;
+  background: linear-gradient(45deg, #2a57bb5c 10%, #99aad047 20%, #99aad047 80%, #2a57bb5c 90%), linear-gradient(45deg, #1b1f28, #1b1f28);
   box-shadow: 1px 1px 2px #c193c1, -1px 1px 2px #ad37ad, 0px -1px 2px #5fcf19;
   padding: 12px 0;
 }
@@ -139,6 +139,7 @@ body {
   width: 253px;
 }
 .carousel section .card .slide.two {
+  background: #3e4556;
   justify-content: flex-start;
   overflow: hidden;
   position: absolute;

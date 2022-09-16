@@ -144,15 +144,12 @@ export default function FirstCard() {
             }}
           >
             {/* A Glimpse Into my Mind */}
-            Kayak Tour Guiding
+            Kayak Touring
           </h3>
           <ContentStyled className="content">
             {/* fgfd */}
           </ContentStyled>
-          <p>
-            What floating among the kelp
-            taught me
-          </p>
+          <p>San Juan Islands, WA</p>
           {/* <button>Learn More</button> */}
         </div>
 

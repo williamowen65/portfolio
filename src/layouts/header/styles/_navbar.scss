@@ -76,6 +76,7 @@
         &.author {
           translate: 20px 0px;
           cursor: pointer;
+          white-space: no-wrap;
         }
       }
     }
