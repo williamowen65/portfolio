@@ -12,6 +12,7 @@ import { GrClose } from "react-icons/gr";
 import markdown from "./markdown.md";
 import ConvertStringToHTML from "../../../../../../utils/stringToHTML";
 import { useSelector } from "react-redux";
+import { intersection } from "d3";
 
 // console.log(markdown);
 // import { Remarkable } from "remarkable";
@@ -87,8 +88,8 @@ export default function FirstCard() {
 
       const config = {
         speed: 0.01,
-        verticalTilted: -10,
-        horizontalTilted: 0,
+        verticalTilted: -30,
+        horizontalTilted: -20,
       };
 
       // The orthographic Earth projection
@@ -107,9 +108,6 @@ export default function FirstCard() {
       const path = d3
         .geoPath()
         .projection(projection);
-
-      // Calling rotate() function for rotation of globe
-      Rotate();
 
       // Loading data from json
       d3.json(
@@ -134,20 +132,67 @@ export default function FirstCard() {
         }
       );
 
+      const Spin = (elapsed) => {
+        projection.rotate([
+          config.speed * elapsed - 120,
+          config.verticalTilted,
+          config.horizontalTilted,
+        ]);
+        svg
+          .selectAll("path")
+          .attr("d", path);
+        // console.log("firing");
+      };
+
       // Function to rotate() projection of globe.
-      function Rotate() {
-        d3.timer(function (elapsed) {
-          projection.rotate([
-            config.speed * elapsed -
-              120,
-            config.verticalTilted,
-            config.horizontalTilted,
-          ]);
-          svg
-            .selectAll("path")
-            .attr("d", path);
-        });
+      const Rotate = d3.timer(Spin);
+
+      Rotate.stop();
+
+      /* 
+       let func=function(elapsed) {
+      console.log(elapsed);
+      if (elapsed > 500){
+        console.log("Timer stopped")
+        timer.stop();
       }
+    }
+   var timer = d3.timer(func);
+      
+      */
+
+      const options = {
+        // root: document.body,
+        rootMargin:
+          "0px 300px 300px 0px",
+        threshold: 0.01,
+      };
+
+      const intersectionCallback = (
+        entries,
+        observer
+      ) => {
+        entries.forEach((entry) => {
+          // you can find out easily if target is intersecting by inspecting `isIntersecting` property
+          if (entry.isIntersecting) {
+            console.log("start");
+            Rotate.restart(Spin);
+          } else {
+            console.log("stop");
+            Rotate.stop();
+          }
+        });
+      };
+      const observer =
+        new IntersectionObserver(
+          intersectionCallback,
+          options
+        );
+
+      observer.observe(earth.current);
+
+      // Calling rotate() function for rotation of globe
+      // Rotate();
     }
   }, [earth.current]);
 
@@ -205,81 +250,3 @@ export default function FirstCard() {
     </CardStyled>
   );
 }
-
-/* 
-
-<html lang="en"> 
-
-<head> 
-<meta charset="UTF-8" /> 
-<meta name="viewport" content=
-"width=device-width,initial-scale=1.0" /> 
-<script src="https://d3js.org/d3.v4.js"></script> 
-<script src=
-"https://d3js.org/d3-geo-projection.v2.min.js">
-</script>  
-</head> 
-
-<body> 
-<div> 
-<svg width="1200" height="850"> 
-            </svg> 
-            </div> 
-            
-            <script> 
-            var svg = d3.select("svg"), 
-            width = +svg.attr("width"), 
-            height = +svg.attr("height"); 
-            
-            const config = {
-              speed: 0.010,
-              verticalTilted: -10,
-              horizontalTilted: 0
-            }
-            
-            // The orthographic Earth projection 
-            // Center(0,0) and no rotation 
-            var projection = d3.geoOrthographic()
-            .center([0, 0]) 
-            .scale(250)
-            .clipAngle(90 )
-            .translate([width / 2, height / 3]) 
-            .rotate([0,0])
-            
-            const path = d3.geoPath().projection(projection);
-            
-            // Calling rotate() function for rotation of globe
-            Rotate();
-            
-            // Loading data from json
-            d3.json("https://raw.githubusercontent.com/"
-            +"epistler999/GeoLocation/master/world.json", 
-            function (data) { 
-      
-                    // Draw the map 
-                    svg.append("g") 
-                    .selectAll("path") 
-                    .data(data.features) 
-                        .enter().append("path") 
-                        .attr("fill", "grey") 
-                        .attr("d", d3.geoPath() 
-                        .projection(projection) 
-                        ) 
-                        .style("stroke", "#ffff") 
-                      }) 
-                      
-                      // Function to rotate() projection of globe.
-                      function Rotate() {
-                        d3.timer(function (elapsed) {
-                          projection.rotate(
-                            [config.speed*elapsed-120, 
-                              config.verticalTilted, 
-                              config.horizontalTilted]);
-                              svg.selectAll("path").attr("d", path);
-                            });
-                          }   
-                          </script> 
-                          </body>
-                          
-                          </html>
-                          */
