@@ -144,7 +144,7 @@ export default function FirstCard() {
             }}
           >
             {/* A Glimpse Into my Mind */}
-            Thought's on Kayak Guiding
+            Kayak Tour Guiding
           </h3>
           <ContentStyled className="content">
             {/* fgfd */}

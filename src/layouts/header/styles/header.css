@@ -55,6 +55,21 @@
   text-align: left;
   font-size: 12px;
 }
+.flex.C .quote span {
+  font-size: 20px;
+  position: absolute;
+  font-family: "Courier New", Courier, monospace;
+}
+.flex.C .quote span.before {
+  translate: -30px -13px;
+}
+.flex.C .quote span.after {
+  translate: 0px -2px;
+}
+.flex.C .quote span.author {
+  translate: 20px 0px;
+  cursor: pointer;
+}
 .flex.R {
   flex-direction: row;
   justify-content: space-between;

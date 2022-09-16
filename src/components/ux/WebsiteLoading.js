@@ -427,7 +427,7 @@ const WebsiteLoadingStyled = styled.div`
     /* transform: translate(-50%, -50%); */
     svg {
       width: 1px;
-      box-shadow: 0px 0px 4px black;
+      /* box-shadow: 0px 0px 4px black; */
       height: 1px;
       overflow: visible;
       position: fixed;

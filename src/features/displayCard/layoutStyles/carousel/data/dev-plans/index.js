@@ -95,10 +95,10 @@ export default function FirstCard() {
       // The orthographic Earth projection
       // Center(0,0) and no rotation
       var projection = d3
-        .geoOrthographic()
+        .geoBaker()
         .center([0, 0])
-        .scale(100)
-        .clipAngle(90)
+        .scale(50)
+        // .clipAngle(90)
         .translate([
           width / 2,
           height / 3,
@@ -115,6 +115,37 @@ export default function FirstCard() {
           "epistler999/GeoLocation/master/world.json",
         function (data) {
           // Draw the map
+          svg
+            .append("g")
+            .selectAll("path")
+            .data(data.features)
+            .enter()
+            .append("path")
+            .attr("fill", "grey")
+            .attr(
+              "d",
+              d3
+                .geoPath()
+                .projection(projection)
+            )
+            .style("stroke", "#ffff");
+
+          svg
+            .append("g")
+            .selectAll("path")
+            .datum(d3.geoGraticule()())
+            .enter()
+            .append("path")
+            .attr("fill", "grey")
+            .attr(
+              "d",
+              d3
+                .geoPath()
+                .projection(projection)
+            )
+            .style("stroke", "#ffff")
+            .attr("stroke-width", "2");
+
           svg
             .append("g")
             .selectAll("path")
@@ -161,38 +192,38 @@ export default function FirstCard() {
       
       */
 
-      const options = {
-        // root: document.body,
-        rootMargin:
-          "0px 300px 300px 0px",
-        threshold: 0.01,
-      };
+      //     const options = {
+      //       // root: document.body,
+      //       rootMargin:
+      //         "0px 300px 300px 0px",
+      //       threshold: 0.01,
+      //     };
 
-      const intersectionCallback = (
-        entries,
-        observer
-      ) => {
-        entries.forEach((entry) => {
-          // you can find out easily if target is intersecting by inspecting `isIntersecting` property
-          if (entry.isIntersecting) {
-            console.log("start");
-            Rotate.restart(Spin);
-          } else {
-            console.log("stop");
-            Rotate.stop();
-          }
-        });
-      };
-      const observer =
-        new IntersectionObserver(
-          intersectionCallback,
-          options
-        );
+      //     const intersectionCallback = (
+      //       entries,
+      //       observer
+      //     ) => {
+      //       entries.forEach((entry) => {
+      //         // you can find out easily if target is intersecting by inspecting `isIntersecting` property
+      //         if (entry.isIntersecting) {
+      //           console.log("start");
+      //           Rotate.restart(Spin);
+      //         } else {
+      //           console.log("stop");
+      //           Rotate.stop();
+      //         }
+      //       });
+      //     };
+      //     const observer =
+      //       new IntersectionObserver(
+      //         intersectionCallback,
+      //         options
+      //       );
 
-      observer.observe(earth.current);
+      //     observer.observe(earth.current);
 
-      // Calling rotate() function for rotation of globe
-      // Rotate();
+      //     // Calling rotate() function for rotation of globe
+      //     // Rotate();
     }
   }, [earth.current]);
 

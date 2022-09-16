@@ -18,6 +18,11 @@ import {
   IoReorderThree,
 } from "react-icons/io5";
 import {
+  RiDoubleQuotesL,
+  RiDoubleQuotesR,
+} from "react-icons/ri";
+import { BsThreeDots } from "react-icons/bs";
+import {
   useSelector,
   useDispatch,
 } from "react-redux";
@@ -208,21 +213,21 @@ const Navbar = ({
     // };
   }, []);
 
-  useEffect(() => {
-    // console.log(scrollDir);
-    if (bottomNav.current) {
-      const el = bottomNav.current;
-      if (scrollDir > 0) {
-        gsap.to(el, {
-          y: 0,
-        });
-      } else {
-        gsap.to(el, {
-          y: -50,
-        });
-      }
-    }
-  }, [scrollDir]);
+  // useEffect(() => {
+  //   // console.log(scrollDir);
+  //   if (bottomNav.current) {
+  //     const el = bottomNav.current;
+  //     if (scrollDir > 0) {
+  //       gsap.to(el, {
+  //         y: 0,
+  //       });
+  //     } else {
+  //       gsap.to(el, {
+  //         y: -50,
+  //       });
+  //     }
+  //   }
+  // }, [scrollDir]);
 
   /// the html
   const Resume = () => <ResumeButton />;
@@ -265,11 +270,36 @@ const Navbar = ({
   //   );
   // };
 
+  const handleClick = (e) => {
+    document.querySelector(
+      ".author"
+    ).innerHTML =
+      "<p style='position:relative; top: 39px;'>Mark Twain?</p>";
+  };
+
   const Quote = () => (
     <p>
+      {/* <span className="before">
+        <RiDoubleQuotesL
+          size={20}
+          color={"#3c4861"}
+        />
+      </span> */}
       The two most important days of
       your life are the day you were
       born and the day you find out why.
+      {/* <span className="after">
+        <RiDoubleQuotesR
+          size={20}
+          color={"#3c4861"}
+        />
+      </span> */}
+      <span
+        className="author"
+        onClick={handleClick}
+      >
+        <BsThreeDots size={20} />
+      </span>
     </p>
   );
 

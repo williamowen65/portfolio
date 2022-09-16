@@ -62,6 +62,22 @@
         text-align: left;
         font-size: 12px;
       }
+      span {
+        font-size: 20px;
+        position: absolute;
+        font-family: "Courier New",
+          Courier, monospace;
+        &.before {
+          translate: -30px -13px;
+        }
+        &.after {
+          translate: 0px -2px;
+        }
+        &.author {
+          translate: 20px 0px;
+          cursor: pointer;
+        }
+      }
     }
   }
 
