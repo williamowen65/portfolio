@@ -19,6 +19,10 @@ import { BiArrowFromLeft } from "react-icons/bi";
 import "./styles/index.css";
 import styled from "styled-components";
 import Card from "./NewCard";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const Carousel = React.memo(
   ({ title, cards }) => {
@@ -95,6 +99,17 @@ const Carousel = React.memo(
       }
     `;
 
+    const handleScroll = (e) => {
+      if (carousel.current) {
+        const el =
+          carousel.current.querySelector(
+            "#scrollArea"
+          );
+        gsap.to(el, {
+          scrollTo: { x: 50, y: 0 },
+        });
+      }
+    };
     return (
       <CarouselStyled
         className="carousel sidenavTarget"
@@ -107,18 +122,20 @@ const Carousel = React.memo(
           <div className="small-container">
             <h2>{title}</h2>
             <p>
-              <span>
-                {/* <i className='material-icons'>chevron_left</i> */}
-                <LeftArrow
-                  scroll={scroll}
-                />
+              <span
+                onClick={() =>
+                  handleScroll(-1)
+                }
+              >
+                <LeftArrow />
               </span>
               <BsDot size={30} />
-              <span>
-                {/* <i className='material-icons'>chevron_right</i> */}
-                <RightArrow
-                  scroll={scroll}
-                />
+              <span
+                onClick={() =>
+                  handleScroll(1)
+                }
+              >
+                <RightArrow />
               </span>
             </p>
           </div>

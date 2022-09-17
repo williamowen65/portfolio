@@ -32,11 +32,11 @@
   {
     "type": "Freelance",
     "links": {
-      "github": "www.wowebdev.com"
+      "medium": "https://medium.com/@william.owen.dev/excel-diary-for-tracking-health-fitness-freelance-da84fc743fe4"
     },
     "meta": {
-      "title": "Excel Diary for tracking health & fitness ",
-      "description": "For this product I dove into Google Scripts/Google Sheets to create an awesome experience for my client and her clients. This project achieved the goals of automating spreadsheet generation in a consistent style and of adapting inspiration from a similar product."
+      "title": "Excel Diary for tracking health & fitness",
+      "description": "A custom built Google sheet with a JavaScript automated product-creation experience for my client.  This product duplicates a template layout, including all of the hidden functionality, and creates a whole new spreadsheet which can be shared with clients, leaving the template to be reused. I used the Google App Script API to navigate manipulating the document and also added to the menu of the sheet. Follow my link to the medium article and you can set up with your own automated diary and learn about how it works."
     }
   },
   {

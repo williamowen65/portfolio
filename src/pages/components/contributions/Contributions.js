@@ -4,7 +4,10 @@ import React, {
   useState,
 } from "react";
 import styled from "styled-components";
-import { BsGithub } from "react-icons/bs";
+import {
+  BsGithub,
+  BsMedium,
+} from "react-icons/bs";
 import { DiDocker } from "react-icons/di";
 import { FaDocker } from "react-icons/fa";
 import { ImInfo } from "react-icons/im";
@@ -174,17 +177,43 @@ export default function Contributions() {
                 .map((entry, i) => (
                   <div key={i}>
                     <h3>
-                      <div className="action">
-                        <BsGithub
-                          size={20}
-                          color={
-                            configValues
-                              .theme
-                              .dark
-                              .color
-                              .main
-                          }
-                        />
+                      <div
+                        className="action"
+                        onClick={() => {
+                          const link =
+                            Object.keys(
+                              entry.links
+                            );
+                          window.location =
+                            entry.links[
+                              link
+                            ];
+                        }}
+                      >
+                        {entry.links
+                          .github ? (
+                          <BsGithub
+                            size={20}
+                            color={
+                              configValues
+                                .theme
+                                .dark
+                                .color
+                                .main
+                            }
+                          />
+                        ) : (
+                          <BsMedium
+                            size={20}
+                            color={
+                              configValues
+                                .theme
+                                .dark
+                                .color
+                                .main
+                            }
+                          />
+                        )}
                       </div>
                       {entry.meta.title}
                     </h3>

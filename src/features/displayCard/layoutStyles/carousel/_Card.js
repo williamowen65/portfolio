@@ -124,6 +124,7 @@ const Card = ({
       setDetail("", "");
     }
   };
+
   return (
     // Details Portion of card is wrapping the front of the card
     <div

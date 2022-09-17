@@ -12,6 +12,7 @@ body {
   padding-top: 0%;
   // max-width: 1100px;
   // margin: 0 auto 600px;
+
   header {
     display: flex;
     align-items: center;
@@ -62,7 +63,7 @@ body {
     }
   }
   section {
-    height: 340px;
+    height: 363px;
     margin: auto;
     margin-bottom: 100px;
     display: flex;
@@ -79,11 +80,11 @@ body {
     // );
 
     &::-webkit-scrollbar {
-      // display: none;
-      // background-color: blue;
+      display: contents;
+      background-color: transparent;
       height: 5px;
-      // max-width: 10%;
-      // transform: translateX(10px);
+      max-width: 10%;
+      transform: translateX(10px);
       // padding: 0 20px;
     }
     &::-webkit-scrollbar-track {
@@ -97,16 +98,21 @@ body {
           hsl(0deg 0% 100% / 25%),
         inset -2px -2px 2px
           rgb(0 0 0 / 25%);
+      &::before {
+        content: "jhi";
+      }
+    }
+    &::-webkit-scrollbar-track-piece:end,
+    &::-webkit-scrollbar-track-piece:start {
+      background: rgb(88, 97, 90);
     }
     &::-webkit-scrollbar-track-piece:end {
       border-radius: 10px;
-      background: rgb(145, 223, 169);
       margin-right: 10px;
     }
 
     &::-webkit-scrollbar-track-piece:start {
       border-radius: 10px;
-      background: rgb(145, 223, 169);
       margin-left: 10px;
     }
 

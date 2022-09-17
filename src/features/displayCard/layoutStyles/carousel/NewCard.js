@@ -19,7 +19,7 @@ export default function Card() {
     "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/302085057_10225037046066479_347752878933419272_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=ICVasttexKYAX8P4IM4&_nc_ht=scontent-sea1-1.xx&oh=00_AT_D84gdgQS9kdNuBTuwbWDqtJMvb-gO-XIGHhMJtk6PKg&oe=631E7305";
 
   return (
-    <CardStyled>
+    <CardStyled id="scrollArea">
       <div className="card intro">
         <div className="slide intro">
           <p>

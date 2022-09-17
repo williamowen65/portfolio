@@ -146,7 +146,7 @@ const ContactStyled = styled.div`
     box-sizing: content-box;
     width: 375px;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 66px auto 0;
     &.linkedin {
       width: 74px;
       background: #2b7ab8;
