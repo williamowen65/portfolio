@@ -184,10 +184,13 @@ export default function Contributions() {
                             Object.keys(
                               entry.links
                             );
-                          window.location =
+
+                          window.open(
                             entry.links[
                               link
-                            ];
+                            ],
+                            "_blank"
+                          );
                         }}
                       >
                         {entry.links
@@ -258,14 +261,7 @@ const Article = styled.article`
       }
     }
     .actualContent {
-      width: ${({ sw }) =>
-        console.log(
-          sw,
-          sw <
-            configValues.breakpoints
-              .mobile
-        )};
-  
+   
     background-color: ${
       configValues.theme.dark.background
         .color.window
@@ -306,6 +302,13 @@ const Article = styled.article`
           25px
         );
       }
+    }
+    .list {
+      margin-left: ${({ sw }) =>
+        sw >
+        configValues.breakpoints.mobile
+          ? "112px"
+          : "0px"}
     }
     svg.info {
       color: ${

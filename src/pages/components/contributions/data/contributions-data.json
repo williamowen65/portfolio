@@ -2,10 +2,10 @@
   {
     "type": "Dev Tools",
     "links": {
-      "github": "www.wowebdev.com"
+      "github": "https://github.com/williamowen65/project-setup"
     },
     "meta": {
-      "description": "Simply manage a folder of project-boiler-plates and use the built-in CLI tool to print projects to any folder on your machine. I was inspired by front-end frameworks that provide the same thing, but in a much more restricted way. This solution provides a 100% customizable experience. This is still in maintenance at the moment, but it is very usable already.",
+      "description": "The magic of this is brought down to only a few lines of code. It just goes to show you how we are playing with fire. Simply manage a folder of project-boiler-plates and use the built-in CLI tool to print projects to any folder on your machine. The logic recursively looks at folder names and Yargs.js helps to bring it to the CLI. This solution provides a 100% customizable experience, unlike prepackaged framework generators like create-react-app. This is still in maintenance at the moment, but it is very usable already.",
       "title": "A simple way to generate customized boiler-plate code"
     }
   },
@@ -45,18 +45,28 @@
       "github": "www.wowebdev.com"
     },
     "meta": {
-      "title": "Read Voices",
-      "description": "A custom app for a friend."
+      "title": "Read Voices (Website)",
+      "description": "This website functions as a hub for an author with content dispersed across the internet. I based this app on the layout and functionality of WordPress. When you're logged in, you have a dashboard, and editing of content happens directly in the site interface, with a dynamic WYSIWYG editor."
     }
   },
   {
-    "type": "Games",
+    "type": "Freelance",
+    "links": {
+      "medium": "www.wowebdev.com"
+    },
+    "meta": {
+      "title": "Google Sheet for Tracking Expenses",
+      "description": "This product provides invoicing orders, tracking inventory, managing costs and sale prices, and overall understanding the data as a whole. It is built with JavaScript via Google AppScripts. "
+    }
+  },
+  {
+    "type": "Freelance",
     "links": {
       "github": "www.wowebdev.com"
     },
     "meta": {
-      "title": "Extra",
-      "description": "None yet, but soon (etc)"
+      "title": "A Newsletter SignUp App",
+      "description": "This custom application was built with React Native. The problem I solved for this client was manual entry of data. It was a gap in her workflow that I knew could be automated. React Native was chosen because the target was an android tablet that could be brought to art shows and used in a booth to sign people up for newsletters. Her workflow was integrated with other websites, which is what prompted me to use Puppeteer.js! Puppeteer is handled on a remote server. Overall, the app has a custom look and puts user experience first. "
     }
   }
 ]
